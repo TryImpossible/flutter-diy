@@ -1,3 +1,4 @@
+import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
@@ -26,7 +27,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
               SizedBox(height: MediaQuery.of(context).padding.top),
               _buildItem('Material控件', MaterialWidgetActivity()),
               _buildItem('ListView系列控件', ListViewWidgetActivity()),
-              _buildItem('GridView系列控件', ListViewWidgetActivity()),
+              _buildItem('GridView系列控件', GridViewWidgetActivity()),
               _buildItem('Sliver系列控件', SliverWidgetActivity()),
             ],
           ),
