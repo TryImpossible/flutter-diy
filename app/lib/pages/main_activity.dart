@@ -32,6 +32,18 @@ class _MainActivityState extends State<MainActivity> {
         CustomWidgetFragment(),
       ],
     );
+    // return IndexedStack(
+    //   children: <Widget>[
+    //     Offstage(
+    //       offstage: _currentIndex != 0,
+    //       child: FrameworkWidgetFragment(),
+    //     ),
+    //     Offstage(
+    //       offstage: _currentIndex != 1,
+    //       child: CustomWidgetFragment(),
+    //     )
+    //   ],
+    // );
   }
 
   Widget _buildBottomNavigationBar() {
