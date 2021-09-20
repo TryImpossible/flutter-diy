@@ -1,6 +1,7 @@
 import 'package:app/pages/sliver/sliver_example_01_activity.dart';
 import 'package:app/pages/sliver/sliver_example_02_activity.dart';
 import 'package:app/pages/sliver/sliver_example_03_activity.dart';
+import 'package:app/pages/sliver/sliver_example_04_activity.dart';
 import 'package:flutter/material.dart';
 
 class SliverWidgetActivity extends StatelessWidget {
@@ -39,6 +40,11 @@ class SliverWidgetActivity extends StatelessWidget {
                 context,
                 'SliverPersistentHeader的使用',
                 SliverExample03Activity(),
+              ),
+              _buildItem(
+                context,
+                'SliverScaleHeader的使用',
+                SliverExample04Activity(),
               ),
             ],
           ),
