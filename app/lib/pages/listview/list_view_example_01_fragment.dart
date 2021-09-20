@@ -1,0 +1,31 @@
+import 'package:app/global.dart';
+import 'package:flutter/material.dart';
+
+class ListViewExample01Fragment extends StatelessWidget {
+  const ListViewExample01Fragment({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        padding: EdgeInsets.zero,
+        itemExtent: 100,
+        children:
+            colorList.asMap().entries.map((MapEntry<int, Color> mapEntry) {
+          return Container(
+            color: mapEntry.value,
+            alignment: Alignment.center,
+            child: Text(
+              mapEntry.key.toString(),
+              style: TextStyle(
+                fontSize: 21,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}
