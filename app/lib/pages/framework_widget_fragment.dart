@@ -1,5 +1,6 @@
 import 'package:app/global.dart';
 import 'package:app/pages/button_bar_widget_activity.dart';
+import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
@@ -23,6 +24,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
     'GridView系列控件': GridViewWidgetActivity(),
     'Sliver系列控件': SliverWidgetActivity(),
     'ButtonBar控件': ButtonBarWidgetActivity(),
+    'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
   };
 
   @override

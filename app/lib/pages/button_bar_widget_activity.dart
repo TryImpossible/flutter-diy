@@ -9,16 +9,6 @@ class ButtonBarWidgetActivity extends StatelessWidget {
       appBar: AppBar(
         title: Text('ButtonBar控件'),
       ),
-      // body: ListView.separated(
-      //     itemBuilder: (BuildContext context, int index) {
-      //       return _buildButtonbar(index);
-      //     },
-      //     separatorBuilder: (BuildContext context, int index) {
-      //       return Divider(
-      //         color: Colors.black45,
-      //       );
-      //     },
-      //     itemCount: 10),
       body: SizedBox.expand(
         child: SingleChildScrollView(
           child: Column(
