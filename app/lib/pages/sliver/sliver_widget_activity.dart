@@ -1,4 +1,5 @@
 import 'package:app/pages/sliver/sliver_example_01_activity.dart';
+import 'package:app/pages/sliver/sliver_example_02_activity.dart';
 import 'package:flutter/material.dart';
 
 class SliverWidgetActivity extends StatelessWidget {
@@ -12,7 +13,27 @@ class SliverWidgetActivity extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              _buildItem(context, '普通用法', SliverExample01Activity()),
+              _buildItem(context, 'Grid和List的混合使用', SliverExample01Activity()),
+              _buildItem(
+                context,
+                'SliverAppBar的使用',
+                SliverExample02Activity(type: 0),
+              ),
+              _buildItem(
+                context,
+                'SliverAppBar-Float效果',
+                SliverExample02Activity(type: 1),
+              ),
+              _buildItem(
+                context,
+                'SliverAppBar-Snap效果',
+                SliverExample02Activity(type: 2),
+              ),
+              _buildItem(
+                context,
+                'SliverAppBar-Pinned效果',
+                SliverExample02Activity(type: 3),
+              ),
             ],
           ),
         ),
