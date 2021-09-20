@@ -1,5 +1,6 @@
 import 'package:app/pages/sliver/sliver_example_01_activity.dart';
 import 'package:app/pages/sliver/sliver_example_02_activity.dart';
+import 'package:app/pages/sliver/sliver_example_03_activity.dart';
 import 'package:flutter/material.dart';
 
 class SliverWidgetActivity extends StatelessWidget {
@@ -33,6 +34,11 @@ class SliverWidgetActivity extends StatelessWidget {
                 context,
                 'SliverAppBar-Pinned效果',
                 SliverExample02Activity(type: 3),
+              ),
+              _buildItem(
+                context,
+                'SliverPersistentHeader的使用',
+                SliverExample03Activity(),
               ),
             ],
           ),
