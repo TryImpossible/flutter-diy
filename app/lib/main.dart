@@ -1,4 +1,4 @@
-import 'package:app/pages/main_page.dart';
+import 'package:app/pages/main_activity.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: MainActivity(),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_diy/widget/dropdown_text_field.dart';
 
-class DropdownTextFieldPage extends StatelessWidget {
-  const DropdownTextFieldPage({Key? key}) : super(key: key);
+class DropdownTextFieldActivity extends StatelessWidget {
+  const DropdownTextFieldActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
