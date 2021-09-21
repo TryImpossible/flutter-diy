@@ -3,8 +3,8 @@ import 'package:app/pages/listview/list_view_example_02_fragment.dart';
 import 'package:app/pages/listview/list_view_example_03_fragment.dart';
 import 'package:app/pages/listview/list_view_example_04_fragment.dart';
 import 'package:app/pages/listview/list_view_example_05_fragment.dart';
+import 'package:app/pages/listview/list_view_example_06_fragment.dart';
 import 'package:flutter/material.dart';
-
 
 class ListViewWidgetActivity extends StatelessWidget {
   const ListViewWidgetActivity({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class ListViewWidgetActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           title: Text('ListView系列组件'),
@@ -24,6 +24,7 @@ class ListViewWidgetActivity extends StatelessWidget {
               Tab(text: 'seperated用法'),
               Tab(text: '下拉刷新用法'),
               Tab(text: '上拉加载用法'),
+              Tab(text: 'AnimatedList'),
             ],
           ),
         ),
@@ -34,6 +35,7 @@ class ListViewWidgetActivity extends StatelessWidget {
             ListViewExample03Fragment(),
             ListViewExample04Fragment(),
             ListViewExample05Fragment(),
+            ListViewExample06Fragment(),
           ],
         ),
       ),
