@@ -5,6 +5,7 @@ import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
+import 'package:app/pages/toggle_buttons_widget_activity.dart';
 import 'package:flutter/material.dart';
 
 class FrameworkWidgetFragment extends StatefulWidget {
@@ -25,6 +26,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
     'Sliver系列控件': SliverWidgetActivity(),
     'ButtonBar控件': ButtonBarWidgetActivity(),
     'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
+    'ToggleButtons控件': ToggleButtonWidgetActivity(),
   };
 
   @override
