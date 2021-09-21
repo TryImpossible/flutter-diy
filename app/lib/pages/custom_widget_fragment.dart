@@ -8,11 +8,16 @@ class CustomWidgetFragment extends StatefulWidget {
   _CustomWidgetFragmentState createState() => _CustomWidgetFragmentState();
 }
 
-class _CustomWidgetFragmentState extends State<CustomWidgetFragment> {
+class _CustomWidgetFragmentState extends State<CustomWidgetFragment>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   void _topping() {}
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: SizedBox.expand(
         child: SingleChildScrollView(

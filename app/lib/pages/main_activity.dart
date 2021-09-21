@@ -11,7 +11,6 @@ class MainActivity extends StatefulWidget {
 
 class _MainActivityState extends State<MainActivity> {
   final PageController _pageController = PageController();
-  int _currentIndex = 0;
 
   void _topping() {}
 
@@ -19,7 +18,11 @@ class _MainActivityState extends State<MainActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildBody(),
-      bottomNavigationBar: _buildBottomNavigationBar(),
+      bottomNavigationBar: MainBottomNavigationBar(
+        onTap: (int index) {
+          _pageController.jumpToPage(index);
+        },
+      ),
     );
   }
 
@@ -45,8 +48,25 @@ class _MainActivityState extends State<MainActivity> {
     //   ],
     // );
   }
+}
 
-  Widget _buildBottomNavigationBar() {
+class MainBottomNavigationBar extends StatefulWidget {
+  const MainBottomNavigationBar({
+    Key? key,
+    this.onTap,
+  }) : super(key: key);
+  final ValueChanged<int>? onTap;
+
+  @override
+  _MainBottomNavigationBarState createState() =>
+      _MainBottomNavigationBarState();
+}
+
+class _MainBottomNavigationBarState extends State<MainBottomNavigationBar> {
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       items: <BottomNavigationBarItem>[
@@ -60,9 +80,9 @@ class _MainActivityState extends State<MainActivity> {
         ),
       ],
       onTap: (int index) {
-        _pageController.jumpToPage(index);
         _currentIndex = index;
         setState(() {});
+        widget.onTap?.call(index);
       },
     );
   }

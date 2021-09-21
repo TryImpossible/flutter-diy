@@ -4,6 +4,7 @@ import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
+import 'package:app/pages/paginated_data_table_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
 import 'package:app/pages/toggle_buttons_widget_activity.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,11 @@ class FrameworkWidgetFragment extends StatefulWidget {
       _FrameworkWidgetFragmentState();
 }
 
-class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
+class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   void _topping() {}
 
   Map<String, Widget> _data = <String, Widget>{
@@ -27,10 +32,12 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
     'ButtonBar控件': ButtonBarWidgetActivity(),
     'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
     'ToggleButtons控件': ToggleButtonWidgetActivity(),
+    'PaginatedDataTable控件': PaginatedDataTableWidgetActivity(),
   };
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -50,6 +57,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment> {
                 );
               },
               child: Container(
+                padding: EdgeInsets.all(4),
                 alignment: Alignment.center,
                 color: randomColor,
                 child: Text(
