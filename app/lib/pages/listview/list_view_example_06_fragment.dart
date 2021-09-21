@@ -98,7 +98,7 @@ class _ListViewExample06FragmentState extends State<ListViewExample06Fragment>
 
   Widget _buildItem(int index, UserBean user) {
     return Container(
-      color: colorList[index % colorList.length],
+      color: Colors.primaries[index % Colors.primaries.length],
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: 16),
       height: 56,

@@ -26,10 +26,10 @@ class _ListViewExample04FragmentState extends State<ListViewExample04Fragment> {
         child: ListView.builder(
           padding: EdgeInsets.zero,
           itemExtent: 100,
-          itemCount: colorList.length,
+          itemCount: Colors.primaries.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              color: colorList[index],
+              color: Colors.primaries[index],
               alignment: Alignment.center,
               child: Text(
                 index.toString(),

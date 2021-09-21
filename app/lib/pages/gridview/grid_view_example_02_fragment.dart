@@ -10,11 +10,11 @@ class GridViewExample02Fragment extends StatelessWidget {
       body: GridView.builder(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.zero,
-        itemCount: colorList.length,
+        itemCount: Colors.primaries.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             alignment: Alignment.center,
-            color: colorList[index],
+            color: Colors.primaries[index],
             child: Text(
               index.toString(),
               style: TextStyle(

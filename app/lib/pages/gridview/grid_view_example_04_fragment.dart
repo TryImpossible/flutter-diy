@@ -14,10 +14,10 @@ class GridViewExample04Fragment extends StatelessWidget {
         crossAxisSpacing: 4,
         childAspectRatio: 0.7,
         children:
-            colorList.asMap().entries.map((MapEntry<int, Color> mapEntry) {
+            Colors.primaries.asMap().entries.map((MapEntry<int, Color> mapEntry) {
           return Container(
             alignment: Alignment.center,
-            color: colorList[mapEntry.key],
+            color: Colors.primaries[mapEntry.key],
             child: Text(
               mapEntry.key.toString(),
               style: TextStyle(

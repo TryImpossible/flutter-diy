@@ -9,11 +9,11 @@ class ListViewExample03Fragment extends StatelessWidget {
     return Scaffold(
       body: ListView.separated(
         padding: EdgeInsets.zero,
-        itemCount: colorList.length,
+        itemCount: Colors.primaries.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             padding: EdgeInsets.symmetric(vertical: 40),
-            color: colorList[index],
+            color: Colors.primaries[index],
             alignment: Alignment.center,
             child: Text(
               index.toString(),

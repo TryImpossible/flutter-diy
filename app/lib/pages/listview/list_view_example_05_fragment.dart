@@ -12,7 +12,7 @@ class ListViewExample05Fragment extends StatefulWidget {
 class _ListViewExample05FragmentState extends State<ListViewExample05Fragment> {
   bool _isLoading = false;
   ScrollController _scrollController = ScrollController();
-  List<Color> _list = List.from(colorList);
+  List<Color> _list = List.from(Colors.primaries);
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _ListViewExample05FragmentState extends State<ListViewExample05Fragment> {
     return Future.delayed(Duration(seconds: 1), () {
       setState(() {
         _isLoading = false;
-        _list.addAll(colorList);
+        _list.addAll(Colors.primaries);
       });
     });
   }
@@ -62,7 +62,7 @@ class _ListViewExample05FragmentState extends State<ListViewExample05Fragment> {
     return Container(
       color: _list[index],
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 60),
+      height: 100,
       child: Text(
         index.toString(),
         style: TextStyle(

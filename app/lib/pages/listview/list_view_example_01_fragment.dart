@@ -11,7 +11,7 @@ class ListViewExample01Fragment extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemExtent: 100,
         children:
-            colorList.asMap().entries.map((MapEntry<int, Color> mapEntry) {
+            Colors.primaries.asMap().entries.map((MapEntry<int, Color> mapEntry) {
           return Container(
             color: mapEntry.value,
             alignment: Alignment.center,

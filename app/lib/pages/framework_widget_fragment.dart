@@ -1,9 +1,9 @@
-import 'package:app/global.dart';
 import 'package:app/pages/button_bar_widget_activity.dart';
 import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
+import 'package:app/pages/nested_scroll_view_widget_activity.dart';
 import 'package:app/pages/paginated_data_table_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
 import 'package:app/pages/toggle_buttons_widget_activity.dart';
@@ -29,6 +29,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'ListView系列控件': ListViewWidgetActivity(),
     'GridView系列控件': GridViewWidgetActivity(),
     'Sliver系列控件': SliverWidgetActivity(),
+    'NestedScrollView控件': NestedScrollViewWidgetActivity(),
     'ButtonBar控件': ButtonBarWidgetActivity(),
     'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
     'ToggleButtons控件': ToggleButtonWidgetActivity(),
@@ -59,7 +60,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
               child: Container(
                 padding: EdgeInsets.all(4),
                 alignment: Alignment.center,
-                color: randomColor,
+                color: Colors.primaries[index % Colors.primaries.length],
                 child: Text(
                   _data.keys.elementAt(index),
                   style: TextStyle(

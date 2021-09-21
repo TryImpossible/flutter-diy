@@ -11,6 +11,7 @@ class DraggableScrollableSheetWidgetActivity extends StatelessWidget {
       ),
       body: DraggableScrollableSheet(
         maxChildSize: 0.75,
+        initialChildSize: 0.75,
         builder: (BuildContext context, ScrollController scrollController) {
           return _buildScrollableWidget(scrollController);
         },

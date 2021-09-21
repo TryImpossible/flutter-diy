@@ -67,8 +67,12 @@ class _SliverExample03ActivityState extends State<SliverExample03Activity>
 }
 
 class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
-  StickyTabBarDelegate({required this.child});
+  StickyTabBarDelegate({
+    required this.child,
+    this.color = Colors.white,
+  });
 
+  final Color color;
   final TabBar child;
 
   @override
@@ -77,7 +81,10 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    return child;
+    return Material(
+      color: color,
+      child: child,
+    );
   }
 
   @override

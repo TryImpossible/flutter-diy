@@ -15,7 +15,7 @@ class SliverExample01Activity extends StatelessWidget {
           _buildTitle('SliverGrid'),
           SliverGrid(
             delegate: SliverChildListDelegate.fixed(
-              colorList
+              Colors.primaries
                   .asMap()
                   .entries
                   .map((MapEntry<int, Color> mapEntry) => Container(
@@ -34,7 +34,7 @@ class SliverExample01Activity extends StatelessWidget {
           _buildTitle('SliverGrid.count'),
           SliverGrid.count(
               crossAxisCount: 3,
-              children: colorList
+              children: Colors.primaries
                   .asMap()
                   .entries
                   .map((MapEntry<int, Color> mapEntry) => Container(
@@ -47,7 +47,7 @@ class SliverExample01Activity extends StatelessWidget {
           SliverGrid.extent(
             maxCrossAxisExtent: 100,
             childAspectRatio: 0.5,
-            children: colorList
+            children: Colors.primaries
                 .asMap()
                 .entries
                 .map((MapEntry<int, Color> mapEntry) => Container(
@@ -60,7 +60,7 @@ class SliverExample01Activity extends StatelessWidget {
           _buildTitle('SliverList'),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
-              colorList
+              Colors.primaries
                   .asMap()
                   .entries
                   .map((MapEntry<int, Color> mapEntry) => Container(
@@ -77,13 +77,13 @@ class SliverExample01Activity extends StatelessWidget {
               (BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
-                  color: colorList[index],
+                  color: Colors.primaries[index],
                   child: _buildNum(
                     index.toString(),
                   ),
                 );
               },
-              childCount: colorList.length,
+              childCount: Colors.primaries.length,
             ),
             itemExtent: 100,
           ),
@@ -99,7 +99,7 @@ class SliverExample01Activity extends StatelessWidget {
                 opacity: animation.value,
                 child: Container(
                   alignment: Alignment.center,
-                  color: colorList[index],
+                  color: Colors.primaries[index],
                   height: 100,
                   child: _buildNum(
                     index.toString(),
@@ -107,7 +107,7 @@ class SliverExample01Activity extends StatelessWidget {
                 ),
               );
             },
-            initialItemCount: colorList.length,
+            initialItemCount: Colors.primaries.length,
           ),
         ],
       ),
