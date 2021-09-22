@@ -1,5 +1,6 @@
 import 'package:app/pages/button_bar_widget_activity.dart';
 import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
+import 'package:app/pages/expansion_panel_list_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
@@ -34,6 +35,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
     'ToggleButtons控件': ToggleButtonWidgetActivity(),
     'PaginatedDataTable控件': PaginatedDataTableWidgetActivity(),
+    'ExpansionPanelList控件': ExpansionPanelListWidgetActivity(),
   };
 
   @override
