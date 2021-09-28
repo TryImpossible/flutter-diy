@@ -1,4 +1,3 @@
-import 'package:app/global.dart';
 import 'package:flutter/material.dart';
 
 class ListViewExample06Fragment extends StatefulWidget {
@@ -65,17 +64,17 @@ class _ListViewExample06FragmentState extends State<ListViewExample06Fragment>
     );
   }
 
-  Widget _buildItemWithSlide(
-    int index,
-    UserBean user,
-    Animation<double> animation,
-  ) {
-    return SlideTransition(
-      position: Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
-          .animate(animation),
-      child: _buildItem(index, user),
-    );
-  }
+  // Widget _buildItemWithSlide(
+  //   int index,
+  //   UserBean user,
+  //   Animation<double> animation,
+  // ) {
+  //   return SlideTransition(
+  //     position: Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
+  //         .animate(animation),
+  //     child: _buildItem(index, user),
+  //   );
+  // }
 
   Widget _buildItemWithSlideSizeFade(
     int index,

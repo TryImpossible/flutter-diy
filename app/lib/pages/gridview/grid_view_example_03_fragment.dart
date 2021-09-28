@@ -1,4 +1,3 @@
-import 'package:app/global.dart';
 import 'package:flutter/material.dart';
 
 class GridViewExample03Fragment extends StatelessWidget {

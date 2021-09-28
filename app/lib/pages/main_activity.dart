@@ -12,8 +12,6 @@ class MainActivity extends StatefulWidget {
 class _MainActivityState extends State<MainActivity> {
   final PageController _pageController = PageController();
 
-  void _topping() {}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

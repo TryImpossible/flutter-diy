@@ -13,6 +13,7 @@ class PaginatedDataTableWidgetActivity extends StatefulWidget {
 class _PaginatedDataTableWidgetActivityState
     extends State<PaginatedDataTableWidgetActivity> {
   SourceData _sourceData = SourceData();
+  bool _sortAscending = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,8 @@ class _PaginatedDataTableWidgetActivityState
           PaginatedDataTable(
             header: Text('Flight Products'),
             showFirstLastButtons: true,
-            sortAscending: true,
+            sortAscending: _sortAscending,
+            sortColumnIndex: 3,
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
@@ -38,22 +40,28 @@ class _PaginatedDataTableWidgetActivityState
               DataColumn(label: Text('ID')),
               DataColumn(label: Text('Name')),
               DataColumn(
+                label: Text('Price'),
+                onSort: (int columnIndex, bool ascending) {
+                  if (columnIndex == 3) {
+                    _sortAscending = ascending;
+                    setState(() {});
+                    _sourceData.sortByPrice(ascending);
+                  }
+                },
+                tooltip: '点击排序',
+              ),
+              DataColumn(label: Text('No.')),
+              DataColumn(
                 label: Row(
                   children: [
-                    Text('Price'),
+                    Text('Address'),
                     SizedBox(width: 5.0),
-                    Icon(Icons.airplanemode_active),
+                    Icon(Icons.home),
                   ],
                 ),
               ),
-              DataColumn(
-                label: Text('No.'),
-                onSort: (int columnIndex, bool ascending) {},
-              ),
-              DataColumn(label: Text('Address')),
             ],
             source: _sourceData,
-            sortColumnIndex: 0,
             onSelectAll: (bool? value) {
               if (value != null) {
                 print('onSelectAll is $value');
@@ -84,7 +92,7 @@ class SourceData extends DataTableSource {
               ? 'assets/images/suolong.jpeg'
               : 'assets/images/shanzhi.jpeg',
       "id": (index + 1),
-      "name": "Item Name ${(index + 1)}",
+      "name": "Name ${(index + 1)}",
       "price": Random().nextInt(10000),
       "no.": Random().nextInt(10000),
       "address": (index % 3 == 1)
@@ -99,6 +107,14 @@ class SourceData extends DataTableSource {
   void selectAll(bool value) {
     _sourceData.forEach((Map<String, dynamic> element) {
       element['selected'] = value;
+    });
+    notifyListeners();
+  }
+
+  void sortByPrice(bool ascending) {
+    _sourceData.sort((Map<String, dynamic> m1, Map<String, dynamic> m2) {
+      int result = (m1['price'] as int) - (m2['price'] as int);
+      return ascending ? result : -result;
     });
     notifyListeners();
   }
@@ -124,6 +140,7 @@ class SourceData extends DataTableSource {
         DataCell(
           Text(_sourceData[index]['name']),
           showEditIcon: true,
+          placeholder: true,
         ),
         DataCell(Text('\$ ${_sourceData[index]['price']}')),
         DataCell(Text(_sourceData[index]['no.'].toString())),
