@@ -1,12 +1,12 @@
 import 'package:app/pages/align_widget_activity.dart';
 import 'package:app/pages/button_bar_widget_activity.dart';
+import 'package:app/pages/clip_widget_activity.dart';
 import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
 import 'package:app/pages/expansion_panel_list_widget_activity.dart';
 import 'package:app/pages/flow_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
-import 'package:app/pages/lificycle/stateful_parent_page_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
 import 'package:app/pages/nested_scroll_view_widget_activity.dart';
 import 'package:app/pages/paginated_data_table_widget_activity.dart';
@@ -43,6 +43,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'ExpansionPanelList控件': ExpansionPanelListWidgetActivity(),
     'Flow控件': FlowWidgetActivity(),
     'Align控件': AlignWidgetActivity(),
+    'Clip控件': ClipWidgetActivity(),
   };
 
   @override
@@ -70,14 +71,25 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
               padding: EdgeInsets.all(4),
               alignment: Alignment.center,
               color: Colors.primaries[index % Colors.primaries.length],
-              child: Text(
-                _data.keys.elementAt(index),
-                style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white.withOpacity(0.7),
-                ),
-                textAlign: TextAlign.center,
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  return FittedBox(
+                    child: ConstrainedBox(
+                      constraints: constraints.copyWith(
+                        maxHeight: double.infinity,
+                      ),
+                      child: Text(
+                        _data.keys.elementAt(index),
+                        style: TextStyle(
+                          fontSize: 21,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white.withOpacity(0.7),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           );

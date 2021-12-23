@@ -60,7 +60,11 @@ class _AlignWidgetActivityState extends State<AlignWidgetActivity> {
             height: 120.0,
             child: Align(
               alignment: FractionalOffset(0.2, 0.6),
-              child: FlutterLogo(size: 60.0),
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  return FlutterLogo(size: 60.0);
+                },
+              ),
             ),
           ),
         ],
