@@ -7,6 +7,7 @@ import 'package:app/pages/fittedbox_widget_activity.dart';
 import 'package:app/pages/flow_widget_activity.dart';
 import 'package:app/pages/future_builder_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
+import 'package:app/pages/inherited_widget_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
@@ -35,23 +36,24 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
 
   Map<String, Widget> _data = <String, Widget>{
     'Lifecycle': LifecyclePageActivity(),
-    'Material控件': MaterialWidgetActivity(),
-    'ListView系列控件': ListViewWidgetActivity(),
-    'GridView系列控件': GridViewWidgetActivity(),
-    'Sliver系列控件': SliverWidgetActivity(),
-    'NestedScrollView控件': NestedScrollViewWidgetActivity(),
-    'ButtonBar控件': ButtonBarWidgetActivity(),
-    'DraggableScrollableSheet控件': DraggableScrollableSheetWidgetActivity(),
-    'ToggleButtons控件': ToggleButtonWidgetActivity(),
-    'PaginatedDataTable控件': PaginatedDataTableWidgetActivity(),
-    'ExpansionPanelList控件': ExpansionPanelListWidgetActivity(),
-    'Flow控件': FlowWidgetActivity(),
-    'Align控件': AlignWidgetActivity(),
-    'Clip控件': ClipWidgetActivity(),
-    'FittedBox控件': FittedBoxWidgetActivity(),
+    'Material': MaterialWidgetActivity(),
+    'ListView': ListViewWidgetActivity(),
+    'GridView': GridViewWidgetActivity(),
+    'Sliver': SliverWidgetActivity(),
+    'NestedScrollView': NestedScrollViewWidgetActivity(),
+    'ButtonBar': ButtonBarWidgetActivity(),
+    'DraggableScrollableSheet': DraggableScrollableSheetWidgetActivity(),
+    'ToggleButtons': ToggleButtonWidgetActivity(),
+    'PaginatedDataTable': PaginatedDataTableWidgetActivity(),
+    'ExpansionPanelList': ExpansionPanelListWidgetActivity(),
+    'Flow': FlowWidgetActivity(),
+    'Align': AlignWidgetActivity(),
+    'Clip': ClipWidgetActivity(),
+    'FittedBox': FittedBoxWidgetActivity(),
     'ValueListenableBuilder': ValueListenableBuilderWidgetActivity(),
     'FutureBuilder': FutureBuilderWidgetActivity(),
     'StreamBuilder': StreamBuilderWidgetActivity(),
+    'InheritedWidget': InheritedWidgetActivity(),
   };
 
   @override

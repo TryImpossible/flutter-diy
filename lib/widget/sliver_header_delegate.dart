@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+
+typedef SliverHeaderBuilder = Widget Function(
+  BuildContext context,
+  double shrinkOffset,
+  bool overlapsContent,
+);
+
+class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
+  /// child 为 header
+  SliverHeaderDelegate({
+    required Widget child,
+    required this.maxHeight,
+    this.minHeight = 0,
+  })  : builder = ((
+          BuildContext context,
+          double shrinkOffset,
+          bool overlapsContent,
+        ) =>
+            child),
+        assert(minHeight <= maxHeight && minHeight >= 0);
+
+  // 最大和最小高度相同
+  SliverHeaderDelegate.fixedHeight({
+    required double height,
+    required Widget child,
+  })  : builder = ((
+          BuildContext context,
+          double shrinkOffset,
+          bool overlapsContent,
+        ) =>
+            child),
+        maxHeight = height,
+        minHeight = height;
+
+  // 需要自定义builder时使用
+  SliverHeaderDelegate.builder({
+    required this.maxHeight,
+    this.minHeight = 0,
+    required this.builder,
+  });
+
+  final double maxHeight;
+  final double minHeight;
+  final SliverHeaderBuilder builder;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    Widget child = build(context, shrinkOffset, overlapsContent);
+    //测试代码：如果在调试模式，且子组件设置了key，则打印日志
+    assert(() {
+      if (child.key != null) {
+        print('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
+      }
+      return true;
+    }());
+    // 让 header 尽可能充满限制的空间；宽度为 Viewport 宽度，
+    // 高度随着用户滑动在[minHeight,maxHeight]之间变化。
+    return SizedBox.expand(child: child);
+  }
+
+  @override
+  double get maxExtent => minHeight;
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return oldDelegate.maxExtent != maxExtent ||
+        oldDelegate.minExtent != minExtent;
+  }
+}
