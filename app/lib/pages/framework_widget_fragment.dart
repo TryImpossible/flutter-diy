@@ -13,6 +13,7 @@ import 'package:app/pages/nested_scroll_view_widget_activity.dart';
 import 'package:app/pages/paginated_data_table_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
 import 'package:app/pages/toggle_buttons_widget_activity.dart';
+import 'package:app/pages/value_listenable_builder_widget_activity.dart';
 import 'package:flutter/material.dart';
 
 class FrameworkWidgetFragment extends StatefulWidget {
@@ -46,6 +47,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'Align控件': AlignWidgetActivity(),
     'Clip控件': ClipWidgetActivity(),
     'FittedBox控件': FittedBoxWidgetActivity(),
+    'ValueListenableBuilder': ValueListenableBuilderWidgetActivity(),
   };
 
   @override
