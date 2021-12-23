@@ -13,6 +13,7 @@ import 'package:app/pages/material_widget_activity.dart';
 import 'package:app/pages/nested_scroll_view_widget_activity.dart';
 import 'package:app/pages/paginated_data_table_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
+import 'package:app/pages/stream_builder_widget_activity.dart';
 import 'package:app/pages/toggle_buttons_widget_activity.dart';
 import 'package:app/pages/value_listenable_builder_widget_activity.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'FittedBox控件': FittedBoxWidgetActivity(),
     'ValueListenableBuilder': ValueListenableBuilderWidgetActivity(),
     'FutureBuilder': FutureBuilderWidgetActivity(),
+    'StreamBuilder': StreamBuilderWidgetActivity(),
   };
 
   @override
