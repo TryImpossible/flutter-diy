@@ -5,6 +5,7 @@ import 'package:app/pages/draggable_scrollable_sheet_widget_activity.dart';
 import 'package:app/pages/expansion_panel_list_widget_activity.dart';
 import 'package:app/pages/fittedbox_widget_activity.dart';
 import 'package:app/pages/flow_widget_activity.dart';
+import 'package:app/pages/future_builder_widget_activity.dart';
 import 'package:app/pages/gridview/grid_view_widget_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
@@ -48,6 +49,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'Clip控件': ClipWidgetActivity(),
     'FittedBox控件': FittedBoxWidgetActivity(),
     'ValueListenableBuilder': ValueListenableBuilderWidgetActivity(),
+    'FutureBuilder': FutureBuilderWidgetActivity(),
   };
 
   @override
