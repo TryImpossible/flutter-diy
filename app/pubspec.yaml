@@ -31,12 +31,13 @@ dependencies:
 
   flutter_diy:
     path: ../
+  dokit: 0.8.0-nullsafety.0
 
 dev_dependencies:
   integration_test:
     sdk: flutter
   flutter_test:
-      sdk: flutter
+    sdk: flutter
   flutter_driver:
     sdk: flutter
 

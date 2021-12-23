@@ -1,5 +1,5 @@
-import 'package:app/pages/lificycle/stateful_parent_page_activity.dart';
-import 'package:app/pages/lificycle/stateless_page_01_activity.dart';
+import 'package:app/pages/lificycle/stateful_parent_activity.dart';
+import 'package:app/pages/lificycle/stateless_parent_activity.dart';
 import 'package:flutter/material.dart';
 
 class LifecyclePageActivity extends StatelessWidget {
@@ -20,7 +20,7 @@ class LifecyclePageActivity extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) {
-                      return StatelessPage01Activity();
+                      return StatelessParentActivity();
                     },
                   ),
                 );
@@ -32,7 +32,7 @@ class LifecyclePageActivity extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) {
-                      return StatefulParentPageActivity();
+                      return StatefulParentActivity();
                     },
                   ),
                 );

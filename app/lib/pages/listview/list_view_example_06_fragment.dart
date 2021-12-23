@@ -32,13 +32,13 @@ class _ListViewExample06FragmentState extends State<ListViewExample06Fragment>
       body: AnimatedList(
         key: _key,
         initialItemCount: _animatedList.length,
-        itemBuilder: (
-          BuildContext context,
-          int index,
-          Animation<double> animation,
-        ) {
+        itemBuilder:
+            (BuildContext context, int index, Animation<double> animation) {
           return _buildItemWithSlideSizeFade(
-              index, _animatedList[index], animation);
+            index,
+            _animatedList[index],
+            animation,
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(

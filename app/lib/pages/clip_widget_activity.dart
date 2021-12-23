@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class ClipWidgetActivity extends StatelessWidget {
@@ -46,7 +48,10 @@ class ClipWidgetActivity extends StatelessWidget {
               ],
             ),
             DecoratedBox(
-              decoration: BoxDecoration(color: Colors.red),
+              decoration: BoxDecoration(
+                color: Colors.primaries[
+                    Random.secure().nextInt(10) % Colors.primaries.length],
+              ),
               child: ClipRect(
                 clipper: MyClipper(),
                 child: avatar,

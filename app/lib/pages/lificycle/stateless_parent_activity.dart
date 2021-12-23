@@ -1,8 +1,8 @@
-import 'package:app/pages/lificycle/stateless_page_02_activity.dart';
+import 'package:app/pages/lificycle/stateless_child_activity.dart';
 import 'package:flutter/material.dart';
 
-class StatelessPage01Activity extends StatelessWidget {
-  StatelessPage01Activity({Key? key}) : super(key: key) {
+class StatelessParentActivity extends StatelessWidget {
+  StatelessParentActivity({Key? key}) : super(key: key) {
     print('无状态父页面---constructor');
   }
 
@@ -23,7 +23,7 @@ class StatelessPage01Activity extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return StatelessPage02Activity();
+                      return StatelessChildActivity();
                     },
                   ),
                 );
