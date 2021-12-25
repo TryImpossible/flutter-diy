@@ -1,16 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class ValueListenableBuilderWidgetActivity extends StatefulWidget {
-  const ValueListenableBuilderWidgetActivity({Key? key}) : super(key: key);
+class ValueListenableBuilderActivity extends StatefulWidget {
+  const ValueListenableBuilderActivity({Key? key}) : super(key: key);
 
   @override
-  _ValueListenableBuilderWidgetActivityState createState() =>
-      _ValueListenableBuilderWidgetActivityState();
+  _ValueListenableBuilderActivityState createState() =>
+      _ValueListenableBuilderActivityState();
 }
 
-class _ValueListenableBuilderWidgetActivityState
-    extends State<ValueListenableBuilderWidgetActivity> {
+class _ValueListenableBuilderActivityState
+    extends State<ValueListenableBuilderActivity> {
   final ValueNotifier<int> _counter = ValueNotifier<int>(0);
   static const double textScaleFactor = 1.5;
 

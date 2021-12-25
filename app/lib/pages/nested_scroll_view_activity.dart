@@ -1,16 +1,16 @@
 import 'package:app/pages/sliver/sliver_example_03_activity.dart';
 import 'package:flutter/material.dart';
 
-class NestedScrollViewWidgetActivity extends StatefulWidget {
-  const NestedScrollViewWidgetActivity({Key? key}) : super(key: key);
+class NestedScrollViewActivity extends StatefulWidget {
+  const NestedScrollViewActivity({Key? key}) : super(key: key);
 
   @override
-  _NestedScrollViewWidgetActivityState createState() =>
-      _NestedScrollViewWidgetActivityState();
+  _NestedScrollViewActivityState createState() =>
+      _NestedScrollViewActivityState();
 }
 
-class _NestedScrollViewWidgetActivityState
-    extends State<NestedScrollViewWidgetActivity>
+class _NestedScrollViewActivityState
+    extends State<NestedScrollViewActivity>
     with TickerProviderStateMixin {
   late TabController _tabController;
 

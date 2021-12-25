@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DraggableScrollableSheetWidgetActivity extends StatelessWidget {
-  const DraggableScrollableSheetWidgetActivity({Key? key}) : super(key: key);
+class DraggableScrollableSheetActivity extends StatelessWidget {
+  const DraggableScrollableSheetActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

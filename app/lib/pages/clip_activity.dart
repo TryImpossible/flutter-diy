@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class ClipWidgetActivity extends StatelessWidget {
-  const ClipWidgetActivity({Key? key}) : super(key: key);
+class ClipActivity extends StatelessWidget {
+  const ClipActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

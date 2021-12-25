@@ -4,14 +4,14 @@ import 'package:app/pages/gridview/grid_view_example_03_fragment.dart';
 import 'package:app/pages/gridview/grid_view_example_04_fragment.dart';
 import 'package:flutter/material.dart';
 
-class GridViewWidgetActivity extends StatefulWidget {
-  const GridViewWidgetActivity({Key? key}) : super(key: key);
+class GridViewActivity extends StatefulWidget {
+  const GridViewActivity({Key? key}) : super(key: key);
 
   @override
-  _GridViewWidgetActivityState createState() => _GridViewWidgetActivityState();
+  _GridViewActivityState createState() => _GridViewActivityState();
 }
 
-class _GridViewWidgetActivityState extends State<GridViewWidgetActivity> {
+class _GridViewActivityState extends State<GridViewActivity> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

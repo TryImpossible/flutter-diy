@@ -1,5 +1,5 @@
+import 'package:app/widget/custom_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_diy/widget/custom_widget.dart';
 
 class CustomWidgetActivity extends StatefulWidget {
   const CustomWidgetActivity({Key? key}) : super(key: key);

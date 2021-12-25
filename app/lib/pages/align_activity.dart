@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AlignWidgetActivity extends StatefulWidget {
-  const AlignWidgetActivity({Key? key}) : super(key: key);
+class AlignActivity extends StatefulWidget {
+  const AlignActivity({Key? key}) : super(key: key);
 
   @override
-  _AlignWidgetActivityState createState() => _AlignWidgetActivityState();
+  _AlignActivityState createState() => _AlignActivityState();
 }
 
-class _AlignWidgetActivityState extends State<AlignWidgetActivity> {
+class _AlignActivityState extends State<AlignActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

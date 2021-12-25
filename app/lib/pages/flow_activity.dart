@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FlowWidgetActivity extends StatefulWidget {
-  const FlowWidgetActivity({Key? key}) : super(key: key);
+class FlowActivity extends StatefulWidget {
+  const FlowActivity({Key? key}) : super(key: key);
 
   @override
-  _FlowWidgetActivityState createState() => _FlowWidgetActivityState();
+  _FlowActivityState createState() => _FlowActivityState();
 }
 
-class _FlowWidgetActivityState extends State<FlowWidgetActivity> {
+class _FlowActivityState extends State<FlowActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

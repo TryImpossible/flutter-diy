@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ButtonBarWidgetActivity extends StatelessWidget {
-  const ButtonBarWidgetActivity({Key? key}) : super(key: key);
+class ButtonBarActivity extends StatelessWidget {
+  const ButtonBarActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

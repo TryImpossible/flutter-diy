@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class FutureBuilderWidgetActivity extends StatefulWidget {
-  const FutureBuilderWidgetActivity({Key? key}) : super(key: key);
+class FutureBuilderActivity extends StatefulWidget {
+  const FutureBuilderActivity({Key? key}) : super(key: key);
 
   @override
-  _FutureBuilderWidgetActivityState createState() =>
-      _FutureBuilderWidgetActivityState();
+  _FutureBuilderActivityState createState() =>
+      _FutureBuilderActivityState();
 }
 
-class _FutureBuilderWidgetActivityState
-    extends State<FutureBuilderWidgetActivity> {
+class _FutureBuilderActivityState
+    extends State<FutureBuilderActivity> {
   Future<String> _mockNetworkData() {
     return Future.delayed(Duration(seconds: 2), () => '模拟请求网络数据');
   }

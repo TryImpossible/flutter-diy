@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class StreamBuilderWidgetActivity extends StatefulWidget {
-  const StreamBuilderWidgetActivity({Key? key}) : super(key: key);
+class StreamBuilderActivity extends StatefulWidget {
+  const StreamBuilderActivity({Key? key}) : super(key: key);
 
   @override
-  _StreamBuilderWidgetActivityState createState() =>
-      _StreamBuilderWidgetActivityState();
+  _StreamBuilderActivityState createState() =>
+      _StreamBuilderActivityState();
 }
 
-class _StreamBuilderWidgetActivityState
-    extends State<StreamBuilderWidgetActivity> {
+class _StreamBuilderActivityState
+    extends State<StreamBuilderActivity> {
   Stream<int> _counter() {
     return Stream.periodic(Duration(seconds: 1), (i) => i);
   }

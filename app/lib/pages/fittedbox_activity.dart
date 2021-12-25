@@ -1,8 +1,8 @@
+import 'package:app/widget/single_line_fittedbox.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_diy/widget/single_line_fittedbox.dart';
 
-class FittedBoxWidgetActivity extends StatelessWidget {
-  const FittedBoxWidgetActivity({Key? key}) : super(key: key);
+class FittedBoxActivity extends StatelessWidget {
+  const FittedBoxActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

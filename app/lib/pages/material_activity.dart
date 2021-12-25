@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MaterialWidgetActivity extends StatelessWidget {
-  const MaterialWidgetActivity({Key? key}) : super(key: key);
+class MaterialActivity extends StatelessWidget {
+  const MaterialActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

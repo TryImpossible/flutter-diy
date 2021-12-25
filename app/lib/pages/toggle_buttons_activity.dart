@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ToggleButtonWidgetActivity extends StatefulWidget {
-  const ToggleButtonWidgetActivity({Key? key}) : super(key: key);
+class ToggleButtonActivity extends StatefulWidget {
+  const ToggleButtonActivity({Key? key}) : super(key: key);
 
   @override
-  _ToggleButtonWidgetActivityState createState() =>
-      _ToggleButtonWidgetActivityState();
+  _ToggleButtonActivityState createState() =>
+      _ToggleButtonActivityState();
 }
 
-class _ToggleButtonWidgetActivityState
-    extends State<ToggleButtonWidgetActivity> {
+class _ToggleButtonActivityState
+    extends State<ToggleButtonActivity> {
   final List<Widget> _children = <Widget>[
     Icon(Icons.airplanemode_active),
     Icon(Icons.directions_bus),

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ExpansionPanelListWidgetActivity extends StatefulWidget {
-  const ExpansionPanelListWidgetActivity({Key? key}) : super(key: key);
+class ExpansionPanelListActivity extends StatefulWidget {
+  const ExpansionPanelListActivity({Key? key}) : super(key: key);
 
   @override
-  _ExpansionPanelListWidgetActivityState createState() =>
-      _ExpansionPanelListWidgetActivityState();
+  _ExpansionPanelListActivityState createState() =>
+      _ExpansionPanelListActivityState();
 }
 
-class _ExpansionPanelListWidgetActivityState
-    extends State<ExpansionPanelListWidgetActivity> {
+class _ExpansionPanelListActivityState
+    extends State<ExpansionPanelListActivity> {
   List<ExpandBean> _data = List.generate(20, (int index) {
     return ExpandBean('标题$index', List.filled(50, '内容'), false);
   });

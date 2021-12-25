@@ -2,16 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PaginatedDataTableWidgetActivity extends StatefulWidget {
-  const PaginatedDataTableWidgetActivity({Key? key}) : super(key: key);
+class PaginatedDataTableActivity extends StatefulWidget {
+  const PaginatedDataTableActivity({Key? key}) : super(key: key);
 
   @override
-  _PaginatedDataTableWidgetActivityState createState() =>
-      _PaginatedDataTableWidgetActivityState();
+  _PaginatedDataTableActivityState createState() =>
+      _PaginatedDataTableActivityState();
 }
 
-class _PaginatedDataTableWidgetActivityState
-    extends State<PaginatedDataTableWidgetActivity> {
+class _PaginatedDataTableActivityState
+    extends State<PaginatedDataTableActivity> {
   SourceData _sourceData = SourceData();
   bool _sortAscending = false;
 

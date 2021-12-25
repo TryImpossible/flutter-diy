@@ -6,8 +6,8 @@ import 'package:app/pages/listview/list_view_example_05_fragment.dart';
 import 'package:app/pages/listview/list_view_example_06_fragment.dart';
 import 'package:flutter/material.dart';
 
-class ListViewWidgetActivity extends StatelessWidget {
-  const ListViewWidgetActivity({Key? key}) : super(key: key);
+class ListViewActivity extends StatelessWidget {
+  const ListViewActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

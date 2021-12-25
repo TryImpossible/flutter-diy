@@ -4,8 +4,8 @@ import 'package:app/pages/sliver/sliver_example_03_activity.dart';
 import 'package:app/pages/sliver/sliver_example_04_activity.dart';
 import 'package:flutter/material.dart';
 
-class SliverWidgetActivity extends StatelessWidget {
-  const SliverWidgetActivity({Key? key}) : super(key: key);
+class SliverActivity extends StatelessWidget {
+  const SliverActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
