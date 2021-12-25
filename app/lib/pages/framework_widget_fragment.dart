@@ -6,6 +6,7 @@ import 'package:app/pages/expansion_panel_list_activity.dart';
 import 'package:app/pages/fittedbox_activity.dart';
 import 'package:app/pages/flow_activity.dart';
 import 'package:app/pages/future_builder_activity.dart';
+import 'package:app/pages/gesture_activity.dart';
 import 'package:app/pages/gridview/grid_view_activity.dart';
 import 'package:app/pages/inherited_widget_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
@@ -58,6 +59,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'InheritedWidget': InheritedWidgetActivity(),
     'MyProvider': MyProviderActivity(),
     'Listener': ListenerActivity(),
+    'Gesture': GestureActivity(),
   };
 
   @override
