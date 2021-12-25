@@ -11,6 +11,7 @@ import 'package:app/pages/inherited_widget_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
 import 'package:app/pages/listview/list_view_widget_activity.dart';
 import 'package:app/pages/material_widget_activity.dart';
+import 'package:app/pages/my_provider/my_provider_activity.dart';
 import 'package:app/pages/nested_scroll_view_widget_activity.dart';
 import 'package:app/pages/paginated_data_table_widget_activity.dart';
 import 'package:app/pages/sliver/sliver_widget_activity.dart';
@@ -54,6 +55,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'FutureBuilder': FutureBuilderWidgetActivity(),
     'StreamBuilder': StreamBuilderWidgetActivity(),
     'InheritedWidget': InheritedWidgetActivity(),
+    'MyProvider': MyProviderActivity(),
   };
 
   @override
