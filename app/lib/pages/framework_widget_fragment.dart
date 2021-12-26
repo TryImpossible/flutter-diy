@@ -1,4 +1,5 @@
 import 'package:app/pages/align_activity.dart';
+import 'package:app/pages/animation/animation_activity.dart';
 import 'package:app/pages/button_bar_activity.dart';
 import 'package:app/pages/clip_activity.dart';
 import 'package:app/pages/draggable_scrollable_sheet_activity.dart';
@@ -60,6 +61,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'MyProvider': MyProviderActivity(),
     'Listener': ListenerActivity(),
     'Gesture': GestureActivity(),
+    'Animation': AnimationActivity(),
   };
 
   @override
