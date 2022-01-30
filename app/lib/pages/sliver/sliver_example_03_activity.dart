@@ -55,7 +55,23 @@ class _SliverExample03ActivityState extends State<SliverExample03Activity>
             child: TabBarView(
               controller: _tabController,
               children: <Widget>[
-                Center(child: Text('Content of Home')),
+                // Center(child: Text('Content of Home')),
+                Column(
+                  children: <Widget>[
+                    Text('Content of Home'),
+                    Expanded(
+                      child: ListView.separated(
+                        itemCount: 100,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(height: 60, color: Colors.red);
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return Divider();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
                 Center(child: Text('Content of Profile')),
               ],
             ),

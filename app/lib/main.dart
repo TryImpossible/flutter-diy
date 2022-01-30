@@ -1,7 +1,7 @@
 import 'package:app/pages/main_activity.dart';
 import 'package:dokit/dokit.dart';
+import 'package:dokit/kit/biz/biz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   DoKit.runApp(
@@ -17,6 +17,14 @@ void main() {
     },
     logCallback: (String line) {
       /// 可以获取所有的print日志信息
+    },
+  );
+  BizKitManager.instance.buildBizKit(
+    group: '业务工具',
+    name: '测试入口',
+    desc: '业务。。。',
+    kitBuilder: () {
+      return Container(color: Colors.orange);
     },
   );
 }

@@ -31,7 +31,8 @@ dependencies:
 
   flutter_diy:
     path: ../
-  dokit: 0.8.0-nullsafety.0
+  dokit: ^0.8.1-nullsafety.0
+  crypto: ^3.0.1
 
 dev_dependencies:
   integration_test:
@@ -40,6 +41,9 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
+
+dependency_overrides:
+  vm_service: 7.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
