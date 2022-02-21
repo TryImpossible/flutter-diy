@@ -1,9 +1,30 @@
+import 'dart:ui';
+
 import 'package:app/pages/main_activity.dart';
 import 'package:dokit/dokit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
+  // //1.创建绘制记录器和Canvas
+  // PictureRecorder recorder = PictureRecorder();
+  // Canvas canvas = Canvas(recorder);
+  // canvas.drawColor(Colors.red, BlendMode.color);
+  // //2.在指定位置区域绘制。
+  // var rect = Rect.fromLTWH(30, 200, 300,300 );
+  // // drawChessboard(canvas,rect); //画棋盘
+  // // drawPieces(canvas,rect);//画棋子
+  // //3.创建layer，将绘制的产物保存在layer中
+  // var pictureLayer = PictureLayer(rect);
+  // //recorder.endRecording()获取绘制产物。
+  // pictureLayer.picture = recorder.endRecording();
+  // var rootLayer = OffsetLayer();
+  // rootLayer.append(pictureLayer);
+  // //4.上屏，将绘制的内容显示在屏幕上。
+  // final SceneBuilder builder = SceneBuilder();
+  // final Scene scene = rootLayer.buildScene(builder);
+  // window.render(scene);
+
   DoKit.runApp(
     app: DoKitApp(MyApp()),
     // appCreator: () => Future.value(DoKitApp(MyApp())),

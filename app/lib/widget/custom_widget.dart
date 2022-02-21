@@ -27,4 +27,5 @@ class RenderCustomObject extends RenderBox {
     super.paint(context, offset);
     // 实现绘制
   }
+
 }

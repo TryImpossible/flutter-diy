@@ -2,6 +2,7 @@ import 'package:app/pages/align_activity.dart';
 import 'package:app/pages/animation/animation_activity.dart';
 import 'package:app/pages/button_bar_activity.dart';
 import 'package:app/pages/clip_activity.dart';
+import 'package:app/pages/custom_widgets/custom_widgets_activity.dart';
 import 'package:app/pages/draggable_scrollable_sheet_activity.dart';
 import 'package:app/pages/expansion_panel_list_activity.dart';
 import 'package:app/pages/fittedbox_activity.dart';
@@ -21,6 +22,7 @@ import 'package:app/pages/sliver/sliver_activity.dart';
 import 'package:app/pages/stream_builder_activity.dart';
 import 'package:app/pages/toggle_buttons_activity.dart';
 import 'package:app/pages/value_listenable_builder_activity.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class FrameworkWidgetFragment extends StatefulWidget {
@@ -62,6 +64,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'Listener': ListenerActivity(),
     'Gesture': GestureActivity(),
     'Animation': AnimationActivity(),
+    'CustomWidgets': CustomWidgetsActivity(),
   };
 
   @override
