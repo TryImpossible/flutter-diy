@@ -9,8 +9,7 @@ class NestedScrollViewActivity extends StatefulWidget {
       _NestedScrollViewActivityState();
 }
 
-class _NestedScrollViewActivityState
-    extends State<NestedScrollViewActivity>
+class _NestedScrollViewActivityState extends State<NestedScrollViewActivity>
     with TickerProviderStateMixin {
   late TabController _tabController;
 

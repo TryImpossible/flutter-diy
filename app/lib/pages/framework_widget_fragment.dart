@@ -11,6 +11,7 @@ import 'package:app/pages/future_builder_activity.dart';
 import 'package:app/pages/gesture_activity.dart';
 import 'package:app/pages/gridview/grid_view_activity.dart';
 import 'package:app/pages/inherited_widget_activity.dart';
+import 'package:app/pages/isolate_compute_activity.dart';
 import 'package:app/pages/lificycle/lifecycle_page_activity.dart';
 import 'package:app/pages/listener_activity.dart';
 import 'package:app/pages/listview/list_view_activity.dart';
@@ -59,6 +60,7 @@ class _FrameworkWidgetFragmentState extends State<FrameworkWidgetFragment>
     'ValueListenableBuilder': ValueListenableBuilderActivity(),
     'FutureBuilder': FutureBuilderActivity(),
     'StreamBuilder': StreamBuilderActivity(),
+    'Isolate\nCompute': IsolateComputeActivity(),
     'InheritedWidget': InheritedWidgetActivity(),
     'MyProvider': MyProviderActivity(),
     'Listener': ListenerActivity(),

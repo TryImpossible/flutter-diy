@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'dart:typed_data';
+import 'package:crypto/crypto.dart';
+
 import 'package:flutter/material.dart';
 
 class ListViewExample05Fragment extends StatefulWidget {
@@ -57,13 +61,25 @@ class _ListViewExample05FragmentState extends State<ListViewExample05Fragment> {
     );
   }
 
+  String _generateMd5(String data) {
+    Uint8List content = Utf8Encoder().convert(data);
+    Digest digest = md5.convert(content);
+    return digest.toString();
+  }
+
   Widget _buildItem(int index) {
+    //反复迭代计算MD5
+    String str = '1234567890abcdefghijklmnopqrstuvwxyz';
+    for (int i = 0; i < 10000; i++) {
+      str = _generateMd5(str);
+    }
     return Container(
       color: _list[index],
       alignment: Alignment.center,
       height: 100,
       child: Text(
-        index.toString(),
+        // index.toString(),
+        str,
         style: TextStyle(
           fontSize: 21,
           color: Colors.white,
