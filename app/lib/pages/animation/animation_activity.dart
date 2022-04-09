@@ -26,128 +26,130 @@ class _AnimationActivityState extends State<AnimationActivity> {
         title: Text('Animation'),
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return ScaleAnimation01Activity();
-                  },
-                ));
-              },
-              child: Text('图片放大动画示例01'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return ScaleAnimation02Activity();
-                  },
-                ));
-              },
-              child: Text('图片放大动画示例02'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return ScaleAnimation03Activity();
-                  },
-                ));
-              },
-              child: Text('图片放大动画示例03'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(CupertinoPageRoute(
-                  builder: (BuildContext context) {
-                    return RouteAnimationActivity();
-                  },
-                ));
-              },
-              child: Text('路由动画示例01'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  PageRouteBuilder(
-                    pageBuilder: (
-                      BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation,
-                    ) {
-                      return FadeTransition(
-                        opacity: animation,
-                        child: RouteAnimationActivity(),
-                      );
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ScaleAnimation01Activity();
                     },
-                  ),
-                );
-              },
-              child: Text('路由动画示例02'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  FadeRoute(builder: (BuildContext context) {
-                    return RouteAnimationActivity();
-                  }),
-                );
-              },
-              child: Text('路由动画示例03'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return HeroAnimationActivity();
-                  },
-                ));
-              },
-              child: Text('Hero动画'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return StaggerAnimationActivity();
-                  },
-                ));
-              },
-              child: Text('Stagger交织动画'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return AnimatedSwitcherActivity();
-                  },
-                ));
-              },
-              child: Text('AnimatedSwitcher动画切换组件'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return AnimatedDecoratedBox1Activity();
-                  },
-                ));
-              },
-              child: Text('AnimatedDecorateBox1组件'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return AnimatedWidgetsActivity();
-                  },
-                ));
-              },
-              child: Text('Flutter预置的动画过渡组件'),
-            ),
-          ],
+                  ));
+                },
+                child: Text('图片放大动画示例01'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ScaleAnimation02Activity();
+                    },
+                  ));
+                },
+                child: Text('图片放大动画示例02'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ScaleAnimation03Activity();
+                    },
+                  ));
+                },
+                child: Text('图片放大动画示例03'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                    builder: (BuildContext context) {
+                      return RouteAnimationActivity();
+                    },
+                  ));
+                },
+                child: Text('路由动画示例01'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (
+                        BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secondaryAnimation,
+                      ) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: RouteAnimationActivity(),
+                        );
+                      },
+                    ),
+                  );
+                },
+                child: Text('路由动画示例02'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    FadeRoute(builder: (BuildContext context) {
+                      return RouteAnimationActivity();
+                    }),
+                  );
+                },
+                child: Text('路由动画示例03'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return HeroAnimationActivity();
+                    },
+                  ));
+                },
+                child: Text('Hero动画'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return StaggerAnimationActivity();
+                    },
+                  ));
+                },
+                child: Text('Stagger交织动画'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return AnimatedSwitcherActivity();
+                    },
+                  ));
+                },
+                child: Text('AnimatedSwitcher动画切换组件'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return AnimatedDecoratedBox1Activity();
+                    },
+                  ));
+                },
+                child: Text('AnimatedDecorateBox1组件'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return AnimatedWidgetsActivity();
+                    },
+                  ));
+                },
+                child: Text('Flutter预置的动画过渡组件'),
+              ),
+            ],
+          ),
         ),
       ),
     );

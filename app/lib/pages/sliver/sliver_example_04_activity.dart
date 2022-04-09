@@ -5,7 +5,6 @@ class SliverExample04Activity extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +13,11 @@ class SliverExample04Activity extends StatelessWidget {
           SliverPersistentHeader(
             pinned: true,
             delegate: SliverCustomHeaderDelegate(
-                title: '漩涡鸣人',
-                collapsedHeight: 44,
-                expandedHeight: 300,
-                paddingTop: MediaQuery.of(context).padding.top,
-                coverImgUrl: 'assets/images/mingren.jpeg',
+              title: '漩涡鸣人',
+              collapsedHeight: 44,
+              expandedHeight: 300,
+              paddingTop: MediaQuery.of(context).padding.top,
+              coverImgUrl: 'assets/images/mingren.jpeg',
             ),
           ),
           SliverFillRemaining(
@@ -29,7 +28,6 @@ class SliverExample04Activity extends StatelessWidget {
     );
   }
 }
-
 
 class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   final double collapsedHeight;
@@ -58,21 +56,26 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 
   Color makeStickyHeaderBgColor(shrinkOffset) {
-    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255).clamp(0, 255).toInt();
+    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
+        .clamp(0, 255)
+        .toInt();
     return Color.fromARGB(alpha, 255, 255, 255);
   }
 
   Color makeStickyHeaderTextColor(shrinkOffset, isIcon) {
-    if(shrinkOffset <= 50) {
+    if (shrinkOffset <= 50) {
       return isIcon ? Colors.white : Colors.transparent;
     } else {
-      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255).clamp(0, 255).toInt();
+      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
+          .clamp(0, 255)
+          .toInt();
       return Color.fromARGB(alpha, 0, 0, 0);
     }
   }
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: this.maxExtent,
       width: MediaQuery.of(context).size.width,
@@ -87,7 +90,7 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
             right: 0,
             top: 0,
             child: Container(
-              color: this.makeStickyHeaderBgColor(shrinkOffset),    // 背景颜色
+              color: this.makeStickyHeaderBgColor(shrinkOffset), // 背景颜色
               child: SafeArea(
                 bottom: false,
                 child: Container(
@@ -98,7 +101,8 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: this.makeStickyHeaderTextColor(shrinkOffset, true),    // 返回图标颜色
+                          color: this.makeStickyHeaderTextColor(
+                              shrinkOffset, true), // 返回图标颜色
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -107,13 +111,15 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          color: this.makeStickyHeaderTextColor(shrinkOffset, false),   // 标题颜色
+                          color: this.makeStickyHeaderTextColor(
+                              shrinkOffset, false), // 标题颜色
                         ),
                       ),
                       IconButton(
                         icon: Icon(
                           Icons.share,
-                          color: this.makeStickyHeaderTextColor(shrinkOffset, true),    // 分享图标颜色
+                          color: this.makeStickyHeaderTextColor(
+                              shrinkOffset, true), // 分享图标颜色
                         ),
                         onPressed: () {},
                       ),
