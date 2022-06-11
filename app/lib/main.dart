@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:app/pages/main_activity.dart';
-import 'package:dokit/dokit.dart';
-import 'package:dokit/kit/biz/biz.dart';
+// import 'package:dokit/dokit.dart';
+// import 'package:dokit/kit/biz/biz.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,29 +23,30 @@ void main() {
   // final Scene scene = rootLayer.buildScene(builder);
   // window.render(scene);
 
-  DoKit.runApp(
-    app: DoKitApp(MyApp()),
-    // appCreator: () => Future.value(DoKitApp(MyApp())),
-    // 是否在release包内使用，默认release包会禁用
-    useInRelease: false,
-    releaseAction: () => {
-      // release模式下执行该函数，一些用到runZone之类实现的可以放到这里，该值为空则会直接调用系统的runApp(MyApp())，
-    },
-    exceptionCallback: (dynamic error, StackTrace stack) {
-      /// 捕获异常
-    },
-    logCallback: (String line) {
-      /// 可以获取所有的print日志信息
-    },
-  );
-  BizKitManager.instance.buildBizKit(
-    group: '业务工具',
-    name: '测试入口',
-    desc: '业务。。。',
-    kitBuilder: () {
-      return Container(color: Colors.orange);
-    },
-  );
+  // DoKit.runApp(
+  //   app: DoKitApp(MyApp()),
+  //   // appCreator: () => Future.value(DoKitApp(MyApp())),
+  //   // 是否在release包内使用，默认release包会禁用
+  //   useInRelease: false,
+  //   releaseAction: () => {
+  //     // release模式下执行该函数，一些用到runZone之类实现的可以放到这里，该值为空则会直接调用系统的runApp(MyApp())，
+  //   },
+  //   exceptionCallback: (dynamic error, StackTrace stack) {
+  //     /// 捕获异常
+  //   },
+  //   logCallback: (String line) {
+  //     /// 可以获取所有的print日志信息
+  //   },
+  // );
+  // BizKitManager.instance.buildBizKit(
+  //   group: '业务工具',
+  //   name: '测试入口',
+  //   desc: '业务。。。',
+  //   kitBuilder: () {
+  //     return Container(color: Colors.orange);
+  //   },
+  // );
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
