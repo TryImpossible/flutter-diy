@@ -8,6 +8,7 @@ import 'package:app/pages/animation/scale_animation_01_activity.dart';
 import 'package:app/pages/animation/scale_animation_02_activity.dart';
 import 'package:app/pages/animation/scale_animation_03_activity.dart';
 import 'package:app/pages/animation/stagger_animation_activity.dart';
+import 'package:app/pages/animation/tween_animation_builder_activity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -147,6 +148,16 @@ class _AnimationActivityState extends State<AnimationActivity> {
                   ));
                 },
                 child: Text('Flutter预置的动画过渡组件'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return TweenAnimationBuilderActivity();
+                    },
+                  ));
+                },
+                child: Text('TweenAnimationBuilder组件'),
               ),
             ],
           ),
