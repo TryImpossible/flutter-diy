@@ -1,4 +1,4 @@
-import 'package:app/pages/main_activity.dart';
+import 'package:app/main_page.dart';
 // import 'package:dokit/dokit.dart';
 // import 'package:dokit/kit/biz/biz.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainActivity(),
+      home: MainPage(),
     );
   }
 }
