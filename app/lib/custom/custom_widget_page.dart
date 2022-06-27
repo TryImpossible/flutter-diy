@@ -38,6 +38,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: ListView.builder(
         controller: _controller,
@@ -56,7 +57,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
         },
         tooltip: 'topping',
         child: Icon(Icons.arrow_upward),
-        heroTag: "framework_widget",
+        heroTag: "custom_widget",
       ),
     );
   }

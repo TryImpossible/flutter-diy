@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ThirdPartyPage extends StatefulWidget {
-  ThirdPartyPage({Key? key}) : super(key: key);
+class ThirdPartyWidgetPage extends StatefulWidget {
+  ThirdPartyWidgetPage({Key? key}) : super(key: key);
 
   @override
-  _ThirdPartyPageState createState() => _ThirdPartyPageState();
+  _ThirdPartyWidgetPageState createState() => _ThirdPartyWidgetPageState();
 }
 
-class _ThirdPartyPageState extends State<ThirdPartyPage>
+class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
     with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
@@ -24,6 +24,7 @@ class _ThirdPartyPageState extends State<ThirdPartyPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: ListView.builder(
         controller: _controller,
@@ -42,7 +43,7 @@ class _ThirdPartyPageState extends State<ThirdPartyPage>
         },
         tooltip: 'topping',
         child: Icon(Icons.arrow_upward),
-        heroTag: "framework_widget",
+        heroTag: "third_party_widget",
       ),
     );
   }

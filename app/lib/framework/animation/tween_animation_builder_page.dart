@@ -19,25 +19,32 @@ class TweenAnimationBuilderPage extends StatelessWidget {
           _PageView4(),
         ],
       ),
-      bottomNavigationBar: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 5),
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: _types.map((e) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: ElevatedButton(
-                child: Text(e),
-                onPressed: () {
-                  _controller.animateToPage(
-                    _types.indexOf(e),
-                    duration: kThemeAnimationDuration,
-                    curve: Curves.linear,
-                  );
-                },
-              ),
-            );
-          }).toList(),
+      bottomNavigationBar: SizedBox(
+        width: double.infinity,
+        height: 44,
+        child: Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: _types.map((e) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: ElevatedButton(
+                    child: Text(e),
+                    onPressed: () {
+                      _controller.animateToPage(
+                        _types.indexOf(e),
+                        duration: kThemeAnimationDuration,
+                        curve: Curves.linear,
+                      );
+                    },
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
         ),
       ),
     );

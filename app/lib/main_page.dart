@@ -1,7 +1,7 @@
 import 'package:app/custom/app_keep_alive_wrapper.dart';
 import 'package:app/custom/custom_widget_page.dart';
 import 'package:app/framework/framework_widget_page.dart';
-import 'package:app/thirdparty/third_party_page.dart';
+import 'package:app/thirdparty/third_party_widget_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
       controller: _pageController,
       children: <Widget>[
         AppKeepAliveWrapper(child: FrameworkWidgetPage()),
-        ThirdPartyPage(),
+        ThirdPartyWidgetPage(),
         CustomWidgetPage(),
       ],
     );
