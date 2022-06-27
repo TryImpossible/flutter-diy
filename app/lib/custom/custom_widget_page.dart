@@ -1,3 +1,4 @@
+import 'package:app/custom/animated_counter_page.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_render_object_widget_page.dart';
@@ -26,6 +27,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'MyProvider': MyProviderPage(),
       'GradientButton': GradientButtonPage(),
       'TurnBox': TurnBoxPage(),
+      'AnimatedCounter': AnimatedCounterPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),

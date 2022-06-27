@@ -10,7 +10,7 @@ class LifecyclePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('生命周期'),
+        title: Text('Widget生命周期'),
       ),
       body: Center(
         child: Column(

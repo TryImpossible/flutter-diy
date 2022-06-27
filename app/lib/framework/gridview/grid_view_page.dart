@@ -19,7 +19,7 @@ class _GridViewPageState extends State<GridViewPage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('GridView系统组件'),
+          title: Text('GridView系列组件'),
           bottom: TabBar(
             isScrollable: true,
             tabs: <Tab>[

@@ -76,7 +76,9 @@ class _TurnBoxPageState extends State<TurnBoxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('TurnBox控件'),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[

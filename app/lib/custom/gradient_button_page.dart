@@ -68,7 +68,9 @@ class GradientButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('GradientButton控件'),
+      ),
       body: Column(
         children: <Widget>[
           _GradientButton(
