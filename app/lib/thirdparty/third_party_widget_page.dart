@@ -25,27 +25,6 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return RadialGradient(
-          center: Alignment.topLeft,
-          radius: 1.0,
-          colors: <Color>[Colors.yellow, Colors.deepOrange.shade900],
-          tileMode: TileMode.mirror,
-        ).createShader(bounds);
-      },
-      child: const Text(
-        'ShaderMask',
-        style: TextStyle(fontSize: 30, color: Colors.black),
-      ),
-    );
-    return ColorFiltered(
-      colorFilter: ColorFilter.mode(
-        Colors.black,
-        BlendMode.src,
-      ),
-      child: FlutterLogo(),
-    );
     return Scaffold(
       body: ListView.builder(
         controller: _controller,

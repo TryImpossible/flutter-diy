@@ -1,8 +1,8 @@
-import 'package:app/framework/color_filtered_page.dart';
 import 'package:flutter/material.dart';
 
 import 'button_bar_page.dart';
 import 'clip_page.dart';
+import 'color_filtered_page.dart';
 import 'draggable_scrollable_sheet_page.dart';
 import 'expansion_panel_list_page.dart';
 import 'fittedbox_page.dart';
@@ -16,6 +16,7 @@ import 'listener_page.dart';
 import 'listview/list_view_page.dart';
 import 'material_widget_page.dart';
 import 'paginated_data_table_page.dart';
+import 'shader_mask_page.dart';
 import 'sliver/sliver_page.dart';
 import 'stream_builder_page.dart';
 import 'toggle_buttons_page.dart';
@@ -53,6 +54,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'Gesture': GesturePage(),
       'Animation': AnimationPage(),
       'ColorFiltered': ColorFilteredPage(),
+      'ShaderMask': ShaderMaskPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
