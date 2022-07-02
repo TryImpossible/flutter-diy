@@ -1,3 +1,4 @@
+import 'package:app/framework/color_filtered_page.dart';
 import 'package:flutter/material.dart';
 
 import 'button_bar_page.dart';
@@ -51,6 +52,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'Listener': ListenerPage(),
       'Gesture': GesturePage(),
       'Animation': AnimationPage(),
+      'ColorFiltered': ColorFilteredPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
