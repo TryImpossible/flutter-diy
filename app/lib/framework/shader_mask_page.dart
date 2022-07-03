@@ -37,6 +37,8 @@ class ShaderMaskPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // CustomSingleChildLayout
+    // CustomMultiChildLayout
     final Text text = const Text(
       '隐约雷鸣，阴霾天空，但盼风雨来，能留你在此；隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。',
       style: TextStyle(fontSize: 20, color: Colors.black),

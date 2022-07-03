@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'button_bar_page.dart';
 import 'clip_page.dart';
 import 'color_filtered_page.dart';
+import 'custom_single_child_layout_page.dart';
 import 'draggable_scrollable_sheet_page.dart';
 import 'expansion_panel_list_page.dart';
 import 'fittedbox_page.dart';
@@ -55,6 +56,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'Animation': AnimationPage(),
       'ColorFiltered': ColorFilteredPage(),
       'ShaderMask': ShaderMaskPage(),
+      'CustomSingleChildLayout': CustomSingleChildLayoutPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
