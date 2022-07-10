@@ -159,37 +159,34 @@ class _AnimatedNumeral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: Colors.red,
-      child: TweenAnimationBuilder(
-        curve: curve,
-        duration: duration,
-        tween: Tween<double>(begin: 0.0, end: value.toDouble()),
-        builder: (BuildContext context, double value, Widget? child) {
-          // 整数部分
-          final int integer = value ~/ 1;
-          // 小数部分
-          final double decimal = (value - integer).abs();
-          // debugPrint('whole is $integer, decimal is $decimal');
-          return SizedBox.fromSize(
-            size: size,
-            child: Stack(
-              children: <Widget>[
-                _buildSingleNumeral(
-                  offset: size.height * decimal, // 0 -> -size.height
-                  opacity: 1 - decimal, // 1.0 -> 0.0
-                  digit: integer,
-                ),
-                _buildSingleNumeral(
-                  offset: size.height * (decimal - 1), // size.height -> 0
-                  opacity: decimal, // 0.0 -> 0.1
-                  digit: integer + 1,
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+    return TweenAnimationBuilder(
+      curve: curve,
+      duration: duration,
+      tween: Tween<double>(begin: 0.0, end: value.toDouble()),
+      builder: (BuildContext context, double value, Widget? child) {
+        // 整数部分
+        final int integer = value ~/ 1;
+        // 小数部分
+        final double decimal = (value - integer).abs();
+        // debugPrint('whole is $integer, decimal is $decimal');
+        return SizedBox.fromSize(
+          size: size,
+          child: Stack(
+            children: <Widget>[
+              _buildSingleNumeral(
+                offset: size.height * decimal, // 0 -> -size.height
+                opacity: 1 - decimal, // 1.0 -> 0.0
+                digit: integer,
+              ),
+              _buildSingleNumeral(
+                offset: size.height * (decimal - 1), // size.height -> 0
+                opacity: decimal, // 0.0 -> 0.1
+                digit: integer + 1,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 

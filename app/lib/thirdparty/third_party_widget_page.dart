@@ -25,14 +25,52 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    double value = 0.0;
     return Scaffold(
-      body: ListView.builder(
-        controller: _controller,
-        itemCount: _data.entries.length,
-        itemBuilder: (BuildContext context, int index) {
-          return _ListItem(data: _data, index: index);
-        },
+      body: Center(
+        child: StatefulBuilder(
+          builder: (
+            BuildContext context,
+            StateSetter setState,
+          ) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                AnimatedContainer(
+                  duration: Duration.zero,
+                  width: 300,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(150),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: <Color>[Colors.red, Colors.white],
+                      stops: <double>[value - 0.01, value],
+                    ),
+                    boxShadow: [BoxShadow(spreadRadius: 25, blurRadius: 25)],
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      value += 0.01;
+                    });
+                  },
+                  child: Text('添加'),
+                ),
+              ],
+            );
+          },
+        ),
       ),
+      // body: ListView.builder(
+      //   controller: _controller,
+      //   itemCount: _data.entries.length,
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return _ListItem(data: _data, index: index);
+      //   },
+      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _controller.animateTo(

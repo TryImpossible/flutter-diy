@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class AnimatedWidgetsPage extends StatefulWidget {
   @override
-  _AnimatedWidgetsPageState createState() =>
-      _AnimatedWidgetsPageState();
+  _AnimatedWidgetsPageState createState() => _AnimatedWidgetsPageState();
 }
 
 class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
@@ -14,6 +13,7 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
   Color _color = Colors.red;
   TextStyle _style = TextStyle(color: Colors.black);
   Color _decorationColor = Colors.blue;
+  double _progress = 0.3;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +117,27 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
             //       style: TextStyle(color: Colors.white),
             //     ),
             //   ),
-            // )
+            // ),
+            GestureDetector(
+              onTap: () {
+                setState(() => _progress += 0.03);
+              },
+              child: AnimatedContainer(
+                duration: Duration.zero,
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(150),
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: <Color>[Colors.red, Colors.white],
+                    stops: <double>[_progress, _progress],
+                  ),
+                  boxShadow: [BoxShadow(spreadRadius: 10, blurRadius: 10)],
+                ),
+              ),
+            ),
           ].map((e) {
             return Padding(
               padding: EdgeInsets.symmetric(vertical: 16),
