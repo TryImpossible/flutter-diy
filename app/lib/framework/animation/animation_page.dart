@@ -1,4 +1,5 @@
 import 'package:app/framework/animation/breathing_animation_page.dart';
+import 'package:app/framework/animation/snow_animation_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -170,6 +171,16 @@ class _AnimationPageState extends State<AnimationPage> {
                   ));
                 },
                 child: Text('BreathingAnimation'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return SnowAnimationPage();
+                    },
+                  ));
+                },
+                child: Text('SnowAnimation'),
               ),
             ],
           ),
