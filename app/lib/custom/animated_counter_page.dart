@@ -1,5 +1,6 @@
-import 'package:app/custom/app_animated_counter.dart';
 import 'package:flutter/material.dart';
+
+import 'app_animated_counter.dart';
 
 class AnimatedCounterPage extends StatefulWidget {
   const AnimatedCounterPage({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class AnimatedCounterPage extends StatefulWidget {
 }
 
 class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
-  double _count = 0.0;
+  double _value = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,27 +20,13 @@ class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
       ),
       body: Center(
         child: Container(
-          width: 300,
+          width: double.infinity,
           height: 120,
           color: Colors.blue,
           alignment: Alignment.center,
-          child: Row(
-            children: _count.toString().split('').map((String item) {
-              if (RegExp(r'\d').hasMatch(item)) {
-                return Expanded(
-                  child: AppAnimatedCounter(
-                    duration: const Duration(milliseconds: 500),
-                    value: int.tryParse(item) ?? 0,
-                  ),
-                );
-              } else {
-                return Text(
-                  item,
-                  style: TextStyle(fontSize: 100),
-                  textAlign: TextAlign.center,
-                );
-              }
-            }).toList(),
+          child: AppAnimatedCounter(
+            value: _value,
+            textStyle: TextStyle(fontSize: 100),
           ),
         ),
       ),
@@ -57,18 +44,7 @@ class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        _count -= 10;
-                      });
-                    },
-                    child: Text('减10'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _count--;
+                        _value--;
                       });
                     },
                     child: Text('减1'),
@@ -79,7 +55,7 @@ class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        _count++;
+                        _value++;
                       });
                     },
                     child: Text('加1'),
@@ -90,7 +66,40 @@ class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        _count += 10;
+                        _value -= 0.1;
+                      });
+                    },
+                    child: Text('减0.1'),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _value += 0.1;
+                      });
+                    },
+                    child: Text('加0.1'),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _value -= 10;
+                      });
+                    },
+                    child: Text('减10'),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _value += 10;
                       });
                     },
                     child: Text('加10'),
