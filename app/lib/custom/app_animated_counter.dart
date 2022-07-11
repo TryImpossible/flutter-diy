@@ -28,14 +28,14 @@ class AppAnimatedCounter extends StatelessWidget {
   final Duration duration;
   final Curve curve;
   final AppAnimatedCounterSymbol symbol;
-  final num value;
+  final String value;
   final TextStyle textStyle;
   final String? prefix;
   final String? suffix;
 
   @override
   Widget build(BuildContext context) {
-    final style = DefaultTextStyle.of(context).style.merge(textStyle);
+    final TextStyle style = DefaultTextStyle.of(context).style.merge(textStyle);
     final List<Widget> widgets = <Widget>[];
     if (prefix != null) {
       widgets.add(Text(prefix!));
@@ -44,7 +44,7 @@ class AppAnimatedCounter extends StatelessWidget {
       curve: curve,
       duration: duration,
       symbol: symbol,
-      value: value,
+      value: double.tryParse(value) ?? 0.0,
     ));
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: '8', style: style),
@@ -62,7 +62,7 @@ class AppAnimatedCounter extends StatelessWidget {
         ));
       }
       if (RegExp(r'\.').hasMatch(item)) {
-        widgets.add(_DecimalPoint());
+        widgets.add(const _DecimalPoint());
       }
     }
     if (suffix != null) {
@@ -96,7 +96,7 @@ class _AnimatedSymbol extends StatelessWidget {
   Widget build(BuildContext context) {
     return Visibility(
       visible: symbol != AppAnimatedCounterSymbol.none,
-      child: TweenAnimationBuilder(
+      child: TweenAnimationBuilder<double>(
         curve: curve,
         duration: duration,
         tween: Tween<double>(begin: 0.0, end: value == 0 ? 0.0 : 1.0),
@@ -139,7 +139,7 @@ class _DecimalPoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('.', textAlign: TextAlign.center);
+    return const Text('.', textAlign: TextAlign.center);
   }
 }
 
@@ -159,7 +159,7 @@ class _AnimatedNumeral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
+    return TweenAnimationBuilder<double>(
       curve: curve,
       duration: duration,
       tween: Tween<double>(begin: 0.0, end: value.toDouble()),

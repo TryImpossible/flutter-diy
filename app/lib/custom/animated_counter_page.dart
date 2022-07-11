@@ -25,7 +25,7 @@ class _AnimatedCounterPageState extends State<AnimatedCounterPage> {
           color: Colors.blue,
           alignment: Alignment.center,
           child: AppAnimatedCounter(
-            value: _value,
+            value: _value.toString(),
             textStyle: TextStyle(fontSize: 100),
           ),
         ),
