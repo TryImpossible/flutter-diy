@@ -5,6 +5,7 @@ import 'custom_render_object_widget_page.dart';
 import 'dropdown_text_field_page.dart';
 import 'gradient_button_page.dart';
 import 'my_provider/my_provider_page.dart';
+import 'shadow_box_page.dart';
 import 'turn_box_page.dart';
 
 class CustomWidgetPage extends StatefulWidget {
@@ -28,6 +29,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'GradientButton': GradientButtonPage(),
       'TurnBox': TurnBoxPage(),
       'AnimatedCounter': AnimatedCounterPage(),
+      'ShadowBox': ShadowBoxPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
