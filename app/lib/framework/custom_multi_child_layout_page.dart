@@ -7,23 +7,47 @@ class CustomMultiChildLayoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('CustomMultiChildLayout'),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('CustomMultiChildLayout'),
+          bottom: TabBar(
+            isScrollable: true,
+            tabs: <Widget>[
+              Tab(text: 'WaterfallFlow'),
+              Tab(text: 'UnderlineText'),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            WaterfallFlowPage(),
+            UnderlineTextPage(),
+          ],
+        ),
       ),
-      body: _WaterfallFlow(
-        children: List.generate(18, (int index) {
-          return LayoutId(
-            id: 'id_$index',
-            child: Container(
-              width: 100,
-              height: 40 + Random().nextDouble() * 100,
-              color: Colors.primaries[index % Colors.primaries.length],
-              child: FlutterLogo(),
-            ),
-          );
-        }).toList(),
-      ),
+    );
+  }
+}
+
+class WaterfallFlowPage extends StatelessWidget {
+  const WaterfallFlowPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return _WaterfallFlow(
+      children: List.generate(18, (int index) {
+        return LayoutId(
+          id: 'id_$index',
+          child: Container(
+            width: 100,
+            height: 40 + Random().nextDouble() * 100,
+            color: Colors.primaries[index % Colors.primaries.length],
+            child: FlutterLogo(),
+          ),
+        );
+      }).toList(),
     );
   }
 }
@@ -38,7 +62,7 @@ class _WaterfallFlow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomMultiChildLayout(
-      delegate: _WaterfallDelegate(
+      delegate: _WaterfallFlowDelegate(
         itemCount: children.length,
         crossAxisCount: 3,
         padding: 5,
@@ -48,8 +72,8 @@ class _WaterfallFlow extends StatelessWidget {
   }
 }
 
-class _WaterfallDelegate extends MultiChildLayoutDelegate {
-  _WaterfallDelegate({
+class _WaterfallFlowDelegate extends MultiChildLayoutDelegate {
+  _WaterfallFlowDelegate({
     required this.itemCount,
     required this.crossAxisCount,
     required this.padding,
@@ -68,7 +92,7 @@ class _WaterfallDelegate extends MultiChildLayoutDelegate {
       return 0.0;
     });
     for (int i = 0; i < itemCount; i++) {
-      final row = i ~/ crossAxisCount;
+      // final row = i ~/ crossAxisCount;
       final column = i % 3;
 
       // 布局子元素，获得尺寸
@@ -88,6 +112,64 @@ class _WaterfallDelegate extends MultiChildLayoutDelegate {
       // 指定子元素位置
       positionChild('id_$i', Offset(dx, dy));
       columnOffsetY[column] += itemSize.height + padding;
+    }
+  }
+
+  @override
+  bool shouldRelayout(covariant MultiChildLayoutDelegate oldDelegate) {
+    return true;
+  }
+}
+
+class UnderlineTextPage extends StatelessWidget {
+  const UnderlineTextPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomMultiChildLayout(
+      delegate: _UnderlineTextDelegate(),
+      children: <Widget>[
+        LayoutId(
+          id: 'text',
+          child: ColoredBox(
+            color: Colors.red,
+            child: Text('我是文字'),
+          ),
+        ),
+        LayoutId(
+          id: 'underline',
+          child: Container(
+            height: 5,
+            color: Colors.blue,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _UnderlineTextDelegate extends MultiChildLayoutDelegate {
+  @override
+  void performLayout(Size size) {
+    Size textSize = Size.zero;
+    if (hasChild('text')) {
+      textSize = layoutChild('text', BoxConstraints.loose(size));
+      positionChild('text', Offset((size.width - textSize.width) / 2, 30));
+    }
+    if (hasChild('underline')) {
+      final underlineSize = layoutChild(
+        'underline',
+        BoxConstraints(
+          minWidth: textSize.width - 10,
+          minHeight: 0,
+          maxWidth: textSize.width - 10,
+          maxHeight: textSize.height,
+        ),
+      );
+      positionChild(
+        'underline',
+        Offset((size.width - textSize.width + 10) / 2, 30 + textSize.height),
+      );
     }
   }
 

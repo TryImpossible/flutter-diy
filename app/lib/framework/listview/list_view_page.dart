@@ -12,7 +12,6 @@ class ListViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Colors.primaries
     return DefaultTabController(
       length: 6,
       child: Scaffold(
