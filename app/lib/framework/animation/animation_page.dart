@@ -15,15 +15,9 @@ import 'scale_animation_03_page.dart';
 import 'stagger_animation_page.dart';
 import 'tween_animation_builder_page.dart';
 
-class AnimationPage extends StatefulWidget {
+class AnimationPage extends StatelessWidget {
   const AnimationPage({Key? key}) : super(key: key);
 
-  @override
-  _AnimationPageState createState() => _AnimationPageState();
-}
-
-class _AnimationPageState extends State<AnimationPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
