@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ClipPathPage extends StatelessWidget {
-  const ClipPathPage({Key? key}) : super(key: key);
+class DrawPathPage extends StatelessWidget {
+  const DrawPathPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('ClipPath')),
+      appBar: AppBar(title: Text('DrawPath')),
       body: Center(
         child: ColoredBox(
           color: Colors.grey.shade300,
