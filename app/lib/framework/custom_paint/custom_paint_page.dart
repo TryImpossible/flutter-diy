@@ -1,3 +1,4 @@
+import 'package:app/framework/custom_paint/canvas_principle_page.dart';
 import 'package:flutter/material.dart';
 
 import 'paint_page.dart';
@@ -13,6 +14,16 @@ class CustomPaintPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return CanvasPrinciplePage();
+                    },
+                  ));
+                },
+                child: Text('Canvas原理'),
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
