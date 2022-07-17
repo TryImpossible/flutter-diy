@@ -9,9 +9,12 @@ class ClipRectPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('ClipRect')),
       body: Center(
-        child: CustomPaint(
-          painter: _MyPainter(),
-          size: Size(size.width, size.width),
+        child: ColoredBox(
+          color: Colors.grey.shade300,
+          child: CustomPaint(
+            painter: _MyPainter(),
+            size: Size.square(size.width),
+          ),
         ),
       ),
     );

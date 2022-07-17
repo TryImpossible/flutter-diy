@@ -1,5 +1,6 @@
 import 'package:app/framework/custom_paint/canvas_principle_page.dart';
 import 'package:app/framework/custom_paint/clip_rect_page.dart';
+import 'package:app/framework/custom_paint/line_chart_page.dart';
 import 'package:app/framework/custom_paint/water_waves_page.dart';
 import 'package:flutter/material.dart';
 
@@ -76,6 +77,16 @@ class CustomPaintPage extends StatelessWidget {
                   ));
                 },
                 child: Text('水波荡漾效果'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return LineChartPage();
+                    },
+                  ));
+                },
+                child: Text('拆线图'),
               ),
             ],
           ),
