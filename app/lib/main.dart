@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             child!,
             Banner(
-              message: 'Dev',
+              message: 'DEBUG',
               location: BannerLocation.topStart,
             ),
           ],
