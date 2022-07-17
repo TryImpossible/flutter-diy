@@ -1,12 +1,7 @@
-import 'package:app/custom/make_ui/render_object_ui.dart';
 import 'package:app/main_page.dart';
-
 // import 'package:dokit/dokit.dart';
 // import 'package:dokit/kit/biz/biz.dart';
 import 'package:flutter/material.dart';
-
-import 'custom/make_ui/foundation_ui.dart';
-import 'custom/make_ui/widget_ui.dart';
 
 void main() {
   // //1.创建绘制记录器和Canvas
@@ -82,6 +77,17 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       home: MainPage(),
+      builder: (_, Widget? child) {
+        return Stack(
+          children: <Widget>[
+            child!,
+            Banner(
+              message: 'Dev',
+              location: BannerLocation.topStart,
+            ),
+          ],
+        );
+      },
     );
   }
 }

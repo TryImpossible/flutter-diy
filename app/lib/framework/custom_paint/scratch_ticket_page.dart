@@ -115,15 +115,19 @@ class _MyPainter extends CustomPainter {
 
   @override
   void paint(ui.Canvas canvas, ui.Size size) {
+    /// 绘制奖票图片
     canvas.drawImage(image, Offset.zero, Paint());
 
+    /// 保存新的图层
     canvas.saveLayer(null, Paint());
 
+    /// 绘制灰色区域
     canvas.drawRect(
       Rect.fromLTWH(0, 0, size.width, size.height),
       Paint()..color = Colors.grey,
     );
 
+    /// 绘制透明区域，使用BlendMode.src实现，手指滑过的区域只显示透明，不显示灰色
     Paint paint = Paint();
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 30;
