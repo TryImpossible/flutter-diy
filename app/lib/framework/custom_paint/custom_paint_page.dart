@@ -1,4 +1,5 @@
 import 'package:app/framework/custom_paint/canvas_principle_page.dart';
+import 'package:app/framework/custom_paint/clip_rect_page.dart';
 import 'package:flutter/material.dart';
 
 import 'paint_page.dart';
@@ -43,6 +44,16 @@ class CustomPaintPage extends StatelessWidget {
                   ));
                 },
                 child: Text('刮奖票'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ClipRectPage();
+                    },
+                  ));
+                },
+                child: Text('ClipRect使用'),
               ),
             ],
           ),
