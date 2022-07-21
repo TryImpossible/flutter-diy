@@ -6,41 +6,39 @@ class PaginatedDataTablePage extends StatefulWidget {
   const PaginatedDataTablePage({Key? key}) : super(key: key);
 
   @override
-  _PaginatedDataTablePageState createState() =>
-      _PaginatedDataTablePageState();
+  State<PaginatedDataTablePage> createState() => _PaginatedDataTablePageState();
 }
 
-class _PaginatedDataTablePageState
-    extends State<PaginatedDataTablePage> {
-  SourceData _sourceData = SourceData();
+class _PaginatedDataTablePageState extends State<PaginatedDataTablePage> {
+  final SourceData _sourceData = SourceData();
   bool _sortAscending = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PaginatedDataTable控件'),
+        title: const Text('PaginatedDataTable控件'),
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           PaginatedDataTable(
-            header: Text('Flight Products'),
+            header: const Text('Flight Products'),
             showFirstLastButtons: true,
             sortAscending: _sortAscending,
             sortColumnIndex: 3,
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search),
               ),
             ],
             columns: <DataColumn>[
-              DataColumn(label: Text('Avatar')),
-              DataColumn(label: Text('ID')),
-              DataColumn(label: Text('Name')),
+              const DataColumn(label: Text('Avatar')),
+              const DataColumn(label: Text('ID')),
+              const DataColumn(label: Text('Name')),
               DataColumn(
-                label: Text('Price'),
+                label: const Text('Price'),
                 onSort: (int columnIndex, bool ascending) {
                   if (columnIndex == 3) {
                     _sortAscending = ascending;
@@ -50,10 +48,10 @@ class _PaginatedDataTablePageState
                 },
                 tooltip: '点击排序',
               ),
-              DataColumn(label: Text('No.')),
+              const DataColumn(label: Text('No.')),
               DataColumn(
                 label: Row(
-                  children: [
+                  children: const <Widget>[
                     Text('Address'),
                     SizedBox(width: 5.0),
                     Icon(Icons.home),
@@ -64,12 +62,12 @@ class _PaginatedDataTablePageState
             source: _sourceData,
             onSelectAll: (bool? value) {
               if (value != null) {
-                print('onSelectAll is $value');
+                debugPrint('onSelectAll is $value');
                 _sourceData.selectAll(value);
               }
             },
             onPageChanged: (int value) {
-              print('onPageChanged is $value');
+              debugPrint('onPageChanged is $value');
             },
             checkboxHorizontalMargin: 12,
             horizontalMargin: 12,
@@ -105,9 +103,9 @@ class SourceData extends DataTableSource {
   );
 
   void selectAll(bool value) {
-    _sourceData.forEach((Map<String, dynamic> element) {
+    for (var element in _sourceData) {
       element['selected'] = value;
-    });
+    }
     notifyListeners();
   }
 

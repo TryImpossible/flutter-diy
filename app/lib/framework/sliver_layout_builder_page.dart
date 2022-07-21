@@ -6,10 +6,10 @@ class SliverLayoutBuilderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color _color = Colors.green;
+    Color color = Colors.green;
     return Scaffold(
       appBar: AppBar(
-        title: Text('SliverLayoutBuilder'),
+        title: const Text('SliverLayoutBuilder'),
       ),
       body: CustomScrollView(
         slivers: <Widget>[
@@ -19,18 +19,18 @@ class SliverLayoutBuilderPage extends StatelessWidget {
                 builder: (BuildContext context, SliverConstraints constraints) {
               debugPrint('SliverConstraints  = $constraints');
               if (constraints.userScrollDirection == ScrollDirection.forward) {
-                _color = Colors.blue;
+                color = Colors.blue;
               } else if (constraints.userScrollDirection ==
                   ScrollDirection.idle) {
-                _color = Colors.green;
+                color = Colors.green;
               } else {
-                _color = Colors.cyan;
+                color = Colors.cyan;
               }
 
               return SliverToBoxAdapter(
                 child: Container(
                   height: 100,
-                  color: _color,
+                  color: color,
                 ),
               );
             });

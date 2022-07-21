@@ -68,27 +68,20 @@ class _ScannerSweepPageState extends State<ScannerSweepPage>
         AnimatedBuilder(
           animation: _controller,
           builder: (_, Widget? child) {
-            debugPrint('value is ${_controller.value}');
-            return ColorFiltered(
-              colorFilter: const ColorFilter.mode(
-                Colors.transparent,
-                BlendMode.dst,
-              ),
-              child: Container(
-                width: size,
-                height: size,
-                decoration: BoxDecoration(
-                  shape: shape,
-                  gradient: SweepGradient(
-                    colors: <Color>[
-                      Colors.transparent,
-                      Colors.black.withOpacity(0.1),
-                    ],
-                    stops: <double>[_controller.value, _controller.value],
-                  ),
+            return Container(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                shape: shape,
+                gradient: SweepGradient(
+                  colors: <Color>[
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.1),
+                  ],
+                  stops: <double>[_controller.value, _controller.value],
                 ),
-                child: child,
               ),
+              child: child,
             );
           },
         ),

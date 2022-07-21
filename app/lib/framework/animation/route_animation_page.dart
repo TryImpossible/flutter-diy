@@ -4,7 +4,7 @@ class RouteAnimationPage extends StatefulWidget {
   const RouteAnimationPage({Key? key}) : super(key: key);
 
   @override
-  _RouteAnimationPageState createState() => _RouteAnimationPageState();
+  State<RouteAnimationPage> createState() => _RouteAnimationPageState();
 }
 
 class _RouteAnimationPageState extends State<RouteAnimationPage> {

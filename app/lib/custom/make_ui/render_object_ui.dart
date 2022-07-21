@@ -5,14 +5,14 @@ import 'package:flutter/rendering.dart';
 bool _tapped = false;
 
 Decoration get boxDecoration => BoxDecoration(
-      color: _tapped ? Color(0x22000000) : Color(0xFF000000),
+      color: _tapped ? const Color(0x22000000) : const Color(0xFF000000),
     );
 
 void runRenderObjectUI() {
   RenderDecoratedBox box = RenderDecoratedBox(decoration: boxDecoration);
   RenderingFlutterBinding(
     root: RenderDecoratedBox(
-      decoration: BoxDecoration(color: Color(0xFFFFFFFF)),
+      decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
       child: RenderPositionedBox(
         alignment: Alignment.center,
         child: RenderPointerListener(
@@ -22,7 +22,7 @@ void runRenderObjectUI() {
             box.reassemble();
           },
           child: RenderConstrainedBox(
-            additionalConstraints: BoxConstraints.tight(Size(100, 100)),
+            additionalConstraints: BoxConstraints.tight(const Size(100, 100)),
             child: box,
           ),
         ),

@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 
 class AppShadowBox extends SingleChildRenderObjectWidget {
-  AppShadowBox({
-    this.child,
+  const AppShadowBox({
+    Key? key,
+    Widget? child,
     required this.distance,
-  });
+  }) : super(key: key, child: child);
 
-  final Widget? child;
   final double distance;
 
   @override
@@ -17,8 +17,10 @@ class AppShadowBox extends SingleChildRenderObjectWidget {
 
   @override
   void updateRenderObject(
-      BuildContext context, covariant _RenderShadowBox renderObject) {
-    renderObject..distance = distance;
+    BuildContext context,
+    covariant RenderObject renderObject,
+  ) {
+    (renderObject as _RenderShadowBox).distance = distance;
   }
 }
 

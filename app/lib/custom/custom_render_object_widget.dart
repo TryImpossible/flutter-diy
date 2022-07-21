@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomRenderObjectWidget extends LeafRenderObjectWidget {
+  const CustomRenderObjectWidget({Key? key}) : super(key: key);
+
   @override
   RenderObject createRenderObject(BuildContext context) {
     // 创建 RenderObject
@@ -8,11 +10,11 @@ class CustomRenderObjectWidget extends LeafRenderObjectWidget {
   }
 
   @override
-  void updateRenderObject(BuildContext context, covariant RenderObject renderObject) {
+  void updateRenderObject(
+      BuildContext context, covariant RenderObject renderObject) {
     super.updateRenderObject(context, renderObject);
     // 更新 RenderObject
   }
-
 }
 
 class RenderCustomObject extends RenderBox {
@@ -27,5 +29,4 @@ class RenderCustomObject extends RenderBox {
     super.paint(context, offset);
     // 实现绘制
   }
-
 }

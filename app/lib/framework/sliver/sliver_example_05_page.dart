@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
 class SliverExample05Page extends StatefulWidget {
+  const SliverExample05Page({Key? key}) : super(key: key);
+
   @override
-  _SliverExample05PageState createState() =>
-      _SliverExample05PageState();
+  State<SliverExample05Page> createState() => _SliverExample05PageState();
 }
 
 class _SliverExample05PageState extends State<SliverExample05Page>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  List<String> _tabTitles = [
+  final List<String> _tabTitles = [
     "Tab1",
     "Tab2",
     "Tab3",
   ];
 
-  List<DataColumn> _dataColumns = [];
-  List<DataRow> _dataRows = [];
+  final List<DataColumn> _dataColumns = [];
+  final List<DataRow> _dataRows = [];
 
-  List<Widget> _rowTitles = [];
+  final List<Widget> _rowTitles = [];
 
   @override
   void initState() {
@@ -33,10 +34,10 @@ class _SliverExample05PageState extends State<SliverExample05Page>
         child: Container(
             height: 36.0,
             alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               "RowTitle${i + 1}",
-              style: TextStyle(fontSize: 14.0, color: Color(0xff333333)),
+              style: const TextStyle(fontSize: 14.0, color: Color(0xff333333)),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             )),
@@ -50,7 +51,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
         fadeData.add(DataCell(Text(
           "$i$j",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 14.0, color: Color(0xff666666)),
+          style: const TextStyle(fontSize: 14.0, color: Color(0xff666666)),
         )));
       }
       _dataRows.add(DataRow(cells: fadeData));
@@ -68,13 +69,12 @@ class _SliverExample05PageState extends State<SliverExample05Page>
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        brightness: Brightness.light,
         backgroundColor: Colors.white,
         centerTitle: true,
         //在标题前面显示的一个控件，在首页通常显示应用的 logo；在其他界面通常显示为返回按钮
         leading: IconButton(
           padding: const EdgeInsets.all(0.0),
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
           ),
@@ -82,7 +82,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
         ),
         //Toolbar 中主要内容，通常显示为当前界面的标题文字
         title: Column(
-          children: [
+          children: const [
             Text(
               "title",
               style: TextStyle(
@@ -101,12 +101,12 @@ class _SliverExample05PageState extends State<SliverExample05Page>
         ),
         //标题右侧显示的按钮组
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () => doSearch(),
             child: Container(
               alignment: Alignment.centerRight,
-              margin: EdgeInsets.only(left: 22.0),
-              child: Text(
+              margin: const EdgeInsets.only(left: 22.0),
+              child: const Text(
                 "Search",
                 style: TextStyle(
                   fontSize: 14.0,
@@ -134,7 +134,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                 background: Container(
                   height: 200.0,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "TopContent",
                     style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
@@ -146,7 +146,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                 children: [
                   Container(
                     height: 44.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
                           style: BorderStyle.solid,
@@ -162,7 +162,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                             (e) => Tab(
                               child: Text(
                                 e,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -171,9 +171,9 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                           )
                           .toList(),
                       isScrollable: false,
-                      labelColor: Color(0xff1376ee),
-                      indicatorColor: Color(0xff1376ee),
-                      unselectedLabelColor: Color(0xff666666),
+                      labelColor: const Color(0xff1376ee),
+                      indicatorColor: const Color(0xff1376ee),
+                      unselectedLabelColor: const Color(0xff666666),
                     ),
                   ),
                   Expanded(
@@ -182,7 +182,7 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                       color: Colors.white,
                       child: TabBarView(
                         controller: _tabController,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         children: <Widget>[
                           ListView(
                             children: [
@@ -191,21 +191,23 @@ class _SliverExample05PageState extends State<SliverExample05Page>
                                   // 行名
                                   Expanded(
                                       child: ListView(
-                                    physics: NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
                                     children: _rowTitles,
                                   )),
                                   Expanded(
                                     flex: 3,
                                     child: ListView(
-                                      physics: NeverScrollableScrollPhysics(),
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       shrinkWrap: true,
                                       children: [
                                         SingleChildScrollView(
                                           scrollDirection: Axis.horizontal,
                                           child: DataTable(
                                             dividerThickness: 0.0,
-                                            headingTextStyle: TextStyle(
+                                            headingTextStyle: const TextStyle(
                                               fontSize: 14.0,
                                               color: Color(0xff333333),
                                               fontWeight: FontWeight.w600,

@@ -14,22 +14,22 @@ void runFoundationUI() {
 
 void _render(Duration duration) {
   // 1.创建绘制记录器和Canvas
-  final PictureRecorder recorder = new PictureRecorder();
+  final PictureRecorder recorder = PictureRecorder();
   final Canvas canvas = Canvas(recorder);
-  Paint background = Paint()..color = Color(0xFFFFFFFF);
+  Paint background = Paint()..color = const Color(0xFFFFFFFF);
   canvas.drawPaint(background);
 
   // 在指定位置区域绘制。
   Paint paint = Paint()
     ..style = PaintingStyle.fill
-    ..color = _tapped ? Color(0x22000000) : Color(0xFF000000);
+    ..color = _tapped ? const Color(0x22000000) : const Color(0xFF000000);
   canvas.drawRect(_centerRect, paint);
 
   // 获取绘制产物
   Picture picture = recorder.endRecording();
 
   // 将绘制的内容显示在屏幕上。
-  SceneBuilder builder = new SceneBuilder();
+  SceneBuilder builder = SceneBuilder();
   builder.pushTransform(Float64List.fromList(Matrix4.identity().storage));
   builder.addPicture(Offset.zero, picture);
   Scene scene = builder.build();
@@ -39,7 +39,7 @@ void _render(Duration duration) {
 /// 获取中的100x100位置
 Rect get _centerRect {
   Size size = window.physicalSize;
-  Size centerSize = Size(100, 100) * window.devicePixelRatio;
+  Size centerSize = const Size(100, 100) * window.devicePixelRatio;
   return Rect.fromLTWH(
     (size.width - centerSize.width) / 2,
     (size.height - centerSize.height) / 2,

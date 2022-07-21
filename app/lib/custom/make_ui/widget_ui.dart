@@ -13,7 +13,7 @@ class _UIState extends State<_UI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFFFFFFF),
+      color: const Color(0xFFFFFFFF),
       child: Center(
         child: GestureDetector(
           onTap: () {
@@ -24,7 +24,7 @@ class _UIState extends State<_UI> {
           child: Container(
             width: 100,
             height: 100,
-            color: _tapped ? Color(0x22000000) : Color(0xFF000000),
+            color: _tapped ? const Color(0x22000000) : const Color(0xFF000000),
           ),
         ),
       ),
@@ -33,5 +33,5 @@ class _UIState extends State<_UI> {
 }
 
 void runWidgetUI() {
-  runApp(_UI());
+  runApp(const _UI());
 }

@@ -7,7 +7,7 @@ class IsolateComputePage extends StatefulWidget {
   const IsolateComputePage({Key? key}) : super(key: key);
 
   @override
-  _IsolateComputePageState createState() => _IsolateComputePageState();
+  State<IsolateComputePage> createState() => _IsolateComputePageState();
 }
 
 class _IsolateComputePageState extends State<IsolateComputePage> {
@@ -17,18 +17,18 @@ class _IsolateComputePageState extends State<IsolateComputePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('IsolateCompute'),
+        title: const Text('IsolateCompute'),
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               width: 80.0,
               height: 80.0,
               child: CircularProgressIndicator(),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             ElevatedButton(
               onPressed: _update,
               child: Text(
@@ -62,7 +62,7 @@ class _IsolateComputePageState extends State<IsolateComputePage> {
 
   static Future<dynamic> isolateCountEven(int num) async {
     final response = ReceivePort();
-    await Isolate.spawn((message) { }, response.sendPort);
+    await Isolate.spawn((message) {}, response.sendPort);
     final sendPort = await response.first;
     final answer = ReceivePort();
   }

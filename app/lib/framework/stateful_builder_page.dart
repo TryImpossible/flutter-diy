@@ -7,10 +7,10 @@ class StatefulBuilderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color _color = Colors.black;
+    Color color = Colors.black;
     return Scaffold(
       appBar: AppBar(
-        title: Text('StatefulBuilder'),
+        title: const Text('StatefulBuilder'),
       ),
       body: Center(
         child: Column(
@@ -21,20 +21,20 @@ class StatefulBuilderPage extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     setState(() {
-                      _color = Colors
+                      color = Colors
                           .primaries[Random().nextInt(Colors.primaries.length)];
                     });
                   },
                   child: Container(
                     width: 100,
                     height: 100,
-                    color: _color,
+                    color: color,
                   ),
                 );
               },
             ),
-            SizedBox(height: 12),
-            Text('点击盒子切换颜色'),
+            const SizedBox(height: 12),
+            const Text('点击盒子切换颜色'),
           ],
         ),
       ),

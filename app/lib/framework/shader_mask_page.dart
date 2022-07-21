@@ -39,20 +39,20 @@ class ShaderMaskPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // CustomSingleChildLayout
     // CustomMultiChildLayout
-    final Text text = const Text(
+    const Text text = Text(
       '隐约雷鸣，阴霾天空，但盼风雨来，能留你在此；隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。',
       style: TextStyle(fontSize: 20, color: Colors.black),
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('ShaderMask'),
+        title: const Text('ShaderMask'),
       ),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: ShaderMask(
               shaderCallback: (Rect bounds) {
-                return LinearGradient(
+                return const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: <Color>[Colors.blue, Colors.green],
@@ -65,7 +65,7 @@ class ShaderMaskPage extends StatelessWidget {
           SliverToBoxAdapter(
             child: ShaderMask(
               shaderCallback: (Rect bounds) {
-                return RadialGradient(
+                return const RadialGradient(
                   center: Alignment.center,
                   radius: 0.5,
                   colors: <Color>[Colors.blue, Colors.green],
@@ -78,7 +78,7 @@ class ShaderMaskPage extends StatelessWidget {
           SliverToBoxAdapter(
             child: ShaderMask(
               shaderCallback: (Rect bounds) {
-                return SweepGradient(
+                return const SweepGradient(
                   center: Alignment.center,
                   colors: <Color>[Colors.blue, Colors.green],
                 ).createShader(bounds);
@@ -91,9 +91,13 @@ class ShaderMaskPage extends StatelessWidget {
             crossAxisCount: 4,
             children: _blendMode.map((BlendMode mode) {
               return GridTile(
+                footer: Text(
+                  mode.toString().replaceAll('BlendMode.', ''),
+                  textAlign: TextAlign.center,
+                ),
                 child: ShaderMask(
                   shaderCallback: (Rect bounds) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: <Color>[Colors.black, Colors.white],
@@ -101,10 +105,6 @@ class ShaderMaskPage extends StatelessWidget {
                   },
                   blendMode: mode,
                   child: Image.asset("assets/images/lufei.jpeg"),
-                ),
-                footer: Text(
-                  mode.toString().replaceAll('BlendMode.', ''),
-                  textAlign: TextAlign.center,
                 ),
               );
             }).toList(),

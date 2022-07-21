@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ThirdPartyWidgetPage extends StatefulWidget {
-  ThirdPartyWidgetPage({Key? key}) : super(key: key);
+  const ThirdPartyWidgetPage({Key? key}) : super(key: key);
 
   @override
-  _ThirdPartyWidgetPageState createState() => _ThirdPartyWidgetPageState();
+  State<ThirdPartyWidgetPage> createState() => _ThirdPartyWidgetPageState();
 }
 
 class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
@@ -45,10 +45,12 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
                     gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
-                      colors: <Color>[Colors.red, Colors.white],
+                      colors: const <Color>[Colors.red, Colors.white],
                       stops: <double>[value - 0.01, value],
                     ),
-                    boxShadow: [BoxShadow(spreadRadius: 25, blurRadius: 25)],
+                    boxShadow: const <BoxShadow>[
+                      BoxShadow(spreadRadius: 25, blurRadius: 25)
+                    ],
                   ),
                 ),
                 TextButton(
@@ -57,7 +59,7 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
                       value += 0.01;
                     });
                   },
-                  child: Text('添加'),
+                  child: const Text('添加'),
                 ),
               ],
             );
@@ -80,48 +82,8 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
           );
         },
         tooltip: 'topping',
-        child: Icon(Icons.arrow_upward),
         heroTag: "third_party_widget",
-      ),
-    );
-  }
-}
-
-class _ListItem extends StatelessWidget {
-  const _ListItem({
-    Key? key,
-    required Map<String, Widget> data,
-    required int index,
-  })  : _data = data,
-        _index = index,
-        super(key: key);
-
-  final Map<String, Widget> _data;
-  final int _index;
-
-  @override
-  Widget build(BuildContext context) {
-    return ColoredBox(
-      color: Colors.primaries[_index % Colors.primaries.length],
-      child: ListTile(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return _data.values.elementAt(_index);
-              },
-            ),
-          );
-        },
-        title: Text(
-          _data.keys.elementAt(_index),
-          style: TextStyle(
-            fontSize: 21,
-            fontWeight: FontWeight.w500,
-            color: Colors.white.withOpacity(0.7),
-          ),
-          textAlign: TextAlign.center,
-        ),
+        child: const Icon(Icons.arrow_upward),
       ),
     );
   }

@@ -1,12 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class GesturePage extends StatefulWidget {
   const GesturePage({Key? key}) : super(key: key);
 
   @override
-  _GesturePageState createState() => _GesturePageState();
+  State<GesturePage> createState() => _GesturePageState();
 }
 
 class _GesturePageState extends State<GesturePage> {
@@ -28,7 +27,7 @@ class _GesturePageState extends State<GesturePage> {
   /// 通过修改图片宽度来达到绽放效果
   double _width = 200.0;
 
-  TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
+  final TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
   bool _toggle = false;
 
   @override
@@ -41,13 +40,13 @@ class _GesturePageState extends State<GesturePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gesture控件'),
+        title: const Text('Gesture控件'),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text('手势检测', textScaleFactor: 1.5),
               ),
@@ -59,14 +58,14 @@ class _GesturePageState extends State<GesturePage> {
                   height: 100.0,
                   child: Text(
                     _operation,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
                 onTap: () => _updateText('Tap'), // 点击
                 onDoubleTap: () => _updateText('DoubleTap'), // 双击
                 onLongPress: () => _updateText('LongPress'), // 长按
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text('拖动、滑动', textScaleFactor: 1.5),
               ),
@@ -80,16 +79,16 @@ class _GesturePageState extends State<GesturePage> {
                       top: _top,
                       left: _left,
                       child: GestureDetector(
-                        child: CircleAvatar(child: Text('A')),
+                        child: const CircleAvatar(child: Text('A')),
                         // 手指按下时会触发此回调
                         onPanDown: (DragDownDetails details) {
                           // 打印手指按下的位置（相对于屏幕）
-                          print('用户手指按下：${details.globalPosition}');
+                          debugPrint('用户手指按下：${details.globalPosition}');
                         },
                         // 手指滑动时会触发此回调
                         onPanUpdate: (DragUpdateDetails details) {
                           // 用户手指滑动时，更新偏移，重新构建
-                          print('用户手指滑动：$_left $_top');
+                          debugPrint('用户手指滑动：$_left $_top');
                           setState(() {
                             _left += details.delta.dx;
                             _top += details.delta.dy;
@@ -98,7 +97,7 @@ class _GesturePageState extends State<GesturePage> {
                         // 手指抬起时会触发此回调
                         onPanEnd: (DragEndDetails details) {
                           //打印滑动结束时在x、y轴上的速度
-                          print('用户手指抬起: ${details.velocity}');
+                          debugPrint('用户手指抬起: ${details.velocity}');
                           setState(() {
                             _left = 0;
                             _top = 0;
@@ -115,29 +114,27 @@ class _GesturePageState extends State<GesturePage> {
                   ],
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text('缩放', textScaleFactor: 1.5),
               ),
-              Container(
-                child: GestureDetector(
-                  child: Image.asset("assets/images/lufei.jpeg", width: _width),
-                  onScaleUpdate: (ScaleUpdateDetails details) {
-                    setState(() {
-                      // 绽放倍数在0.8到10倍之间
-                      _width = 200 * details.scale.clamp(.8, 10.0);
-                    });
-                  },
-                ),
+              GestureDetector(
+                child: Image.asset("assets/images/lufei.jpeg", width: _width),
+                onScaleUpdate: (ScaleUpdateDetails details) {
+                  setState(() {
+                    // 绽放倍数在0.8到10倍之间
+                    _width = 200 * details.scale.clamp(.8, 10.0);
+                  });
+                },
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text('GestureRecognizer', textScaleFactor: 1.5),
               ),
               Text.rich(
                 TextSpan(
                   children: [
-                    TextSpan(text: '你好世界'),
+                    const TextSpan(text: '你好世界'),
                     TextSpan(
                       text: '点我变色',
                       style: TextStyle(
@@ -151,11 +148,11 @@ class _GesturePageState extends State<GesturePage> {
                           });
                         },
                     ),
-                    TextSpan(text: '你好世界'),
+                    const TextSpan(text: '你好世界'),
                   ],
                 ),
               ),
-              SizedBox(height: 100.0),
+              const SizedBox(height: 100.0),
             ],
           ),
         ),

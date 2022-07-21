@@ -10,7 +10,7 @@ class ClipPage extends StatelessWidget {
     Widget avatar = Image.asset("assets/images/lufei.jpeg", width: 60.0);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Clip控件'),
+        title: const Text('Clip控件'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -28,8 +28,9 @@ class ClipPage extends StatelessWidget {
               ),
               ClipRRect(
                 // 剪裁为圆角矩形
-                child: avatar,
                 borderRadius: BorderRadius.circular(5.0),
+                // 剪裁为圆角矩形
+                child: avatar,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +40,7 @@ class ClipPage extends StatelessWidget {
                     widthFactor: 0.5, // 宽度设为原来宽度一半，另一半会溢出
                     child: avatar,
                   ),
-                  Text("你好世界", style: TextStyle(color: Colors.green))
+                  const Text("你好世界", style: TextStyle(color: Colors.green))
                 ],
               ),
               Row(
@@ -53,7 +54,7 @@ class ClipPage extends StatelessWidget {
                       child: avatar,
                     ),
                   ),
-                  Text("你好世界", style: TextStyle(color: Colors.green))
+                  const Text("你好世界", style: TextStyle(color: Colors.green))
                 ],
               ),
               DecoratedBox(
@@ -71,7 +72,7 @@ class ClipPage extends StatelessWidget {
                 child: avatar,
               ),
               ClipPath.shape(
-                shape: CircleBorder(
+                shape: const CircleBorder(
                   side: BorderSide(width: 4, color: Colors.blue),
                 ),
                 child: avatar,
@@ -89,7 +90,7 @@ class ClipPage extends StatelessWidget {
                 child: avatar,
               ),
               ClipPath.shape(
-                shape: StadiumBorder(),
+                shape: const StadiumBorder(),
                 child: avatar,
               ),
               ClipPath.shape(
@@ -112,7 +113,7 @@ class MyClipper extends CustomClipper<Rect> {
     /// getClip()是用于获取剪裁区域的接口，由于图片大小是60×60，
     /// 我们返回剪裁区域为Rect.fromLTWH(10.0, 15.0, 40.0, 30.0)，
     /// 即图片中部40×30像素的范围。
-    return Rect.fromLTWH(10.0, 15.0, 40.0, 30.0);
+    return const Rect.fromLTWH(10.0, 15.0, 40.0, 30.0);
   }
 
   @override

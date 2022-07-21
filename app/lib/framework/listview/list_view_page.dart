@@ -16,8 +16,8 @@ class ListViewPage extends StatelessWidget {
       length: 6,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('ListView系列组件'),
-          bottom: TabBar(
+          title: const Text('ListView系列组件'),
+          bottom: const TabBar(
             isScrollable: true,
             tabs: <Widget>[
               Tab(text: '普通用法'),
@@ -29,7 +29,7 @@ class ListViewPage extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             ListViewExample01Page(),
             ListViewExample02Page(),

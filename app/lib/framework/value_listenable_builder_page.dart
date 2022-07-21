@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ValueListenableBuilderPage extends StatefulWidget {
   const ValueListenableBuilderPage({Key? key}) : super(key: key);
 
   @override
-  _ValueListenableBuilderPageState createState() =>
+  State<ValueListenableBuilderPage> createState() =>
       _ValueListenableBuilderPageState();
 }
 
@@ -18,7 +17,7 @@ class _ValueListenableBuilderPageState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ValueListenableBuilder'),
+        title: const Text('ValueListenableBuilder'),
       ),
       body: Center(
         child: ValueListenableBuilder(

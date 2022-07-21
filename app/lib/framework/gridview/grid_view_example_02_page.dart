@@ -16,7 +16,7 @@ class GridViewExample02Page extends StatelessWidget {
             color: Colors.primaries[index],
             child: Text(
               index.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 21,
@@ -25,7 +25,7 @@ class GridViewExample02Page extends StatelessWidget {
             ),
           );
         },
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,

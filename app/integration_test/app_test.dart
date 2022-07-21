@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+import 'package:app/main.dart' as app;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:app/main.dart' as app;
 
 void main() {
   /// flutter drive --driver=test_driver/integration_test.dart  --target=integration_test/app_test.dart
@@ -25,11 +24,13 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      await tester.flingFrom(Offset(100, 230), Offset(100, -812), 500.0);
+      await tester.flingFrom(
+          const Offset(100, 230), const Offset(100, -812), 500.0);
 
-      await tester.flingFrom(Offset(200, 500), Offset(200, 200), 500.0);
+      await tester.flingFrom(
+          const Offset(200, 500), const Offset(200, 200), 500.0);
 
-      sleep(Duration(seconds: 10));
+      sleep(const Duration(seconds: 10));
     });
   });
 }

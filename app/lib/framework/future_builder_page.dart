@@ -4,14 +4,12 @@ class FutureBuilderPage extends StatefulWidget {
   const FutureBuilderPage({Key? key}) : super(key: key);
 
   @override
-  _FutureBuilderPageState createState() =>
-      _FutureBuilderPageState();
+  State<FutureBuilderPage> createState() => _FutureBuilderPageState();
 }
 
-class _FutureBuilderPageState
-    extends State<FutureBuilderPage> {
+class _FutureBuilderPageState extends State<FutureBuilderPage> {
   Future<String> _mockNetworkData() {
-    return Future.delayed(Duration(seconds: 2), () => '模拟请求网络数据');
+    return Future.delayed(const Duration(seconds: 2), () => '模拟请求网络数据');
   }
 
   @override
@@ -24,7 +22,7 @@ class _FutureBuilderPageState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FutureBuilder'),
+        title: const Text('FutureBuilder'),
       ),
       body: Center(
         child: FutureBuilder<String>(
@@ -41,7 +39,7 @@ class _FutureBuilderPageState
               }
             } else {
               // 请求未结束，显示loadign
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
           },
         ),

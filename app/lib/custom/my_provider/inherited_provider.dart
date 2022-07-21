@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 /// 一个能用的InheritedWidget，保存需要跨组件共享的状态
 class InheritedProvider<T> extends InheritedWidget {
-  InheritedProvider({
+  const InheritedProvider({
+    Key? key,
     required this.data,
     required Widget child,
-  }) : super(child: child);
+  }) : super(key: key, child: child);
 
   final T data;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ShareDataWidget extends InheritedWidget {
-  ShareDataWidget({Key? key, required this.data, required Widget child})
+  const ShareDataWidget({Key? key, required this.data, required Widget child})
       : super(key: key, child: child);
 
   /// 需要在子树中共享的数据，保存点击次数
@@ -36,14 +36,14 @@ class _TestWidgetState extends State<_TestWidget> {
 
     /// 父或祖先widget中的InheritedWidget改变(updateShouldNotify返回true)时会被调用
     /// 如果 build 中没有依赖InheritedWidget, 则此回调不会被调用
-    print('Dependencies change');
+    debugPrint('Dependencies change');
   }
 
   @override
   void didUpdateWidget(covariant _TestWidget oldWidget) {
     // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
-    print('didUpdateWidget change');
+    debugPrint('didUpdateWidget change');
   }
 
   @override
@@ -57,8 +57,7 @@ class InheritedWidgetPage extends StatefulWidget {
   const InheritedWidgetPage({Key? key}) : super(key: key);
 
   @override
-  _InheritedWidgetPageState createState() =>
-      _InheritedWidgetPageState();
+  State<InheritedWidgetPage> createState() => _InheritedWidgetPageState();
 }
 
 class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
@@ -68,7 +67,7 @@ class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('InheritedWidget'),
+        title: const Text('InheritedWidget'),
       ),
       body: Center(
         child: ShareDataWidget(
@@ -76,8 +75,8 @@ class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 20.0),
                 child: _TestWidget(),
               ),
               ElevatedButton(
@@ -86,7 +85,7 @@ class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
                     ++_count;
                   });
                 },
-                child: Text('Increment'),
+                child: const Text('Increment'),
               )
             ],
           ),

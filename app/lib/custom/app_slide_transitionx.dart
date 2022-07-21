@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AppSlideTransitionX extends AnimatedWidget {
@@ -12,16 +11,16 @@ class AppSlideTransitionX extends AnimatedWidget {
     // 偏移在内部处理
     switch (direction) {
       case AxisDirection.up:
-        _tween = Tween(begin: Offset(0, 1), end: Offset(0, 0));
+        _tween = Tween(begin: const Offset(0, 1), end: const Offset(0, 0));
         break;
       case AxisDirection.right:
-        _tween = Tween(begin: Offset(-1, 0), end: Offset(0, 0));
+        _tween = Tween(begin: const Offset(-1, 0), end: const Offset(0, 0));
         break;
       case AxisDirection.down:
-        _tween = Tween(begin: Offset(0, -1), end: Offset(0, 0));
+        _tween = Tween(begin: const Offset(0, -1), end: const Offset(0, 0));
         break;
       case AxisDirection.left:
-        _tween = Tween(begin: Offset(1, 0), end: Offset(0, 0));
+        _tween = Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
         break;
     }
   }

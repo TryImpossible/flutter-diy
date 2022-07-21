@@ -9,7 +9,7 @@ class GridViewPage extends StatefulWidget {
   const GridViewPage({Key? key}) : super(key: key);
 
   @override
-  _GridViewPageState createState() => _GridViewPageState();
+  State<GridViewPage> createState() => _GridViewPageState();
 }
 
 class _GridViewPageState extends State<GridViewPage> {
@@ -19,8 +19,8 @@ class _GridViewPageState extends State<GridViewPage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('GridView系列组件'),
-          bottom: TabBar(
+          title: const Text('GridView系列组件'),
+          bottom: const TabBar(
             isScrollable: true,
             tabs: <Tab>[
               Tab(text: '普通用法'),
@@ -30,7 +30,7 @@ class _GridViewPageState extends State<GridViewPage> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: <Widget>[
             GridViewExample01Page(),
             GridViewExample02Page(),

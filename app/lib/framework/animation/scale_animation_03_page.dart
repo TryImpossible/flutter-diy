@@ -4,8 +4,7 @@ class ScaleAnimation03Page extends StatefulWidget {
   const ScaleAnimation03Page({Key? key}) : super(key: key);
 
   @override
-  _ScaleAnimation03PageState createState() =>
-      _ScaleAnimation03PageState();
+  State<ScaleAnimation03Page> createState() => _ScaleAnimation03PageState();
 }
 
 class _ScaleAnimation03PageState extends State<ScaleAnimation03Page>
@@ -51,7 +50,7 @@ class _ScaleAnimation03PageState extends State<ScaleAnimation03Page>
           animation: _animation,
           child: Image.asset("assets/images/lufei.jpeg"),
           builder: (BuildContext context, Widget? child) {
-            return Container(
+            return SizedBox(
               width: _animation.value,
               height: _animation.value,
               child: child,

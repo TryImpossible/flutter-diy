@@ -20,7 +20,7 @@ class SliverExample04Page extends StatelessWidget {
               coverImgUrl: 'assets/images/mingren.jpeg',
             ),
           ),
-          SliverFillRemaining(
+          const SliverFillRemaining(
             child: Center(child: Text('Content')),
           )
         ],
@@ -45,10 +45,10 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   });
 
   @override
-  double get minExtent => this.collapsedHeight + this.paddingTop;
+  double get minExtent => collapsedHeight + paddingTop;
 
   @override
-  double get maxExtent => this.expandedHeight;
+  double get maxExtent => expandedHeight;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
@@ -56,9 +56,8 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 
   Color makeStickyHeaderBgColor(shrinkOffset) {
-    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-        .clamp(0, 255)
-        .toInt();
+    final int alpha =
+        (shrinkOffset / (maxExtent - minExtent) * 255).clamp(0, 255).toInt();
     return Color.fromARGB(alpha, 255, 255, 255);
   }
 
@@ -66,9 +65,8 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
     if (shrinkOffset <= 50) {
       return isIcon ? Colors.white : Colors.transparent;
     } else {
-      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-          .clamp(0, 255)
-          .toInt();
+      final int alpha =
+          (shrinkOffset / (maxExtent - minExtent) * 255).clamp(0, 255).toInt();
       return Color.fromARGB(alpha, 0, 0, 0);
     }
   }
@@ -76,49 +74,49 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      height: this.maxExtent,
+    return SizedBox(
+      height: maxExtent,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           // 背景图
-          Container(child: Image.asset(this.coverImgUrl, fit: BoxFit.cover)),
+          Image.asset(coverImgUrl, fit: BoxFit.cover),
           // 收起头部
           Positioned(
             left: 0,
             right: 0,
             top: 0,
             child: Container(
-              color: this.makeStickyHeaderBgColor(shrinkOffset), // 背景颜色
+              color: makeStickyHeaderBgColor(shrinkOffset), // 背景颜色
               child: SafeArea(
                 bottom: false,
-                child: Container(
-                  height: this.collapsedHeight,
+                child: SizedBox(
+                  height: collapsedHeight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: this.makeStickyHeaderTextColor(
+                          color: makeStickyHeaderTextColor(
                               shrinkOffset, true), // 返回图标颜色
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
                       Text(
-                        this.title,
+                        title,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          color: this.makeStickyHeaderTextColor(
+                          color: makeStickyHeaderTextColor(
                               shrinkOffset, false), // 标题颜色
                         ),
                       ),
                       IconButton(
                         icon: Icon(
                           Icons.share,
-                          color: this.makeStickyHeaderTextColor(
+                          color: makeStickyHeaderTextColor(
                               shrinkOffset, true), // 分享图标颜色
                         ),
                         onPressed: () {},

@@ -45,7 +45,7 @@ class AppFadeRoute extends PageRoute {
       return FadeTransition(opacity: animation, child: builder(context));
     } else {
       // 是返回，则不应用过渡动画
-      return Padding(padding: EdgeInsets.zero);
+      return const Padding(padding: EdgeInsets.zero);
     }
   }
 }

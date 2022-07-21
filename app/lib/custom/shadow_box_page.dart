@@ -7,8 +7,8 @@ class ShadowBoxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ShadowBox')),
-      body: Center(
+      appBar: AppBar(title: const Text('ShadowBox')),
+      body: const Center(
         child: AppShadowBox(
           distance: 20,
           child: FlutterLogo(

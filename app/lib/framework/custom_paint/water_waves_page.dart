@@ -7,7 +7,7 @@ class WaterWavesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('WaterWaves')),
+      appBar: AppBar(title: const Text('WaterWaves')),
       body: TweenAnimationBuilder(
         duration: const Duration(seconds: 3),
         // curve: Curves.easeInOutQuint,

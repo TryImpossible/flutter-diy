@@ -4,8 +4,7 @@ class StaggerAnimationPage extends StatefulWidget {
   const StaggerAnimationPage({Key? key}) : super(key: key);
 
   @override
-  _StaggerAnimationPageState createState() =>
-      _StaggerAnimationPageState();
+  State<StaggerAnimationPage> createState() => _StaggerAnimationPageState();
 }
 
 class _StaggerAnimationPageState extends State<StaggerAnimationPage>
@@ -47,7 +46,7 @@ class _StaggerAnimationPageState extends State<StaggerAnimationPage>
           children: <Widget>[
             ElevatedButton(
               onPressed: _playAnimation,
-              child: Text('start animation'),
+              child: const Text('start animation'),
             ),
             Container(
               width: 300.0,
@@ -76,7 +75,7 @@ class _StaggerAnimation extends StatelessWidget {
       end: 300.0,
     ).animate(CurvedAnimation(
       parent: controller,
-      curve: Interval(0.0, 0.6, curve: Curves.ease),
+      curve: const Interval(0.0, 0.6, curve: Curves.ease),
     ));
     // 颜色动画
     color = ColorTween(
@@ -84,15 +83,15 @@ class _StaggerAnimation extends StatelessWidget {
       end: Colors.red,
     ).animate(CurvedAnimation(
       parent: controller,
-      curve: Interval(0.0, 0.6, curve: Curves.ease),
+      curve: const Interval(0.0, 0.6, curve: Curves.ease),
     ));
     // padding动画
     padding = Tween<EdgeInsets>(
-      begin: EdgeInsets.only(left: .0),
-      end: EdgeInsets.only(left: 100.0),
+      begin: const EdgeInsets.only(left: .0),
+      end: const EdgeInsets.only(left: 100.0),
     ).animate(CurvedAnimation(
       parent: controller,
-      curve: Interval(0.6, 1.0, curve: Curves.ease),
+      curve: const Interval(0.6, 1.0, curve: Curves.ease),
     ));
   }
 

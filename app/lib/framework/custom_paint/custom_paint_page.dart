@@ -12,9 +12,10 @@ import 'scratch_ticket_page.dart';
 class CustomPaintPage extends StatelessWidget {
   const CustomPaintPage({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CustomPaint')),
+      appBar: AppBar(title: const Text('CustomPaint')),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -23,81 +24,81 @@ class CustomPaintPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return CanvasPrinciplePage();
+                      return const CanvasPrinciplePage();
                     },
                   ));
                 },
-                child: Text('Canvas原理'),
+                child: const Text('Canvas原理'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return PaintPage();
+                      return const PaintPage();
                     },
                   ));
                 },
-                child: Text('Paint使用'),
+                child: const Text('Paint使用'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ScratchTicketPage();
+                      return const ScratchTicketPage();
                     },
                   ));
                 },
-                child: Text('刮奖票'),
+                child: const Text('刮奖票'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ClipRectPage();
+                      return const ClipRectPage();
                     },
                   ));
                 },
-                child: Text('ClipRect使用'),
+                child: const Text('ClipRect使用'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return DrawPathPage();
+                      return const DrawPathPage();
                     },
                   ));
                 },
-                child: Text('DrawPath使用'),
+                child: const Text('DrawPath使用'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return WaterWavesPage();
+                      return const WaterWavesPage();
                     },
                   ));
                 },
-                child: Text('水波荡漾效果'),
+                child: const Text('水波荡漾效果'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return LineChartPage();
+                      return const LineChartPage();
                     },
                   ));
                 },
-                child: Text('拆线图'),
+                child: const Text('拆线图'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return TextPainterPage();
+                      return const TextPainterPage();
                     },
                   ));
                 },
-                child: Text('TextPainter使用'),
+                child: const Text('TextPainter使用'),
               ),
             ],
           ),

@@ -6,8 +6,7 @@ class AnimatedSwitcherPage extends StatefulWidget {
   const AnimatedSwitcherPage({Key? key}) : super(key: key);
 
   @override
-  _AnimatedSwitcherPageState createState() =>
-      _AnimatedSwitcherPageState();
+  State<AnimatedSwitcherPage> createState() => _AnimatedSwitcherPageState();
 }
 
 class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage>
@@ -66,7 +65,7 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage>
 }
 
 class MySlideTransition extends AnimatedWidget {
-  MySlideTransition({
+  const MySlideTransition({
     Key? key,
     required Animation<Offset> position,
     this.transformHitTest = true,

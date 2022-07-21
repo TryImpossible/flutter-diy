@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AnimatedWidgetsPage extends StatefulWidget {
+  const AnimatedWidgetsPage({Key? key}) : super(key: key);
+
   @override
-  _AnimatedWidgetsPageState createState() => _AnimatedWidgetsPageState();
+  State<AnimatedWidgetsPage> createState() => _AnimatedWidgetsPageState();
 }
 
 class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
@@ -11,13 +13,13 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
   double _height = 100;
   double _left = 0;
   Color _color = Colors.red;
-  TextStyle _style = TextStyle(color: Colors.black);
-  Color _decorationColor = Colors.blue;
+  TextStyle _style = const TextStyle(color: Colors.black);
+  final Color _decorationColor = Colors.blue;
   double _progress = 0.3;
 
   @override
   Widget build(BuildContext context) {
-    var duration = Duration(seconds: 2);
+    var duration = const Duration(seconds: 2);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -32,7 +34,7 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
               child: AnimatedPadding(
                 duration: duration,
                 padding: EdgeInsets.all(_padding),
-                child: Text("AnimatedPadding"),
+                child: const Text("AnimatedPadding"),
               ),
             ),
             SizedBox(
@@ -48,7 +50,7 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
                           _left = 100;
                         });
                       },
-                      child: Text("AnimatedPositioned"),
+                      child: const Text("AnimatedPositioned"),
                     ),
                   )
                 ],
@@ -66,7 +68,7 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
                       _align = Alignment.center;
                     });
                   },
-                  child: Text("AnimatedAlign"),
+                  child: const Text("AnimatedAlign"),
                 ),
               ),
             ),
@@ -81,18 +83,20 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
                     _color = Colors.blue;
                   });
                 },
-                child: Text(
+                child: const Text(
                   "AnimatedContainer",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
             AnimatedDefaultTextStyle(
+              style: _style,
+              duration: duration,
               child: GestureDetector(
-                child: Text("hello world"),
+                child: const Text("hello world"),
                 onTap: () {
                   setState(() {
-                    _style = TextStyle(
+                    _style = const TextStyle(
                       color: Colors.blue,
                       decorationStyle: TextDecorationStyle.solid,
                       decorationColor: Colors.blue,
@@ -100,8 +104,6 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
                   });
                 },
               ),
-              style: _style,
-              duration: duration,
             ),
             // AnimatedDecoratedBox(
             //   duration: duration,
@@ -131,16 +133,18 @@ class _AnimatedWidgetsPageState extends State<AnimatedWidgetsPage> {
                   gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
-                    colors: <Color>[Colors.red, Colors.white],
+                    colors: const <Color>[Colors.red, Colors.white],
                     stops: <double>[_progress, _progress],
                   ),
-                  boxShadow: [BoxShadow(spreadRadius: 10, blurRadius: 10)],
+                  boxShadow: const [
+                    BoxShadow(spreadRadius: 10, blurRadius: 10)
+                  ],
                 ),
               ),
             ),
           ].map((e) {
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 16),
               child: e,
             );
           }).toList(),

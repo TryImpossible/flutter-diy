@@ -4,15 +4,15 @@ import 'stateless_child_page.dart';
 
 class StatelessParentPage extends StatelessWidget {
   StatelessParentPage({Key? key}) : super(key: key) {
-    print('无状态父页面---constructor');
+    debugPrint('无状态父页面---constructor');
   }
 
   @override
   Widget build(BuildContext context) {
-    print('无状态父页面---build');
+    debugPrint('无状态父页面---build');
     return Scaffold(
       appBar: AppBar(
-        title: Text('无状态父页面'),
+        title: const Text('无状态父页面'),
       ),
       body: Container(
         alignment: Alignment.topCenter,
@@ -29,7 +29,7 @@ class StatelessParentPage extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('子页面'),
+              child: const Text('子页面'),
             ),
           ],
         ),

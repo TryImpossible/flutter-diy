@@ -39,24 +39,19 @@ class ColorFilteredPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ColorFiltered'),
+        title: const Text('ColorFiltered'),
       ),
       body: GridView.count(
         crossAxisCount: 4,
         children: _blendMode.map((BlendMode mode) {
           return GridTile(
-            child: ColorFiltered(
-              colorFilter: ColorFilter.mode(Colors.orangeAccent, mode),
-              child: FlutterLogo(),
-            ),
-            // child: Image.asset(
-            //   "assets/images/lufei.jpeg",
-            //   color: Colors.amber,
-            //   colorBlendMode: mode,
-            // ),
             footer: Text(
               mode.toString().replaceAll('BlendMode.', ''),
               textAlign: TextAlign.center,
+            ),
+            child: ColorFiltered(
+              colorFilter: ColorFilter.mode(Colors.orangeAccent, mode),
+              child: const FlutterLogo(),
             ),
           );
         }).toList(),

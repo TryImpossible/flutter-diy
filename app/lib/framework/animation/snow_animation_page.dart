@@ -12,13 +12,14 @@ class SnowAnimationPage extends StatefulWidget {
 class _SnowAnimationPageState extends State<SnowAnimationPage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  List<_Snowflake> _snowflakes = List.generate(100, (index) => _Snowflake());
+  final List<_Snowflake> _snowflakes =
+      List.generate(100, (index) => _Snowflake());
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       vsync: this,
     )..repeat();
   }
@@ -32,12 +33,12 @@ class _SnowAnimationPageState extends State<SnowAnimationPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('SnowAnimation')),
+      appBar: AppBar(title: const Text('SnowAnimation')),
       body: Center(
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.blue,
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -49,7 +50,9 @@ class _SnowAnimationPageState extends State<SnowAnimationPage>
           child: AnimatedBuilder(
             animation: _controller,
             builder: (BuildContext context, Widget? child) {
-              _snowflakes.forEach((_Snowflake snow) => snow.fall());
+              for (var snow in _snowflakes) {
+                snow.fall();
+              }
               return CustomPaint(painter: _MyPainter(_snowflakes));
             },
           ),
@@ -62,27 +65,27 @@ class _SnowAnimationPageState extends State<SnowAnimationPage>
 class _MyPainter extends CustomPainter {
   _MyPainter(this._snowflakes);
 
-  List<_Snowflake> _snowflakes;
+  final List<_Snowflake> _snowflakes;
 
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.white;
-    canvas.drawCircle(size.center(Offset(0, 160)), 60, paint);
+    canvas.drawCircle(size.center(const Offset(0, 160)), 60, paint);
     canvas.drawOval(
       Rect.fromCenter(
-        center: size.center(Offset(0, 320)),
+        center: size.center(const Offset(0, 320)),
         width: 200,
         height: 250,
       ),
       paint,
     );
-    _snowflakes.forEach((_Snowflake snowflake) {
+    for (var snowflake in _snowflakes) {
       canvas.drawCircle(
         Offset(snowflake.x, snowflake.y),
         snowflake.radius,
         paint,
       );
-    });
+    }
   }
 
   @override

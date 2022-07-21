@@ -7,7 +7,7 @@ class DrawPathPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('DrawPath')),
+      appBar: AppBar(title: const Text('DrawPath')),
       body: Center(
         child: ColoredBox(
           color: Colors.grey.shade300,

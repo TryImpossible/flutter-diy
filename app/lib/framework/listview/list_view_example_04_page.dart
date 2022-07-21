@@ -4,15 +4,14 @@ class ListViewExample04Page extends StatefulWidget {
   const ListViewExample04Page({Key? key}) : super(key: key);
 
   @override
-  _ListViewExample04PageState createState() =>
-      _ListViewExample04PageState();
+  State<ListViewExample04Page> createState() => _ListViewExample04PageState();
 }
 
 class _ListViewExample04PageState extends State<ListViewExample04Page> {
   Future _onRefresh() {
-    return Future.delayed(Duration(seconds: 1), () {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: new Text('当前已是最新数据!'),
+    return Future.delayed(const Duration(seconds: 1), () {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('当前已是最新数据!'),
       ));
     });
   }
@@ -32,7 +31,7 @@ class _ListViewExample04PageState extends State<ListViewExample04Page> {
               alignment: Alignment.center,
               child: Text(
                 index.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 21,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

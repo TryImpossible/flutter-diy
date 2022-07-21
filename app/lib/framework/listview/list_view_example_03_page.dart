@@ -11,12 +11,12 @@ class ListViewExample03Page extends StatelessWidget {
         itemCount: Colors.primaries.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 40),
+            padding: const EdgeInsets.symmetric(vertical: 40),
             color: Colors.primaries[index],
             alignment: Alignment.center,
             child: Text(
               index.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 21,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class ListViewExample03Page extends StatelessWidget {
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return Divider();
+          return const Divider();
         },
       ),
     );

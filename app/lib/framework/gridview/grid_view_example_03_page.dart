@@ -11,14 +11,16 @@ class GridViewExample03Page extends StatelessWidget {
         crossAxisCount: 3,
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
-        children:
-            Colors.primaries.asMap().entries.map((MapEntry<int, Color> mapEntry) {
+        children: Colors.primaries
+            .asMap()
+            .entries
+            .map((MapEntry<int, Color> mapEntry) {
           return Container(
             alignment: Alignment.center,
             color: Colors.primaries[mapEntry.key],
             child: Text(
               mapEntry.key.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 21,

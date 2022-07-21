@@ -4,37 +4,35 @@ class ToggleButtonPage extends StatefulWidget {
   const ToggleButtonPage({Key? key}) : super(key: key);
 
   @override
-  _ToggleButtonPageState createState() =>
-      _ToggleButtonPageState();
+  State<ToggleButtonPage> createState() => _ToggleButtonPageState();
 }
 
-class _ToggleButtonPageState
-    extends State<ToggleButtonPage> {
+class _ToggleButtonPageState extends State<ToggleButtonPage> {
   final List<Widget> _children = <Widget>[
-    Icon(Icons.airplanemode_active),
-    Icon(Icons.directions_bus),
-    Icon(Icons.agriculture),
+    const Icon(Icons.airplanemode_active),
+    const Icon(Icons.directions_bus),
+    const Icon(Icons.agriculture),
   ];
 
-  List<bool> _isSelected = <bool>[true, false, false];
+  final List<bool> _isSelected = <bool>[true, false, false];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ToggleButtons控件'),
+        title: const Text('ToggleButtons控件'),
       ),
       body: SizedBox.expand(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
                 isSelected: _isSelected,
                 onPressed: _onPressed,
                 children: _children,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
                 isSelected: _isSelected,
                 color: Colors.green.withOpacity(0.7),
@@ -48,7 +46,7 @@ class _ToggleButtonPageState
                 onPressed: _onPressed,
                 children: _children,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
                 renderBorder: true,
                 isSelected: _isSelected,
@@ -60,14 +58,14 @@ class _ToggleButtonPageState
                 onPressed: _onPressed,
                 children: _children,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
                 renderBorder: true,
                 isSelected: _isSelected,
                 borderColor: Colors.red.withOpacity(0.3),
                 selectedBorderColor: Colors.red,
                 disabledBorderColor: Colors.grey,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(25.0),
                   bottomRight: Radius.circular(25.0),
                 ),
@@ -75,7 +73,7 @@ class _ToggleButtonPageState
                 onPressed: _onPressed,
                 children: _children,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
                 renderBorder: true,
                 color: Colors.green.withOpacity(0.7),
@@ -87,8 +85,9 @@ class _ToggleButtonPageState
                 onPressed: _onPressed,
                 children: _children,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ToggleButtons(
+                isSelected: const <bool>[true, false, false],
                 children: <Widget>[
                   Image.asset(
                     'assets/images/lufei.jpeg',
@@ -109,7 +108,6 @@ class _ToggleButtonPageState
                     fit: BoxFit.cover,
                   ),
                 ],
-                isSelected: <bool>[true, false, false],
               ),
             ],
           ),

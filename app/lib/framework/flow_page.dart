@@ -4,7 +4,7 @@ class FlowPage extends StatefulWidget {
   const FlowPage({Key? key}) : super(key: key);
 
   @override
-  _FlowPageState createState() => _FlowPageState();
+  State<FlowPage> createState() => _FlowPageState();
 }
 
 class _FlowPageState extends State<FlowPage> {
@@ -12,20 +12,18 @@ class _FlowPageState extends State<FlowPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flow控件'),
+        title: const Text('Flow控件'),
       ),
-      body: Container(
-        child: Flow(
-          delegate: TestFlowDelegate(),
-          children: <Widget>[
-            Container(width: 120.0, height: 120.0, color: Colors.red),
-            Container(width: 120.0, height: 120.0, color: Colors.green),
-            Container(width: 120.0, height: 120.0, color: Colors.blue),
-            Container(width: 120.0, height: 120.0, color: Colors.yellow),
-            Container(width: 120.0, height: 120.0, color: Colors.brown),
-            Container(width: 120.0, height: 120.0, color: Colors.purple),
-          ],
-        ),
+      body: Flow(
+        delegate: TestFlowDelegate(),
+        children: <Widget>[
+          Container(width: 120.0, height: 120.0, color: Colors.red),
+          Container(width: 120.0, height: 120.0, color: Colors.green),
+          Container(width: 120.0, height: 120.0, color: Colors.blue),
+          Container(width: 120.0, height: 120.0, color: Colors.yellow),
+          Container(width: 120.0, height: 120.0, color: Colors.brown),
+          Container(width: 120.0, height: 120.0, color: Colors.purple),
+        ],
       ),
     );
   }
@@ -66,7 +64,7 @@ class TestFlowDelegate extends FlowDelegate {
   Size getSize(BoxConstraints constraints) {
     // 指定Flow的大小，简单起见我们让宽度竟可能大，但高度指定为200，
     // 实际开发中我们需要根据子元素所占用的具体宽高来设置Flow大小
-    return Size(double.infinity, 240.0);
+    return const Size(double.infinity, 240.0);
   }
 
   @override

@@ -46,7 +46,7 @@ void main() {
   //     return Container(color: Colors.orange);
   //   },
   // );
-  runApp(MyApp());
+  runApp(const MyApp());
 
   // runFoundationUI();
   // runRenderObjectUI();
@@ -54,9 +54,11 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -76,12 +78,12 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: const MainPage(),
       builder: (_, Widget? child) {
         return Stack(
           children: <Widget>[
             child!,
-            Banner(
+            const Banner(
               message: 'DEBUG',
               location: BannerLocation.topStart,
             ),

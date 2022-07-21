@@ -11,8 +11,8 @@ class CustomMultiChildLayoutPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('CustomMultiChildLayout'),
-          bottom: TabBar(
+          title: const Text('CustomMultiChildLayout'),
+          bottom: const TabBar(
             isScrollable: true,
             tabs: <Widget>[
               Tab(text: 'WaterfallFlow'),
@@ -20,7 +20,7 @@ class CustomMultiChildLayoutPage extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             WaterfallFlowPage(),
             UnderlineTextPage(),
@@ -44,7 +44,7 @@ class WaterfallFlowPage extends StatelessWidget {
             width: 100,
             height: 40 + Random().nextDouble() * 100,
             color: Colors.primaries[index % Colors.primaries.length],
-            child: FlutterLogo(),
+            child: const FlutterLogo(),
           ),
         );
       }).toList(),
@@ -131,7 +131,7 @@ class UnderlineTextPage extends StatelessWidget {
       children: <Widget>[
         LayoutId(
           id: 'text',
-          child: ColoredBox(
+          child: const ColoredBox(
             color: Colors.red,
             child: Text('我是文字'),
           ),

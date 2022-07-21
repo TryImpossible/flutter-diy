@@ -37,12 +37,12 @@ class _ScratchTicketPageState extends State<ScratchTicketPage> {
   Widget build(BuildContext context) {
     final Size size = Size.square(MediaQuery.of(context).size.width);
     return Scaffold(
-      appBar: AppBar(title: Text('ScratchTicket')),
+      appBar: AppBar(title: const Text('ScratchTicket')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(bottom: 12),
               child: Text(
                 '在灰色区域滑动即可刮出惊喜',
@@ -60,31 +60,31 @@ class _ScratchTicketPageState extends State<ScratchTicketPage> {
                 builder:
                     (BuildContext context, AsyncSnapshot<ui.Image> snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
-                    Path _path = Path();
+                    Path path = Path();
                     // 请求已结束
                     return StatefulBuilder(builder: (_, StateSetter setState) {
                       return GestureDetector(
                         onPanUpdate: (DragUpdateDetails update) {
-                          _path.lineTo(
+                          path.lineTo(
                             update.localPosition.dx,
                             update.localPosition.dy,
                           );
                           setState(() {});
                         },
                         onPanDown: (DragDownDetails down) {
-                          _path.moveTo(
+                          path.moveTo(
                               down.localPosition.dx, down.localPosition.dy);
                         },
                         child: CustomPaint(
                           painter:
-                              _MyPainter(image: snapshot.data!, path: _path),
+                              _MyPainter(image: snapshot.data!, path: path),
                           size: size,
                         ),
                       );
                     });
                   } else {
                     // 请求未结束，显示loadign
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   }
                 },
               ),
@@ -95,7 +95,7 @@ class _ScratchTicketPageState extends State<ScratchTicketPage> {
                     _allImagePath[Random().nextInt(_allImagePath.length - 1)];
                 setState(() {});
               },
-              child: Text('再刮一次'),
+              child: const Text('再刮一次'),
             ),
           ],
         ),

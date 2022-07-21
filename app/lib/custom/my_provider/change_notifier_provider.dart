@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'inherited_provider.dart';
 
 class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
-  ChangeNotifierProvider({
+  const ChangeNotifierProvider({
     Key? key,
     required this.child,
     required this.data,
-  });
+  }) : super(key: key);
 
   final Widget child;
   final T data;

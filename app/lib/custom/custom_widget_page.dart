@@ -9,10 +9,10 @@ import 'shadow_box_page.dart';
 import 'turn_box_page.dart';
 
 class CustomWidgetPage extends StatefulWidget {
-  CustomWidgetPage({Key? key}) : super(key: key);
+  const CustomWidgetPage({Key? key}) : super(key: key);
 
   @override
-  _CustomWidgetPageState createState() => _CustomWidgetPageState();
+  State<CustomWidgetPage> createState() => _CustomWidgetPageState();
 }
 
 class _CustomWidgetPageState extends State<CustomWidgetPage>
@@ -23,13 +23,13 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
   final ScrollController _controller = ScrollController();
   final Map<String, Widget> _data = () {
     final Map<String, Widget> pages = <String, Widget>{
-      '下拉输入文本': DropdownTextFieldPage(),
-      '通过 RenderObject 自定义 Widget': CustomRenderObjectWidgetPage(),
-      'MyProvider': MyProviderPage(),
-      'GradientButton': GradientButtonPage(),
-      'TurnBox': TurnBoxPage(),
-      'AnimatedCounter': AnimatedCounterPage(),
-      'ShadowBox': ShadowBoxPage(),
+      '下拉输入文本': const DropdownTextFieldPage(),
+      '通过 RenderObject 自定义 Widget': const CustomRenderObjectWidgetPage(),
+      'MyProvider': const MyProviderPage(),
+      'GradientButton': const GradientButtonPage(),
+      'TurnBox': const TurnBoxPage(),
+      'AnimatedCounter': const AnimatedCounterPage(),
+      'ShadowBox': const ShadowBoxPage(),
     };
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
@@ -58,8 +58,8 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
           );
         },
         tooltip: 'topping',
-        child: Icon(Icons.arrow_upward),
         heroTag: "custom_widget",
+        child: const Icon(Icons.arrow_upward),
       ),
     );
   }

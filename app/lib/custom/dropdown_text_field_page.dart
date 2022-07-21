@@ -8,7 +8,7 @@ class DropdownTextFieldPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('下拉输入文本'),
+        title: const Text('下拉输入文本'),
       ),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -18,7 +18,7 @@ class DropdownTextFieldPage extends StatelessWidget {
               height: 100,
               color: Colors.green,
             ),
-            TextField(),
+            const TextField(),
             // Container(
             //   height: 500,
             //   color: Colors.green,
@@ -27,21 +27,21 @@ class DropdownTextFieldPage extends StatelessWidget {
               // initialValue: '语文',
               controller: AppDropdownTextFieldController(initialValue: '英语'),
               items: [
-                DropdownMenuItem(child: Text('语文'), value: '语文'),
+                const DropdownMenuItem(value: '语文', child: Text('语文')),
                 DropdownMenuItem(
-                  child: Text('数学'),
                   value: '数学',
-                  onTap: () => print('outer value'),
+                  onTap: () => debugPrint('outer value'),
+                  child: const Text('数学'),
                 ),
-                DropdownMenuItem(child: Text('英语'), value: '英语'),
+                const DropdownMenuItem(value: '英语', child: Text('英语')),
               ],
             ),
             DropdownButton(
               value: '语文',
-              items: <DropdownMenuItem<String>>[
-                DropdownMenuItem(child: Text('语文'), value: '语文'),
-                DropdownMenuItem(child: Text('数学'), value: '数学'),
-                DropdownMenuItem(child: Text('英语'), value: '英语'),
+              items: const <DropdownMenuItem<String>>[
+                DropdownMenuItem(value: '语文', child: Text('语文')),
+                DropdownMenuItem(value: '数学', child: Text('数学')),
+                DropdownMenuItem(value: '英语', child: Text('英语')),
               ],
               onChanged: (value) {},
             ),

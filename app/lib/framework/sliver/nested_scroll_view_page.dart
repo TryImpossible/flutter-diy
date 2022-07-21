@@ -7,7 +7,7 @@ class NestedScrollViewPage extends StatefulWidget {
   const NestedScrollViewPage({Key? key}) : super(key: key);
 
   @override
-  _NestedScrollViewPageState createState() => _NestedScrollViewPageState();
+  State<NestedScrollViewPage> createState() => _NestedScrollViewPageState();
 }
 
 class _NestedScrollViewPageState extends State<NestedScrollViewPage>
@@ -38,7 +38,7 @@ class _NestedScrollViewPageState extends State<NestedScrollViewPage>
 
   Widget _buildSliverAppBar() {
     return SliverAppBar(
-      title: Text('NestedScrollView控件'),
+      title: const Text('NestedScrollView控件'),
       expandedHeight: 250,
       pinned: true,
       // flexibleSpace: FlexibleSpaceBar(
@@ -68,7 +68,7 @@ class _NestedScrollViewPageState extends State<NestedScrollViewPage>
         child: TabBar(
           labelColor: Colors.black,
           controller: _tabController,
-          tabs: <Tab>[
+          tabs: const <Tab>[
             Tab(text: 'Home'),
             Tab(text: 'Profile'),
           ],
@@ -100,7 +100,7 @@ class _NestedScrollViewPageState extends State<NestedScrollViewPage>
             height: 100,
             child: Text(
               index.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 21,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

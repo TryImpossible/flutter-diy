@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 class AnimatedImage extends AnimatedWidget {
-  AnimatedImage({
+  const AnimatedImage({
     Key? key,
     required Animation<double> animation,
   }) : super(key: key, listenable: animation);
 
   @override
   Widget build(BuildContext context) {
-    final _animation = listenable as Animation<double>;
+    final animation = listenable as Animation<double>;
     return Center(
       child: Image.asset(
         "assets/images/lufei.jpeg",
-        width: _animation.value,
-        height: _animation.value,
+        width: animation.value,
+        height: animation.value,
       ),
     );
   }
@@ -23,8 +23,7 @@ class ScaleAnimation02Page extends StatefulWidget {
   const ScaleAnimation02Page({Key? key}) : super(key: key);
 
   @override
-  _ScaleAnimation02PageState createState() =>
-      _ScaleAnimation02PageState();
+  State<ScaleAnimation02Page> createState() => _ScaleAnimation02PageState();
 }
 
 class _ScaleAnimation02PageState extends State<ScaleAnimation02Page>

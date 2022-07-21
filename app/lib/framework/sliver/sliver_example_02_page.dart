@@ -87,7 +87,7 @@ class SliverExample02Page extends StatelessWidget {
                   color: index.isOdd ? Colors.grey.shade200 : Colors.white,
                   child: Text(
                     index.toString(),
-                    style: TextStyle(fontSize: 21, color: Colors.black),
+                    style: const TextStyle(fontSize: 21, color: Colors.black),
                   ),
                 );
               },

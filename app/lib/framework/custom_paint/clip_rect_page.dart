@@ -7,7 +7,7 @@ class ClipRectPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('ClipRect')),
+      appBar: AppBar(title: const Text('ClipRect')),
       body: Center(
         child: ColoredBox(
           color: Colors.grey.shade300,
@@ -29,17 +29,17 @@ class _MyPainter extends CustomPainter {
       Paint()..color = Colors.red,
     );
 
-    Rect rect = Rect.fromPoints(Offset(30, 30), Offset(100, 100));
+    Rect rect = Rect.fromPoints(const Offset(30, 30), const Offset(100, 100));
     // canvas.clipRect(rect);
 
     /// 返回个矩形相交的区域
-    Rect newRect =
-        rect.intersect(Rect.fromPoints(Offset(80, 80), Offset(150, 150)));
+    Rect newRect = rect.intersect(
+        Rect.fromPoints(const Offset(80, 80), const Offset(150, 150)));
     canvas.clipRect(newRect);
 
     canvas.drawRect(
       Rect.fromPoints(
-        Offset(30, 30),
+        const Offset(30, 30),
         Offset(size.width, size.height),
       ),
       Paint()..color = Colors.green,

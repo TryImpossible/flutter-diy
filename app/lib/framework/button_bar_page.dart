@@ -7,7 +7,7 @@ class ButtonBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ButtonBar控件'),
+        title: const Text('ButtonBar控件'),
       ),
       body: SizedBox.expand(
         child: SingleChildScrollView(
@@ -17,45 +17,45 @@ class ButtonBarPage extends StatelessWidget {
               _buildTitle('MainAxisAlignment'),
               Divider(color: Colors.blue.shade300),
               _buildButtonbarByMainAxisAlignment(0),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisAlignment(1),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisAlignment(2),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisAlignment(3),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisAlignment(4),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisAlignment(5),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildTitle('MainAxisAlignment'),
               Divider(color: Colors.blue.shade300),
               _buildButtonbarByMainAxisSize(0),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByMainAxisSize(1),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildTitle('ButtonTextTheme'),
               Divider(color: Colors.blue.shade300),
               _buildButtonbarByButtonTextTheme(ButtonTextTheme.accent),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByButtonTextTheme(ButtonTextTheme.primary),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonbarByButtonTextTheme(ButtonTextTheme.normal),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildTitle('ButtonSize'),
               Divider(color: Colors.blue.shade300),
               _buildButtonbarByButtonSize(1000, 200, MainAxisAlignment.end),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildTitle('ButtonPaddingSpacing'),
               Divider(color: Colors.blue.shade300),
               _buildButtonBarByPaddingSpacing(30, 10),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildTitle('ButtonOverflowDirection'),
               Divider(color: Colors.blue.shade300),
               _buildButtonBarByOverflowDirection(VerticalDirection.up),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
               _buildButtonBarByOverflowDirection(VerticalDirection.down),
-              Divider(color: Colors.black45),
+              const Divider(color: Colors.black45),
             ],
           ),
         ),
@@ -65,10 +65,10 @@ class ButtonBarPage extends StatelessWidget {
 
   Widget _buildTitle(String title) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class ButtonBarPage extends StatelessWidget {
     return ButtonBar(
       alignment: alignment,
       children: <Widget>[
-        ElevatedButton(onPressed: null, child: Text('Button')),
+        const ElevatedButton(onPressed: null, child: Text('Button')),
         ElevatedButton(onPressed: null, child: Text(alignment.toString())),
       ],
     );
@@ -112,7 +112,7 @@ class ButtonBarPage extends StatelessWidget {
       color: Colors.blue.withOpacity(0.3),
       child: ButtonBar(
         mainAxisSize: mainAxisSize,
-        children: <Widget>[
+        children: const <Widget>[
           ElevatedButton(onPressed: null, child: Text('Button01')),
           ElevatedButton(onPressed: null, child: Text('Button02')),
           ElevatedButton(onPressed: null, child: Text('Button03')),
@@ -125,9 +125,9 @@ class ButtonBarPage extends StatelessWidget {
     return ButtonBar(
       buttonTextTheme: theme,
       children: <Widget>[
-        ElevatedButton(onPressed: null, child: Text('Button01')),
-        ElevatedButton(onPressed: null, child: Text('Button02')),
-        ElevatedButton(child: Text('${theme.toString()}'), onPressed: null),
+        const ElevatedButton(onPressed: null, child: Text('Button01')),
+        const ElevatedButton(onPressed: null, child: Text('Button02')),
+        ElevatedButton(onPressed: null, child: Text(theme.toString())),
       ],
     );
   }
@@ -142,12 +142,12 @@ class ButtonBarPage extends StatelessWidget {
       buttonMinWidth: width,
       buttonHeight: height,
       children: <Widget>[
-        ElevatedButton(onPressed: null, child: Text('Button01')),
-        ElevatedButton(
-          child: Text('Button 02', style: TextStyle(color: Colors.blue)),
+        const ElevatedButton(onPressed: null, child: Text('Button01')),
+        const ElevatedButton(
           onPressed: null,
+          child: Text('Button 02', style: TextStyle(color: Colors.blue)),
         ),
-        ElevatedButton(child: Text('${alignment.toString()}'), onPressed: null),
+        ElevatedButton(onPressed: null, child: Text(alignment.toString())),
       ],
     );
   }
@@ -156,12 +156,13 @@ class ButtonBarPage extends StatelessWidget {
     return ButtonBar(
       overflowButtonSpacing: spacing,
       buttonPadding: EdgeInsets.all(padding),
-      children: <Widget>[
-        ElevatedButton(child: Text('Button 01'), onPressed: null),
+      children: const <Widget>[
+        ElevatedButton(onPressed: null, child: Text('Button 01')),
         ElevatedButton(
-            child: Text('Button 02', style: TextStyle(color: Colors.blue)),
-            onPressed: null),
-        ElevatedButton(child: Text('Button 03'), onPressed: null)
+          onPressed: null,
+          child: Text('Button 02', style: TextStyle(color: Colors.blue)),
+        ),
+        ElevatedButton(onPressed: null, child: Text('Button 03'))
       ],
     );
   }
@@ -170,12 +171,13 @@ class ButtonBarPage extends StatelessWidget {
     return ButtonBar(
       overflowDirection: direction,
       children: <Widget>[
-        ElevatedButton(child: Text('Button 01'), onPressed: null),
-        ElevatedButton(
-            child: Text('Button 02', style: TextStyle(color: Colors.blue)),
-            onPressed: null),
-        ElevatedButton(child: Text('Button 03'), onPressed: null),
-        ElevatedButton(child: Text('${direction.toString()}'), onPressed: null),
+        const ElevatedButton(onPressed: null, child: Text('Button 01')),
+        const ElevatedButton(
+          onPressed: null,
+          child: Text('Button 02', style: TextStyle(color: Colors.blue)),
+        ),
+        const ElevatedButton(onPressed: null, child: Text('Button 03')),
+        ElevatedButton(onPressed: null, child: Text(direction.toString())),
       ],
     );
   }

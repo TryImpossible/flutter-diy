@@ -27,13 +27,13 @@ class HeroAnimationPage extends StatelessWidget {
                       (BuildContext context, animation, secondaryAnimation) {
                     return FadeTransition(
                       opacity: animation,
-                      child: _TargetActivity(),
+                      child: const _TargetActivity(),
                     );
                   },
                 ));
               },
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: 12.0),
               child: Text('点击头像'),
             ),

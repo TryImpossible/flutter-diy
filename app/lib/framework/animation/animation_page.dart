@@ -19,10 +19,11 @@ import 'tween_animation_builder_page.dart';
 class AnimationPage extends StatelessWidget {
   const AnimationPage({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animation'),
+        title: const Text('Animation'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -32,41 +33,41 @@ class AnimationPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ScaleAnimation01Page();
+                      return const ScaleAnimation01Page();
                     },
                   ));
                 },
-                child: Text('图片放大动画示例01'),
+                child: const Text('图片放大动画示例01'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ScaleAnimation02Page();
+                      return const ScaleAnimation02Page();
                     },
                   ));
                 },
-                child: Text('图片放大动画示例02'),
+                child: const Text('图片放大动画示例02'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ScaleAnimation03Page();
+                      return const ScaleAnimation03Page();
                     },
                   ));
                 },
-                child: Text('图片放大动画示例03'),
+                child: const Text('图片放大动画示例03'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(CupertinoPageRoute(
                     builder: (BuildContext context) {
-                      return RouteAnimationPage();
+                      return const RouteAnimationPage();
                     },
                   ));
                 },
-                child: Text('路由动画示例01'),
+                child: const Text('路由动画示例01'),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -79,73 +80,73 @@ class AnimationPage extends StatelessWidget {
                       ) {
                         return FadeTransition(
                           opacity: animation,
-                          child: RouteAnimationPage(),
+                          child: const RouteAnimationPage(),
                         );
                       },
                     ),
                   );
                 },
-                child: Text('路由动画示例02'),
+                child: const Text('路由动画示例02'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     AppFadeRoute(builder: (BuildContext context) {
-                      return RouteAnimationPage();
+                      return const RouteAnimationPage();
                     }),
                   );
                 },
-                child: Text('路由动画示例03'),
+                child: const Text('路由动画示例03'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return HeroAnimationPage();
+                      return const HeroAnimationPage();
                     },
                   ));
                 },
-                child: Text('Hero动画'),
+                child: const Text('Hero动画'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return StaggerAnimationPage();
+                      return const StaggerAnimationPage();
                     },
                   ));
                 },
-                child: Text('Stagger交织动画'),
+                child: const Text('Stagger交织动画'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return AnimatedSwitcherPage();
+                      return const AnimatedSwitcherPage();
                     },
                   ));
                 },
-                child: Text('AnimatedSwitcher动画切换组件'),
+                child: const Text('AnimatedSwitcher动画切换组件'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return AnimatedDecoratedBox1Page();
+                      return const AnimatedDecoratedBox1Page();
                     },
                   ));
                 },
-                child: Text('AnimatedDecorateBox1组件'),
+                child: const Text('AnimatedDecorateBox1组件'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return AnimatedWidgetsPage();
+                      return const AnimatedWidgetsPage();
                     },
                   ));
                 },
-                child: Text('Flutter预置的动画过渡组件'),
+                child: const Text('Flutter预置的动画过渡组件'),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -155,37 +156,37 @@ class AnimationPage extends StatelessWidget {
                     },
                   ));
                 },
-                child: Text('TweenAnimationBuilder组件'),
+                child: const Text('TweenAnimationBuilder组件'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return BreathingAnimationPage();
+                      return const BreathingAnimationPage();
                     },
                   ));
                 },
-                child: Text('BreathingAnimation'),
+                child: const Text('BreathingAnimation'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return SnowAnimationPage();
+                      return const SnowAnimationPage();
                     },
                   ));
                 },
-                child: Text('SnowAnimation'),
+                child: const Text('SnowAnimation'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ScannerSweepPage();
+                      return const ScannerSweepPage();
                     },
                   ));
                 },
-                child: Text('ScannerSweepAnimation'),
+                child: const Text('ScannerSweepAnimation'),
               ),
             ],
           ),

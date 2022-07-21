@@ -29,18 +29,18 @@ class _GradientButton extends StatelessWidget {
     ThemeData theme = Theme.of(context);
 
     //确保colors数组不空
-    List<Color> _colors =
+    List<Color> colorList =
         colors ?? [theme.primaryColor, theme.primaryColorDark];
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: _colors),
+        gradient: LinearGradient(colors: colorList),
         borderRadius: borderRadius,
       ),
       child: Material(
         type: MaterialType.transparency,
         child: InkWell(
-          splashColor: _colors.last,
+          splashColor: colorList.last,
           highlightColor: Colors.transparent,
           borderRadius: borderRadius,
           onTap: onPressed,
@@ -50,7 +50,7 @@ class _GradientButton extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: DefaultTextStyle(
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                   child: child,
                 ),
               ),
@@ -69,27 +69,27 @@ class GradientButtonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GradientButton控件'),
+        title: const Text('GradientButton控件'),
       ),
       body: Column(
         children: <Widget>[
           _GradientButton(
-            colors: [Colors.orange, Colors.red],
+            colors: const [Colors.orange, Colors.red],
             height: 50.0,
-            child: Text("Submit"),
             onPressed: onTap,
+            child: const Text("Submit"),
           ),
           _GradientButton(
             height: 50.0,
             colors: [Colors.lightGreen, Colors.green.shade700],
-            child: Text("Submit"),
             onPressed: onTap,
+            child: const Text("Submit"),
           ),
           _GradientButton(
             height: 50.0,
             colors: [Colors.lightBlue.shade300, Colors.blueAccent],
-            child: Text("Submit"),
             onPressed: onTap,
+            child: const Text("Submit"),
           ),
         ],
       ),
@@ -97,6 +97,6 @@ class GradientButtonPage extends StatelessWidget {
   }
 
   onTap() {
-    print("button click");
+    debugPrint("button click");
   }
 }

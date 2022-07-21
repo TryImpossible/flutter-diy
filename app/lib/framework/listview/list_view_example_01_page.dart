@@ -9,14 +9,16 @@ class ListViewExample01Page extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.zero,
         itemExtent: 100,
-        children:
-            Colors.primaries.asMap().entries.map((MapEntry<int, Color> mapEntry) {
+        children: Colors.primaries
+            .asMap()
+            .entries
+            .map((MapEntry<int, Color> mapEntry) {
           return Container(
             color: mapEntry.value,
             alignment: Alignment.center,
             child: Text(
               mapEntry.key.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 21,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

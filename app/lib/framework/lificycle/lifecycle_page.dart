@@ -10,12 +10,12 @@ class LifecyclePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Widget生命周期'),
+        title: const Text('Widget生命周期'),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
@@ -26,19 +26,19 @@ class LifecyclePage extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('StatelessWidget(无状态)'),
+              child: const Text('StatelessWidget(无状态)'),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) {
-                      return StatefulParentPage();
+                      return const StatefulParentPage();
                     },
                   ),
                 );
               },
-              child: Text('StatefulWidget(有状态)'),
+              child: const Text('StatefulWidget(有状态)'),
             ),
           ],
         ),

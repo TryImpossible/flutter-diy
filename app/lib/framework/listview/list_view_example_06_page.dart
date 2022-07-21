@@ -4,8 +4,7 @@ class ListViewExample06Page extends StatefulWidget {
   const ListViewExample06Page({Key? key}) : super(key: key);
 
   @override
-  _ListViewExample06PageState createState() =>
-      _ListViewExample06PageState();
+  State<ListViewExample06Page> createState() => _ListViewExample06PageState();
 }
 
 class _ListViewExample06PageState extends State<ListViewExample06Page>
@@ -45,7 +44,7 @@ class _ListViewExample06PageState extends State<ListViewExample06Page>
         onPressed: () {
           _insertItem(_animatedList.length, _addItem);
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
@@ -82,8 +81,9 @@ class _ListViewExample06PageState extends State<ListViewExample06Page>
     Animation<double> animation,
   ) {
     return SlideTransition(
-      position: Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
-          .animate(animation),
+      position:
+          Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
+              .animate(animation),
       child: FadeTransition(
         opacity: animation,
         child: SizeTransition(
@@ -99,16 +99,16 @@ class _ListViewExample06PageState extends State<ListViewExample06Page>
     return Container(
       color: Colors.primaries[index % Colors.primaries.length],
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       height: 56,
       child: Row(
         children: <Widget>[
           CircleAvatar(backgroundImage: AssetImage(user.avatar)),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               user.name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 21,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -116,7 +116,7 @@ class _ListViewExample06PageState extends State<ListViewExample06Page>
             ),
           ),
           GestureDetector(
-            child: Icon(Icons.clear),
+            child: const Icon(Icons.clear),
             onTap: () {
               _removeItem(index);
             },

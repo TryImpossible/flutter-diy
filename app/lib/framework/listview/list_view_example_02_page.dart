@@ -18,7 +18,7 @@ class ListViewExample02Page extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               index.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 21,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

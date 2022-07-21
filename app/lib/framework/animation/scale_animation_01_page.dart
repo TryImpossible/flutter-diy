@@ -4,8 +4,7 @@ class ScaleAnimation01Page extends StatefulWidget {
   const ScaleAnimation01Page({Key? key}) : super(key: key);
 
   @override
-  _ScaleAnimation01PageState createState() =>
-      _ScaleAnimation01PageState();
+  State<ScaleAnimation01Page> createState() => _ScaleAnimation01PageState();
 }
 
 class _ScaleAnimation01PageState extends State<ScaleAnimation01Page>

@@ -12,17 +12,18 @@ class ImageSizeProxyWidget extends SingleChildRenderObjectWidget {
   final ImageSizeResolve onResolve;
 
   @override
-  _ImageSizeProxyElement createElement() => _ImageSizeProxyElement(this);
+  SingleChildRenderObjectElement createElement() =>
+      _ImageSizeProxyElement(this);
 
   @override
-  _RenderImageSizeProxy createRenderObject(BuildContext context) =>
+  RenderObject createRenderObject(BuildContext context) =>
       _RenderImageSizeProxy(onResolve);
 
   @override
   void updateRenderObject(
-      BuildContext context, covariant _RenderImageSizeProxy renderObject) {
+      BuildContext context, covariant RenderObject renderObject) {
     super.updateRenderObject(context, renderObject);
-    renderObject.onResolve = onResolve;
+    (renderObject as _RenderImageSizeProxy).onResolve = onResolve;
   }
 }
 
@@ -31,9 +32,7 @@ class _ImageSizeProxyElement extends SingleChildRenderObjectElement {
 }
 
 class _RenderImageSizeProxy extends RenderProxyBox with RenderProxyBoxMixin {
-  _RenderImageSizeProxy(ImageSizeResolve onResolve, [RenderBox? child])
-      : onResolve = onResolve,
-        super(child);
+  _RenderImageSizeProxy(this.onResolve, [RenderBox? child]) : super(child);
   ImageSizeResolve onResolve;
 
   @override

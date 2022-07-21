@@ -4,8 +4,7 @@ class SliverExample03Page extends StatefulWidget {
   const SliverExample03Page({Key? key}) : super(key: key);
 
   @override
-  _SliverExample03PageState createState() =>
-      _SliverExample03PageState();
+  State<SliverExample03Page> createState() => _SliverExample03PageState();
 }
 
 class _SliverExample03PageState extends State<SliverExample03Page>
@@ -30,7 +29,7 @@ class _SliverExample03PageState extends State<SliverExample03Page>
             pinned: true,
             expandedHeight: 250,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('Sliver-sticky效果'),
+              title: const Text('Sliver-sticky效果'),
               background: Image.asset(
                 'assets/images/mingren.jpeg',
                 fit: BoxFit.cover,
@@ -44,7 +43,7 @@ class _SliverExample03PageState extends State<SliverExample03Page>
               child: TabBar(
                 labelColor: Colors.black,
                 controller: _tabController,
-                tabs: <Tab>[
+                tabs: const <Tab>[
                   Tab(text: 'Home'),
                   Tab(text: 'Profile'),
                 ],
@@ -58,7 +57,7 @@ class _SliverExample03PageState extends State<SliverExample03Page>
                 // Center(child: Text('Content of Home')),
                 Column(
                   children: <Widget>[
-                    Text('Content of Home'),
+                    const Text('Content of Home'),
                     Expanded(
                       child: ListView.separated(
                         itemCount: 100,
@@ -66,13 +65,13 @@ class _SliverExample03PageState extends State<SliverExample03Page>
                           return Container(height: 60, color: Colors.red);
                         },
                         separatorBuilder: (BuildContext context, int index) {
-                          return Divider();
+                          return const Divider();
                         },
                       ),
                     ),
                   ],
                 ),
-                Center(child: Text('Content of Profile')),
+                const Center(child: Text('Content of Profile')),
               ],
             ),
           ),
@@ -104,10 +103,10 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => this.child.preferredSize.height;
+  double get maxExtent => child.preferredSize.height;
 
   @override
-  double get minExtent => this.child.preferredSize.height;
+  double get minExtent => child.preferredSize.height;
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {

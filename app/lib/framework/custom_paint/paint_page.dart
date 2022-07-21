@@ -25,7 +25,7 @@ class PaintPage extends StatelessWidget {
     final Size paintSize = Size(size.width, size.width * .5);
     final Size imageSize = Size.square((paintSize.height - 30) / 2);
     return Scaffold(
-      appBar: AppBar(title: Text('Paint')),
+      appBar: AppBar(title: const Text('Paint')),
       body: Center(
         child: SingleChildScrollView(
           child: FutureBuilder<ui.Image>(
@@ -41,7 +41,7 @@ class PaintPage extends StatelessWidget {
                 );
               } else {
                 // 请求未结束，显示loadign
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               }
             },
           ),
@@ -62,7 +62,7 @@ class _MyPainter extends CustomPainter {
 
   final double padding = 10;
 
-  Paint _paint = Paint();
+  final Paint _paint = Paint();
 
   @override
   void paint(ui.Canvas canvas, ui.Size size) {
@@ -91,7 +91,7 @@ class _MyPainter extends CustomPainter {
   /// paint: color、style、strokeWidth
   void _paint1(ui.Canvas canvas, ui.Size size) {
     final double width = size.width;
-    final double radius = 30;
+    const double radius = 30;
 
     canvas.drawCircle(
       Offset(padding + radius, radius),
@@ -113,7 +113,7 @@ class _MyPainter extends CustomPainter {
 
   /// strokeCap、strokeJoin
   void _paint2(ui.Canvas canvas, ui.Size size) {
-    final double lineSize = 50;
+    const double lineSize = 50;
 
     _paint.strokeCap = StrokeCap.square;
     _paint.strokeJoin = StrokeJoin.bevel;
@@ -161,7 +161,7 @@ class _MyPainter extends CustomPainter {
   /// colorFilter、blendMode
   void _paint3(ui.Canvas canvas, ui.Size size) {
     /// 原始的
-    _paint.colorFilter = ColorFilter.matrix(<double>[
+    _paint.colorFilter = const ColorFilter.matrix(<double>[
       1, 0, 0, 0, 0, //
       0, 1, 0, 0, 0, //
       0, 0, 1, 0, 0, //
@@ -174,7 +174,7 @@ class _MyPainter extends CustomPainter {
     );
 
     /// 图片变暗
-    _paint.colorFilter = ColorFilter.matrix(<double>[
+    _paint.colorFilter = const ColorFilter.matrix(<double>[
       0.5, 0, 0, 0, 0, //
       0, 0.5, 0, 0, 0, //
       0, 0, 0.5, 0, 0, //
@@ -187,7 +187,7 @@ class _MyPainter extends CustomPainter {
     );
 
     /// 图片变暗
-    _paint.colorFilter = ColorFilter.matrix(<double>[
+    _paint.colorFilter = const ColorFilter.matrix(<double>[
       0.33, 0.59, 0.11, 0, 0, //
       0.33, 0.59, 0.11, 0, 0, //
       0.33, 0.59, 0.11, 0, 0, //
@@ -200,7 +200,7 @@ class _MyPainter extends CustomPainter {
     );
 
     /// 颜色反向效果
-    _paint.colorFilter = ColorFilter.matrix(<double>[
+    _paint.colorFilter = const ColorFilter.matrix(<double>[
       -1, 0, 0, 1, 1, //
       0, -1, 0, 1, 1, //
       0, 0, -1, 1, 1, //
@@ -213,7 +213,7 @@ class _MyPainter extends CustomPainter {
     );
 
     /// 复古效果（老照片效果）
-    _paint.colorFilter = ColorFilter.matrix(<double>[
+    _paint.colorFilter = const ColorFilter.matrix(<double>[
       0.393, 0.769, 0.189, 0, 0, //
       0.349, 0.696, 0.168, 0, 0, //
       0.272, 0.534, 0.131, 0, 0, //
@@ -228,7 +228,7 @@ class _MyPainter extends CustomPainter {
       _paint,
     );
 
-    _paint.colorFilter = ColorFilter.mode(Colors.red, BlendMode.src);
+    _paint.colorFilter = const ColorFilter.mode(Colors.red, BlendMode.src);
     canvas.drawImage(
       image,
       Offset(
@@ -269,24 +269,24 @@ class _MyPainter extends CustomPainter {
 
   /// maskFilter
   void _paint4(ui.Canvas canvas, ui.Size size) {
-    final double rectSize = 40;
+    const double rectSize = 40;
 
     _paint.color = Colors.red;
 
-    _paint.maskFilter = MaskFilter.blur(BlurStyle.solid, 20);
+    _paint.maskFilter = const MaskFilter.blur(BlurStyle.solid, 20);
     canvas.drawRect(
       Rect.fromLTWH(padding, rectSize, rectSize, rectSize),
       _paint,
     );
 
     // 透明
-    _paint.maskFilter = MaskFilter.blur(BlurStyle.outer, 20);
+    _paint.maskFilter = const MaskFilter.blur(BlurStyle.outer, 20);
     canvas.drawRect(
       Rect.fromLTWH(padding + rectSize * 2, rectSize, rectSize, rectSize),
       _paint,
     );
 
-    _paint.maskFilter = MaskFilter.blur(BlurStyle.inner, 20);
+    _paint.maskFilter = const MaskFilter.blur(BlurStyle.inner, 20);
     canvas.drawRect(
       Rect.fromLTWH(
         padding * 2 + rectSize * 4,
@@ -315,11 +315,11 @@ class _MyPainter extends CustomPainter {
 
   /// shader
   void _paint6(ui.Canvas canvas, ui.Size size) {
-    final double rectWidth = 60;
-    final double rectHeight = 120;
+    const double rectWidth = 60;
+    const double rectHeight = 120;
     _paint.shader = ui.Gradient.linear(
-      Offset(0, 0),
-      Offset(rectWidth / 10, rectHeight / 10),
+      const Offset(0, 0),
+      const Offset(rectWidth / 10, rectHeight / 10),
       <Color>[Colors.green, Colors.red],
       [0.4, 0.6],
       TileMode.mirror,
@@ -335,8 +335,8 @@ class _MyPainter extends CustomPainter {
     );
 
     _paint.shader = ui.Gradient.linear(
-      Offset(rectWidth / 2, rectHeight / 2),
-      Offset(rectWidth, rectHeight),
+      const Offset(rectWidth / 2, rectHeight / 2),
+      const Offset(rectWidth, rectHeight),
       <Color>[Colors.green, Colors.red],
       [0, 1],
       TileMode.clamp,
@@ -352,8 +352,8 @@ class _MyPainter extends CustomPainter {
     );
 
     _paint.shader = ui.Gradient.linear(
-      Offset(10, 10),
-      Offset(20, 20),
+      const Offset(10, 10),
+      const Offset(20, 20),
       <Color>[Colors.green, Colors.red],
       [0, 1],
       TileMode.repeated,

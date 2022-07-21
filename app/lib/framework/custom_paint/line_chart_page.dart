@@ -7,7 +7,7 @@ class LineChartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('LineChart')),
+      appBar: AppBar(title: const Text('LineChart')),
       body: Center(
         child: ColoredBox(
           color: Colors.grey.shade300,
@@ -29,7 +29,7 @@ class _MyPainter extends CustomPainter {
       ..strokeWidth = 3
       ..style = PaintingStyle.stroke;
 
-    canvas.drawLine(Offset(10, 10), Offset(10, size.height - 10), paint);
+    canvas.drawLine(const Offset(10, 10), Offset(10, size.height - 10), paint);
     canvas.drawLine(
       Offset(10, size.height - 10),
       Offset(size.width - 10, size.height - 10),

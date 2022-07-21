@@ -7,7 +7,7 @@ class SliverExample01Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Grid和List的混合使用'),
+        title: const Text('Grid和List的混合使用'),
       ),
       body: CustomScrollView(
         slivers: [
@@ -24,7 +24,7 @@ class SliverExample01Page extends StatelessWidget {
                       ))
                   .toList(),
             ),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               mainAxisSpacing: 8,
               crossAxisSpacing: 8,
@@ -116,13 +116,13 @@ class SliverExample01Page extends StatelessWidget {
   Widget _buildTitle(String title) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 16,
         ),
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );
@@ -131,7 +131,7 @@ class SliverExample01Page extends StatelessWidget {
   Widget _buildNum(String num) {
     return Text(
       num,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 21,
         color: Colors.white,
         fontWeight: FontWeight.bold,

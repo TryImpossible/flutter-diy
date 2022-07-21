@@ -8,7 +8,7 @@ class FittedBoxPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FittedBox控件'),
+        title: const Text('FittedBox控件'),
       ),
       body: Center(
         child: Column(
@@ -19,7 +19,7 @@ class FittedBoxPage extends StatelessWidget {
             AppSingleLineFittedBox(child: _buildRow(' 800 ')),
           ].map((e) {
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: e,
             );
           }).toList(),

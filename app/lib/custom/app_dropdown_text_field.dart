@@ -51,7 +51,7 @@ class AppDropdownTextField extends StatefulWidget {
   final String? initialValue;
 
   @override
-  _AppDropdownTextFieldState createState() => _AppDropdownTextFieldState();
+  State<AppDropdownTextField> createState() => _AppDropdownTextFieldState();
 }
 
 class _AppDropdownTextFieldState extends State<AppDropdownTextField> {
@@ -103,7 +103,7 @@ class _AppDropdownTextFieldState extends State<AppDropdownTextField> {
   }
 
   void _showMenu() {
-    _overlayEntry = this._buildOverlayEntry();
+    _overlayEntry = _buildOverlayEntry();
     Overlay.of(context)?.insert(_overlayEntry!);
   }
 

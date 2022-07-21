@@ -16,7 +16,7 @@ class GrowTransition extends StatelessWidget {
       child: AnimatedBuilder(
         animation: animation,
         builder: (BuildContext context, Widget? child) {
-          return Container(
+          return SizedBox(
             height: animation.value,
             width: animation.value,
             child: child,

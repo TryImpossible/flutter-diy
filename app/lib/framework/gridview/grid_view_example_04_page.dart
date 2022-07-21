@@ -21,7 +21,7 @@ class GridViewExample04Page extends StatelessWidget {
             color: Colors.primaries[mapEntry.key],
             child: Text(
               mapEntry.key.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 21,

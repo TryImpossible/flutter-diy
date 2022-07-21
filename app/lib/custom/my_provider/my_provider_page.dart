@@ -41,7 +41,7 @@ class MyProviderPage extends StatefulWidget {
   const MyProviderPage({Key? key}) : super(key: key);
 
   @override
-  _MyProviderPageState createState() => _MyProviderPageState();
+  State<MyProviderPage> createState() => _MyProviderPageState();
 }
 
 class _MyProviderPageState extends State<MyProviderPage> {
@@ -49,7 +49,7 @@ class _MyProviderPageState extends State<MyProviderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyProvider'),
+        title: const Text('MyProvider'),
       ),
       body: Center(
         child: ChangeNotifierProvider(
@@ -64,7 +64,7 @@ class _MyProviderPageState extends State<MyProviderPage> {
                     },
                   ),
                   Builder(builder: (BuildContext context) {
-                    print('ElevatedButton build');
+                    debugPrint('ElevatedButton build');
                     return ElevatedButton(
                       onPressed: () {
                         // 给购物车中添加商品，添加后总价会更新
@@ -73,7 +73,7 @@ class _MyProviderPageState extends State<MyProviderPage> {
                                 listen: false)
                             .add(Item(20.0, 1));
                       },
-                      child: Text('添加商品'),
+                      child: const Text('添加商品'),
                     );
                   }),
                 ],

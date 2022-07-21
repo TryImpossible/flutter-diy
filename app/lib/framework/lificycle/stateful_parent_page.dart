@@ -8,12 +8,12 @@ class StatefulParentPage extends StatefulWidget {
   const StatefulParentPage({Key? key}) : super(key: key);
 
   @override
-  _StatefulParentPageState createState() => _StatefulParentPageState();
+  State<StatefulParentPage> createState() => _StatefulParentPageState();
 }
 
 class _StatefulParentPageState extends State<StatefulParentPage> {
   _StatefulParentPageState() {
-    print('有状态父页面---constructor');
+    debugPrint('有状态父页面---constructor');
   }
 
   int _count = 0;
@@ -21,21 +21,21 @@ class _StatefulParentPageState extends State<StatefulParentPage> {
   @override
   void initState() {
     super.initState();
-    print('有状态父页面---initState');
+    debugPrint('有状态父页面---initState');
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print('有状态父页面---didChangeDependencies');
+    debugPrint('有状态父页面---didChangeDependencies');
   }
 
   @override
   Widget build(BuildContext context) {
-    print('有状态父页面---build');
+    debugPrint('有状态父页面---build');
     return Scaffold(
       appBar: AppBar(
-        title: Text('有状态父页面'),
+        title: const Text('有状态父页面'),
       ),
       body: ParentWidget(
         child: (String content) {
@@ -54,11 +54,11 @@ class _StatefulParentPageState extends State<StatefulParentPage> {
                     ),
                   );
                 },
-                child: Text('子页面'),
+                child: const Text('子页面'),
               ),
               ElevatedButton(
                 onPressed: update,
-                child: Text('更新当前组件'),
+                child: const Text('更新当前组件'),
               ),
             ],
           );
@@ -70,19 +70,19 @@ class _StatefulParentPageState extends State<StatefulParentPage> {
   @override
   void didUpdateWidget(covariant StatefulParentPage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    print('有状态父页面---didUpdateWidget');
+    debugPrint('有状态父页面---didUpdateWidget');
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    print('有状态父页面---deactivate');
+    debugPrint('有状态父页面---deactivate');
   }
 
   @override
   void dispose() {
     super.dispose();
-    print('有状态父页面---dispose');
+    debugPrint('有状态父页面---dispose');
   }
 
   void update() {
@@ -99,7 +99,7 @@ class ParentWidget extends StatefulWidget {
   final Widget Function(String content) child;
 
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  State<ParentWidget> createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -109,60 +109,58 @@ class _ParentWidgetState extends State<ParentWidget> {
   void initState() {
     super.initState();
     //初始化状态
-    print("父组件---initState");
+    debugPrint("父组件---initState");
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("父组件---didChangeDependencies");
+    debugPrint("父组件---didChangeDependencies");
   }
 
   @override
   Widget build(BuildContext context) {
-    print("父组件---build");
-    return Container(
-      child: Stack(
-        children: <Widget>[
-          widget.child.call(_content),
-          Align(
-            alignment: Alignment.topCenter,
-            child: ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _content = '父组件更新了';
-                });
-              },
-              child: Text(_content),
-            ),
+    debugPrint("父组件---build");
+    return Stack(
+      children: <Widget>[
+        widget.child.call(_content),
+        Align(
+          alignment: Alignment.topCenter,
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _content = '父组件更新了';
+              });
+            },
+            child: Text(_content),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
   @override
   void didUpdateWidget(covariant ParentWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    print("父组件---didUpdateWidget ");
+    debugPrint("父组件---didUpdateWidget ");
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    print("父组件---deactivate");
+    debugPrint("父组件---deactivate");
   }
 
   @override
   void dispose() {
     super.dispose();
-    print("父组件---dispose");
+    debugPrint("父组件---dispose");
   }
 
   @override
   void reassemble() {
     super.reassemble();
-    print("父组件---reassemble");
+    debugPrint("父组件---reassemble");
   }
 }
 
@@ -170,12 +168,12 @@ class _ParentWidgetState extends State<ParentWidget> {
 ///  -------------子组件-----------------
 /// -------------------------------------
 class ChildWidget extends StatefulWidget {
-  const ChildWidget({Key? key, this.initValue = 0});
+  const ChildWidget({Key? key, this.initValue = 0}) : super(key: key);
 
   final int initValue;
 
   @override
-  _ChildWidgetState createState() => _ChildWidgetState();
+  State<ChildWidget> createState() => _ChildWidgetState();
 }
 
 class _ChildWidgetState extends State<ChildWidget> {
@@ -186,18 +184,18 @@ class _ChildWidgetState extends State<ChildWidget> {
     super.initState();
     //初始化状态
     _counter = widget.initValue;
-    print("子组件---initState");
+    debugPrint("子组件---initState");
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("子组件---didChangeDependencies");
+    debugPrint("子组件---didChangeDependencies");
   }
 
   @override
   Widget build(BuildContext context) {
-    print("子组件---build");
+    debugPrint("子组件---build");
     return Center(
       child: ElevatedButton(
         child: Text('$_counter，更新子组件'),
@@ -213,24 +211,24 @@ class _ChildWidgetState extends State<ChildWidget> {
   void didUpdateWidget(ChildWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
     _counter = widget.initValue;
-    print("子组件---didUpdateWidget ");
+    debugPrint("子组件---didUpdateWidget ");
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    print("子组件---deactivate");
+    debugPrint("子组件---deactivate");
   }
 
   @override
   void dispose() {
     super.dispose();
-    print("子组件---dispose");
+    debugPrint("子组件---dispose");
   }
 
   @override
   void reassemble() {
     super.reassemble();
-    print("子组件---reassemble");
+    debugPrint("子组件---reassemble");
   }
 }

@@ -13,51 +13,52 @@ class SliverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sliver系列组件')),
+      appBar: AppBar(title: const Text('Sliver系列组件')),
       body: SizedBox.expand(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              _buildItem(context, 'Grid和List的混合使用', SliverExample01Page()),
+              _buildItem(
+                  context, 'Grid和List的混合使用', const SliverExample01Page()),
               _buildItem(
                 context,
                 'SliverAppBar的使用',
-                SliverExample02Page(type: 0),
+                const SliverExample02Page(type: 0),
               ),
               _buildItem(
                 context,
                 'SliverAppBar-Float效果',
-                SliverExample02Page(type: 1),
+                const SliverExample02Page(type: 1),
               ),
               _buildItem(
                 context,
                 'SliverAppBar-Snap效果',
-                SliverExample02Page(type: 2),
+                const SliverExample02Page(type: 2),
               ),
               _buildItem(
                 context,
                 'SliverAppBar-Pinned效果',
-                SliverExample02Page(type: 3),
+                const SliverExample02Page(type: 3),
               ),
               _buildItem(
                 context,
                 'SliverPersistentHeader的使用',
-                SliverExample03Page(),
+                const SliverExample03Page(),
               ),
               _buildItem(
                 context,
                 'SliverScaleHeader的使用',
-                SliverExample04Page(),
+                const SliverExample04Page(),
               ),
               _buildItem(
                 context,
                 '结合DataTable的使用',
-                SliverExample05Page(),
+                const SliverExample05Page(),
               ),
               _buildItem(
                 context,
                 'NestedScrollView的使用',
-                NestedScrollViewPage(),
+                const NestedScrollViewPage(),
               ),
             ],
           ),

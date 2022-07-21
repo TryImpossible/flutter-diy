@@ -5,10 +5,10 @@ import 'package:app/thirdparty/third_party_widget_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
-  MainPage({Key? key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  _MainPageState createState() => _MainPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
@@ -34,8 +34,8 @@ class _MainPageState extends State<MainPage> {
       controller: _pageController,
       children: <Widget>[
         AppKeepAliveWrapper(child: FrameworkWidgetPage()),
-        ThirdPartyWidgetPage(),
-        CustomWidgetPage(),
+        const ThirdPartyWidgetPage(),
+        const CustomWidgetPage(),
       ],
     );
     // return IndexedStack(
@@ -72,7 +72,7 @@ class _MainBottomNavigationBarState extends State<_MainBottomNavigationBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
-      items: <BottomNavigationBarItem>[
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.airplanemode_active),
           label: '框架组件',

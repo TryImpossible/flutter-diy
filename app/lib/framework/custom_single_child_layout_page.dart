@@ -7,7 +7,7 @@ class CustomSingleChildLayoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CustomSingleChildLayout'),
+        title: const Text('CustomSingleChildLayout'),
       ),
       body: Center(
         child: Container(
@@ -15,7 +15,7 @@ class CustomSingleChildLayoutPage extends StatelessWidget {
           height: 200,
           color: Colors.grey.shade500,
           child: _OffsetWidget(
-            offset: Offset(-10, -10),
+            offset: const Offset(-10, -10),
             direction: Direction.bottomLeft,
             child: Container(
               width: 100,

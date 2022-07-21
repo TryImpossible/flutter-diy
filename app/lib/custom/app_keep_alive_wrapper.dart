@@ -10,7 +10,7 @@ class AppKeepAliveWrapper extends StatefulWidget {
   final Widget child;
 
   @override
-  _AppKeepAliveWrapperState createState() => _AppKeepAliveWrapperState();
+  State<AppKeepAliveWrapper> createState() => _AppKeepAliveWrapperState();
 }
 
 class _AppKeepAliveWrapperState extends State<AppKeepAliveWrapper>

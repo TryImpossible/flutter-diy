@@ -35,7 +35,7 @@ class _BreathingAnimationPageState extends State<BreathingAnimationPage>
     //     .chain(CurveTween(curve: Interval(0.4, 0.95)))
     //     .animate(_controller);
     return Scaffold(
-      appBar: AppBar(title: Text('BreathingAnimation')),
+      appBar: AppBar(title: const Text('BreathingAnimation')),
       body: Center(
         child: FadeTransition(
           opacity: Tween(begin: 0.5, end: 1.0).animate(_opacityController),
@@ -63,13 +63,13 @@ class _BreathingAnimationPageState extends State<BreathingAnimationPage>
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          _controller.duration = Duration(seconds: 4);
+          _controller.duration = const Duration(seconds: 4);
           if (mounted) {
             _controller.forward();
           }
           await Future.delayed(const Duration(seconds: 4));
 
-          _opacityController.duration = Duration(microseconds: 1750);
+          _opacityController.duration = const Duration(microseconds: 1750);
           if (mounted) {
             _opacityController.repeat(reverse: true);
           }
@@ -78,13 +78,13 @@ class _BreathingAnimationPageState extends State<BreathingAnimationPage>
             _opacityController.reset();
           }
 
-          _controller.duration = Duration(seconds: 8);
+          _controller.duration = const Duration(seconds: 8);
           if (mounted) {
             _controller.reverse();
           }
         },
-        child: Icon(Icons.add),
         heroTag: "BreathingAnimationPage",
+        child: const Icon(Icons.add),
       ),
     );
   }

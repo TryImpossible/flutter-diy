@@ -9,7 +9,7 @@ class TextPainterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: Text('TextPainter')),
+      appBar: AppBar(title: const Text('TextPainter')),
       body: Center(
         child: ColoredBox(
           color: Colors.grey.shade300,
@@ -31,7 +31,7 @@ class _MyPainter extends CustomPainter {
     /// 画文字
     final TextPainter textPainter =
         TextPainter(textDirection: TextDirection.ltr);
-    textPainter.text = TextSpan(
+    textPainter.text = const TextSpan(
       text: 'АБВおかがご★轩☆ゞΕΖΗ叁肆伍陆ㄉㄊㄋ'
           'АБВおかがご★轩☆ゞΕΖΗ叁肆伍陆ㄉㄊㄋ'
           'АБВおかがご★轩☆ゞΕΖΗ叁肆伍陆ㄉㄊㄋ',
@@ -42,7 +42,7 @@ class _MyPainter extends CustomPainter {
 
     /// 获取LineMetrics
     ui.LineMetrics lineMetrics = textPainter.computeLineMetrics()[0];
-    debugPrint('LineMetrics: ' + lineMetrics.toString());
+    debugPrint('LineMetrics: $lineMetrics');
 
     /// 基准线 alphabetic
     final double a =
@@ -68,14 +68,14 @@ class _MyPainter extends CustomPainter {
     );
 
     final List<TextBox> textBoxes = textPainter.getBoxesForSelection(
-      TextSelection(
+      const TextSelection(
         baseOffset: 0,
         extentOffset: 18,
         affinity: TextAffinity.downstream,
         isDirectional: true,
       ),
     );
-    textBoxes.forEach((TextBox box) {
+    for (var box in textBoxes) {
       canvas.drawRect(
         Rect.fromLTRB(box.left, box.top, box.right, box.bottom),
         Paint()
@@ -83,14 +83,15 @@ class _MyPainter extends CustomPainter {
           ..strokeWidth = 1
           ..style = PaintingStyle.stroke,
       );
-    });
+    }
 
     /// 获取行的边界
-    TextRange textRange = textPainter.getLineBoundary(TextPosition(offset: 8));
+    TextRange textRange =
+        textPainter.getLineBoundary(const TextPosition(offset: 8));
     debugPrint('getLineBoundary: ${textRange.toString()}');
 
     /// 获取单词的边界
-    textRange = textPainter.getWordBoundary(TextPosition(offset: 1));
+    textRange = textPainter.getWordBoundary(const TextPosition(offset: 1));
     debugPrint('getWordBoundary: ${textRange.toString()}');
 
     final ui.ParagraphBuilder builder = ui.ParagraphBuilder(ui.ParagraphStyle(
@@ -103,8 +104,8 @@ class _MyPainter extends CustomPainter {
     builder.pushStyle(ui.TextStyle(fontSize: 20, color: Colors.black));
     builder.addText('АБВおかがご★轩☆ゞΕΖΗ叁肆伍陆ㄉㄊㄋ');
     final ui.Paragraph paragraph = builder.build()
-      ..layout(ui.ParagraphConstraints(width: 300));
-    canvas.drawParagraph(paragraph, Offset(0, 180));
+      ..layout(const ui.ParagraphConstraints(width: 300));
+    canvas.drawParagraph(paragraph, const Offset(0, 180));
   }
 
   @override

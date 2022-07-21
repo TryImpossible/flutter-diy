@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class _TurnBox extends StatefulWidget {
@@ -67,7 +66,7 @@ class TurnBoxPage extends StatefulWidget {
   const TurnBoxPage({Key? key}) : super(key: key);
 
   @override
-  _TurnBoxPageState createState() => _TurnBoxPageState();
+  State<TurnBoxPage> createState() => _TurnBoxPageState();
 }
 
 class _TurnBoxPageState extends State<TurnBoxPage> {
@@ -77,7 +76,7 @@ class _TurnBoxPageState extends State<TurnBoxPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TurnBox控件'),
+        title: const Text('TurnBox控件'),
       ),
       body: Center(
         child: Column(
@@ -85,7 +84,7 @@ class _TurnBoxPageState extends State<TurnBoxPage> {
             _TurnBox(
               turns: _turns,
               speed: 500,
-              child: Icon(
+              child: const Icon(
                 Icons.refresh,
                 size: 50,
               ),
@@ -93,13 +92,13 @@ class _TurnBoxPageState extends State<TurnBoxPage> {
             _TurnBox(
               turns: _turns,
               speed: 1000,
-              child: Icon(
+              child: const Icon(
                 Icons.refresh,
                 size: 150.0,
               ),
             ),
             ElevatedButton(
-              child: Text("顺时针旋转1/5圈"),
+              child: const Text("顺时针旋转1/5圈"),
               onPressed: () {
                 setState(() {
                   _turns += .2;
@@ -107,7 +106,7 @@ class _TurnBoxPageState extends State<TurnBoxPage> {
               },
             ),
             ElevatedButton(
-              child: Text("逆时针旋转1/5圈"),
+              child: const Text("逆时针旋转1/5圈"),
               onPressed: () {
                 setState(() {
                   _turns -= .2;
@@ -129,9 +128,7 @@ class HomeView extends ComponentElement {
     // TODO: implement build
     throw UnimplementedError();
   }
-
 }
-
 
 class CustomHome extends Widget {
   @override
@@ -139,5 +136,4 @@ class CustomHome extends Widget {
     // TODO: implement createElement
     throw UnimplementedError();
   }
-
 }

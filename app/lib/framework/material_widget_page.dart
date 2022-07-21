@@ -7,52 +7,52 @@ class MaterialWidgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Material控件'),
+        title: const Text('Material控件'),
       ),
       body: SizedBox.expand(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
                 shape: BeveledRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
+                  side: const BorderSide(
                     width: 1,
                     style: BorderStyle.none,
                   ),
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(10),
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
                 shape: BeveledRectangleBorder(
                   borderRadius: BorderRadius.circular(200),
-                  side: BorderSide(
+                  side: const BorderSide(
                     width: 1,
                     style: BorderStyle.none,
                   ),
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(16),
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
-                shape: BorderDirectional(
+                shape: const BorderDirectional(
                   start: BorderSide(color: Colors.red, width: 8),
                   top: BorderSide(color: Colors.blue, width: 8),
                   end: BorderSide(color: Colors.brown, width: 8),
@@ -60,16 +60,16 @@ class MaterialWidgetPage extends StatelessWidget {
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(16),
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
-                shape: CircleBorder(
+                shape: const CircleBorder(
                   side: BorderSide(
                     color: Colors.green,
                     width: 2,
@@ -78,17 +78,17 @@ class MaterialWidgetPage extends StatelessWidget {
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(48),
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
+                  side: const BorderSide(
                     width: 2.0,
                     color: Colors.brown,
                   ),
@@ -96,46 +96,46 @@ class MaterialWidgetPage extends StatelessWidget {
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(48),
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
-                shape: StadiumBorder(
-                  side: const BorderSide(width: 2.0, color: Colors.brown),
+                shape: const StadiumBorder(
+                  side: BorderSide(width: 2.0, color: Colors.brown),
                 ),
                 child: Container(
                   width: 360,
                   height: 80,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 color: Colors.amber,
-                shape: StadiumBorder(
-                  side: const BorderSide(width: 2.0, color: Colors.brown),
+                shape: const StadiumBorder(
+                  side: BorderSide(width: 2.0, color: Colors.brown),
                 ),
                 child: Container(
                   width: 80,
                   height: 360,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     '你好\nMaterial',
                     style: TextStyle(fontSize: 14),
                     textAlign: TextAlign.center,
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Material(
                 ///必须要设置颜色
                 color: Colors.amber,
@@ -143,13 +143,13 @@ class MaterialWidgetPage extends StatelessWidget {
 
                 ///阴影颜色
                 shadowColor: Colors.green,
-                borderRadius: new BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(8.0),
                 type: MaterialType.button,
                 child: Container(
                   width: 100,
                   height: 40,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     '你好 Material',
                     style: TextStyle(fontSize: 14),
                     textAlign: TextAlign.center,

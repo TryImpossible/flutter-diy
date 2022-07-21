@@ -7,7 +7,7 @@ class DraggableScrollableSheetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DraggableScrollableSheet控件'),
+        title: const Text('DraggableScrollableSheet控件'),
       ),
       body: DraggableScrollableSheet(
         maxChildSize: 0.75,
@@ -23,7 +23,7 @@ class DraggableScrollableSheetPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.4),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -37,17 +37,17 @@ class DraggableScrollableSheetPage extends StatelessWidget {
               width: 25.0,
               decoration: BoxDecoration(
                 color: Colors.blue.withOpacity(0.8),
-                borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(16.0)),
               ),
-              margin: EdgeInsets.symmetric(vertical: 12.0),
+              margin: const EdgeInsets.symmetric(vertical: 12.0),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: GridView.builder(
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 primary: false,
                 shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 5,
                   mainAxisSpacing: 8.0,
                   crossAxisSpacing: 12.0,
@@ -65,8 +65,8 @@ class DraggableScrollableSheetPage extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        SizedBox(height: 4),
-                        Text('海贼王'),
+                        const SizedBox(height: 4),
+                        const Text('海贼王'),
                       ],
                     ),
                   );

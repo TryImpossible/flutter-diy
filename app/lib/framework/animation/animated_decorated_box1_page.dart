@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnimatedDecoratedBox extends ImplicitlyAnimatedWidget {
-  AnimatedDecoratedBox({
+  const AnimatedDecoratedBox({
     Key? key,
     required this.decoration,
     required this.child,
@@ -13,7 +13,7 @@ class AnimatedDecoratedBox extends ImplicitlyAnimatedWidget {
   final Widget child;
 
   @override
-  _AnimatedDecoratedBoxState createState() {
+  AnimatedWidgetBaseState<AnimatedDecoratedBox> createState() {
     return _AnimatedDecoratedBoxState();
   }
 }
@@ -57,7 +57,7 @@ class AnimatedDecoratedBox1 extends StatefulWidget {
   final Duration? reverseDuration;
 
   @override
-  _AnimatedDecoratedBox1State createState() => _AnimatedDecoratedBox1State();
+  State<AnimatedDecoratedBox1> createState() => _AnimatedDecoratedBox1State();
 }
 
 class _AnimatedDecoratedBox1State extends State<AnimatedDecoratedBox1>
@@ -128,12 +128,11 @@ class AnimatedDecoratedBox1Page extends StatefulWidget {
   const AnimatedDecoratedBox1Page({Key? key}) : super(key: key);
 
   @override
-  _AnimatedDecoratedBox1PageState createState() =>
+  State<AnimatedDecoratedBox1Page> createState() =>
       _AnimatedDecoratedBox1PageState();
 }
 
-class _AnimatedDecoratedBox1PageState
-    extends State<AnimatedDecoratedBox1Page> {
+class _AnimatedDecoratedBox1PageState extends State<AnimatedDecoratedBox1Page> {
   Color _decorationColor = Colors.blue;
 
   @override
@@ -143,9 +142,9 @@ class _AnimatedDecoratedBox1PageState
       body: Center(
         child: AnimatedDecoratedBox1(
           decoration: BoxDecoration(color: _decorationColor),
-          duration: Duration(seconds: 1),
+          duration: const Duration(seconds: 1),
           child: TextButton(
-            child: Text(
+            child: const Text(
               'AnimatedDecoratedBox',
               style: TextStyle(color: Colors.white),
             ),

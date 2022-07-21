@@ -8,7 +8,7 @@ class CanvasPrinciplePage extends StatelessWidget {
 
   Future<ByteData?> _canvasToImage() async {
     ui.PictureRecorder pictureRecorder = ui.PictureRecorder();
-    Rect rect = Rect.fromPoints(Offset.zero, ui.Offset(300, 300));
+    Rect rect = Rect.fromPoints(Offset.zero, const ui.Offset(300, 300));
     Canvas canvas = Canvas(pictureRecorder, rect);
     canvas.drawColor(Colors.red, BlendMode.color);
     ui.Picture picture = pictureRecorder.endRecording();
@@ -19,13 +19,13 @@ class CanvasPrinciplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Canvas原理')),
+      appBar: AppBar(title: const Text('Canvas原理')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text('直接new Canvas转成图片加载'),
-            SizedBox(height: 12),
+            const Text('直接new Canvas转成图片加载'),
+            const SizedBox(height: 12),
             FutureBuilder<ByteData?>(
               future: _canvasToImage(),
               builder: (_, AsyncSnapshot<ByteData?> snapshot) {

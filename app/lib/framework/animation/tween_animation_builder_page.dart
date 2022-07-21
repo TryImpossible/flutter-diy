@@ -12,7 +12,7 @@ class TweenAnimationBuilderPage extends StatelessWidget {
       appBar: AppBar(),
       body: PageView(
         controller: _controller,
-        children: <Widget>[
+        children: const <Widget>[
           _PageView1(),
           _PageView2(),
           _PageView3(),
@@ -24,13 +24,13 @@ class TweenAnimationBuilderPage extends StatelessWidget {
         height: 44,
         child: Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: _types.map((e) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: ElevatedButton(
                     child: Text(e),
                     onPressed: () {
@@ -61,8 +61,8 @@ class _PageView4 extends StatelessWidget {
     return Center(
       child: TweenAnimationBuilder(
         key: UniqueKey(),
-        duration: Duration(seconds: 1),
-        tween: Tween(begin: Offset.zero, end: Offset(100, 100)),
+        duration: const Duration(seconds: 1),
+        tween: Tween(begin: Offset.zero, end: const Offset(100, 100)),
         builder: (BuildContext context, Offset value, Widget? child) {
           return Container(
             width: 300,
@@ -71,7 +71,7 @@ class _PageView4 extends StatelessWidget {
             child: Center(
               child: Transform.translate(
                 offset: value,
-                child: Text(
+                child: const Text(
                   'Hi',
                   style: TextStyle(fontSize: 50.0),
                 ),
@@ -93,7 +93,7 @@ class _PageView3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: TweenAnimationBuilder(
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         tween: Tween(begin: 0.0, end: 3.14),
         builder: (BuildContext context, double value, Widget? child) {
           return Container(
@@ -103,7 +103,7 @@ class _PageView3 extends StatelessWidget {
             child: Center(
               child: Transform.rotate(
                 angle: value,
-                child: Text(
+                child: const Text(
                   'Hi',
                   style: TextStyle(fontSize: 50.0),
                 ),
@@ -125,7 +125,7 @@ class _PageView2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: TweenAnimationBuilder(
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         tween: Tween(begin: 1.0, end: 1.6),
         builder: (BuildContext context, double value, Widget? child) {
           return Container(
@@ -135,7 +135,7 @@ class _PageView2 extends StatelessWidget {
             child: Center(
               child: Transform.scale(
                 scale: value,
-                child: Text(
+                child: const Text(
                   'Hi',
                   style: TextStyle(fontSize: 50.0),
                 ),
@@ -164,7 +164,7 @@ class _PageView1State extends State<_PageView1> {
   Widget build(BuildContext context) {
     return Center(
       child: TweenAnimationBuilder(
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         tween: Tween(end: _big ? 120.0 : 50.0),
         builder: (BuildContext context, double value, Widget? child) {
           return GestureDetector(
