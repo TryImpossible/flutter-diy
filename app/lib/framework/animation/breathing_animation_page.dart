@@ -64,16 +64,24 @@ class _BreathingAnimationPageState extends State<BreathingAnimationPage>
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           _controller.duration = Duration(seconds: 4);
-          _controller.forward();
+          if (mounted) {
+            _controller.forward();
+          }
           await Future.delayed(const Duration(seconds: 4));
 
           _opacityController.duration = Duration(microseconds: 1750);
-          _opacityController.repeat(reverse: true);
+          if (mounted) {
+            _opacityController.repeat(reverse: true);
+          }
           await Future.delayed(const Duration(seconds: 7));
-          _opacityController.reset();
+          if (mounted) {
+            _opacityController.reset();
+          }
 
           _controller.duration = Duration(seconds: 8);
-          _controller.reverse();
+          if (mounted) {
+            _controller.reverse();
+          }
         },
         child: Icon(Icons.add),
         heroTag: "BreathingAnimationPage",

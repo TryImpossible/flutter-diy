@@ -1,4 +1,5 @@
 import 'package:app/framework/animation/breathing_animation_page.dart';
+import 'package:app/framework/animation/scanner_sweep_page.dart';
 import 'package:app/framework/animation/snow_animation_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -175,6 +176,16 @@ class AnimationPage extends StatelessWidget {
                   ));
                 },
                 child: Text('SnowAnimation'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ScannerSweepPage();
+                    },
+                  ));
+                },
+                child: Text('ScannerSweepAnimation'),
               ),
             ],
           ),
