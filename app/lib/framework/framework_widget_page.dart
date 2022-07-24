@@ -66,6 +66,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'CustomMultiChildLayout': const CustomMultiChildLayoutPage(),
       'CustomPaint': const CustomPaintPage(),
     };
+    // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
       key: (dynamic item) => item,

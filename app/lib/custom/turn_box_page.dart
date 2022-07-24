@@ -131,6 +131,8 @@ class HomeView extends ComponentElement {
 }
 
 class CustomHome extends Widget {
+  const CustomHome({Key? key}) : super(key: key);
+
   @override
   Element createElement() {
     // TODO: implement createElement

@@ -157,6 +157,7 @@ class _UnderlineTextDelegate extends MultiChildLayoutDelegate {
       positionChild('text', Offset((size.width - textSize.width) / 2, 30));
     }
     if (hasChild('underline')) {
+      // ignore: unused_local_variable
       final underlineSize = layoutChild(
         'underline',
         BoxConstraints(
