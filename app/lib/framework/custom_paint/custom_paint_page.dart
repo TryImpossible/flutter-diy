@@ -4,6 +4,7 @@ import 'canvas_principle_page.dart';
 import 'clip_rect_page.dart';
 import 'draw_arc_page.dart';
 import 'draw_circle_page.dart';
+import 'draw_image_page.dart';
 import 'draw_line_page.dart';
 import 'draw_oval_page.dart';
 import 'draw_path_page.dart';
@@ -42,6 +43,7 @@ class CustomPaintPage extends StatelessWidget {
       'DrawPath使用': const DrawPathPage(),
       '水波荡漾效果': const WaterWavesPage(),
       '拆线图': const LineChartPage(),
+      'DrawImage使用': const DrawImagePage(),
       'ClipRect使用': const ClipRectPage(),
       '刮奖票': const ScratchTicketPage(),
       'TextPainter使用': const TextPainterPage(),
