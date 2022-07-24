@@ -39,11 +39,11 @@ class CustomPaintPage extends StatelessWidget {
       'DrawCircle使用': const DrawCirclePage(),
       'DrawOval使用': const DrawOvalPage(),
       'DrawArc使用': const DrawArcPage(),
-      '刮奖票': const ScratchTicketPage(),
-      'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
       '水波荡漾效果': const WaterWavesPage(),
       '拆线图': const LineChartPage(),
+      'ClipRect使用': const ClipRectPage(),
+      '刮奖票': const ScratchTicketPage(),
       'TextPainter使用': const TextPainterPage(),
     };
     return Scaffold(

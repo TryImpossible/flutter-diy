@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -31,47 +30,57 @@ class _MyPainter extends CustomPainter {
 
     canvas.translate(100, 0);
 
+    _drawArc(canvas, size);
+
+    canvas.translate(
+      0,
+      100,
+    );
+    _drawArc(canvas, size, useCenter: false);
+
+    canvas.translate(0, 100);
+    _drawArc(canvas, size, useCenter: false);
+  }
+
+  void _drawArc(
+    Canvas canvas,
+    Size size, {
+    bool useCenter = true,
+  }) {
     // rect: 是椭圆的外接矩形，因此椭圆的长短轴之比就是矩形的宽高比。
     // startAngle: 开始绘制圆环的角度，注意：x轴的角度是0度，并且必须是弧度制
     // sweepAngle: 圆环的角度大小，也是弧度制
     // useCenter: 终点是否和圆心连接起来
+    Paint arcPaint = Paint()..color = Colors.redAccent;
     canvas.drawArc(
       Rect.fromCenter(center: const Offset(60, 80), width: 80, height: 40),
       pi / 2,
       pi / 2 + pi / 4,
-      true,
-      paint..color = Colors.redAccent,
-    );
-    canvas.drawCircle(
-      const Offset(60, 80),
-      40,
-      paint..color = Colors.red.withOpacity(0.2),
+      useCenter,
+      arcPaint,
     );
 
-    canvas.drawArc(
-      Rect.fromCenter(center: const Offset(60, 180), width: 80, height: 40),
-      pi / 2,
-      pi / 2 + pi / 4,
-      false,
-      paint..color = Colors.redAccent,
+    Paint linePaint = Paint()
+      ..strokeWidth = 1
+      ..style = PaintingStyle.stroke
+      ..color = Colors.black54;
+    canvas.drawRect(
+      Rect.fromCenter(center: const Offset(60, 80), width: 80, height: 40),
+      linePaint,
     );
-    canvas.drawCircle(
-      const Offset(60, 180),
-      40,
-      paint..color = Colors.red.withOpacity(0.2),
+    canvas.drawOval(
+      Rect.fromCenter(center: const Offset(60, 80), width: 80, height: 40),
+      linePaint,
     );
-
-    canvas.drawArc(
-      Rect.fromCenter(center: const Offset(60, 280), width: 80, height: 40),
-      pi / 2,
-      pi / 2 + pi / 4,
-      false,
-      paint..color = Colors.redAccent,
+    canvas.drawLine(
+      const Offset(60, 60),
+      const Offset(60, 100),
+      linePaint,
     );
-    canvas.drawCircle(
-      const Offset(60, 280),
-      40,
-      paint..color = Colors.red.withOpacity(0.2),
+    canvas.drawLine(
+      const Offset(20, 80),
+      const Offset(100, 80),
+      linePaint,
     );
   }
 
