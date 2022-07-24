@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'canvas_principle_page.dart';
 import 'clip_rect_page.dart';
+import 'draw_arc_page.dart';
 import 'draw_circle_page.dart';
 import 'draw_line_page.dart';
 import 'draw_oval_page.dart';
@@ -37,6 +38,7 @@ class CustomPaintPage extends StatelessWidget {
       'DrawRect使用': const DrawRectPage(),
       'DrawCircle使用': const DrawCirclePage(),
       'DrawOval使用': const DrawOvalPage(),
+      'DrawArc使用': const DrawArcPage(),
       '刮奖票': const ScratchTicketPage(),
       'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
