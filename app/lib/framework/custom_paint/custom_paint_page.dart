@@ -1,3 +1,4 @@
+import 'package:app/framework/custom_paint/scale_page.dart';
 import 'package:flutter/material.dart';
 
 import 'canvas_principle_page.dart';
@@ -21,6 +22,7 @@ class CustomPaintPage extends StatelessWidget {
       'Paint使用': const PaintPage(),
       'SaveRestore使用': const SaveRestorePage(),
       'Translate使用': const TranslatePage(),
+      'Scale使用': const ScalePage(),
       '刮奖票': const ScratchTicketPage(),
       'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
