@@ -1,6 +1,7 @@
 import 'package:app/framework/custom_paint/canvas_principle_page.dart';
 import 'package:app/framework/custom_paint/clip_rect_page.dart';
 import 'package:app/framework/custom_paint/line_chart_page.dart';
+import 'package:app/framework/custom_paint/save_restore_page.dart';
 import 'package:app/framework/custom_paint/text_painter_page.dart';
 import 'package:app/framework/custom_paint/water_waves_page.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,16 @@ class CustomPaintPage extends StatelessWidget {
                   ));
                 },
                 child: const Text('Paint使用'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const SaveRestorePage();
+                    },
+                  ));
+                },
+                child: const Text('SaveRestore使用'),
               ),
               ElevatedButton(
                 onPressed: () {

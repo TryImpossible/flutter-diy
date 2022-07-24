@@ -35,6 +35,8 @@ class _MyPainter extends CustomPainter {
     path.close();
 
     canvas.drawPath(path, paint);
+    canvas.save();
+    canvas.restore();
 
     path = Path();
     path.moveTo(100, 100);
