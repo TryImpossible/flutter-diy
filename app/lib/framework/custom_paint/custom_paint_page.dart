@@ -5,6 +5,7 @@ import 'clip_rect_page.dart';
 import 'draw_line_page.dart';
 import 'draw_path_page.dart';
 import 'draw_points_page.dart';
+import 'draw_rect_page.dart';
 import 'line_chart_page.dart';
 import 'paint_page.dart';
 import 'rotate_page.dart';
@@ -31,6 +32,7 @@ class CustomPaintPage extends StatelessWidget {
       'Skew使用': const SkewPage(),
       'DrawPoints使用': const DrawPointsPage(),
       'DrawLine使用': const DrawLinePage(),
+      'DrawRect使用': const DrawRectPage(),
       '刮奖票': const ScratchTicketPage(),
       'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
