@@ -1,5 +1,3 @@
-import 'package:app/framework/custom_paint/rotate_page.dart';
-import 'package:app/framework/custom_paint/scale_page.dart';
 import 'package:flutter/material.dart';
 
 import 'canvas_principle_page.dart';
@@ -7,8 +5,11 @@ import 'clip_rect_page.dart';
 import 'draw_path_page.dart';
 import 'line_chart_page.dart';
 import 'paint_page.dart';
+import 'rotate_page.dart';
 import 'save_restore_page.dart';
+import 'scale_page.dart';
 import 'scratch_ticket_page.dart';
+import 'skew_page.dart';
 import 'text_painter_page.dart';
 import 'translate_page.dart';
 import 'water_waves_page.dart';
@@ -25,6 +26,7 @@ class CustomPaintPage extends StatelessWidget {
       'Translate使用': const TranslatePage(),
       'Scale使用': const ScalePage(),
       'Rotate使用': const RotatePage(),
+      'Skew使用': const SkewPage(),
       '刮奖票': const ScratchTicketPage(),
       'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
