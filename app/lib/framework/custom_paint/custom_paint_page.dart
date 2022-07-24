@@ -1,3 +1,4 @@
+import 'package:app/framework/custom_paint/rotate_page.dart';
 import 'package:app/framework/custom_paint/scale_page.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,7 @@ class CustomPaintPage extends StatelessWidget {
       'SaveRestore使用': const SaveRestorePage(),
       'Translate使用': const TranslatePage(),
       'Scale使用': const ScalePage(),
+      'Rotate使用': const RotatePage(),
       '刮奖票': const ScratchTicketPage(),
       'ClipRect使用': const ClipRectPage(),
       'DrawPath使用': const DrawPathPage(),
