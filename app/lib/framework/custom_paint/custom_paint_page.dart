@@ -11,8 +11,10 @@ import 'draw_oval_page.dart';
 import 'draw_path_page.dart';
 import 'draw_points_page.dart';
 import 'draw_rect_page.dart';
+import 'gesture_painter_page.dart';
 import 'line_chart_page.dart';
 import 'paint_page.dart';
+import 'painter_usage_page.dart';
 import 'rotate_page.dart';
 import 'save_restore_page.dart';
 import 'scale_page.dart';
@@ -29,6 +31,7 @@ class CustomPaintPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Map<String, Widget> pages = <String, Widget>{
       'Canvas原理': const CanvasPrinciplePage(),
+      'Painter用法': const PainterUsagePage(),
       'Paint使用': const PaintPage(),
       'SaveRestore使用': const SaveRestorePage(),
       'Translate使用': const TranslatePage(),
@@ -49,6 +52,7 @@ class CustomPaintPage extends StatelessWidget {
       '刮奖票': const ScratchTicketPage(),
       'TextPainter使用': const TextPainterPage(),
       'AnimatedPath': const AnimatedPathPage(),
+      'GesturePainter': const GesturePainterPage(),
     };
     return Scaffold(
       appBar: AppBar(title: const Text('CustomPaint')),

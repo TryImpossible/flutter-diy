@@ -47,27 +47,6 @@ class _DrawLinePageState extends State<DrawLinePage>
   }
 }
 
-// class DrawLinePage extends StatelessWidget {
-//   const DrawLinePage({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final Size size = MediaQuery.of(context).size;
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('DrawLine')),
-//       body: Center(
-//         child: ColoredBox(
-//           color: Colors.grey.shade300,
-//           child: CustomPaint(
-//             painter: _MyPainter(),
-//             size: Size.square(size.width),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class _MyPainter extends CustomPainter {
   const _MyPainter(this.animation) : super(repaint: animation);
   final Animation<double> animation;

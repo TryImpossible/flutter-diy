@@ -73,11 +73,15 @@ class _ScratchTicketPageState extends State<ScratchTicketPage> {
                         },
                         onPanDown: (DragDownDetails down) {
                           path.moveTo(
-                              down.localPosition.dx, down.localPosition.dy);
+                            down.localPosition.dx,
+                            down.localPosition.dy,
+                          );
                         },
                         child: CustomPaint(
-                          painter:
-                              _MyPainter(image: snapshot.data!, path: path),
+                          painter: _MyPainter(
+                            image: snapshot.data!,
+                            path: path,
+                          ),
                           size: size,
                         ),
                       );
