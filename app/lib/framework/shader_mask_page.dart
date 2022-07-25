@@ -1,39 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ShaderMaskPage extends StatelessWidget {
-  ShaderMaskPage({Key? key}) : super(key: key);
-
-  final List<BlendMode> _blendMode = [
-    BlendMode.clear,
-    BlendMode.src,
-    BlendMode.dst,
-    BlendMode.srcOver,
-    BlendMode.dstOver,
-    BlendMode.srcIn,
-    BlendMode.dstIn,
-    BlendMode.srcOut,
-    BlendMode.dstOut,
-    BlendMode.srcATop,
-    BlendMode.dstATop,
-    BlendMode.xor,
-    BlendMode.plus,
-    BlendMode.modulate,
-    BlendMode.screen,
-    BlendMode.overlay,
-    BlendMode.darken,
-    BlendMode.lighten,
-    BlendMode.colorDodge,
-    BlendMode.colorBurn,
-    BlendMode.hardLight,
-    BlendMode.softLight,
-    BlendMode.difference,
-    BlendMode.exclusion,
-    BlendMode.multiply,
-    BlendMode.hue,
-    BlendMode.saturation,
-    BlendMode.color,
-    BlendMode.luminosity,
-  ];
+  const ShaderMaskPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +57,7 @@ class ShaderMaskPage extends StatelessWidget {
           ),
           SliverGrid.count(
             crossAxisCount: 4,
-            children: _blendMode.map((BlendMode mode) {
+            children: BlendMode.values.map((BlendMode mode) {
               return GridTile(
                 footer: Text(
                   mode.toString().replaceAll('BlendMode.', ''),

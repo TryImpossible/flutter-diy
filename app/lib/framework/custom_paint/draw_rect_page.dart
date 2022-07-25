@@ -30,29 +30,54 @@ class _MyPainter extends CustomPainter {
       ..color = Colors.redAccent
       ..strokeWidth = 5;
 
-    canvas.translate(100, 0);
-
     // 根据四个点生成
-    canvas.drawRect(const Rect.fromLTRB(20, 100, 80, 200), paint);
+    canvas.drawRect(const Rect.fromLTRB(20, 20, 80, 120), paint);
 
     // 根据定点和宽高
-    canvas.drawRect(const Rect.fromLTWH(100, 100, 60, 100), paint);
+    canvas.drawRect(const Rect.fromLTWH(100, 20, 60, 100), paint);
 
     // 根据点心和宽度
     canvas.drawRect(
-      Rect.fromCenter(center: const Offset(50, 300), width: 60, height: 100),
+      Rect.fromCenter(center: const Offset(50, 180), width: 60, height: 100),
       paint,
     );
 
     // 根据内接圆
     canvas.drawRect(
-      Rect.fromCircle(center: const Offset(130, 300), radius: 20),
+      Rect.fromCircle(center: const Offset(130, 180), radius: 20),
       paint,
     );
 
     // 根据对角线坐标
     canvas.drawRect(
-      Rect.fromPoints(const Offset(20, 410), const Offset(80, 510)),
+      Rect.fromPoints(const Offset(20, 240), const Offset(80, 340)),
+      paint,
+    );
+
+    // 绘制圆角矩形环
+    canvas.drawDRRect(
+      RRect.fromRectXY(
+        size.topRight(const Offset(-20, 20)) & const Size(-60, 60),
+        10.0,
+        10.0,
+      ),
+      RRect.fromRectXY(
+        size.topRight(const Offset(-20, 20)) & const Size(-60, 60),
+        60.0,
+        60.0,
+      ),
+      paint,
+    );
+
+    // 绘制圆角矩形
+    canvas.drawRRect(
+      RRect.fromLTRBR(
+        size.width - 80,
+        size.height - 120,
+        size.width - 20,
+        size.height - 20,
+        const Radius.circular(10),
+      ),
       paint,
     );
   }

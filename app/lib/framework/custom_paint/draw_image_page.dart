@@ -30,7 +30,7 @@ class DrawImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> tabs = ['Demo1', 'Demo2'];
+    final List<String> tabs = ['Demo1', 'Demo2', 'Demo3', 'Demo4'];
 
     final Size size = MediaQuery.of(context).size;
     final Size imageSize = Size.square(size.width / 3);
@@ -66,7 +66,7 @@ class DrawImagePage extends StatelessWidget {
                           ),
                           size: Size.square(size.width),
                         );
-                      } else {
+                      } else if (title == 'Demo2') {
                         return SingleChildScrollView(
                           child: CustomPaint(
                             painter: _MyPainter2(
@@ -80,6 +80,24 @@ class DrawImagePage extends StatelessWidget {
                             ),
                           ),
                         );
+                      } else if (title == 'Demo3') {
+                        return CustomPaint(
+                          painter: _MyPainter3(
+                            image: snapshot.data!,
+                            imageSize: imageSize,
+                          ),
+                          size: Size.square(size.width),
+                        );
+                      } else if (title == 'Demo4') {
+                        return CustomPaint(
+                          painter: _MyPainter4(
+                            image: snapshot.data!,
+                            imageSize: imageSize,
+                          ),
+                          size: Size.square(size.width),
+                        );
+                      } else {
+                        return const SizedBox.shrink();
                       }
                     } else {
                       // 请求未结束，显示loadign
@@ -174,6 +192,81 @@ class _MyPainter2 extends CustomPainter {
 
       canvas.restore();
     }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+class _MyPainter3 extends CustomPainter {
+  _MyPainter3({
+    required this.image,
+    required this.imageSize,
+  });
+
+  final ui.Image image;
+  final Size imageSize;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint();
+    // 直接绘制原图
+    canvas.drawImage(image, Offset.zero, paint);
+    // 绘制放大0.5倍的.9图片
+    canvas.drawImageNine(
+      image,
+      const Rect.fromLTWH(55, 30, 50, 80),
+      Rect.fromLTWH(
+        imageSize.width,
+        imageSize.height,
+        imageSize.width * 1.5,
+        imageSize.height * 1.5,
+      ),
+      paint,
+    );
+    // 绘制缩小一倍的.9图片
+    canvas.drawImageNine(
+      image,
+      const Rect.fromLTWH(55, 30, 10, 10),
+      Rect.fromLTWH(0, 300, imageSize.width / 2, imageSize.height / 2),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+class _MyPainter4 extends CustomPainter {
+  _MyPainter4({
+    required this.image,
+    required this.imageSize,
+  });
+
+  final ui.Image image;
+  final Size imageSize;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint();
+    // 直接绘制原图
+    canvas.drawImage(image, Offset.zero, paint);
+
+    // 在200*0 的位置绘制左眼
+    canvas.drawImageRect(
+      image,
+      Rect.fromLTWH(55, 87, 30, 30),
+      Rect.fromLTWH(200, 0, 30, 30),
+      paint,
+    );
+
+    // // 在200*50 的位置绘制左眼
+    // canvas.drawImageRect(
+    //   image,
+    //   Rect.fromLTWH(55, 57, 10, 10),
+    //   Rect.fromLTWH(200, 50, 20, 20),
+    //   paint,
+    // );
   }
 
   @override
