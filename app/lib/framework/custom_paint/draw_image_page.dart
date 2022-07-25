@@ -255,18 +255,26 @@ class _MyPainter4 extends CustomPainter {
     // 在200*0 的位置绘制左眼
     canvas.drawImageRect(
       image,
-      Rect.fromLTWH(55, 87, 30, 30),
-      Rect.fromLTWH(200, 0, 30, 30),
+      const Rect.fromLTWH(28, 36, 30, 30),
+      const Rect.fromLTWH(200, 0, 20, 20),
       paint,
     );
 
-    // // 在200*50 的位置绘制左眼
-    // canvas.drawImageRect(
-    //   image,
-    //   Rect.fromLTWH(55, 57, 10, 10),
-    //   Rect.fromLTWH(200, 50, 20, 20),
-    //   paint,
-    // );
+    // 在200*50 的位置绘制左眼
+    canvas.drawImageRect(
+      image,
+      const Rect.fromLTWH(28, 36, 30, 30),
+      const Rect.fromLTWH(200, 50, 50, 50),
+      paint,
+    );
+
+    // 在200*150 的位置绘制左眼
+    canvas.drawImageRect(
+      image,
+      const Rect.fromLTWH(28, 36, 30, 30),
+      const Rect.fromLTWH(200, 150, 100, 100),
+      paint,
+    );
   }
 
   @override

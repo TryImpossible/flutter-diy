@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'animated_path_page.dart';
 import 'canvas_principle_page.dart';
 import 'clip_rect_page.dart';
 import 'draw_arc_page.dart';
@@ -47,6 +48,7 @@ class CustomPaintPage extends StatelessWidget {
       'ClipRect使用': const ClipRectPage(),
       '刮奖票': const ScratchTicketPage(),
       'TextPainter使用': const TextPainterPage(),
+      'AnimatedPath': const AnimatedPathPage(),
     };
     return Scaffold(
       appBar: AppBar(title: const Text('CustomPaint')),
