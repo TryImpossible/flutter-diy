@@ -1,6 +1,7 @@
 import 'package:app/custom/animated_counter_page.dart';
 import 'package:flutter/material.dart';
 
+import 'app_bubble_page.dart';
 import 'custom_render_object_widget_page.dart';
 import 'dropdown_text_field_page.dart';
 import 'gradient_button_page.dart';
@@ -30,6 +31,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'TurnBox': const TurnBoxPage(),
       'AnimatedCounter': const AnimatedCounterPage(),
       'ShadowBox': const ShadowBoxPage(),
+      'AppBubble': const AppBubblePage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
