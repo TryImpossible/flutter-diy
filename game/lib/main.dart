@@ -1,5 +1,6 @@
-import 'package:game/course/01/main.dart' as course01;
+import 'course/02/main.dart' as course02;
 
 void main() {
-  course01.main();
+  // course01.main();
+  course02.main();
 }

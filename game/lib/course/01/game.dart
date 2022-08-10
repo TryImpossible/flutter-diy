@@ -1,5 +1,6 @@
 import 'package:flame/game.dart';
-import 'package:game/course/01/component.dart';
+
+import 'component.dart';
 
 class HeroGame extends FlameGame {
   @override
