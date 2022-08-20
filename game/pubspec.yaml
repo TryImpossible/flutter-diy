@@ -96,3 +96,8 @@ flutter:
   assets:
     - assets/audio/
     - assets/images/adventurer/
+
+  fonts:
+    - family: ZCOOLKuaiLe
+      fonts:
+        - asset: assets/fonts/ZCOOLKuaiLe/ZCOOLKuaiLe-Regular.ttf
