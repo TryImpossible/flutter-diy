@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 
-class HeroComponent extends SpriteAnimationComponent {
-  HeroComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
+class AdventurerComponent extends SpriteAnimationComponent {
+  AdventurerComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
   @override
   Future<void>? onLoad() async {

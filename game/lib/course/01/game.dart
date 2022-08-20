@@ -2,9 +2,9 @@ import 'package:flame/game.dart';
 
 import 'component.dart';
 
-class HeroGame extends FlameGame {
+class OwnGame extends FlameGame {
   @override
   Future<void>? onLoad() async {
-    await add(HeroComponent());
+    await add(AdventurerComponent());
   }
 }

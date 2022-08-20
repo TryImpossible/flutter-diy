@@ -9,6 +9,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-  runApp(GameWidget(game: HeroGame()));
+  runApp(GameWidget(game: OwnGame()));
   FlameAudio.play('background.mp3');
 }

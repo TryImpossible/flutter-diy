@@ -5,10 +5,10 @@ import 'package:flutter/painting.dart';
 
 import 'component.dart';
 
-class HeroGame extends FlameGame with HasDraggables {
+class OwnGame extends FlameGame with HasDraggables {
   late final JoystickComponent _moveJoystick;
   late final JoystickComponent _rotateJoystick;
-  late final HeroComponent _player;
+  late final AdventurerComponent _player;
 
   @override
   Future<void>? onLoad() async {
@@ -28,7 +28,7 @@ class HeroGame extends FlameGame with HasDraggables {
     );
     await add(_rotateJoystick);
 
-    _player = HeroComponent();
+    _player = AdventurerComponent();
     await add(_player);
   }
 

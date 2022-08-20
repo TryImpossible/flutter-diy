@@ -5,12 +5,12 @@ import 'package:flame/components.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/material.dart';
 
-class HeroComponent extends SpriteAnimationComponent
+class AdventurerComponent extends SpriteAnimationComponent
     with HasGameRef, Tappable, Hoverable {
   late final RectangleHitbox _box;
   double _counter = 0;
 
-  HeroComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
+  AdventurerComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
   @override
   Future<void>? onLoad() async {

@@ -1,8 +1,8 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-class HeroComponent extends SpriteAnimationComponent with HasGameRef {
-  HeroComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
+class AdventurerComponent extends SpriteAnimationComponent with HasGameRef {
+  AdventurerComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
   @override
   Future<void>? onLoad() async {
