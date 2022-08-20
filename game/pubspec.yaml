@@ -96,6 +96,7 @@ flutter:
   assets:
     - assets/audio/
     - assets/images/adventurer/
+    - assets/images/touch/
 
   fonts:
     - family: ZCOOLKuaiLe
