@@ -10,6 +10,7 @@ import 'course/04/04/main.dart' as course0404;
 import 'course/05/main.dart' as course05;
 import 'course/06/main.dart' as course06;
 import 'course/07/main.dart' as course07;
+import 'course/08/main.dart' as course08;
 
 void main() {
   // course01.main();
@@ -22,5 +23,6 @@ void main() {
   // course0404.main();
   // course05.main();
   // course06.main();
-  course07.main();
+  // course07.main();
+  course08.main();
 }

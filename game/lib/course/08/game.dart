@@ -8,10 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'adventurer.dart';
+import 'bullet.dart';
 import 'monster.dart';
 import 'touch_indicator.dart';
 
-class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
+class OwnGame extends FlameGame with KeyboardEvents, PanDetector {
   late final AdventurerComponent _player;
   late final MonsterComponent _monster;
   final double step = 10;
@@ -47,25 +48,19 @@ class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
   }
 
   @override
-  void onTap() {
-    super.onTap();
-    _monster.loss(50);
-  }
-
-  double ds = 0;
-  Vector2? _lastPointerPos;
-
-  @override
-  void onPanEnd(DragEndInfo info) {
-    if (_lastPointerPos != null) {
-      _player.toTarget(_lastPointerPos!);
-      _lastPointerPos = null;
+  void update(double dt) {
+    super.update(dt);
+    final Iterable<Bullet> bullets = children.whereType<Bullet>();
+    for (Bullet bullet in bullets) {
+      if (bullet.isRemoving) {
+        continue;
+      }
+      if (_monster.containsPoint(bullet.absoluteCenter)) {
+        bullet.removeFromParent();
+        _monster.loss(50);
+        break;
+      }
     }
-  }
-
-  @override
-  void onPanStart(DragStartInfo info) {
-    _lastPointerPos = info.eventPosition.global;
   }
 
   @override
@@ -74,6 +69,8 @@ class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
     add(TouchIndicator(position: target));
     _player.toTarget(target);
   }
+
+  double ds = 0;
 
   @override
   void onPanUpdate(DragUpdateInfo info) {
