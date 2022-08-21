@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';

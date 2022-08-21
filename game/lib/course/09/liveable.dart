@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-
 import 'damage_text.dart';
 
 mixin Liveable on PositionComponent {

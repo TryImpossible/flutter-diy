@@ -1,9 +1,9 @@
 import 'dart:math';
 
-import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-import 'package:game/course/06/damage_text.dart';
+
+import 'damage_text.dart';
 
 mixin Liveable on PositionComponent {
   final TextStyle _defaultTextStyle = const TextStyle(
