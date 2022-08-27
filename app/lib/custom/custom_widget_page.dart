@@ -1,4 +1,5 @@
 import 'package:app/custom/animated_counter_page.dart';
+import 'package:app/custom/app_refresh_indicator_page.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bubble_page.dart';
@@ -32,6 +33,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'AnimatedCounter': const AnimatedCounterPage(),
       'ShadowBox': const ShadowBoxPage(),
       'AppBubble': const AppBubblePage(),
+      'AppRefreshIndicator': const AppRefreshIndicatorPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
