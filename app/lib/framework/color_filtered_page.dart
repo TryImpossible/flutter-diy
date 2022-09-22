@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ColorFilteredPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class ColorFilteredPage extends StatelessWidget {
     BlendMode.src,
     BlendMode.dst,
     BlendMode.srcOver,
-    BlendMode.dstOver,
+    if (!kIsWeb) BlendMode.dstOver,
     BlendMode.srcIn,
     BlendMode.dstIn,
     BlendMode.srcOut,
