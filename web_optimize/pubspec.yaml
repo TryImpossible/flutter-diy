@@ -56,6 +56,9 @@ dev_dependencies:
   # https://pub.flutter-io.cn/packages/crypto
   crypto: 3.0.2
 
+  tencent_cos_plus:
+    path: ../tencent_cos_plus
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
