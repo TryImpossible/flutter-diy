@@ -699,7 +699,7 @@ gjq(){return this.a},
 tS(d){var w,v={},u=d.a
 if(u==null)u=$.HK()
 v.a=v.b=null
-u.RJ("AssetManifest.71ebd831.json",A.ahM(),x.g).aU(new A.Ii(v,this,d,u),x.H).h4(new A.Ij(v))
+u.RJ("AssetManifest.json",A.ahM(),x.g).aU(new A.Ii(v,this,d,u),x.H).h4(new A.Ij(v))
 w=v.a
 if(w!=null)return w
 w=new B.a8($.a_,x.E)
