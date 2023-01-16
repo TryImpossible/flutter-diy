@@ -6050,7 +6050,7 @@ f.toString
 if(i instanceof f){f=i
 f.toString
 h=f
-if(h.status===404&&b==="/AssetManifest.6cde1e9b.json"){$.j4().$1("Asset manifest does not exist at `"+A.i(d)+"` \u2013 ignoring.")
+if(h.status===404&&b==="AssetManifest.6cde1e9b.json"){$.j4().$1("Asset manifest does not exist at `"+A.i(d)+"` \u2013 ignoring.")
 q=A.kN(new Uint8Array(A.Cm(B.X.gp8().d7("{}"))).buffer,0,null)
 s=1
 break}f=A.avk(h)
@@ -13502,7 +13502,7 @@ var $async$p_=A.T(function(a7,a8){if(a7===1){o=a8
 s=p}while(true)switch(s){case 0:a4=null
 p=4
 s=7
-return A.a0(a6.e0(0,"/FontManifest.012eb3a7.json"),$async$p_)
+return A.a0(a6.e0(0,"FontManifest.012eb3a7.json"),$async$p_)
 case 7:a4=a8
 p=2
 s=6
@@ -13519,7 +13519,7 @@ break
 case 3:s=2
 break
 case 6:j=t.kc.a(B.by.dD(0,B.X.dD(0,A.ds(a4.buffer,0,null))))
-if(j==null)throw A.d(A.lT("There was a problem trying to load /FontManifest.012eb3a7.json"))
+if(j==null)throw A.d(A.lT("There was a problem trying to load FontManifest.012eb3a7.json"))
 n.a=new A.XZ(A.a([],t._W),A.a([],t.J))
 for(k=t.a,i=J.k9(j,k),i=new A.dB(i,i.gp(i)),h=t.N,g=t.j,f=A.o(i).c;i.q();){e=i.d
 if(e==null)e=f.a(e)

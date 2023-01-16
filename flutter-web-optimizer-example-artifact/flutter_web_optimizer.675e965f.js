@@ -5,9 +5,9 @@
     
     // window.mainjsManifest
     var mainjsManifest = {
-  "main.dart.js_1.part.js": "main.dart.js_1.part.bebcfab0.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.fc7f3cf3.js",
   "main.dart_0.js": "main.dart_0.71fbc66f.js",
-  "main.dart_1.js": "main.dart_1.17ce1813.js",
+  "main.dart_1.js": "main.dart_1.3504f7c8.js",
   "main.dart_2.js": "main.dart_2.1c593f89.js",
   "main.dart_3.js": "main.dart_3.c7d17bd4.js",
   "main.dart_4.js": "main.dart_4.0a6918a8.js",
@@ -32,9 +32,9 @@
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
   "icons/Icon-maskable-512.png": "icons/Icon-maskable-512.301a7604.png",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.bebcfab0.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.fc7f3cf3.js",
   "main.dart_0.js": "main.dart_0.71fbc66f.js",
-  "main.dart_1.js": "main.dart_1.17ce1813.js",
+  "main.dart_1.js": "main.dart_1.3504f7c8.js",
   "main.dart_2.js": "main.dart_2.1c593f89.js",
   "main.dart_3.js": "main.dart_3.c7d17bd4.js",
   "main.dart_4.js": "main.dart_4.0a6918a8.js",

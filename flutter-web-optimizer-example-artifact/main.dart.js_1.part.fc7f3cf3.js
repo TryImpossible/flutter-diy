@@ -338,7 +338,7 @@ giQ(){return this.a},
 B1(d){var w,v={},u=d.a
 if(u==null)u=$.CJ()
 v.a=v.b=null
-u.a6y("/AssetManifest.6cde1e9b.json",A.aDi(),x.g).br(0,new A.Tg(v,this,d,u),x.H).iC(new A.Th(v))
+u.a6y("AssetManifest.6cde1e9b.json",A.aDi(),x.g).br(0,new A.Tg(v,this,d,u),x.H).iC(new A.Th(v))
 w=v.a
 if(w!=null)return w
 w=new B.af($.ag,x.E)
