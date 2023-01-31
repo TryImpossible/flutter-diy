@@ -5,13 +5,14 @@
     
     // window.mainjsManifest
     var mainjsManifest = {
-  "main.dart.js_1.part.js": "main.dart.js_1.part.fc7f3cf3.js",
-  "main.dart_0.js": "main.dart_0.71fbc66f.js",
-  "main.dart_1.js": "main.dart_1.3504f7c8.js",
-  "main.dart_2.js": "main.dart_2.1c593f89.js",
-  "main.dart_3.js": "main.dart_3.c7d17bd4.js",
-  "main.dart_4.js": "main.dart_4.0a6918a8.js",
-  "main.dart_5.js": "main.dart_5.80222e8e.js"
+  "main.dart.js": "main.dart.30d3d643.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.dcdb713d.js",
+  "main.dart_0.js": "main.dart_0.4a3e49c3.js",
+  "main.dart_1.js": "main.dart_1.386f0ace.js",
+  "main.dart_2.js": "main.dart_2.4f4d2fe2.js",
+  "main.dart_3.js": "main.dart_3.a4aeeba8.js",
+  "main.dart_4.js": "main.dart_4.f20016d7.js",
+  "main.dart_5.js": "main.dart_5.3d4ec374.js"
 };
     
     // window.hashFileManifest
@@ -27,18 +28,19 @@
   "assets/packages/fluttertoast/assets/toastify.js": "assets/packages/fluttertoast/assets/toastify.e7006a0a.js",
   "assets/packages/wakelock_web/assets/no_sleep.js": "assets/packages/wakelock_web/assets/no_sleep.7748a45c.js",
   "favicon.png": "favicon.5dcef449.png",
-  "flutter.js": "flutter.460491c5.js",
+  "flutter.js": "flutter.10920ce5.js",
   "icons/Icon-192.png": "icons/Icon-192.ac9a721a.png",
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
   "icons/Icon-maskable-512.png": "icons/Icon-maskable-512.301a7604.png",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.fc7f3cf3.js",
-  "main.dart_0.js": "main.dart_0.71fbc66f.js",
-  "main.dart_1.js": "main.dart_1.3504f7c8.js",
-  "main.dart_2.js": "main.dart_2.1c593f89.js",
-  "main.dart_3.js": "main.dart_3.c7d17bd4.js",
-  "main.dart_4.js": "main.dart_4.0a6918a8.js",
-  "main.dart_5.js": "main.dart_5.80222e8e.js",
+  "main.dart.js": "main.dart.30d3d643.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.dcdb713d.js",
+  "main.dart_0.js": "main.dart_0.4a3e49c3.js",
+  "main.dart_1.js": "main.dart_1.386f0ace.js",
+  "main.dart_2.js": "main.dart_2.4f4d2fe2.js",
+  "main.dart_3.js": "main.dart_3.a4aeeba8.js",
+  "main.dart_4.js": "main.dart_4.f20016d7.js",
+  "main.dart_5.js": "main.dart_5.3d4ec374.js",
   "manifest.json": "manifest.f76404df.json"
 };
     
