@@ -922,3 +922,5 @@ D.cE=new A.mD(3,"noRepeat")
 D.Tu=new B.iD("\u5b50\u9875\u9762",null,null,null,null,null)})();(function lazyInitializers(){var w=a.lazyFinal
 w($,"aEu","arc",()=>B.dU("/?(\\d+(\\.\\d*)?)x$",!0))})()}
 $__dart_deferred_initializers__["NNuq5Ili/eDfgQ2ea8edxFO6TIg="] = $__dart_deferred_initializers__.current
+
+//# sourceMappingURL=https://tryimpossible.github.io/flutter-diy/flutter-web-optimizer-example-artifact/main.dart.js_1.part.js.94d42fcb.map
