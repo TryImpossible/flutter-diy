@@ -6503,7 +6503,7 @@ f.toString
 if(i instanceof f){f=i
 f.toString
 h=f
-if(h.status===404&&b==="AssetManifest.40a34155.json"){$.kw().$1("Asset manifest does not exist at `"+A.i(d)+"` \u2013 ignoring.")
+if(h.status===404&&b==="AssetManifest.671b9ac9.json"){$.kw().$1("Asset manifest does not exist at `"+A.i(d)+"` \u2013 ignoring.")
 q=A.fF(new Uint8Array(A.kn(B.W.gmT().ct("{}"))).buffer,0,null)
 s=1
 break}f=A.ay0(h)

@@ -3659,6 +3659,6 @@ a(b.target)}for(var r=0;r<s.length;++r)s[r].addEventListener("load",onLoad,false
 var s=A.ajz
 if(typeof dartMainRunner==="function")dartMainRunner(s,[])
 else s([])})})()
-//# sourceMappingURL=https://tryimpossible.github.io/flutter-diy/flutter-web-optimizer-example-artifact/main.dart.js.1e14f47d.map
+//# sourceMappingURL=https://tryimpossible.github.io/flutter-diy/flutter-web-optimizer-example-artifact/main.dart.js.acdbca06.map
 
-//@ sourceURL=https://tryimpossible.github.io/flutter-diy/flutter-web-optimizer-example-artifact/main.dart.8029bb92.js
+//@ sourceURL=https://tryimpossible.github.io/flutter-diy/flutter-web-optimizer-example-artifact/main.dart.a361500a.js

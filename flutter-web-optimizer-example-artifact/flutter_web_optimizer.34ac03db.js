@@ -5,29 +5,20 @@
     
     // window.mainjsManifest
     var mainjsManifest = {
-  "main.dart.js": "main.dart.8029bb92.js",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.2a7c01e4.js",
+  "main.dart.js": "main.dart.a361500a.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.04b97423.js",
   "main.dart_0.js": "main.dart_0.9b5c2f9d.js",
-  "main.dart_1.js": "main.dart_1.8ac7760a.js",
+  "main.dart_1.js": "main.dart_1.b5bcd682.js",
   "main.dart_2.js": "main.dart_2.d082204f.js",
   "main.dart_3.js": "main.dart_3.0b4449d6.js",
-  "main.dart_4.js": "main.dart_4.3f085b63.js",
+  "main.dart_4.js": "main.dart_4.2bb668fa.js",
   "main.dart_5.js": "main.dart_5.ad0ec818.js"
 };
     
     // window.hashFileManifest
     var hashFileManifest = {
-  "assets/AssetManifest.json": "assets/AssetManifest.40a34155.json",
+  "assets/AssetManifest.json": "assets/AssetManifest.671b9ac9.json",
   "assets/FontManifest.json": "assets/FontManifest.f589c084.json",
-  "assets/assets/google_fonts/Inter-Black.ttf": "assets/assets/google_fonts/Inter-Black.980c7e87.ttf",
-  "assets/assets/google_fonts/Inter-Bold.ttf": "assets/assets/google_fonts/Inter-Bold.275bfea5.ttf",
-  "assets/assets/google_fonts/Inter-ExtraBold.ttf": "assets/assets/google_fonts/Inter-ExtraBold.c9709fb8.ttf",
-  "assets/assets/google_fonts/Inter-ExtraLight.ttf": "assets/assets/google_fonts/Inter-ExtraLight.0f3ac069.ttf",
-  "assets/assets/google_fonts/Inter-Light.ttf": "assets/assets/google_fonts/Inter-Light.d55f45d0.ttf",
-  "assets/assets/google_fonts/Inter-Medium.ttf": "assets/assets/google_fonts/Inter-Medium.ed533866.ttf",
-  "assets/assets/google_fonts/Inter-Regular.ttf": "assets/assets/google_fonts/Inter-Regular.079af0e2.ttf",
-  "assets/assets/google_fonts/Inter-SemiBold.ttf": "assets/assets/google_fonts/Inter-SemiBold.07a48beb.ttf",
-  "assets/assets/google_fonts/Inter-Thin.ttf": "assets/assets/google_fonts/Inter-Thin.2dce6221.ttf",
   "assets/assets/images/lufei.jpeg": "assets/assets/images/lufei.e42dc430.jpeg",
   "assets/assets/svg/dart.svg": "assets/assets/svg/dart.b201ee39.svg",
   "assets/assets/svg/flutter_logo.svg": "assets/assets/svg/flutter_logo.2a3e180e.svg",
@@ -42,15 +33,15 @@
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
   "icons/Icon-maskable-512.png": "icons/Icon-maskable-512.301a7604.png",
-  "main.dart.js": "main.dart.8029bb92.js",
-  "main.dart.js.map": "main.dart.js.1e14f47d.map",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.2a7c01e4.js",
+  "main.dart.js": "main.dart.a361500a.js",
+  "main.dart.js.map": "main.dart.js.acdbca06.map",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.04b97423.js",
   "main.dart.js_1.part.js.map": "main.dart.js_1.part.js.90636ff1.map",
   "main.dart_0.js": "main.dart_0.9b5c2f9d.js",
-  "main.dart_1.js": "main.dart_1.8ac7760a.js",
+  "main.dart_1.js": "main.dart_1.b5bcd682.js",
   "main.dart_2.js": "main.dart_2.d082204f.js",
   "main.dart_3.js": "main.dart_3.0b4449d6.js",
-  "main.dart_4.js": "main.dart_4.3f085b63.js",
+  "main.dart_4.js": "main.dart_4.2bb668fa.js",
   "main.dart_5.js": "main.dart_5.ad0ec818.js",
   "manifest.json": "manifest.f76404df.json"
 };
