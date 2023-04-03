@@ -28,7 +28,7 @@
   "assets/packages/fluttertoast/assets/toastify.js": "assets/packages/fluttertoast/assets/toastify.e7006a0a.js",
   "assets/packages/wakelock_web/assets/no_sleep.js": "assets/packages/wakelock_web/assets/no_sleep.7748a45c.js",
   "favicon.png": "favicon.5dcef449.png",
-  "flutter.js": "flutter.10920ce5.js",
+  "flutter.js": "flutter.822458aa.js",
   "icons/Icon-192.png": "icons/Icon-192.ac9a721a.png",
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
