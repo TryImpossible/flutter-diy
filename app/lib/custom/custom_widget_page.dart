@@ -1,10 +1,10 @@
 import 'package:app/custom/animated_counter_page.dart';
 import 'package:app/custom/app_refresh_indicator_page.dart';
+import 'package:app/custom/render_object_button.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bubble_page.dart';
 import 'app_scroll_opacity.dart';
-import 'custom_render_object_widget_page.dart';
 import 'dropdown_text_field_page.dart';
 import 'gradient_button_page.dart';
 import 'my_provider/my_provider_page.dart';
@@ -27,7 +27,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
   final Map<String, Widget> _data = () {
     final Map<String, Widget> pages = <String, Widget>{
       '下拉输入文本': const DropdownTextFieldPage(),
-      '通过 RenderObject 自定义 Widget': const CustomRenderObjectWidgetPage(),
+      'RenderObjectButton': const RenderObjectButtonPage(),
       'MyProvider': const MyProviderPage(),
       'GradientButton': const GradientButtonPage(),
       'TurnBox': const TurnBoxPage(),
