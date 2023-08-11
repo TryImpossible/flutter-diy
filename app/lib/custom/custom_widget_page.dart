@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'app_bubble_page.dart';
 import 'app_scroll_opacity.dart';
 import 'dropdown_text_field_page.dart';
+import 'editing_history_page.dart';
 import 'gradient_button_page.dart';
 import 'my_provider/my_provider_page.dart';
 import 'shadow_box_page.dart';
@@ -38,6 +39,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'AppRefreshIndicator': const AppRefreshIndicatorPage(),
       'AppScrollOpacity': const AppScrollOpacityPage(),
       'TouchHeightLight': const TouchHeightLightPage(),
+      'EditingHistory': const EditingHistoryPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
