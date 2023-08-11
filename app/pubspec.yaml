@@ -33,6 +33,7 @@ dependencies:
     path: ../
 #  dokit: ^0.8.1-nullsafety.0
   crypto: ^3.0.1
+  image: ^4.0.17
 
 dev_dependencies:
   integration_test:

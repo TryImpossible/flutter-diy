@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'splicing_image_page.dart';
+
 class ThirdPartyWidgetPage extends StatefulWidget {
   const ThirdPartyWidgetPage({Key? key}) : super(key: key);
 
@@ -14,7 +16,9 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
 
   final ScrollController _controller = ScrollController();
   final Map<String, Widget> _data = () {
-    final Map<String, Widget> pages = <String, Widget>{};
+    final Map<String, Widget> pages = <String, Widget>{
+      '图片切割': const SplicingImagePage(),
+    };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
       List.from(pages.keys)..sort(),
