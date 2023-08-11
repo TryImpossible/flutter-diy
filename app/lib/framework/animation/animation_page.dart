@@ -10,7 +10,9 @@ import 'animated_decorated_box1_page.dart';
 import 'animated_switcher_page.dart';
 import 'animated_widgets_page.dart';
 import 'hero_animation_page.dart';
+
 // import 'route_animation_02_page.dart';
+import 'route_animation_02_page.dart';
 import 'route_animation_page.dart';
 import 'scale_animation_01_page.dart';
 import 'scale_animation_02_page.dart';
@@ -100,16 +102,16 @@ class AnimationPage extends StatelessWidget {
                 },
                 child: const Text('路由动画示例03'),
               ),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     Navigator.of(context).push(MaterialPageRoute(
-              //       builder: (BuildContext context) {
-              //         return const RouteAnimation02Page();
-              //       },
-              //     ));
-              //   },
-              //   child: const Text('路由动画示例04'),
-              // ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const RouteAnimation02Page();
+                    },
+                  ));
+                },
+                child: const Text('路由动画示例04'),
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
