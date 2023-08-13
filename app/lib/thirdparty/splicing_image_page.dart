@@ -92,19 +92,21 @@ class _SplicingImagePageState extends State<SplicingImagePage> {
               _headerImageBytes!,
               width: width,
             ),
-            Image.memory(
-              _bodyImageBytes!,
-              width: width,
-              height: height * 3,
-              repeat: ImageRepeat.repeatY,
-              alignment: Alignment.topCenter,
-              // fit: BoxFit.fitHeight,
-              // centerSlice: Rect.fromLTRB(0, 10, 750, 250 - 10),
-              // centerSlice: Rect.fromLTWH(750 / 2, 250 / 2, 30, 30),
-              // centerSlice: Rect.fromCircle(
-              //   center: Offset(750 / 2, 250 / 2),
-              //   radius: 10,
-              // ),
+            RepaintBoundary(
+              child: Image.memory(
+                _bodyImageBytes!,
+                width: width,
+                height: height * 3,
+                repeat: ImageRepeat.repeatY,
+                alignment: Alignment.topCenter,
+                // fit: BoxFit.fitHeight,
+                // centerSlice: Rect.fromLTRB(0, 10, 750, 250 - 10),
+                // centerSlice: Rect.fromLTWH(750 / 2, 250 / 2, 30, 30),
+                // centerSlice: Rect.fromCircle(
+                //   center: Offset(750 / 2, 250 / 2),
+                //   radius: 10,
+                // ),
+              ),
             ),
             Image.memory(
               _footerImageBytes!,
