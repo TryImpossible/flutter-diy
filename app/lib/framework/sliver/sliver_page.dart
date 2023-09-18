@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'nested_scroll_view_page.dart';
+import 'scroll_view_position_page.dart';
 import 'sliver_example_01_page.dart';
 import 'sliver_example_02_page.dart';
 import 'sliver_example_03_page.dart';
@@ -59,6 +60,11 @@ class SliverPage extends StatelessWidget {
                 context,
                 'NestedScrollView的使用',
                 const NestedScrollViewPage(),
+              ),
+              _buildItem(
+                context,
+                'ScrollView定位的使用',
+                const ScrollViewPositionPage(),
               ),
             ],
           ),
