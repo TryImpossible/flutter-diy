@@ -10,6 +10,7 @@ import 'editing_history_page.dart';
 import 'gradient_button_page.dart';
 import 'my_provider/my_provider_page.dart';
 import 'shadow_box_page.dart';
+import 'sliver_flexible_header_page.dart';
 import 'touch_height_light_page.dart';
 import 'turn_box_page.dart';
 
@@ -40,6 +41,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'AppScrollOpacity': const AppScrollOpacityPage(),
       'TouchHeightLight': const TouchHeightLightPage(),
       'EditingHistory': const EditingHistoryPage(),
+      'SliverFlexibleHeader': const SliverFlexibleHeaderPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
