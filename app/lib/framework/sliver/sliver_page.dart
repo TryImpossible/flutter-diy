@@ -7,6 +7,7 @@ import 'sliver_example_02_page.dart';
 import 'sliver_example_03_page.dart';
 import 'sliver_example_04_page.dart';
 import 'sliver_example_05_page.dart';
+import 'sliver_layout_builder_page.dart';
 
 class SliverPage extends StatelessWidget {
   const SliverPage({Key? key}) : super(key: key);
@@ -55,6 +56,11 @@ class SliverPage extends StatelessWidget {
                 context,
                 '结合DataTable的使用',
                 const SliverExample05Page(),
+              ),
+              _buildItem(
+                context,
+                'SliverLayoutBuilder',
+                const SliverLayoutBuilderPage(),
               ),
               _buildItem(
                 context,

@@ -24,7 +24,6 @@ import 'material_widget_page.dart';
 import 'paginated_data_table_page.dart';
 import 'shader_mask_page.dart';
 import 'sliver/sliver_page.dart';
-import 'sliver_layout_builder_page.dart';
 import 'stateful_builder_page.dart';
 import 'stream_builder_page.dart';
 import 'toggle_buttons_page.dart';
@@ -59,9 +58,8 @@ class FrameworkWidgetPage extends StatelessWidget {
       'Gesture': const GesturePage(),
       'Animation': const AnimationPage(),
       'ColorFiltered': ColorFilteredPage(),
-      'ShaderMask': ShaderMaskPage(),
+      'ShaderMask': const ShaderMaskPage(),
       'StatefulBuilder': const StatefulBuilderPage(),
-      'SliverLayoutBuilder': const SliverLayoutBuilderPage(),
       'CustomSingleChildLayout': const CustomSingleChildLayoutPage(),
       'CustomMultiChildLayout': const CustomMultiChildLayoutPage(),
       'CustomPaint': const CustomPaintPage(),
