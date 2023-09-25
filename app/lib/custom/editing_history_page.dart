@@ -33,45 +33,49 @@ class _EditingHistoryPageState extends State<EditingHistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('EditingHistory')),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            TextField(controller: _controller, autofocus: true),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                StreamBuilder<bool>(
-                  stream: _historyController.canUndo,
-                  builder: (
-                    BuildContext context,
-                    AsyncSnapshot<bool> snapshot,
-                  ) {
-                    return IconButton(
-                      onPressed: snapshot.data == true
-                          ? _historyController.undo
-                          : null,
-                      icon: const Icon(Icons.undo),
-                    );
-                  },
-                ),
-                StreamBuilder<bool>(
-                  stream: _historyController.canRedo,
-                  builder: (
-                    BuildContext context,
-                    AsyncSnapshot<bool> snapshot,
-                  ) {
-                    return IconButton(
-                      onPressed: snapshot.data == true
-                          ? _historyController.redo
-                          : null,
-                      icon: const Icon(Icons.redo),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              TextField(controller: _controller, autofocus: true),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  StreamBuilder<bool>(
+                    stream: _historyController.canUndo,
+                    builder: (
+                      BuildContext context,
+                      AsyncSnapshot<bool> snapshot,
+                    ) {
+                      return IconButton(
+                        onPressed: snapshot.data == true
+                            ? _historyController.undo
+                            : null,
+                        icon: const Icon(Icons.undo),
+                      );
+                    },
+                  ),
+                  StreamBuilder<bool>(
+                    stream: _historyController.canRedo,
+                    builder: (
+                      BuildContext context,
+                      AsyncSnapshot<bool> snapshot,
+                    ) {
+                      return IconButton(
+                        onPressed: snapshot.data == true
+                            ? _historyController.redo
+                            : null,
+                        icon: const Icon(Icons.redo),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
