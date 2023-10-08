@@ -77,3 +77,4 @@ build/
 getx/
 docs/
 private/
+pubspec_overrides.yaml

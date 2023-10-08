@@ -1,0 +1,10 @@
+name: flutter_diy
+
+packages:
+#  - packages/*
+  - app
+  - game
+
+ide:
+  intellij:
+    enabled: false
