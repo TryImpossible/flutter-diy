@@ -1,3 +1,4 @@
+import 'package:app/framework/single_child_render_object_widget_page.dart';
 import 'package:flutter/material.dart';
 
 import 'align_page.dart';
@@ -63,6 +64,8 @@ class FrameworkWidgetPage extends StatelessWidget {
       'CustomSingleChildLayout': const CustomSingleChildLayoutPage(),
       'CustomMultiChildLayout': const CustomMultiChildLayoutPage(),
       'CustomPaint': const CustomPaintPage(),
+      'SingleChildRenderObjectWidget':
+          const SingleChildRenderObjectWidgetPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
