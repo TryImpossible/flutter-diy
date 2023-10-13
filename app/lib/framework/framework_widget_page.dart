@@ -16,6 +16,7 @@ import 'flow_page.dart';
 import 'future_builder_page.dart';
 import 'gesture_page.dart';
 import 'gridview/grid_view_page.dart';
+import 'hit_test_behavior_page.dart';
 import 'inherited_widget_page.dart';
 import 'isolate_compute_page.dart';
 import 'lificycle/lifecycle_page.dart';
@@ -66,6 +67,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'CustomPaint': const CustomPaintPage(),
       'SingleChildRenderObjectWidget':
           const SingleChildRenderObjectWidgetPage(),
+      'HitTestBehavior': const HitTestBehaviorPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
