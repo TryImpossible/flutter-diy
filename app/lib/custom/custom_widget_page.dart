@@ -10,6 +10,7 @@ import 'editing_history_page.dart';
 import 'gradient_button_page.dart';
 import 'my_provider/my_provider_page.dart';
 import 'scrolling_parallax_effect_page.dart';
+import 'progress/progress_page.dart';
 import 'shadow_box_page.dart';
 import 'sliver_flexible_header_page.dart';
 import 'sliver_persistent_header_to_box_page.dart';
@@ -46,6 +47,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'SliverFlexibleHeader': const SliverFlexibleHeaderPage(),
       'SliverPersistentHeaderToBox': const SliverPersistentHeaderToBoxPage(),
       'ScrollingParallaxEffect': const ScrollingParallaxEffectPage(),
+      'Progress': const ProgressPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
