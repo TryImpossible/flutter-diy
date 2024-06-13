@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 bool _tapped = false;
@@ -9,27 +10,27 @@ Decoration get boxDecoration => BoxDecoration(
     );
 
 void runRenderObjectUI() {
-  RenderDecoratedBox box = RenderDecoratedBox(decoration: boxDecoration);
-  RenderingFlutterBinding(
-    root: RenderDecoratedBox(
-      decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
-      child: RenderPositionedBox(
-        alignment: Alignment.center,
-        child: RenderPointerListener(
-          onPointerUp: (PointerUpEvent event) {
-            _tapped = !_tapped;
-            box.decoration = boxDecoration;
-            box.reassemble();
-          },
-          child: RenderConstrainedBox(
-            additionalConstraints: BoxConstraints.tight(const Size(100, 100)),
-            child: box,
-          ),
-        ),
-      ),
-    ),
-  );
-  window.scheduleFrame();
+  // RenderDecoratedBox box = RenderDecoratedBox(decoration: boxDecoration);
+  // RenderingFlutterBinding(
+  //   root: RenderDecoratedBox(
+  //     decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
+  //     child: RenderPositionedBox(
+  //       alignment: Alignment.center,
+  //       child: RenderPointerListener(
+  //         onPointerUp: (PointerUpEvent event) {
+  //           _tapped = !_tapped;
+  //           box.decoration = boxDecoration;
+  //           box.reassemble();
+  //         },
+  //         child: RenderConstrainedBox(
+  //           additionalConstraints: BoxConstraints.tight(const Size(100, 100)),
+  //           child: box,
+  //         ),
+  //       ),
+  //     ),
+  //   ),
+  // );
+  // window.scheduleFrame();
 }
 
 // bool tapped = false;
