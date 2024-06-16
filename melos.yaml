@@ -4,6 +4,7 @@ packages:
 #  - packages/*
   - app
   - game
+  - shorebird_example
 
 ide:
   intellij:
