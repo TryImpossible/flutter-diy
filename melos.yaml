@@ -5,6 +5,7 @@ packages:
   - app
   - game
   - shorebird_example
+  - riverpod_app
 
 ide:
   intellij:
