@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="riverpod_app" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/riverpod_app/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>
