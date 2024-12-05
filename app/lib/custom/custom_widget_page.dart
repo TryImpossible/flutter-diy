@@ -8,6 +8,7 @@ import 'app_scroll_opacity.dart';
 import 'dropdown_text_field_page.dart';
 import 'editing_history_page.dart';
 import 'gradient_button_page.dart';
+import 'digital_keypad_page.dart';
 import 'my_provider/my_provider_page.dart';
 import 'scrolling_parallax_effect_page.dart';
 import 'progress/progress_page.dart';
@@ -48,6 +49,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'SliverPersistentHeaderToBox': const SliverPersistentHeaderToBoxPage(),
       'ScrollingParallaxEffect': const ScrollingParallaxEffectPage(),
       'Progress': const ProgressPage(),
+      'DigitalKeypad': const DigitalKeypadPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
