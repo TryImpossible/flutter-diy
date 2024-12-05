@@ -177,10 +177,16 @@ class AppRouter {
   void refresh() {
     _router.refresh();
   }
+
+  void dispose() {
+    return _router.dispose();
+  }
 }
 
 @riverpod
 AppRouter appRouter(AppRouterRef ref) {
   final AuthRepository authRepository = ref.read(authRepositoryProvider);
-  return AppRouter(authRepository);
+  final AppRouter router = AppRouter(authRepository);
+  ref.onDispose(router.dispose);
+  return router;
 }
