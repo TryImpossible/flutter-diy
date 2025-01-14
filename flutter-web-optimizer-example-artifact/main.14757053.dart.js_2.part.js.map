@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "engine": "v2",
+  "file": "main.dart.js_2.part.js",
+  "sourceRoot": "",
+  "sources": ["../../../lib/sub_page.dart","../../../lib/widget/image_widget.dart"],
+  "names": ["SubPage","SubPage.build","ImageWidget.build","ImageWidget.build.<anonymous function>","lufei"],
+  "mappings": "A;;;0DAIQA;2BAAoBA,C;;;;;;;;;;CAGnBC,IACLA;OAAOA,MACGA,SAAoBA,KACtBA,KACGA,KCPPA,4BDcNA,C;ACTSC;CADFA,IACLA,aAEWA,gBADYA,6BASzBA,C;;;EARaC,UACMA,MAAmCA;AAC9CA,OAAoBA,iCAIvBA,MAFGA,QAAaA,GAEhBA,C",
+  "x_org_dartlang_dart2js": {
+    "minified_names": {
+      "global": "",
+      "instance": ""
+    },
+    "frames": "+cAc6BI4B;"
+  }
+}
