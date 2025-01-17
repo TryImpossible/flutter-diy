@@ -41,7 +41,7 @@
   "canvaskit/skwasm.wasm": "canvaskit/skwasm.wasm",
   "canvaskit/skwasm.worker.js": "canvaskit/skwasm.worker.js",
   "favicon.png": "favicon.5dcef449.png",
-  "flutter.js": "flutter.5fad6280.js",
+  "flutter.js": "flutter.9e2caca1.js",
   "icons/Icon-192.png": "icons/Icon-192.ac9a721a.png",
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
