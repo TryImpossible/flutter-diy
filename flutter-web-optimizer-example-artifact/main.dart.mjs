@@ -522,6 +522,18 @@ class CompiledApp {
       _1725: () => typeof dartUseDateNowForTicks !== "undefined",
       _1726: () => 1000 * performance.now(),
       _1727: () => Date.now(),
+      _1728: () => {
+        // On browsers return `globalThis.location.href`
+        if (globalThis.location != null) {
+          return globalThis.location.href;
+        }
+        return null;
+      },
+      _1729: () => {
+        return typeof process != "undefined" &&
+               Object.prototype.toString.call(process) == "[object process]" &&
+               process.platform == "win32"
+      },
       _1730: () => new WeakMap(),
       _1731: (map, o) => map.get(o),
       _1732: (map, o, v) => map.set(o, v),
@@ -547,6 +559,7 @@ class CompiledApp {
       _1766: (a, i) => a.splice(i, 1),
       _1768: (a, s) => a.join(s),
       _1769: (a, s, e) => a.slice(s, e),
+      _1771: (a, b) => a == b ? 0 : (a > b ? 1 : -1),
       _1772: a => a.length,
       _1774: (a, i) => a[i],
       _1775: (a, i, v) => a[i] = v,
@@ -607,6 +620,7 @@ class CompiledApp {
       _1842: (x0,x1,x2,x3) => x0.open(x1,x2,x3),
       _1843: (x0,x1,x2) => x0.setRequestHeader(x1,x2),
       _1844: (x0,x1) => x0.send(x1),
+      _1845: x0 => x0.abort(),
       _1846: x0 => x0.getAllResponseHeaders(),
       _1851: (x0,x1) => x0.createElement(x1),
       _1854: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._1854(f,arguments.length,x0) }),
@@ -904,7 +918,10 @@ class CompiledApp {
       _3424: (x0,x1) => x0.type = x1,
       _3428: (x0,x1) => x0.async = x1,
       _3442: (x0,x1) => x0.charset = x1,
+      _3909: () => globalThis.window,
+      _3953: x0 => x0.document,
       _6626: x0 => x0.length,
+      _6675: x0 => x0.baseURI,
       _6692: () => globalThis.document,
       _6785: x0 => x0.body,
       _6787: x0 => x0.head,

@@ -5,15 +5,15 @@
     
     // window.mainjsManifest
     var mainjsManifest = {
-  "main.dart.js": "main.dart.aa1decd6.js",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.216d6af9.js",
-  "main.dart.js_2.part.js": "main.dart.js_2.part.db6e7342.js",
-  "main.dart_0.js": "main.dart_0.fd4b2184.js",
-  "main.dart_1.js": "main.dart_1.77d8de8d.js",
-  "main.dart_2.js": "main.dart_2.9d7fc524.js",
-  "main.dart_3.js": "main.dart_3.6d666f14.js",
-  "main.dart_4.js": "main.dart_4.3fed5c62.js",
-  "main.dart_5.js": "main.dart_5.be108c16.js"
+  "main.dart.js": "main.dart.4d0cc01b.js",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.391ae524.js",
+  "main.dart.js_2.part.js": "main.dart.js_2.part.85b54716.js",
+  "main.dart_0.js": "main.dart_0.7c1aaf8f.js",
+  "main.dart_1.js": "main.dart_1.1d4a3b75.js",
+  "main.dart_2.js": "main.dart_2.0caaa23d.js",
+  "main.dart_3.js": "main.dart_3.a8e56f6d.js",
+  "main.dart_4.js": "main.dart_4.7d7863be.js",
+  "main.dart_5.js": "main.dart_5.0e69ad8a.js"
 };
     
     // window.hashFileManifest
@@ -46,26 +46,26 @@
   "icons/Icon-512.png": "icons/Icon-512.96e75261.png",
   "icons/Icon-maskable-192.png": "icons/Icon-maskable-192.c457ef57.png",
   "icons/Icon-maskable-512.png": "icons/Icon-maskable-512.301a7604.png",
-  "main.dart.js": "main.dart.aa1decd6.js",
-  "main.dart.js.map": "main.dart.js.ea670dbb.map",
-  "main.dart.js_1.part.js": "main.dart.js_1.part.216d6af9.js",
-  "main.dart.js_1.part.js.map": "main.dart.js_1.part.js.44d30495.map",
-  "main.dart.js_2.part.js": "main.dart.js_2.part.db6e7342.js",
+  "main.dart.js": "main.dart.4d0cc01b.js",
+  "main.dart.js.map": "main.dart.js.3e228042.map",
+  "main.dart.js_1.part.js": "main.dart.js_1.part.391ae524.js",
+  "main.dart.js_1.part.js.map": "main.dart.js_1.part.js.36bc922b.map",
+  "main.dart.js_2.part.js": "main.dart.js_2.part.85b54716.js",
   "main.dart.js_2.part.js.map": "main.dart.js_2.part.js.14757053.map",
-  "main.dart_0.js": "main.dart_0.fd4b2184.js",
-  "main.dart_1.js": "main.dart_1.77d8de8d.js",
-  "main.dart_2.js": "main.dart_2.9d7fc524.js",
-  "main.dart_3.js": "main.dart_3.6d666f14.js",
-  "main.dart_4.js": "main.dart_4.3fed5c62.js",
-  "main.dart_5.js": "main.dart_5.be108c16.js",
+  "main.dart_0.js": "main.dart_0.7c1aaf8f.js",
+  "main.dart_1.js": "main.dart_1.1d4a3b75.js",
+  "main.dart_2.js": "main.dart_2.0caaa23d.js",
+  "main.dart_3.js": "main.dart_3.a8e56f6d.js",
+  "main.dart_4.js": "main.dart_4.7d7863be.js",
+  "main.dart_5.js": "main.dart_5.0e69ad8a.js",
   "manifest.json": "manifest.f76404df.json"
 };
 
     // window.deferredLibraryParts
-    var deferredLibraryParts = {sub_page:[0],image_widget:[1]};
+    var deferredLibraryParts = {};
 
     // window.deferredPartUris
-    var deferredPartUris = ["main.dart.js_2.part.js","main.dart.js_1.part.js"];
+    var deferredPartUris = [];
     
     // hook dynamic create element `src` `href` property
     (function(){
