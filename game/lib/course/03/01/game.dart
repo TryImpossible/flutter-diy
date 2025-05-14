@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/collisions.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
 
   @override
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+    KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
     print(event.runtimeType);
@@ -68,20 +69,16 @@ class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
     if (event.logicalKey == LogicalKeyboardKey.keyX && isKeyDown) {
       _player.flip(x: true);
     }
-    if (event.logicalKey == LogicalKeyboardKey.arrowUp ||
-        event.logicalKey == LogicalKeyboardKey.keyW && isKeyDown) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowUp || event.logicalKey == LogicalKeyboardKey.keyW && isKeyDown) {
       _player.move(Vector2(0, -_step));
     }
-    if (event.logicalKey == LogicalKeyboardKey.arrowDown ||
-        event.logicalKey == LogicalKeyboardKey.keyS && isKeyDown) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowDown || event.logicalKey == LogicalKeyboardKey.keyS && isKeyDown) {
       _player.move(Vector2(0, _step));
     }
-    if (event.logicalKey == LogicalKeyboardKey.arrowLeft ||
-        event.logicalKey == LogicalKeyboardKey.keyA && isKeyDown) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowLeft || event.logicalKey == LogicalKeyboardKey.keyA && isKeyDown) {
       _player.move(Vector2(-_step, 0));
     }
-    if (event.logicalKey == LogicalKeyboardKey.arrowRight ||
-        event.logicalKey == LogicalKeyboardKey.keyD && isKeyDown) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowRight || event.logicalKey == LogicalKeyboardKey.keyD && isKeyDown) {
       _player.move(Vector2(_step, 0));
     }
     return super.onKeyEvent(event, keysPressed);

@@ -2,7 +2,7 @@ import 'package:flame/game.dart';
 
 import 'component.dart';
 
-class OwnGame extends FlameGame with HasTappables, HasHoverables {
+class OwnGame extends FlameGame {
   late final AdventurerComponent _player;
 
   @override

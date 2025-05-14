@@ -78,3 +78,6 @@ getx/
 docs/
 private/
 pubspec_overrides.yaml
+
+# FVM Version Cache
+.fvm/

@@ -1,5 +1,7 @@
 name: flutter_diy
 
+sdkPath: .fvm/flutter_sdk
+
 packages:
 #  - packages/*
   - app

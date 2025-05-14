@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'liveable.dart';
 
 class AdventurerComponent extends SpriteAnimationComponent
-    with HasGameRef, Liveable {
+    with HasGameReference, Liveable {
   AdventurerComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
   @override
@@ -13,15 +13,15 @@ class AdventurerComponent extends SpriteAnimationComponent
     List<Sprite> sprites = <Sprite>[];
     for (int i = 0; i <= 8; i++) {
       sprites
-          .add(await gameRef.loadSprite('adventurer/adventurer-bow-0$i.png'));
+          .add(await game.loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
     animation = SpriteAnimation.spriteList(sprites, stepTime: 0.15, loop: true);
-    animation!.onComplete = _onLastFrame;
-    position = gameRef.size / 2;
+    animationTicker!.onComplete = _onLastFrame;
+    position = game.size / 2;
   }
 
   void shoot() {
-    animation!.reset();
+    animationTicker!.reset();
   }
 
   void flip({bool x = false, bool y = true}) {
@@ -37,7 +37,7 @@ class AdventurerComponent extends SpriteAnimationComponent
   }
 
   void _onLastFrame() {
-    animation!.currentIndex = 0;
-    animation!.update(0);
+    animationTicker!.currentIndex = 0;
+    animationTicker!.update(0);
   }
 }

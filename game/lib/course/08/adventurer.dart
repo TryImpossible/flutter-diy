@@ -6,7 +6,7 @@ import 'bullet.dart';
 import 'liveable.dart';
 
 class AdventurerComponent extends SpriteAnimationComponent
-    with HasGameRef, Liveable {
+    with HasGameReference, Liveable {
   AdventurerComponent() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
   late Sprite _bulletSprite;
@@ -19,22 +19,22 @@ class AdventurerComponent extends SpriteAnimationComponent
     List<Sprite> sprites = <Sprite>[];
     for (int i = 0; i <= 8; i++) {
       sprites
-          .add(await gameRef.loadSprite('adventurer/adventurer-bow-0$i.png'));
+          .add(await game.loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
     animation = SpriteAnimation.spriteList(
       sprites,
       stepTime: 0.15,
       loop: false,
     );
-    animation!.onComplete = _onLastFrame;
-    position = gameRef.size / 2;
+    animationTicker!.onComplete = _onLastFrame;
+    position = game.size / 2;
 
-    _bulletSprite = await gameRef.loadSprite('adventurer/weapon_arrow.png');
+    _bulletSprite = await game.loadSprite('adventurer/weapon_arrow.png');
   }
 
   void shoot() {
     _playing = true;
-    animation!.reset();
+    animationTicker!.reset();
   }
 
   void flip({bool x = false, bool y = true}) {
@@ -50,8 +50,8 @@ class AdventurerComponent extends SpriteAnimationComponent
   }
 
   void _onLastFrame() {
-    animation!.currentIndex = 0;
-    animation!.update(0);
+    animationTicker!.currentIndex = 0;
+    animationTicker!.update(0);
 
     /// 添加子弹
     Bullet bullet = Bullet(sprite: _bulletSprite, maxRange: 200);
@@ -60,7 +60,7 @@ class AdventurerComponent extends SpriteAnimationComponent
     bullet.priority = 1;
     priority = 2;
     bullet.position = position - Vector2(0, -3);
-    gameRef.add(bullet);
+    game.add(bullet);
   }
 
   final double _speed = 100;

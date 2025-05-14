@@ -1,6 +1,6 @@
 import 'package:flame/components.dart';
 
-class AdventurerComponent extends SpriteAnimationComponent with HasGameRef {
+class AdventurerComponent extends SpriteAnimationComponent with HasGameReference {
   final Function()? onLastFrame;
   final SpriteAnimation spriteAnimation;
 
@@ -15,12 +15,12 @@ class AdventurerComponent extends SpriteAnimationComponent with HasGameRef {
 
   @override
   Future<void> onLoad() async {
-    animation!.onComplete = _onLastFrame;
+    animationTicker!.onComplete = _onLastFrame;
   }
 
   void shoot() {
     playing = true;
-    animation!.reset();
+    animationTicker!.reset();
   }
 
   void flip({
@@ -31,8 +31,8 @@ class AdventurerComponent extends SpriteAnimationComponent with HasGameRef {
   }
 
   void _onLastFrame() async {
-    animation!.currentIndex = 0;
-    animation!.update(0);
+    animationTicker!.currentIndex = 0;
+    animationTicker!.update(0);
     onLastFrame?.call();
   }
 }

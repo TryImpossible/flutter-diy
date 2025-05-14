@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flame/input.dart';
+import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
 
 class AdventurerComponent extends SpriteAnimationComponent
-    with HasGameRef, Tappable, Hoverable {
+    with HasGameReference, TapCallbacks, HoverCallbacks {
   late final RectangleHitbox _box;
   double _counter = 0;
 
@@ -17,22 +17,22 @@ class AdventurerComponent extends SpriteAnimationComponent
     List<Sprite> sprites = [];
     for (int i = 0; i <= 8; i++) {
       sprites
-          .add(await gameRef.loadSprite('adventurer/adventurer-bow-0$i.png'));
+          .add(await game.loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
     animation = SpriteAnimation.spriteList(sprites, stepTime: 0.15);
-    position = gameRef.size / 2;
+    position = game.size / 2;
     _box = RectangleHitbox()..debugMode = false;
     add(_box);
   }
 
   @override
-  bool onTapUp(TapUpInfo info) {
+  bool onTapUp(TapUpEvent event) {
     _box.debugMode = true;
     return true;
   }
 
   @override
-  bool onTapDown(TapDownInfo info) {
+  bool onTapDown(TapDownEvent event) {
     _box.debugMode = true;
     _box.debugColor = Colors.red;
     _counter++;
@@ -41,20 +41,20 @@ class AdventurerComponent extends SpriteAnimationComponent
   }
 
   @override
-  bool onTapCancel() {
+  bool onTapCancel(TapCancelEvent event) {
     _box.debugMode = false;
     return true;
   }
 
   @override
-  bool onHoverEnter(PointerHoverInfo info) {
+  bool onHoverEnter() {
     _box.debugMode = true;
     _box.debugColor = Colors.greenAccent;
     return true;
   }
 
   @override
-  bool onHoverLeave(PointerHoverInfo info) {
+  bool onHoverExit() {
     _box.debugMode = false;
     return true;
   }

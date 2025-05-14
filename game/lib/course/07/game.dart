@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame/sprite.dart';
@@ -86,7 +87,7 @@ class OwnGame extends FlameGame with KeyboardEvents, TapDetector, PanDetector {
 
   @override
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+    KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
     final isKeyDown = event is RawKeyDownEvent;

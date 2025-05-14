@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 
 import 'component.dart';
 
-class OwnGame extends FlameGame with HasDraggables {
+class OwnGame extends FlameGame {
   late final JoystickComponent _moveJoystick;
   late final JoystickComponent _rotateJoystick;
   late final AdventurerComponent _player;
