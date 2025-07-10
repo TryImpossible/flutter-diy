@@ -8,6 +8,7 @@ packages:
   - game
   - shorebird_example
   - riverpod_app
+  - brick_breaker_game
 
 ide:
   intellij:
