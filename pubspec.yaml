@@ -1,10 +1,26 @@
 name: flutter_diy
 description: A new Flutter package project.
+publish_to: none
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ^3.8.1
+
+workspace:
+  #  - packages/*
+  - app
+  - game
+  - shorebird_example
+  - riverpod_app
+  - brick_breaker_game
 
 dev_dependencies:
-  melos: ^6.3.3
+  melos: ^7.0.0-dev.9
+
+melos:
+  sdkPath: .fvm/flutter_sdk
+
+  ide:
+    intellij:
+      enabled: false
