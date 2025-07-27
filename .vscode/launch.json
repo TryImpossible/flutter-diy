@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "app",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "brick_breaker_game",
+      "cwd": "brick_breaker_game",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "game",
+      "cwd": "game",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "riverpod_app",
+      "cwd": "riverpod_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "shorebird_example",
+      "cwd": "shorebird_example",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
+    },
+  ]
+}
