@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 
 class Bullet extends SpriteComponent {
   Bullet({required Sprite sprite, required this.maxRange})
-      : super(sprite: sprite);
+    : super(sprite: sprite);
 
   final double _speed = 200;
   final double maxRange;

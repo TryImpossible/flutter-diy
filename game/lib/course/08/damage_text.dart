@@ -6,26 +6,15 @@ class DamageText extends PositionComponent {
     fontSize: 14,
     color: Colors.white,
     fontFamily: 'Menlo',
-    shadows: [
-      Shadow(
-        color: Colors.red,
-        offset: Offset(1, 1),
-        blurRadius: 1,
-      ),
-    ],
+    shadows: [Shadow(color: Colors.red, offset: Offset(1, 1), blurRadius: 1)],
   );
 
   final TextStyle _critDamageTextStyle = const TextStyle(
-      fontSize: 15,
-      color: Colors.yellow,
-      fontFamily: 'Menlo',
-      shadows: [
-        Shadow(
-          color: Colors.red,
-          offset: Offset(1, 1),
-          blurRadius: 1,
-        ),
-      ]);
+    fontSize: 15,
+    color: Colors.yellow,
+    fontFamily: 'Menlo',
+    shadows: [Shadow(color: Colors.red, offset: Offset(1, 1), blurRadius: 1)],
+  );
 
   void addDamage(int damage, {bool isCrit = false}) {
     Vector2 offset = Vector2(-30, 0);
@@ -67,7 +56,8 @@ class DamageText extends PositionComponent {
       textRenderer: TextPaint(style: style),
     );
     infoText.text = '暴击';
-    infoText.position = position +
+    infoText.position =
+        position +
         Vector2(damageText.width - infoText.width / 2, -infoText.height / 2);
     add(infoText);
     add(damageText);

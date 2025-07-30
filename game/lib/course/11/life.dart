@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:game/course/06/damage_text.dart';
@@ -34,7 +36,7 @@ class LifeComponent extends PositionComponent {
   double get _progress => _currentLife / lifePoint;
 
   @override
-  Future<void>? onLoad() {
+  FutureOr<void> onLoad() {
     _outlinePaint
       ..color = outlineColor
       ..style = PaintingStyle.stroke

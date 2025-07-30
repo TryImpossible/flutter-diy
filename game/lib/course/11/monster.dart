@@ -13,11 +13,11 @@ class MonsterComponent extends SpriteAnimationComponent with Liveable {
     required Vector2 position,
     required this.life,
   }) : super(
-          animation: animation,
-          size: size,
-          position: position,
-          anchor: Anchor.topLeft,
-        );
+         animation: animation,
+         size: size,
+         position: position,
+         anchor: Anchor.topLeft,
+       );
 
   final double life;
 

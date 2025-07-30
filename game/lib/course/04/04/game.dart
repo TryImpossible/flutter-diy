@@ -39,7 +39,10 @@ class OwnGame extends FlameGame with KeyboardEvents {
     final double pY = _random.nextDouble() * size.y;
     final double pX = size.x - monsterSize.x / 2;
     _monster = MonsterComponent(
-        animation: animation, size: monsterSize, position: Vector2(pX, pY));
+      animation: animation,
+      size: monsterSize,
+      position: Vector2(pX, pY),
+    );
     add(_player);
     add(_monster);
   }
@@ -49,7 +52,7 @@ class OwnGame extends FlameGame with KeyboardEvents {
     KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    final isKeyDown = event is RawKeyDownEvent;
+    final isKeyDown = event is KeyDownEvent;
     if (event.logicalKey == LogicalKeyboardKey.keyY && isKeyDown) {
       _player.flip(y: true);
     }

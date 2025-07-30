@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flame/components.dart';
@@ -15,7 +16,7 @@ class Bullet extends SpriteComponent {
   final bool isLeft;
 
   @override
-  Future<void>? onLoad() {
+  FutureOr<void>? onLoad() {
     if (!isLeft) {
       angle = pi;
     }

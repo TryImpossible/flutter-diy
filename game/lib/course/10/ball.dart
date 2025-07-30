@@ -1,12 +1,10 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+import 'package:game/course/10/game.dart';
 
-class Ball extends PositionComponent with HasGameRef {
+class Ball extends PositionComponent with HasGameReference<OwnGame> {
   Ball({this.color = Colors.white, this.tag})
-      : super(
-          size: Vector2(60, 60),
-          anchor: Anchor.center,
-        );
+    : super(size: Vector2(60, 60), anchor: Anchor.center);
 
   final Color color;
   final String? tag;
@@ -27,7 +25,7 @@ class Ball extends PositionComponent with HasGameRef {
   Future<void>? onLoad() {
     // return super.onLoad();
     _paint.color = color;
-    position = gameRef.size / 2;
+    position = game.size / 2;
     v = Vector2(80, 50);
   }
 
@@ -42,7 +40,7 @@ class Ball extends PositionComponent with HasGameRef {
     v += a * dt;
     position += v * dt;
 
-    final Vector2 winSize = gameRef.size;
+    final Vector2 winSize = game.size;
     // 限定下边界
     if (position.y > winSize.y - size.y / 2) {
       position.y = winSize.y - size.y / 2;

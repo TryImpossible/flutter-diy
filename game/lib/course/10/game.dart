@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'ball.dart';
@@ -6,7 +8,7 @@ class OwnGame extends FlameGame with TapDetector, DoubleTapDetector {
   int _counter = 0;
 
   @override
-  Future<void>? onLoad() {
+  FutureOr<void> onLoad() {
     _addBall();
   }
 

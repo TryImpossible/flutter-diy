@@ -1,6 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flutter/material.dart';
+import 'package:game/course/11/game.dart';
 import 'adventurer.dart';
 import 'life.dart';
 import 'bullet.dart';
@@ -25,7 +26,7 @@ class HeroAttr {
   double critDamage; // 暴击伤害
 }
 
-class HeroComponent extends PositionComponent with HasGameRef {
+class HeroComponent extends PositionComponent with HasGameReference<OwnGame> {
   HeroAttr attr;
   late AdventurerComponent adventurer;
   late LifeComponent lifeComponent;
@@ -44,14 +45,18 @@ class HeroComponent extends PositionComponent with HasGameRef {
   @override
   Future<void> onLoad() async {
     adventurer = AdventurerComponent(
-        size: size, spriteAnimation: spriteAnimation, onLastFrame: addBullet);
+      size: size,
+      spriteAnimation: spriteAnimation,
+      onLastFrame: addBullet,
+    );
     adventurer.position = adventurer.size / 2;
     lifeComponent = LifeComponent(
-        lifePoint: attr.life,
-        lifeColor: Colors.blue,
-        position: adventurer.position,
-        size: adventurer.size);
-    bulletSprite = await gameRef.loadSprite('adventurer/weapon_arrow.png');
+      lifePoint: attr.life,
+      lifeColor: Colors.blue,
+      position: adventurer.position,
+      size: adventurer.size,
+    );
+    bulletSprite = await game.loadSprite('adventurer/weapon_arrow.png');
     add(adventurer);
     add(lifeComponent);
   }
@@ -69,13 +74,10 @@ class HeroComponent extends PositionComponent with HasGameRef {
     bullet.priority = 1;
     priority = 2;
     bullet.position = position - Vector2(0, -3);
-    gameRef.add(bullet);
+    game.add(bullet);
   }
 
-  void flip({
-    bool x = false,
-    bool y = true,
-  }) {
+  void flip({bool x = false, bool y = true}) {
     adventurer.flip(x: x, y: y);
     isLeft = !isLeft;
   }
@@ -109,13 +111,6 @@ class HeroComponent extends PositionComponent with HasGameRef {
     _checkFlip(target);
     removeAll(children.whereType<MoveEffect>());
     double timeMs = (target - position).length / attr.speed;
-    add(
-      MoveEffect.to(
-        target,
-        EffectController(
-          duration: timeMs,
-        ),
-      ),
-    );
+    add(MoveEffect.to(target, EffectController(duration: timeMs)));
   }
 }

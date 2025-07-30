@@ -4,9 +4,10 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
+import 'package:game/course/03/02/game.dart';
 
 class AdventurerComponent extends SpriteAnimationComponent
-    with HasGameReference, TapCallbacks, HoverCallbacks {
+    with HasGameReference<OwnGame>, TapCallbacks, HoverCallbacks {
   late final RectangleHitbox _box;
   double _counter = 0;
 
@@ -16,8 +17,7 @@ class AdventurerComponent extends SpriteAnimationComponent
   Future<void>? onLoad() async {
     List<Sprite> sprites = [];
     for (int i = 0; i <= 8; i++) {
-      sprites
-          .add(await game.loadSprite('adventurer/adventurer-bow-0$i.png'));
+      sprites.add(await game.loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
     animation = SpriteAnimation.spriteList(sprites, stepTime: 0.15);
     position = game.size / 2;

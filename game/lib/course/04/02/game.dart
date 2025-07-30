@@ -55,7 +55,7 @@ class OwnGame extends FlameGame with KeyboardEvents {
     KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    final isKeyDown = event is RawKeyDownEvent;
+    final isKeyDown = event is KeyDownEvent;
     if (event.logicalKey == LogicalKeyboardKey.keyY && isKeyDown) {
       _player.flip(y: true);
     }

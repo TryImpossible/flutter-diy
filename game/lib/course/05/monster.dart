@@ -8,11 +8,11 @@ class MonsterComponent extends SpriteAnimationComponent with Liveable {
     required Vector2 size,
     required Vector2 position,
   }) : super(
-          animation: animation,
-          size: size,
-          position: position,
-          anchor: Anchor.center,
-        );
+         animation: animation,
+         size: size,
+         position: position,
+         anchor: Anchor.center,
+       );
 
   @override
   Future<void> onLoad() async {

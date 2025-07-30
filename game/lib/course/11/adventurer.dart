@@ -1,17 +1,21 @@
 import 'package:flame/components.dart';
+import 'package:game/course/11/game.dart';
 
-class AdventurerComponent extends SpriteAnimationComponent with HasGameReference {
+class AdventurerComponent extends SpriteAnimationComponent
+    with HasGameReference<OwnGame> {
   final Function()? onLastFrame;
   final SpriteAnimation spriteAnimation;
 
-  AdventurerComponent(
-      {this.onLastFrame, required this.spriteAnimation, required Vector2 size})
-      : super(
-          size: size,
-          anchor: Anchor.center,
-          playing: false,
-          animation: spriteAnimation,
-        );
+  AdventurerComponent({
+    this.onLastFrame,
+    required this.spriteAnimation,
+    required Vector2 size,
+  }) : super(
+         size: size,
+         anchor: Anchor.center,
+         playing: false,
+         animation: spriteAnimation,
+       );
 
   @override
   Future<void> onLoad() async {
@@ -23,10 +27,7 @@ class AdventurerComponent extends SpriteAnimationComponent with HasGameReference
     animationTicker!.reset();
   }
 
-  void flip({
-    bool x = false,
-    bool y = true,
-  }) {
+  void flip({bool x = false, bool y = true}) {
     scale = Vector2(scale.x * (y ? -1 : 1), scale.y * (x ? -1 : 1));
   }
 

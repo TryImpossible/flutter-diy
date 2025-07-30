@@ -34,10 +34,12 @@ class OwnGame extends FlameGame with KeyboardEvents, PanDetector {
 
     Vector2 monsterSize = Vector2(64, 64);
     _monster2 = await _createMonster2(
-        Vector2(size.x - monsterSize.x / 2 - 200, size.y / 4));
+      Vector2(size.x - monsterSize.x / 2 - 200, size.y / 4),
+    );
     add(_monster2);
-    _monster3 =
-        await _createMonster2(Vector2(monsterSize.x / 2 + 50, size.y / 4));
+    _monster3 = await _createMonster2(
+      Vector2(monsterSize.x / 2 + 50, size.y / 4),
+    );
     add(_monster3);
   }
 
@@ -46,8 +48,11 @@ class OwnGame extends FlameGame with KeyboardEvents, PanDetector {
     for (int i = 0; i <= 8; i++) {
       sprites.add(await loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
-    SpriteAnimation animation =
-        SpriteAnimation.spriteList(sprites, stepTime: 0.1, loop: false);
+    SpriteAnimation animation = SpriteAnimation.spriteList(
+      sprites,
+      stepTime: 0.1,
+      loop: false,
+    );
 
     final HeroAttr heroAttr = HeroAttr(
       life: 3000,

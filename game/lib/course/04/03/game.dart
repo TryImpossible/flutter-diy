@@ -25,15 +25,21 @@ class OwnGame extends FlameGame with KeyboardEvents {
     const String src = 'adventurer/Characters-part-2.png';
     final Image image = await images.load(src);
 
-    final SpriteSheet sheet =
-        SpriteSheet.fromColumnsAndRows(image: image, columns: 9, rows: 6);
+    final SpriteSheet sheet = SpriteSheet.fromColumnsAndRows(
+      image: image,
+      columns: 9,
+      rows: 6,
+    );
     final List<Sprite> sprites = sheet.getRowSprites(
       row: 0,
       start: 5,
       count: 4,
     );
-    final SpriteAnimation animation =
-        SpriteAnimation.spriteList(sprites, stepTime: 1 / 10, loop: true);
+    final SpriteAnimation animation = SpriteAnimation.spriteList(
+      sprites,
+      stepTime: 1 / 10,
+      loop: true,
+    );
 
     final Vector2 monsterSize = Vector2(32, 48);
     final double pY = _random.nextDouble() * size.y;
@@ -51,7 +57,7 @@ class OwnGame extends FlameGame with KeyboardEvents {
     KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    final isKeyDown = event is RawKeyDownEvent;
+    final isKeyDown = event is KeyDownEvent;
     if (event.logicalKey == LogicalKeyboardKey.keyY && isKeyDown) {
       _player.flip(y: true);
     }
