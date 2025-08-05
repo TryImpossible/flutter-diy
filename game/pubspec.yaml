@@ -101,6 +101,8 @@ flutter:
   assets:
     - assets/audio/
     - assets/images/adventurer/
+    - assets/images/adventurer/skill01/
+    - assets/images/adventurer/skill02/
     - assets/images/touch/
 
   fonts:
