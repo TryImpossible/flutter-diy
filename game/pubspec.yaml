@@ -104,6 +104,7 @@ flutter:
     - assets/images/adventurer/skill01/
     - assets/images/adventurer/skill02/
     - assets/images/touch/
+    - assets/images/parallax/
     - assets/images/
 
   fonts:
