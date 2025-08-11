@@ -32,6 +32,7 @@ import 'course/21/03/main.dart' as course2103;
 import 'course/21/04/main.dart' as course2104;
 import 'course/22/01/main.dart' as course2201;
 import 'course/22/02/main.dart' as course2202;
+import 'course/23/main.dart' as course23;
 
 void main() {
   // course01.main();
@@ -66,5 +67,6 @@ void main() {
   // course2103.main();
   // course2104.main();
   // course2201.main();
-  course2202.main();
+  // course2202.main();
+  course23.main();
 }

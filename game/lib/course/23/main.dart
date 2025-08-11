@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'app/key.dart';
 import 'game.dart';
+import 'l10n/arb/app_localizations.dart';
 import 'menu/main.dart';
 import 'menu/pause.dart';
 
@@ -23,6 +24,9 @@ class GameApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: AppLocalizations.supportedLocales[1],
       debugShowCheckedModeBanner: false,
       navigatorKey: Keys.navKey,
       themeMode: ThemeMode.dark,
