@@ -16,7 +16,7 @@ workspace:
   - brick_breaker_game
 
 dev_dependencies:
-  melos: ^7.0.0-dev.9
+  melos: ^7.1.0
 
 melos:
   sdkPath: .fvm/flutter_sdk
