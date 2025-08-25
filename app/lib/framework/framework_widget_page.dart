@@ -1,4 +1,3 @@
-import 'package:app/framework/single_child_render_object_widget_page.dart';
 import 'package:flutter/material.dart';
 
 import 'align_page.dart';
@@ -9,6 +8,7 @@ import 'color_filtered_page.dart';
 import 'custom_multi_child_layout_page.dart';
 import 'custom_paint/custom_paint_page.dart';
 import 'custom_single_child_layout_page.dart';
+import 'drag_and_drop_page.dart';
 import 'draggable_scrollable_sheet_page.dart';
 import 'expansion_panel_list_page.dart';
 import 'fittedbox_page.dart';
@@ -25,6 +25,7 @@ import 'listview/list_view_page.dart';
 import 'material_widget_page.dart';
 import 'paginated_data_table_page.dart';
 import 'shader_mask_page.dart';
+import 'single_child_render_object_widget_page.dart';
 import 'sliver/sliver_page.dart';
 import 'stateful_builder_page.dart';
 import 'stream_builder_page.dart';
@@ -68,6 +69,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'SingleChildRenderObjectWidget':
           const SingleChildRenderObjectWidgetPage(),
       'HitTestBehavior': const HitTestBehaviorPage(),
+      'DragAndDropPage': const DragAndDropPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
@@ -108,9 +110,9 @@ class _ListItem extends StatelessWidget {
     Key? key,
     required Map<String, Widget> data,
     required int index,
-  })  : _data = data,
-        _index = index,
-        super(key: key);
+  }) : _data = data,
+       _index = index,
+       super(key: key);
 
   final Map<String, Widget> _data;
   final int _index;
