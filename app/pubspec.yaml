@@ -32,10 +32,14 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   ffi_plugin:
-    path: ../
+    path: ./packages/ffi_plugin
+  sqlite_ffi:
+    path: ../sqlite_ffi
 #  dokit: ^0.8.1-nullsafety.0
   crypto: ^3.0.6
   image: ^4.5.4
+  path: ^1.9.1
+  path_provider: ^2.1.5
 
 dev_dependencies:
   integration_test:
