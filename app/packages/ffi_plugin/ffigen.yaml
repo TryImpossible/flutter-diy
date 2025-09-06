@@ -1,0 +1,22 @@
+# Run with `dart run ffigen --config ffigen.yaml`.
+name: FfiPluginBindings
+description: |
+  Bindings for `src/ffi_plugin.h`.
+
+  Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
+output: 'lib/ffi_plugin_bindings_generated.dart'
+headers:
+  entry-points:
+    - 'src/ffi_plugin.h'
+  include-directives:
+    - 'src/ffi_plugin.h'
+preamble: |
+  // ignore_for_file: always_specify_types
+  // ignore_for_file: camel_case_types
+  // ignore_for_file: non_constant_identifier_names
+comments:
+  style: any
+  length: full
+compiler-opts:
+  - '-Wno-expansion-to-defined'  # 忽略宏展开警告
+  - '-Wno-error=expansion-to-defined'  # 不将警告视为错误

@@ -11,6 +11,7 @@ import 'custom_single_child_layout_page.dart';
 import 'drag_and_drop_page.dart';
 import 'draggable_scrollable_sheet_page.dart';
 import 'expansion_panel_list_page.dart';
+import 'ffi_page.dart';
 import 'fittedbox_page.dart';
 import 'flow_page.dart';
 import 'future_builder_page.dart';
@@ -33,7 +34,7 @@ import 'toggle_buttons_page.dart';
 import 'value_listenable_builder_page.dart';
 
 class FrameworkWidgetPage extends StatelessWidget {
-  FrameworkWidgetPage({Key? key}) : super(key: key);
+  FrameworkWidgetPage({super.key});
 
   final ScrollController _controller = ScrollController();
   final Map<String, Widget> _data = () {
@@ -70,6 +71,7 @@ class FrameworkWidgetPage extends StatelessWidget {
           const SingleChildRenderObjectWidgetPage(),
       'HitTestBehavior': const HitTestBehaviorPage(),
       'DragAndDropPage': const DragAndDropPage(),
+      'FFIPage': const FFIPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(

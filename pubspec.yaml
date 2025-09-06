@@ -10,6 +10,7 @@ environment:
 workspace:
   #  - packages/*
   - app
+  - app/packages/ffi_plugin
   - game
   - shorebird_example
   - riverpod_app

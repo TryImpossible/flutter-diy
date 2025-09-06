@@ -1,19 +1,25 @@
 PODS:
+  - ffi_plugin (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - ffi_plugin (from `.symlinks/plugins/ffi_plugin/ios`)
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
 
 EXTERNAL SOURCES:
+  ffi_plugin:
+    :path: ".symlinks/plugins/ffi_plugin/ios"
   Flutter:
     :path: Flutter
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
+  ffi_plugin: d1d69cbf58a1c236e26a1ca267d79c7df6791a4d
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
 
