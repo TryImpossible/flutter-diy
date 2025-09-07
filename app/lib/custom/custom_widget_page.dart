@@ -5,16 +5,17 @@ import 'package:flutter/material.dart';
 
 import 'app_bubble_page.dart';
 import 'app_scroll_opacity.dart';
+import 'digital_keypad_page.dart';
 import 'dropdown_text_field_page.dart';
 import 'editing_history_page.dart';
 import 'gradient_button_page.dart';
-import 'digital_keypad_page.dart';
 import 'my_provider/my_provider_page.dart';
-import 'scrolling_parallax_effect_page.dart';
 import 'progress/progress_page.dart';
+import 'scrolling_parallax_effect_page.dart';
 import 'shadow_box_page.dart';
 import 'sliver_flexible_header_page.dart';
 import 'sliver_persistent_header_to_box_page.dart';
+import 'timestamped_chat_message_page.dart';
 import 'touch_height_light_page.dart';
 import 'turn_box_page.dart';
 
@@ -50,6 +51,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'ScrollingParallaxEffect': const ScrollingParallaxEffectPage(),
       'Progress': const ProgressPage(),
       'DigitalKeypad': const DigitalKeypadPage(),
+      'TimestampedChatMessage': const TimestampedChatMessagePage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
@@ -91,9 +93,9 @@ class _ListItem extends StatelessWidget {
     Key? key,
     required Map<String, Widget> data,
     required int index,
-  })  : _data = data,
-        _index = index,
-        super(key: key);
+  }) : _data = data,
+       _index = index,
+       super(key: key);
 
   final Map<String, Widget> _data;
   final int _index;
