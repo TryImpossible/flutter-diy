@@ -409,13 +409,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.11.8"
-  flame_ext:
-    dependency: transitive
-    description:
-      path: "game/packages/flame_ext"
-      relative: true
-    source: path
-    version: "0.0.1"
   flutter:
     dependency: transitive
     description: flutter
