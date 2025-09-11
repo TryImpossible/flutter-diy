@@ -12,6 +12,7 @@ workspace:
   - app
   - app/packages/ffi_plugin
   - game
+  - game/packages/flame_ext
   - shorebird_example
   - riverpod_app
   - brick_breaker_game
