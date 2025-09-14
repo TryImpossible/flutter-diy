@@ -17,6 +17,7 @@ workspace:
   - riverpod_app
   - brick_breaker_game
   - sqlite_ffi
+  - hybrid/flutter_module
 
 dev_dependencies:
   melos: ^7.1.0
