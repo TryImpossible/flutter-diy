@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-sdk
+        android:minSdkVersion="23"
+        tools:overrideLibrary="com.barry.hybrid.flutter_module.flutter_module" />
+
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,6 +26,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:theme="@style/FlutterLaunchTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.barry.hybrid.android_app.official.OfficialIntegrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Android_app" />
+
+        <activity
+            android:name="com.barry.hybrid.android_app.official.ExistingFlutterFragmentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Android_app" />
+    </application>
 </manifest>

@@ -1,7 +1,4 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
@@ -39,5 +36,12 @@
       "type": "dart",
       "flutterMode": "debug"
     },
+    {
+      "name": "flutter_module",
+      "program": "lib/main.dart",
+      "cwd": "hybrid/flutter_module",
+      "request": "attach",
+      "type": "dart"
+    }
   ]
 }

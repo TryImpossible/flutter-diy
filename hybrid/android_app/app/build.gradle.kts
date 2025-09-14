@@ -16,6 +16,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
+        }
     }
 
     buildTypes {
@@ -25,6 +30,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        create("profile") {
+            initWith(getByName("debug"))
         }
     }
     compileOptions {
@@ -49,6 +57,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -56,4 +68,12 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // aar方式集成
+//    debugImplementation("com.barry.hybrid.flutter_module.flutter_module:flutter_debug:1.0")
+//    releaseImplementation("com.barry.hybrid.flutter_module.flutter_module:flutter_release:1.0")
+//    add("profileImplementation","com.barry.hybrid.flutter_module.flutter_module:flutter_profile:1.0")
+
+    // 源码方式集成
+    implementation(project(":flutter"))
 }
