@@ -9,15 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink("官方的集成方式") {
-                    OfficialIntegrationView()
+        ZStack {
+            NavigationView {
+                VStack {
+                    NavigationLink("官方的集成方式") {
+                        OfficialIntegrationView()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.blue)
+                    NavigationLink("FlutterBoost的集成方式") {
+                        FlutterBoostIntegrationView()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.blue)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.blue)
             }
+            ToastView()
         }
+        
     }
 }
 

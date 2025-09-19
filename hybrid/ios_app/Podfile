@@ -16,4 +16,16 @@ end
 
 post_install do |installer|
   flutter_post_install(installer) if defined?(flutter_post_install)
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        # 判断当前 Mac 的架构
+        if `uname -m`.strip == "x86_64"
+          # Intel Mac 上跑 iOS Simulator，需要排除 arm64
+          config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+        else
+          # Apple Silicon Mac (arm64)，不要排除
+          config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = ""
+        end
+      end
+    end
 end

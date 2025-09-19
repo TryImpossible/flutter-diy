@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.barry.hybrid.android_app.flutterboost.FlutterBoostIntegrationActivity
 import com.barry.hybrid.android_app.official.OfficialIntegrationActivity
 import com.barry.hybrid.android_app.ui.theme.Android_appTheme
 
@@ -29,9 +30,14 @@ class MainActivity : ComponentActivity() {
                     Content(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(innerPadding), onOfficialClick = {
+                            .padding(innerPadding),
+                        onOfficialClick = {
                             startActivity(Intent(this, OfficialIntegrationActivity::class.java))
-                        })
+                        },
+                        onFlutterBoostClick = {
+                            startActivity(Intent(this, FlutterBoostIntegrationActivity::class.java))
+                        }
+                    )
                 }
             }
         }
@@ -39,7 +45,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Content(modifier: Modifier = Modifier, onOfficialClick: () -> Unit = {}) {
+fun Content(modifier: Modifier = Modifier, onOfficialClick: () -> Unit = {}, onFlutterBoostClick: () -> Unit = {}) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -47,6 +53,9 @@ fun Content(modifier: Modifier = Modifier, onOfficialClick: () -> Unit = {}) {
     ) {
         ElevatedButton(onClick = onOfficialClick) {
             Text(text = "官方的集成方式")
+        }
+        ElevatedButton(onClick = onFlutterBoostClick) {
+            Text(text = "FlutterBoost的集成方式")
         }
     }
 }

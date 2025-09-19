@@ -26,6 +26,7 @@
     "DEFINES_MODULE": "YES"
   },
   "dependencies": {
-    "Flutter": []
+    "Flutter": [],
+    "flutter_boost": []
   }
 }

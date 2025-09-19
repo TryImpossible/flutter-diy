@@ -76,4 +76,6 @@ dependencies {
 
     // 源码方式集成
     implementation(project(":flutter"))
+    // flutter boost
+    implementation(project(":flutter_boost"))
 }

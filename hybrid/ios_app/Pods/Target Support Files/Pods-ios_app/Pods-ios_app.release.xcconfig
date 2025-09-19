@@ -1,11 +1,11 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant" "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost/flutter_boost.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "FlutterPluginRegistrant"
-OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/Flutter" "-F${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "FlutterPluginRegistrant" -framework "flutter_boost"
+OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/Flutter" "-F${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant" "-F${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

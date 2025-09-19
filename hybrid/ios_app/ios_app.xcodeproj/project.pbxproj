@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4CB63A3D2E76D885009DA53B /* OfficialIntegrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB63A3C2E76D885009DA53B /* OfficialIntegrationView.swift */; };
-		4CBBC4BC2E76D31700384C19 /* ios_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBBC4BB2E76D31700384C19 /* ios_appApp.swift */; };
+		4CBBC4BC2E76D31700384C19 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBBC4BB2E76D31700384C19 /* MainApp.swift */; };
 		4CBBC4BE2E76D31700384C19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBBC4BD2E76D31700384C19 /* ContentView.swift */; };
 		4CBBC4C02E76D31900384C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBBC4BF2E76D31900384C19 /* Assets.xcassets */; };
 		4CBBC4C32E76D31900384C19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBBC4C22E76D31900384C19 /* Preview Assets.xcassets */; };
 		5A4675CF88283026B31E5E7D /* Pods_ios_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4FB86B5A411C59FD190A7 /* Pods_ios_app.framework */; };
+		AC0DF46D2E7D1C6900742F61 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0DF46C2E7D1C6500742F61 /* OtherViewController.swift */; };
+		AC0DF46F2E7D256C00742F61 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0DF46E2E7D256700742F61 /* Toast.swift */; };
+		AC5F27662E7A994F001EA622 /* FlutterBoostIntegrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F27652E7A9943001EA622 /* FlutterBoostIntegrationView.swift */; };
+		AC5F27682E7D070F001EA622 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F27672E7D0709001EA622 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +25,14 @@
 		4CB63A3E2E76E021009DA53B /* ios-app-Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-app-Info-Debug.plist"; sourceTree = SOURCE_ROOT; };
 		4CB63A3F2E76E169009DA53B /* ios-app-Info-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ios-app-Info-Release.plist"; sourceTree = SOURCE_ROOT; };
 		4CBBC4B82E76D31700384C19 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CBBC4BB2E76D31700384C19 /* ios_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_appApp.swift; sourceTree = "<group>"; };
+		4CBBC4BB2E76D31700384C19 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		4CBBC4BD2E76D31700384C19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CBBC4BF2E76D31900384C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CBBC4C22E76D31900384C19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC0DF46C2E7D1C6500742F61 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		AC0DF46E2E7D256700742F61 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		AC5F27652E7A9943001EA622 /* FlutterBoostIntegrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterBoostIntegrationView.swift; sourceTree = "<group>"; };
+		AC5F27672E7D0709001EA622 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E7E4FB86B5A411C59FD190A7 /* Pods_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91F8CB48E3AC47A07F96855 /* Pods-ios_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_app.release.xcconfig"; path = "Target Support Files/Pods-ios_app/Pods-ios_app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,9 +79,13 @@
 		4CBBC4BA2E76D31700384C19 /* ios_app */ = {
 			isa = PBXGroup;
 			children = (
+				AC0DF46E2E7D256700742F61 /* Toast.swift */,
+				AC0DF46C2E7D1C6500742F61 /* OtherViewController.swift */,
+				AC5F27672E7D0709001EA622 /* RootView.swift */,
+				AC5F27652E7A9943001EA622 /* FlutterBoostIntegrationView.swift */,
 				4CB63A3E2E76E021009DA53B /* ios-app-Info-Debug.plist */,
 				4CB63A3F2E76E169009DA53B /* ios-app-Info-Release.plist */,
-				4CBBC4BB2E76D31700384C19 /* ios_appApp.swift */,
+				4CBBC4BB2E76D31700384C19 /* MainApp.swift */,
 				4CBBC4BD2E76D31700384C19 /* ContentView.swift */,
 				4CBBC4BF2E76D31900384C19 /* Assets.xcassets */,
 				4CBBC4C12E76D31900384C19 /* Preview Content */,
@@ -111,6 +123,7 @@
 				4CBBC4B52E76D31700384C19 /* Frameworks */,
 				4CBBC4B62E76D31700384C19 /* Resources */,
 				B3B1B974463CB49D6F7C5A25 /* [CP-User] Embed Flutter Build flutter_module Script */,
+				5A370957078C7E9BF731A6C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,12 +180,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5A370957078C7E9BF731A6C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_app/Pods-ios_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_app/Pods-ios_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios_app/Pods-ios_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5EE39BC743EFC8C1676E5645 /* [CP-User] Run Flutter Build flutter_module Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
 			name = "[CP-User] Run Flutter Build flutter_module Script";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
@@ -182,7 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
 			name = "[CP-User] Embed Flutter Build flutter_module Script";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
@@ -216,9 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5F27662E7A994F001EA622 /* FlutterBoostIntegrationView.swift in Sources */,
 				4CB63A3D2E76D885009DA53B /* OfficialIntegrationView.swift in Sources */,
 				4CBBC4BE2E76D31700384C19 /* ContentView.swift in Sources */,
-				4CBBC4BC2E76D31700384C19 /* ios_appApp.swift in Sources */,
+				4CBBC4BC2E76D31700384C19 /* MainApp.swift in Sources */,
+				AC5F27682E7D070F001EA622 /* RootView.swift in Sources */,
+				AC0DF46D2E7D1C6900742F61 /* OtherViewController.swift in Sources */,
+				AC0DF46F2E7D256C00742F61 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +396,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios_app/Preview Content\"";
 				DEVELOPMENT_TEAM = NE255JBW6J;
 				ENABLE_PREVIEWS = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-app-Info-$(CONFIGURATION).plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -383,7 +428,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios_app/Preview Content\"";
 				DEVELOPMENT_TEAM = NE255JBW6J;
 				ENABLE_PREVIEWS = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-app-Info-$(CONFIGURATION).plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

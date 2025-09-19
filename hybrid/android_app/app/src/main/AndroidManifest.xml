@@ -43,5 +43,25 @@
             android:name="com.barry.hybrid.android_app.official.ExistingFlutterFragmentActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Android_app" />
+
+        <activity
+            android:name="com.idlefish.flutterboost.containers.FlutterBoostActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+            android:hardwareAccelerated="true"
+            android:theme="@style/Theme.AppCompat"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.barry.hybrid.android_app.flutterboost.FlutterBoostIntegrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Android_app" />
+
+        <activity
+            android:name="com.barry.hybrid.android_app.OtherActivity"
+            android:exported="false"
+            android:label="@string/title_activity_other"
+            android:theme="@style/Theme.Android_app" />
+
     </application>
 </manifest>
+

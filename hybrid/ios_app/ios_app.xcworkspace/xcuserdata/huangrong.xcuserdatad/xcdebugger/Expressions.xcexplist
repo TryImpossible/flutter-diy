@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BoostDelegate.pushFlutterRoute(_:):ios_appApp.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RootView.makeUIViewController(context:):RootView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.delegate as? AppDelegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FBFlutterViewContainer init]:FBFlutterViewContainer.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[FlutterBoost instance] engine].viewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FlutterBoost engine]:FlutterBoost.h">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

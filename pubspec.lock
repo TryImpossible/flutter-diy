@@ -422,6 +422,15 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.5.2"
+  flutter_boost:
+    dependency: transitive
+    description:
+      path: "."
+      ref: "5.0.2"
+      resolved-ref: "622e243416a04aae74845fc42444c5cd09eb15b0"
+      url: "https://github.com/alibaba/flutter_boost.git"
+    source: git
+    version: "5.0.2"
   flutter_driver:
     dependency: transitive
     description: flutter
