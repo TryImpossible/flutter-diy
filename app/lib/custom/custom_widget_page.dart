@@ -3,6 +3,7 @@ import 'package:app/custom/app_refresh_indicator_page.dart';
 import 'package:app/custom/render_object_button.dart';
 import 'package:flutter/material.dart';
 
+import 'GestureConflictPage.dart';
 import 'app_bubble_page.dart';
 import 'app_scroll_opacity.dart';
 import 'digital_keypad_page.dart';
@@ -52,6 +53,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       'Progress': const ProgressPage(),
       'DigitalKeypad': const DigitalKeypadPage(),
       'TimestampedChatMessage': const TimestampedChatMessagePage(),
+      'GestureConflict': const GestureConflictPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
