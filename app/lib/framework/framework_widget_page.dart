@@ -70,8 +70,8 @@ class FrameworkWidgetPage extends StatelessWidget {
       'SingleChildRenderObjectWidget':
           const SingleChildRenderObjectWidgetPage(),
       'HitTestBehavior': const HitTestBehaviorPage(),
-      'DragAndDropPage': const DragAndDropPage(),
-      'FFIPage': const FFIPage(),
+      'DragAndDrop': const DragAndDropPage(),
+      'FFI': const FFIPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(

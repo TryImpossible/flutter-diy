@@ -27,6 +27,7 @@ class _TimestampedChatMessagePageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('TimestampedChatMessage')),
       body: Center(
         child: SizedBox(
           width: 220,
@@ -56,9 +57,7 @@ class _TimestampedChatMessagePageState
               const SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
-                child: TextField(
-                  controller: _controller,
-                ),
+                child: TextField(controller: _controller),
               ),
             ],
           ),
