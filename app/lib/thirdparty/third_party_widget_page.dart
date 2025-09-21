@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'skeleton_page.dart';
 import 'splicing_image_page.dart';
 import 'sqlite_ffi_page.dart';
 
@@ -20,6 +21,7 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
     final Map<String, Widget> pages = <String, Widget>{
       '图片切割': const SplicingImagePage(),
       'SqliteFFI使用': const SqliteFFIPage(),
+      '骨架屏': const SkeletonPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
