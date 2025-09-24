@@ -18,6 +18,7 @@ workspace:
   - brick_breaker_game
   - sqlite_ffi
   - hybrid/flutter_module
+  - analyzer_exploration
 
 dev_dependencies:
   melos: ^7.1.0
