@@ -6,21 +6,52 @@ part of 'product_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productRepositoryHash() => r'1143e6a957468f07814b030b8e53d8ea1ddb037b';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [productRepository].
 @ProviderFor(productRepository)
-final productRepositoryProvider =
-    AutoDisposeProvider<ProductRepository>.internal(
-  productRepository,
-  name: r'productRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$productRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const productRepositoryProvider = ProductRepositoryProvider._();
 
-typedef ProductRepositoryRef = AutoDisposeProviderRef<ProductRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProductRepositoryProvider
+    extends
+        $FunctionalProvider<
+          ProductRepository,
+          ProductRepository,
+          ProductRepository
+        >
+    with $Provider<ProductRepository> {
+  const ProductRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'productRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$productRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProductRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProductRepository create(Ref ref) {
+    return productRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProductRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProductRepository>(value),
+    );
+  }
+}
+
+String _$productRepositoryHash() => r'cafbf9b8224d7b674e13c35ce792ecdfbe43badd';

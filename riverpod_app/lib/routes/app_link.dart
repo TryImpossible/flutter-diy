@@ -51,14 +51,12 @@ class AppLink {
   void toLogin({bool? isPop}) {
     _appRouter.pushNamed(
       AppRoute.login.name,
-      queryParameters: <String, String>{
-        if (isPop == true) 'isPop': '1',
-      },
+      queryParameters: <String, String>{if (isPop == true) 'isPop': '1'},
     );
   }
 }
 
 @riverpod
-AppLink appLink(AppLinkRef ref) {
+AppLink appLink(Ref ref) {
   return AppLink(ref.read(appRouterProvider));
 }

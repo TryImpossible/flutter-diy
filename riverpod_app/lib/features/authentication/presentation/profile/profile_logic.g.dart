@@ -6,20 +6,50 @@ part of 'profile_logic.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$profileLogicHash() => r'432715e4fc163a5c8424c09eadaceee195c4e846';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [ProfileLogic].
 @ProviderFor(ProfileLogic)
-final profileLogicProvider =
-    AutoDisposeAsyncNotifierProvider<ProfileLogic, void>.internal(
-  ProfileLogic.new,
-  name: r'profileLogicProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$profileLogicHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const profileLogicProvider = ProfileLogicProvider._();
 
-typedef _$ProfileLogic = AutoDisposeAsyncNotifier<void>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProfileLogicProvider
+    extends $AsyncNotifierProvider<ProfileLogic, void> {
+  const ProfileLogicProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'profileLogicProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$profileLogicHash();
+
+  @$internal
+  @override
+  ProfileLogic create() => ProfileLogic();
+}
+
+String _$profileLogicHash() => r'500976359e7e75c275152aad41e73e718d354ecb';
+
+abstract class _$ProfileLogic extends $AsyncNotifier<void> {
+  FutureOr<void> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    build();
+    final ref = this.ref as $Ref<AsyncValue<void>, void>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<void>, void>,
+              AsyncValue<void>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, null);
+  }
+}

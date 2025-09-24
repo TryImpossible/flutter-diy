@@ -17,11 +17,9 @@ enum AuthState {
 
 class AuthRepository {
   AuthRepository(UserRepository userRepository)
-      : _userRepository = userRepository,
-        _authStateController = StreamController<AuthState>.broadcast() {
-    _authStateController.stream.listen(
-      (AuthState state) => _authState = state,
-    );
+    : _userRepository = userRepository,
+      _authStateController = StreamController<AuthState>.broadcast() {
+    _authStateController.stream.listen((AuthState state) => _authState = state);
   }
 
   final UserRepository _userRepository;
@@ -42,8 +40,10 @@ class AuthRepository {
     }
     _authStateController.add(AuthState.authenticated);
     final String userId = Random().nextInt(10000000).toString();
-    _userRepository.currentUser =
-        UserEntity(userId: userId, username: username);
+    _userRepository.currentUser = UserEntity(
+      userId: userId,
+      username: username,
+    );
     return true;
   }
 
@@ -55,6 +55,6 @@ class AuthRepository {
 }
 
 @Riverpod(keepAlive: true)
-AuthRepository authRepository(AuthRepositoryRef ref) {
+AuthRepository authRepository(Ref ref) {
   return AuthRepository(ref.read(userRepositoryProvider.notifier));
 }

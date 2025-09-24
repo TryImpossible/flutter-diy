@@ -5,29 +5,28 @@ import 'package:riverpod_app/widgets/widgets.dart';
 import 'login_logic.dart';
 
 class LoginScreen extends ConsumerWidget {
-  const LoginScreen({
-    super.key,
-    this.then,
-    this.isPop,
-  });
+  const LoginScreen({super.key, this.then, this.isPop});
 
   final String? then;
   final String? isPop;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final LoginLogicProvider provider =
-        loginLogicProvider(then: then, isPop: isPop);
-    final AsyncValue<void> user = ref.watch(provider);
-    ref.listen<AsyncValue>(
-      provider,
-      (AsyncValue? prev, AsyncValue? next) {
-        if (next != null && next.valueOrNull == true) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('登录成功')));
-        }
-      },
+    final LoginLogicProvider provider = loginLogicProvider(
+      then: then,
+      isPop: isPop,
     );
+    final AsyncValue<void> user = ref.watch(provider);
+    ref.listen<AsyncValue<bool>>(provider, (
+      AsyncValue<bool>? prev,
+      AsyncValue<bool>? next,
+    ) {
+      if (next != null && next.value == true) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('登录成功')));
+      }
+    });
     return Scaffold(
       appBar: const AppNavBar(titleText: '登录'),
       body: Padding(

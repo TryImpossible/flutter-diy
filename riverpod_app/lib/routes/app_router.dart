@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_app/features/authentication/data/auth_repository.dart';
-import 'package:riverpod_app/features/main/presentation/not_found/not_found_screen.dart';
 import 'package:riverpod_app/routes/app_nav_observer.dart';
 
 import 'app_route.dart';
@@ -14,9 +13,7 @@ part 'app_router.g.dart';
 class _AppRouterRefreshStream extends ChangeNotifier {
   _AppRouterRefreshStream(Stream<dynamic> stream) {
     notifyListeners();
-    _subscription = stream.asBroadcastStream().listen(
-          (_) => notifyListeners(),
-        );
+    _subscription = stream.asBroadcastStream().listen((_) => notifyListeners());
   }
 
   late final StreamSubscription<dynamic> _subscription;
@@ -33,18 +30,16 @@ class AppRouter {
     _router = GoRouter(
       initialLocation: '/home',
       routes: routes,
-      refreshListenable:
-          _AppRouterRefreshStream(authRepository.onAuthStateChanged),
+      refreshListenable: _AppRouterRefreshStream(
+        authRepository.onAuthStateChanged,
+      ),
       redirect: (BuildContext context, GoRouterState state) {
         return _guard(context, state, authRepository);
       },
-      onException: (
-        BuildContext context,
-        GoRouterState state,
-        GoRouter router,
-      ) {
-        router.go('/404', extra: state.uri.toString());
-      },
+      onException:
+          (BuildContext context, GoRouterState state, GoRouter router) {
+            router.go('/404', extra: state.uri.toString());
+          },
       observers: <NavigatorObserver>[AppNavObserver()],
     );
   }
@@ -55,7 +50,7 @@ class AppRouter {
   final List<String> _routeBlacklist = <String>[
     '/shopping-cart',
     '/me',
-    '/my-shopping-cart'
+    '/my-shopping-cart',
   ];
 
   String? _guard(
@@ -104,10 +99,7 @@ class AppRouter {
     );
   }
 
-  Future<T?> push<T extends Object?>(
-    String location, {
-    Object? extra,
-  }) {
+  Future<T?> push<T extends Object?>(String location, {Object? extra}) {
     return _router.push<T>(location, extra: extra);
   }
 
@@ -184,7 +176,7 @@ class AppRouter {
 }
 
 @riverpod
-AppRouter appRouter(AppRouterRef ref) {
+AppRouter appRouter(Ref ref) {
   final AuthRepository authRepository = ref.read(authRepositoryProvider);
   final AppRouter router = AppRouter(authRepository);
   ref.onDispose(router.dispose);

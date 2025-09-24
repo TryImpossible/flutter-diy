@@ -11,8 +11,8 @@ class ProfileLogic extends _$ProfileLogic {
   @override
   FutureOr<void> build() async {}
 
-  Future<void> editProfile() {
-    return ref.read(userRepositoryProvider.notifier).editProfile();
+  Future<void> editProfile() async {
+    ref.read(userRepositoryProvider.notifier).editProfile();
   }
 
   Future<void> toShoppingCart() async {

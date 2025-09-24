@@ -6,14 +6,8 @@ part of 'todo_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TodoEntityImpl _$$TodoEntityImplFromJson(Map<String, dynamic> json) =>
-    _$TodoEntityImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-    );
+_TodoEntity _$TodoEntityFromJson(Map<String, dynamic> json) =>
+    _TodoEntity(id: json['id'] as String, name: json['name'] as String);
 
-Map<String, dynamic> _$$TodoEntityImplToJson(_$TodoEntityImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
+Map<String, dynamic> _$TodoEntityToJson(_TodoEntity instance) =>
+    <String, dynamic>{'id': instance.id, 'name': instance.name};

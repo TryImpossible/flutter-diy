@@ -6,20 +6,46 @@ part of 'todo_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$todoRepositoryHash() => r'bd082c7811065305e849f34378ad710cd0d17f50';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [todoRepository].
 @ProviderFor(todoRepository)
-final todoRepositoryProvider = AutoDisposeProvider<TodoRepository>.internal(
-  todoRepository,
-  name: r'todoRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$todoRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const todoRepositoryProvider = TodoRepositoryProvider._();
 
-typedef TodoRepositoryRef = AutoDisposeProviderRef<TodoRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class TodoRepositoryProvider
+    extends $FunctionalProvider<TodoRepository, TodoRepository, TodoRepository>
+    with $Provider<TodoRepository> {
+  const TodoRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'todoRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$todoRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<TodoRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  TodoRepository create(Ref ref) {
+    return todoRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(TodoRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<TodoRepository>(value),
+    );
+  }
+}
+
+String _$todoRepositoryHash() => r'ca54e3b96bafcf7508a902deb80cfcb1c7f4556e';

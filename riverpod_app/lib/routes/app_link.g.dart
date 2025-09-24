@@ -6,19 +6,46 @@ part of 'app_link.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appLinkHash() => r'f563c2f6735ff534b0c30d11ee238685e44b5798';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [appLink].
 @ProviderFor(appLink)
-final appLinkProvider = AutoDisposeProvider<AppLink>.internal(
-  appLink,
-  name: r'appLinkProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$appLinkHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const appLinkProvider = AppLinkProvider._();
 
-typedef AppLinkRef = AutoDisposeProviderRef<AppLink>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class AppLinkProvider
+    extends $FunctionalProvider<AppLink, AppLink, AppLink>
+    with $Provider<AppLink> {
+  const AppLinkProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'appLinkProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$appLinkHash();
+
+  @$internal
+  @override
+  $ProviderElement<AppLink> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  AppLink create(Ref ref) {
+    return appLink(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(AppLink value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<AppLink>(value),
+    );
+  }
+}
+
+String _$appLinkHash() => r'4cf7416f5fa44c8537daa2318a62d29d934b95bc';

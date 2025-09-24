@@ -6,8 +6,8 @@ part of 'product_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductEntityImpl _$$ProductEntityImplFromJson(Map<String, dynamic> json) =>
-    _$ProductEntityImpl(
+_ProductEntity _$ProductEntityFromJson(Map<String, dynamic> json) =>
+    _ProductEntity(
       catId: (json['cat_id'] as num?)?.toInt(),
       commentsTotal: json['comments_total'] as String?,
       isMultiPrice: json['is_multi_price'] as bool?,
@@ -26,7 +26,7 @@ _$ProductEntityImpl _$$ProductEntityImplFromJson(Map<String, dynamic> json) =>
           : Spm_statBean.fromJson(json['spm_stat'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ProductEntityImplToJson(_$ProductEntityImpl instance) =>
+Map<String, dynamic> _$ProductEntityToJson(_ProductEntity instance) =>
     <String, dynamic>{
       'cat_id': instance.catId,
       'comments_total': instance.commentsTotal,
@@ -44,14 +44,14 @@ Map<String, dynamic> _$$ProductEntityImplToJson(_$ProductEntityImpl instance) =>
       'spm_stat': instance.spmStat,
     };
 
-_$Spm_statBeanImpl _$$Spm_statBeanImplFromJson(Map<String, dynamic> json) =>
-    _$Spm_statBeanImpl(
+_Spm_statBean _$Spm_statBeanFromJson(Map<String, dynamic> json) =>
+    _Spm_statBean(
       scm: json['scm'] as String?,
       spmCode: json['spm_code'] as String?,
       spmParams: json['spm_params'] as String?,
     );
 
-Map<String, dynamic> _$$Spm_statBeanImplToJson(_$Spm_statBeanImpl instance) =>
+Map<String, dynamic> _$Spm_statBeanToJson(_Spm_statBean instance) =>
     <String, dynamic>{
       'scm': instance.scm,
       'spm_code': instance.spmCode,

@@ -3,15 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_app/features/mall/domain/product_entity.dart';
 import 'package:riverpod_app/features/mall/presentation/product_list/product_list_logic.dart';
 import 'package:riverpod_app/features/mall/presentation/shopping_cart/shopping_cart_logic.dart';
-import 'package:riverpod_app/widgets/app_nav_bar.dart';
 
 class ProductListScreen extends ConsumerWidget {
   const ProductListScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<List<ProductEntity>> products =
-        ref.watch(productListLogicProvider);
+    final AsyncValue<List<ProductEntity>> products = ref.watch(
+      productListLogicProvider,
+    );
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(44),
@@ -19,15 +19,18 @@ class ProductListScreen extends ConsumerWidget {
           padding: EdgeInsets.only(top: MediaQuery.viewPaddingOf(context).top),
           child: Row(
             children: <Widget>[
-              const Expanded(
+              Expanded(
                 child: TextField(
+                  controller: ref.watch(inputControllerProvider),
                   decoration: InputDecoration(hintText: '输入你喜欢的商品'),
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: ref
+                    .read(productListLogicProvider.notifier)
+                    .queryProduct,
                 child: const Text('搜索'),
-              )
+              ),
             ],
           ),
         ),
@@ -85,10 +88,7 @@ class _ProductItem extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Expanded(
-            child: Image.network(
-              product.puzzleUrl ?? '',
-              fit: BoxFit.contain,
-            ),
+            child: Image.network(product.puzzleUrl ?? '', fit: BoxFit.contain),
           ),
           Row(
             children: <Widget>[
@@ -103,7 +103,7 @@ class _ProductItem extends StatelessWidget {
                 icon: const Icon(Icons.shopping_cart_outlined),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

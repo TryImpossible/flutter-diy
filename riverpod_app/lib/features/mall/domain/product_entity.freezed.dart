@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,681 +9,589 @@ part of 'product_entity.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ProductEntity _$ProductEntityFromJson(Map<String, dynamic> json) {
-  return _ProductEntity.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ProductEntity {
-  @JsonKey(name: 'cat_id')
-  int? get catId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'comments_total')
-  String? get commentsTotal => throw _privateConstructorUsedError;
-  @JsonKey(name: 'is_multi_price')
-  bool? get isMultiPrice => throw _privateConstructorUsedError;
-  @JsonKey(name: 'is_stock')
-  bool? get isStock => throw _privateConstructorUsedError;
-  @JsonKey(name: 'log_code')
-  String? get logCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'market_price')
-  String? get marketPrice => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'price')
-  String? get price => throw _privateConstructorUsedError;
-  @JsonKey(name: 'product_desc')
-  String? get productDesc => throw _privateConstructorUsedError;
-  @JsonKey(name: 'product_desc_origin')
-  String? get productDescOrigin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'product_id')
-  int? get productId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'puzzle_url')
-  String? get puzzleUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'satisfy_per')
-  String? get satisfyPer => throw _privateConstructorUsedError;
-  @JsonKey(name: 'spm_stat')
-  Spm_statBean? get spmStat => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ProductEntityCopyWith<ProductEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+@JsonKey(name: 'cat_id') int? get catId;@JsonKey(name: 'comments_total') String? get commentsTotal;@JsonKey(name: 'is_multi_price') bool? get isMultiPrice;@JsonKey(name: 'is_stock') bool? get isStock;@JsonKey(name: 'log_code') String? get logCode;@JsonKey(name: 'market_price') String? get marketPrice;@JsonKey(name: 'name') String? get name;@JsonKey(name: 'price') String? get price;@JsonKey(name: 'product_desc') String? get productDesc;@JsonKey(name: 'product_desc_origin') String? get productDescOrigin;@JsonKey(name: 'product_id') int? get productId;@JsonKey(name: 'puzzle_url') String? get puzzleUrl;@JsonKey(name: 'satisfy_per') String? get satisfyPer;@JsonKey(name: 'spm_stat') Spm_statBean? get spmStat;
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ProductEntityCopyWith<ProductEntity> get copyWith => _$ProductEntityCopyWithImpl<ProductEntity>(this as ProductEntity, _$identity);
+
+  /// Serializes this ProductEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductEntity&&(identical(other.catId, catId) || other.catId == catId)&&(identical(other.commentsTotal, commentsTotal) || other.commentsTotal == commentsTotal)&&(identical(other.isMultiPrice, isMultiPrice) || other.isMultiPrice == isMultiPrice)&&(identical(other.isStock, isStock) || other.isStock == isStock)&&(identical(other.logCode, logCode) || other.logCode == logCode)&&(identical(other.marketPrice, marketPrice) || other.marketPrice == marketPrice)&&(identical(other.name, name) || other.name == name)&&(identical(other.price, price) || other.price == price)&&(identical(other.productDesc, productDesc) || other.productDesc == productDesc)&&(identical(other.productDescOrigin, productDescOrigin) || other.productDescOrigin == productDescOrigin)&&(identical(other.productId, productId) || other.productId == productId)&&(identical(other.puzzleUrl, puzzleUrl) || other.puzzleUrl == puzzleUrl)&&(identical(other.satisfyPer, satisfyPer) || other.satisfyPer == satisfyPer)&&(identical(other.spmStat, spmStat) || other.spmStat == spmStat));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,catId,commentsTotal,isMultiPrice,isStock,logCode,marketPrice,name,price,productDesc,productDescOrigin,productId,puzzleUrl,satisfyPer,spmStat);
+
+@override
+String toString() {
+  return 'ProductEntity(catId: $catId, commentsTotal: $commentsTotal, isMultiPrice: $isMultiPrice, isStock: $isStock, logCode: $logCode, marketPrice: $marketPrice, name: $name, price: $price, productDesc: $productDesc, productDescOrigin: $productDescOrigin, productId: $productId, puzzleUrl: $puzzleUrl, satisfyPer: $satisfyPer, spmStat: $spmStat)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ProductEntityCopyWith<$Res> {
-  factory $ProductEntityCopyWith(
-          ProductEntity value, $Res Function(ProductEntity) then) =
-      _$ProductEntityCopyWithImpl<$Res, ProductEntity>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'cat_id') int? catId,
-      @JsonKey(name: 'comments_total') String? commentsTotal,
-      @JsonKey(name: 'is_multi_price') bool? isMultiPrice,
-      @JsonKey(name: 'is_stock') bool? isStock,
-      @JsonKey(name: 'log_code') String? logCode,
-      @JsonKey(name: 'market_price') String? marketPrice,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'price') String? price,
-      @JsonKey(name: 'product_desc') String? productDesc,
-      @JsonKey(name: 'product_desc_origin') String? productDescOrigin,
-      @JsonKey(name: 'product_id') int? productId,
-      @JsonKey(name: 'puzzle_url') String? puzzleUrl,
-      @JsonKey(name: 'satisfy_per') String? satisfyPer,
-      @JsonKey(name: 'spm_stat') Spm_statBean? spmStat});
+abstract mixin class $ProductEntityCopyWith<$Res>  {
+  factory $ProductEntityCopyWith(ProductEntity value, $Res Function(ProductEntity) _then) = _$ProductEntityCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'cat_id') int? catId,@JsonKey(name: 'comments_total') String? commentsTotal,@JsonKey(name: 'is_multi_price') bool? isMultiPrice,@JsonKey(name: 'is_stock') bool? isStock,@JsonKey(name: 'log_code') String? logCode,@JsonKey(name: 'market_price') String? marketPrice,@JsonKey(name: 'name') String? name,@JsonKey(name: 'price') String? price,@JsonKey(name: 'product_desc') String? productDesc,@JsonKey(name: 'product_desc_origin') String? productDescOrigin,@JsonKey(name: 'product_id') int? productId,@JsonKey(name: 'puzzle_url') String? puzzleUrl,@JsonKey(name: 'satisfy_per') String? satisfyPer,@JsonKey(name: 'spm_stat') Spm_statBean? spmStat
+});
 
-  $Spm_statBeanCopyWith<$Res>? get spmStat;
+
+$Spm_statBeanCopyWith<$Res>? get spmStat;
+
 }
-
 /// @nodoc
-class _$ProductEntityCopyWithImpl<$Res, $Val extends ProductEntity>
+class _$ProductEntityCopyWithImpl<$Res>
     implements $ProductEntityCopyWith<$Res> {
-  _$ProductEntityCopyWithImpl(this._value, this._then);
+  _$ProductEntityCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ProductEntity _self;
+  final $Res Function(ProductEntity) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? catId = freezed,
-    Object? commentsTotal = freezed,
-    Object? isMultiPrice = freezed,
-    Object? isStock = freezed,
-    Object? logCode = freezed,
-    Object? marketPrice = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
-    Object? productDesc = freezed,
-    Object? productDescOrigin = freezed,
-    Object? productId = freezed,
-    Object? puzzleUrl = freezed,
-    Object? satisfyPer = freezed,
-    Object? spmStat = freezed,
-  }) {
-    return _then(_value.copyWith(
-      catId: freezed == catId
-          ? _value.catId
-          : catId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      commentsTotal: freezed == commentsTotal
-          ? _value.commentsTotal
-          : commentsTotal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isMultiPrice: freezed == isMultiPrice
-          ? _value.isMultiPrice
-          : isMultiPrice // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isStock: freezed == isStock
-          ? _value.isStock
-          : isStock // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      logCode: freezed == logCode
-          ? _value.logCode
-          : logCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      marketPrice: freezed == marketPrice
-          ? _value.marketPrice
-          : marketPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productDesc: freezed == productDesc
-          ? _value.productDesc
-          : productDesc // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productDescOrigin: freezed == productDescOrigin
-          ? _value.productDescOrigin
-          : productDescOrigin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productId: freezed == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      puzzleUrl: freezed == puzzleUrl
-          ? _value.puzzleUrl
-          : puzzleUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      satisfyPer: freezed == satisfyPer
-          ? _value.satisfyPer
-          : satisfyPer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmStat: freezed == spmStat
-          ? _value.spmStat
-          : spmStat // ignore: cast_nullable_to_non_nullable
-              as Spm_statBean?,
-    ) as $Val);
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? catId = freezed,Object? commentsTotal = freezed,Object? isMultiPrice = freezed,Object? isStock = freezed,Object? logCode = freezed,Object? marketPrice = freezed,Object? name = freezed,Object? price = freezed,Object? productDesc = freezed,Object? productDescOrigin = freezed,Object? productId = freezed,Object? puzzleUrl = freezed,Object? satisfyPer = freezed,Object? spmStat = freezed,}) {
+  return _then(_self.copyWith(
+catId: freezed == catId ? _self.catId : catId // ignore: cast_nullable_to_non_nullable
+as int?,commentsTotal: freezed == commentsTotal ? _self.commentsTotal : commentsTotal // ignore: cast_nullable_to_non_nullable
+as String?,isMultiPrice: freezed == isMultiPrice ? _self.isMultiPrice : isMultiPrice // ignore: cast_nullable_to_non_nullable
+as bool?,isStock: freezed == isStock ? _self.isStock : isStock // ignore: cast_nullable_to_non_nullable
+as bool?,logCode: freezed == logCode ? _self.logCode : logCode // ignore: cast_nullable_to_non_nullable
+as String?,marketPrice: freezed == marketPrice ? _self.marketPrice : marketPrice // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as String?,productDesc: freezed == productDesc ? _self.productDesc : productDesc // ignore: cast_nullable_to_non_nullable
+as String?,productDescOrigin: freezed == productDescOrigin ? _self.productDescOrigin : productDescOrigin // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as int?,puzzleUrl: freezed == puzzleUrl ? _self.puzzleUrl : puzzleUrl // ignore: cast_nullable_to_non_nullable
+as String?,satisfyPer: freezed == satisfyPer ? _self.satisfyPer : satisfyPer // ignore: cast_nullable_to_non_nullable
+as String?,spmStat: freezed == spmStat ? _self.spmStat : spmStat // ignore: cast_nullable_to_non_nullable
+as Spm_statBean?,
+  ));
+}
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$Spm_statBeanCopyWith<$Res>? get spmStat {
+    if (_self.spmStat == null) {
+    return null;
   }
 
-  @override
-  @pragma('vm:prefer-inline')
-  $Spm_statBeanCopyWith<$Res>? get spmStat {
-    if (_value.spmStat == null) {
-      return null;
-    }
-
-    return $Spm_statBeanCopyWith<$Res>(_value.spmStat!, (value) {
-      return _then(_value.copyWith(spmStat: value) as $Val);
-    });
-  }
+  return $Spm_statBeanCopyWith<$Res>(_self.spmStat!, (value) {
+    return _then(_self.copyWith(spmStat: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$ProductEntityImplCopyWith<$Res>
-    implements $ProductEntityCopyWith<$Res> {
-  factory _$$ProductEntityImplCopyWith(
-          _$ProductEntityImpl value, $Res Function(_$ProductEntityImpl) then) =
-      __$$ProductEntityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'cat_id') int? catId,
-      @JsonKey(name: 'comments_total') String? commentsTotal,
-      @JsonKey(name: 'is_multi_price') bool? isMultiPrice,
-      @JsonKey(name: 'is_stock') bool? isStock,
-      @JsonKey(name: 'log_code') String? logCode,
-      @JsonKey(name: 'market_price') String? marketPrice,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'price') String? price,
-      @JsonKey(name: 'product_desc') String? productDesc,
-      @JsonKey(name: 'product_desc_origin') String? productDescOrigin,
-      @JsonKey(name: 'product_id') int? productId,
-      @JsonKey(name: 'puzzle_url') String? puzzleUrl,
-      @JsonKey(name: 'satisfy_per') String? satisfyPer,
-      @JsonKey(name: 'spm_stat') Spm_statBean? spmStat});
 
-  @override
-  $Spm_statBeanCopyWith<$Res>? get spmStat;
+/// Adds pattern-matching-related methods to [ProductEntity].
+extension ProductEntityPatterns on ProductEntity {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProductEntity value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ProductEntity() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProductEntity value)  $default,){
+final _that = this;
+switch (_that) {
+case _ProductEntity():
+return $default(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProductEntity value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ProductEntity() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'cat_id')  int? catId, @JsonKey(name: 'comments_total')  String? commentsTotal, @JsonKey(name: 'is_multi_price')  bool? isMultiPrice, @JsonKey(name: 'is_stock')  bool? isStock, @JsonKey(name: 'log_code')  String? logCode, @JsonKey(name: 'market_price')  String? marketPrice, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'price')  String? price, @JsonKey(name: 'product_desc')  String? productDesc, @JsonKey(name: 'product_desc_origin')  String? productDescOrigin, @JsonKey(name: 'product_id')  int? productId, @JsonKey(name: 'puzzle_url')  String? puzzleUrl, @JsonKey(name: 'satisfy_per')  String? satisfyPer, @JsonKey(name: 'spm_stat')  Spm_statBean? spmStat)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ProductEntity() when $default != null:
+return $default(_that.catId,_that.commentsTotal,_that.isMultiPrice,_that.isStock,_that.logCode,_that.marketPrice,_that.name,_that.price,_that.productDesc,_that.productDescOrigin,_that.productId,_that.puzzleUrl,_that.satisfyPer,_that.spmStat);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'cat_id')  int? catId, @JsonKey(name: 'comments_total')  String? commentsTotal, @JsonKey(name: 'is_multi_price')  bool? isMultiPrice, @JsonKey(name: 'is_stock')  bool? isStock, @JsonKey(name: 'log_code')  String? logCode, @JsonKey(name: 'market_price')  String? marketPrice, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'price')  String? price, @JsonKey(name: 'product_desc')  String? productDesc, @JsonKey(name: 'product_desc_origin')  String? productDescOrigin, @JsonKey(name: 'product_id')  int? productId, @JsonKey(name: 'puzzle_url')  String? puzzleUrl, @JsonKey(name: 'satisfy_per')  String? satisfyPer, @JsonKey(name: 'spm_stat')  Spm_statBean? spmStat)  $default,) {final _that = this;
+switch (_that) {
+case _ProductEntity():
+return $default(_that.catId,_that.commentsTotal,_that.isMultiPrice,_that.isStock,_that.logCode,_that.marketPrice,_that.name,_that.price,_that.productDesc,_that.productDescOrigin,_that.productId,_that.puzzleUrl,_that.satisfyPer,_that.spmStat);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'cat_id')  int? catId, @JsonKey(name: 'comments_total')  String? commentsTotal, @JsonKey(name: 'is_multi_price')  bool? isMultiPrice, @JsonKey(name: 'is_stock')  bool? isStock, @JsonKey(name: 'log_code')  String? logCode, @JsonKey(name: 'market_price')  String? marketPrice, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'price')  String? price, @JsonKey(name: 'product_desc')  String? productDesc, @JsonKey(name: 'product_desc_origin')  String? productDescOrigin, @JsonKey(name: 'product_id')  int? productId, @JsonKey(name: 'puzzle_url')  String? puzzleUrl, @JsonKey(name: 'satisfy_per')  String? satisfyPer, @JsonKey(name: 'spm_stat')  Spm_statBean? spmStat)?  $default,) {final _that = this;
+switch (_that) {
+case _ProductEntity() when $default != null:
+return $default(_that.catId,_that.commentsTotal,_that.isMultiPrice,_that.isStock,_that.logCode,_that.marketPrice,_that.name,_that.price,_that.productDesc,_that.productDescOrigin,_that.productId,_that.puzzleUrl,_that.satisfyPer,_that.spmStat);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$ProductEntityImplCopyWithImpl<$Res>
-    extends _$ProductEntityCopyWithImpl<$Res, _$ProductEntityImpl>
-    implements _$$ProductEntityImplCopyWith<$Res> {
-  __$$ProductEntityImplCopyWithImpl(
-      _$ProductEntityImpl _value, $Res Function(_$ProductEntityImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? catId = freezed,
-    Object? commentsTotal = freezed,
-    Object? isMultiPrice = freezed,
-    Object? isStock = freezed,
-    Object? logCode = freezed,
-    Object? marketPrice = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
-    Object? productDesc = freezed,
-    Object? productDescOrigin = freezed,
-    Object? productId = freezed,
-    Object? puzzleUrl = freezed,
-    Object? satisfyPer = freezed,
-    Object? spmStat = freezed,
-  }) {
-    return _then(_$ProductEntityImpl(
-      catId: freezed == catId
-          ? _value.catId
-          : catId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      commentsTotal: freezed == commentsTotal
-          ? _value.commentsTotal
-          : commentsTotal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isMultiPrice: freezed == isMultiPrice
-          ? _value.isMultiPrice
-          : isMultiPrice // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isStock: freezed == isStock
-          ? _value.isStock
-          : isStock // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      logCode: freezed == logCode
-          ? _value.logCode
-          : logCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      marketPrice: freezed == marketPrice
-          ? _value.marketPrice
-          : marketPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productDesc: freezed == productDesc
-          ? _value.productDesc
-          : productDesc // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productDescOrigin: freezed == productDescOrigin
-          ? _value.productDescOrigin
-          : productDescOrigin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productId: freezed == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      puzzleUrl: freezed == puzzleUrl
-          ? _value.puzzleUrl
-          : puzzleUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      satisfyPer: freezed == satisfyPer
-          ? _value.satisfyPer
-          : satisfyPer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmStat: freezed == spmStat
-          ? _value.spmStat
-          : spmStat // ignore: cast_nullable_to_non_nullable
-              as Spm_statBean?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductEntityImpl implements _ProductEntity {
-  const _$ProductEntityImpl(
-      {@JsonKey(name: 'cat_id') this.catId,
-      @JsonKey(name: 'comments_total') this.commentsTotal,
-      @JsonKey(name: 'is_multi_price') this.isMultiPrice,
-      @JsonKey(name: 'is_stock') this.isStock,
-      @JsonKey(name: 'log_code') this.logCode,
-      @JsonKey(name: 'market_price') this.marketPrice,
-      @JsonKey(name: 'name') this.name,
-      @JsonKey(name: 'price') this.price,
-      @JsonKey(name: 'product_desc') this.productDesc,
-      @JsonKey(name: 'product_desc_origin') this.productDescOrigin,
-      @JsonKey(name: 'product_id') this.productId,
-      @JsonKey(name: 'puzzle_url') this.puzzleUrl,
-      @JsonKey(name: 'satisfy_per') this.satisfyPer,
-      @JsonKey(name: 'spm_stat') this.spmStat});
 
-  factory _$ProductEntityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductEntityImplFromJson(json);
+class _ProductEntity implements ProductEntity {
+  const _ProductEntity({@JsonKey(name: 'cat_id') this.catId, @JsonKey(name: 'comments_total') this.commentsTotal, @JsonKey(name: 'is_multi_price') this.isMultiPrice, @JsonKey(name: 'is_stock') this.isStock, @JsonKey(name: 'log_code') this.logCode, @JsonKey(name: 'market_price') this.marketPrice, @JsonKey(name: 'name') this.name, @JsonKey(name: 'price') this.price, @JsonKey(name: 'product_desc') this.productDesc, @JsonKey(name: 'product_desc_origin') this.productDescOrigin, @JsonKey(name: 'product_id') this.productId, @JsonKey(name: 'puzzle_url') this.puzzleUrl, @JsonKey(name: 'satisfy_per') this.satisfyPer, @JsonKey(name: 'spm_stat') this.spmStat});
+  factory _ProductEntity.fromJson(Map<String, dynamic> json) => _$ProductEntityFromJson(json);
 
-  @override
-  @JsonKey(name: 'cat_id')
-  final int? catId;
-  @override
-  @JsonKey(name: 'comments_total')
-  final String? commentsTotal;
-  @override
-  @JsonKey(name: 'is_multi_price')
-  final bool? isMultiPrice;
-  @override
-  @JsonKey(name: 'is_stock')
-  final bool? isStock;
-  @override
-  @JsonKey(name: 'log_code')
-  final String? logCode;
-  @override
-  @JsonKey(name: 'market_price')
-  final String? marketPrice;
-  @override
-  @JsonKey(name: 'name')
-  final String? name;
-  @override
-  @JsonKey(name: 'price')
-  final String? price;
-  @override
-  @JsonKey(name: 'product_desc')
-  final String? productDesc;
-  @override
-  @JsonKey(name: 'product_desc_origin')
-  final String? productDescOrigin;
-  @override
-  @JsonKey(name: 'product_id')
-  final int? productId;
-  @override
-  @JsonKey(name: 'puzzle_url')
-  final String? puzzleUrl;
-  @override
-  @JsonKey(name: 'satisfy_per')
-  final String? satisfyPer;
-  @override
-  @JsonKey(name: 'spm_stat')
-  final Spm_statBean? spmStat;
+@override@JsonKey(name: 'cat_id') final  int? catId;
+@override@JsonKey(name: 'comments_total') final  String? commentsTotal;
+@override@JsonKey(name: 'is_multi_price') final  bool? isMultiPrice;
+@override@JsonKey(name: 'is_stock') final  bool? isStock;
+@override@JsonKey(name: 'log_code') final  String? logCode;
+@override@JsonKey(name: 'market_price') final  String? marketPrice;
+@override@JsonKey(name: 'name') final  String? name;
+@override@JsonKey(name: 'price') final  String? price;
+@override@JsonKey(name: 'product_desc') final  String? productDesc;
+@override@JsonKey(name: 'product_desc_origin') final  String? productDescOrigin;
+@override@JsonKey(name: 'product_id') final  int? productId;
+@override@JsonKey(name: 'puzzle_url') final  String? puzzleUrl;
+@override@JsonKey(name: 'satisfy_per') final  String? satisfyPer;
+@override@JsonKey(name: 'spm_stat') final  Spm_statBean? spmStat;
 
-  @override
-  String toString() {
-    return 'ProductEntity(catId: $catId, commentsTotal: $commentsTotal, isMultiPrice: $isMultiPrice, isStock: $isStock, logCode: $logCode, marketPrice: $marketPrice, name: $name, price: $price, productDesc: $productDesc, productDescOrigin: $productDescOrigin, productId: $productId, puzzleUrl: $puzzleUrl, satisfyPer: $satisfyPer, spmStat: $spmStat)';
-  }
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ProductEntityCopyWith<_ProductEntity> get copyWith => __$ProductEntityCopyWithImpl<_ProductEntity>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductEntityImpl &&
-            (identical(other.catId, catId) || other.catId == catId) &&
-            (identical(other.commentsTotal, commentsTotal) ||
-                other.commentsTotal == commentsTotal) &&
-            (identical(other.isMultiPrice, isMultiPrice) ||
-                other.isMultiPrice == isMultiPrice) &&
-            (identical(other.isStock, isStock) || other.isStock == isStock) &&
-            (identical(other.logCode, logCode) || other.logCode == logCode) &&
-            (identical(other.marketPrice, marketPrice) ||
-                other.marketPrice == marketPrice) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.productDesc, productDesc) ||
-                other.productDesc == productDesc) &&
-            (identical(other.productDescOrigin, productDescOrigin) ||
-                other.productDescOrigin == productDescOrigin) &&
-            (identical(other.productId, productId) ||
-                other.productId == productId) &&
-            (identical(other.puzzleUrl, puzzleUrl) ||
-                other.puzzleUrl == puzzleUrl) &&
-            (identical(other.satisfyPer, satisfyPer) ||
-                other.satisfyPer == satisfyPer) &&
-            (identical(other.spmStat, spmStat) || other.spmStat == spmStat));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      catId,
-      commentsTotal,
-      isMultiPrice,
-      isStock,
-      logCode,
-      marketPrice,
-      name,
-      price,
-      productDesc,
-      productDescOrigin,
-      productId,
-      puzzleUrl,
-      satisfyPer,
-      spmStat);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProductEntityImplCopyWith<_$ProductEntityImpl> get copyWith =>
-      __$$ProductEntityImplCopyWithImpl<_$ProductEntityImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProductEntityImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ProductEntityToJson(this, );
 }
 
-abstract class _ProductEntity implements ProductEntity {
-  const factory _ProductEntity(
-          {@JsonKey(name: 'cat_id') final int? catId,
-          @JsonKey(name: 'comments_total') final String? commentsTotal,
-          @JsonKey(name: 'is_multi_price') final bool? isMultiPrice,
-          @JsonKey(name: 'is_stock') final bool? isStock,
-          @JsonKey(name: 'log_code') final String? logCode,
-          @JsonKey(name: 'market_price') final String? marketPrice,
-          @JsonKey(name: 'name') final String? name,
-          @JsonKey(name: 'price') final String? price,
-          @JsonKey(name: 'product_desc') final String? productDesc,
-          @JsonKey(name: 'product_desc_origin') final String? productDescOrigin,
-          @JsonKey(name: 'product_id') final int? productId,
-          @JsonKey(name: 'puzzle_url') final String? puzzleUrl,
-          @JsonKey(name: 'satisfy_per') final String? satisfyPer,
-          @JsonKey(name: 'spm_stat') final Spm_statBean? spmStat}) =
-      _$ProductEntityImpl;
-
-  factory _ProductEntity.fromJson(Map<String, dynamic> json) =
-      _$ProductEntityImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'cat_id')
-  int? get catId;
-  @override
-  @JsonKey(name: 'comments_total')
-  String? get commentsTotal;
-  @override
-  @JsonKey(name: 'is_multi_price')
-  bool? get isMultiPrice;
-  @override
-  @JsonKey(name: 'is_stock')
-  bool? get isStock;
-  @override
-  @JsonKey(name: 'log_code')
-  String? get logCode;
-  @override
-  @JsonKey(name: 'market_price')
-  String? get marketPrice;
-  @override
-  @JsonKey(name: 'name')
-  String? get name;
-  @override
-  @JsonKey(name: 'price')
-  String? get price;
-  @override
-  @JsonKey(name: 'product_desc')
-  String? get productDesc;
-  @override
-  @JsonKey(name: 'product_desc_origin')
-  String? get productDescOrigin;
-  @override
-  @JsonKey(name: 'product_id')
-  int? get productId;
-  @override
-  @JsonKey(name: 'puzzle_url')
-  String? get puzzleUrl;
-  @override
-  @JsonKey(name: 'satisfy_per')
-  String? get satisfyPer;
-  @override
-  @JsonKey(name: 'spm_stat')
-  Spm_statBean? get spmStat;
-  @override
-  @JsonKey(ignore: true)
-  _$$ProductEntityImplCopyWith<_$ProductEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductEntity&&(identical(other.catId, catId) || other.catId == catId)&&(identical(other.commentsTotal, commentsTotal) || other.commentsTotal == commentsTotal)&&(identical(other.isMultiPrice, isMultiPrice) || other.isMultiPrice == isMultiPrice)&&(identical(other.isStock, isStock) || other.isStock == isStock)&&(identical(other.logCode, logCode) || other.logCode == logCode)&&(identical(other.marketPrice, marketPrice) || other.marketPrice == marketPrice)&&(identical(other.name, name) || other.name == name)&&(identical(other.price, price) || other.price == price)&&(identical(other.productDesc, productDesc) || other.productDesc == productDesc)&&(identical(other.productDescOrigin, productDescOrigin) || other.productDescOrigin == productDescOrigin)&&(identical(other.productId, productId) || other.productId == productId)&&(identical(other.puzzleUrl, puzzleUrl) || other.puzzleUrl == puzzleUrl)&&(identical(other.satisfyPer, satisfyPer) || other.satisfyPer == satisfyPer)&&(identical(other.spmStat, spmStat) || other.spmStat == spmStat));
 }
 
-Spm_statBean _$Spm_statBeanFromJson(Map<String, dynamic> json) {
-  return _Spm_statBean.fromJson(json);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,catId,commentsTotal,isMultiPrice,isStock,logCode,marketPrice,name,price,productDesc,productDescOrigin,productId,puzzleUrl,satisfyPer,spmStat);
+
+@override
+String toString() {
+  return 'ProductEntity(catId: $catId, commentsTotal: $commentsTotal, isMultiPrice: $isMultiPrice, isStock: $isStock, logCode: $logCode, marketPrice: $marketPrice, name: $name, price: $price, productDesc: $productDesc, productDescOrigin: $productDescOrigin, productId: $productId, puzzleUrl: $puzzleUrl, satisfyPer: $satisfyPer, spmStat: $spmStat)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ProductEntityCopyWith<$Res> implements $ProductEntityCopyWith<$Res> {
+  factory _$ProductEntityCopyWith(_ProductEntity value, $Res Function(_ProductEntity) _then) = __$ProductEntityCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'cat_id') int? catId,@JsonKey(name: 'comments_total') String? commentsTotal,@JsonKey(name: 'is_multi_price') bool? isMultiPrice,@JsonKey(name: 'is_stock') bool? isStock,@JsonKey(name: 'log_code') String? logCode,@JsonKey(name: 'market_price') String? marketPrice,@JsonKey(name: 'name') String? name,@JsonKey(name: 'price') String? price,@JsonKey(name: 'product_desc') String? productDesc,@JsonKey(name: 'product_desc_origin') String? productDescOrigin,@JsonKey(name: 'product_id') int? productId,@JsonKey(name: 'puzzle_url') String? puzzleUrl,@JsonKey(name: 'satisfy_per') String? satisfyPer,@JsonKey(name: 'spm_stat') Spm_statBean? spmStat
+});
+
+
+@override $Spm_statBeanCopyWith<$Res>? get spmStat;
+
+}
+/// @nodoc
+class __$ProductEntityCopyWithImpl<$Res>
+    implements _$ProductEntityCopyWith<$Res> {
+  __$ProductEntityCopyWithImpl(this._self, this._then);
+
+  final _ProductEntity _self;
+  final $Res Function(_ProductEntity) _then;
+
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? catId = freezed,Object? commentsTotal = freezed,Object? isMultiPrice = freezed,Object? isStock = freezed,Object? logCode = freezed,Object? marketPrice = freezed,Object? name = freezed,Object? price = freezed,Object? productDesc = freezed,Object? productDescOrigin = freezed,Object? productId = freezed,Object? puzzleUrl = freezed,Object? satisfyPer = freezed,Object? spmStat = freezed,}) {
+  return _then(_ProductEntity(
+catId: freezed == catId ? _self.catId : catId // ignore: cast_nullable_to_non_nullable
+as int?,commentsTotal: freezed == commentsTotal ? _self.commentsTotal : commentsTotal // ignore: cast_nullable_to_non_nullable
+as String?,isMultiPrice: freezed == isMultiPrice ? _self.isMultiPrice : isMultiPrice // ignore: cast_nullable_to_non_nullable
+as bool?,isStock: freezed == isStock ? _self.isStock : isStock // ignore: cast_nullable_to_non_nullable
+as bool?,logCode: freezed == logCode ? _self.logCode : logCode // ignore: cast_nullable_to_non_nullable
+as String?,marketPrice: freezed == marketPrice ? _self.marketPrice : marketPrice // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as String?,productDesc: freezed == productDesc ? _self.productDesc : productDesc // ignore: cast_nullable_to_non_nullable
+as String?,productDescOrigin: freezed == productDescOrigin ? _self.productDescOrigin : productDescOrigin // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as int?,puzzleUrl: freezed == puzzleUrl ? _self.puzzleUrl : puzzleUrl // ignore: cast_nullable_to_non_nullable
+as String?,satisfyPer: freezed == satisfyPer ? _self.satisfyPer : satisfyPer // ignore: cast_nullable_to_non_nullable
+as String?,spmStat: freezed == spmStat ? _self.spmStat : spmStat // ignore: cast_nullable_to_non_nullable
+as Spm_statBean?,
+  ));
+}
+
+/// Create a copy of ProductEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$Spm_statBeanCopyWith<$Res>? get spmStat {
+    if (_self.spmStat == null) {
+    return null;
+  }
+
+  return $Spm_statBeanCopyWith<$Res>(_self.spmStat!, (value) {
+    return _then(_self.copyWith(spmStat: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$Spm_statBean {
-  @JsonKey(name: 'scm')
-  String? get scm => throw _privateConstructorUsedError;
-  @JsonKey(name: 'spm_code')
-  String? get spmCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'spm_params')
-  String? get spmParams => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $Spm_statBeanCopyWith<Spm_statBean> get copyWith =>
-      throw _privateConstructorUsedError;
+@JsonKey(name: 'scm') String? get scm;@JsonKey(name: 'spm_code') String? get spmCode;@JsonKey(name: 'spm_params') String? get spmParams;
+/// Create a copy of Spm_statBean
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$Spm_statBeanCopyWith<Spm_statBean> get copyWith => _$Spm_statBeanCopyWithImpl<Spm_statBean>(this as Spm_statBean, _$identity);
+
+  /// Serializes this Spm_statBean to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Spm_statBean&&(identical(other.scm, scm) || other.scm == scm)&&(identical(other.spmCode, spmCode) || other.spmCode == spmCode)&&(identical(other.spmParams, spmParams) || other.spmParams == spmParams));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,scm,spmCode,spmParams);
+
+@override
+String toString() {
+  return 'Spm_statBean(scm: $scm, spmCode: $spmCode, spmParams: $spmParams)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $Spm_statBeanCopyWith<$Res> {
-  factory $Spm_statBeanCopyWith(
-          Spm_statBean value, $Res Function(Spm_statBean) then) =
-      _$Spm_statBeanCopyWithImpl<$Res, Spm_statBean>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'scm') String? scm,
-      @JsonKey(name: 'spm_code') String? spmCode,
-      @JsonKey(name: 'spm_params') String? spmParams});
-}
+abstract mixin class $Spm_statBeanCopyWith<$Res>  {
+  factory $Spm_statBeanCopyWith(Spm_statBean value, $Res Function(Spm_statBean) _then) = _$Spm_statBeanCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'scm') String? scm,@JsonKey(name: 'spm_code') String? spmCode,@JsonKey(name: 'spm_params') String? spmParams
+});
 
+
+
+
+}
 /// @nodoc
-class _$Spm_statBeanCopyWithImpl<$Res, $Val extends Spm_statBean>
+class _$Spm_statBeanCopyWithImpl<$Res>
     implements $Spm_statBeanCopyWith<$Res> {
-  _$Spm_statBeanCopyWithImpl(this._value, this._then);
+  _$Spm_statBeanCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Spm_statBean _self;
+  final $Res Function(Spm_statBean) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? scm = freezed,
-    Object? spmCode = freezed,
-    Object? spmParams = freezed,
-  }) {
-    return _then(_value.copyWith(
-      scm: freezed == scm
-          ? _value.scm
-          : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmCode: freezed == spmCode
-          ? _value.spmCode
-          : spmCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmParams: freezed == spmParams
-          ? _value.spmParams
-          : spmParams // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of Spm_statBean
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? scm = freezed,Object? spmCode = freezed,Object? spmParams = freezed,}) {
+  return _then(_self.copyWith(
+scm: freezed == scm ? _self.scm : scm // ignore: cast_nullable_to_non_nullable
+as String?,spmCode: freezed == spmCode ? _self.spmCode : spmCode // ignore: cast_nullable_to_non_nullable
+as String?,spmParams: freezed == spmParams ? _self.spmParams : spmParams // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$Spm_statBeanImplCopyWith<$Res>
-    implements $Spm_statBeanCopyWith<$Res> {
-  factory _$$Spm_statBeanImplCopyWith(
-          _$Spm_statBeanImpl value, $Res Function(_$Spm_statBeanImpl) then) =
-      __$$Spm_statBeanImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'scm') String? scm,
-      @JsonKey(name: 'spm_code') String? spmCode,
-      @JsonKey(name: 'spm_params') String? spmParams});
 }
 
-/// @nodoc
-class __$$Spm_statBeanImplCopyWithImpl<$Res>
-    extends _$Spm_statBeanCopyWithImpl<$Res, _$Spm_statBeanImpl>
-    implements _$$Spm_statBeanImplCopyWith<$Res> {
-  __$$Spm_statBeanImplCopyWithImpl(
-      _$Spm_statBeanImpl _value, $Res Function(_$Spm_statBeanImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? scm = freezed,
-    Object? spmCode = freezed,
-    Object? spmParams = freezed,
-  }) {
-    return _then(_$Spm_statBeanImpl(
-      scm: freezed == scm
-          ? _value.scm
-          : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmCode: freezed == spmCode
-          ? _value.spmCode
-          : spmCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spmParams: freezed == spmParams
-          ? _value.spmParams
-          : spmParams // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [Spm_statBean].
+extension Spm_statBeanPatterns on Spm_statBean {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Spm_statBean value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Spm_statBean() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Spm_statBean value)  $default,){
+final _that = this;
+switch (_that) {
+case _Spm_statBean():
+return $default(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Spm_statBean value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Spm_statBean() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'scm')  String? scm, @JsonKey(name: 'spm_code')  String? spmCode, @JsonKey(name: 'spm_params')  String? spmParams)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Spm_statBean() when $default != null:
+return $default(_that.scm,_that.spmCode,_that.spmParams);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'scm')  String? scm, @JsonKey(name: 'spm_code')  String? spmCode, @JsonKey(name: 'spm_params')  String? spmParams)  $default,) {final _that = this;
+switch (_that) {
+case _Spm_statBean():
+return $default(_that.scm,_that.spmCode,_that.spmParams);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'scm')  String? scm, @JsonKey(name: 'spm_code')  String? spmCode, @JsonKey(name: 'spm_params')  String? spmParams)?  $default,) {final _that = this;
+switch (_that) {
+case _Spm_statBean() when $default != null:
+return $default(_that.scm,_that.spmCode,_that.spmParams);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$Spm_statBeanImpl implements _Spm_statBean {
-  const _$Spm_statBeanImpl(
-      {@JsonKey(name: 'scm') this.scm,
-      @JsonKey(name: 'spm_code') this.spmCode,
-      @JsonKey(name: 'spm_params') this.spmParams});
 
-  factory _$Spm_statBeanImpl.fromJson(Map<String, dynamic> json) =>
-      _$$Spm_statBeanImplFromJson(json);
+class _Spm_statBean implements Spm_statBean {
+  const _Spm_statBean({@JsonKey(name: 'scm') this.scm, @JsonKey(name: 'spm_code') this.spmCode, @JsonKey(name: 'spm_params') this.spmParams});
+  factory _Spm_statBean.fromJson(Map<String, dynamic> json) => _$Spm_statBeanFromJson(json);
 
-  @override
-  @JsonKey(name: 'scm')
-  final String? scm;
-  @override
-  @JsonKey(name: 'spm_code')
-  final String? spmCode;
-  @override
-  @JsonKey(name: 'spm_params')
-  final String? spmParams;
+@override@JsonKey(name: 'scm') final  String? scm;
+@override@JsonKey(name: 'spm_code') final  String? spmCode;
+@override@JsonKey(name: 'spm_params') final  String? spmParams;
 
-  @override
-  String toString() {
-    return 'Spm_statBean(scm: $scm, spmCode: $spmCode, spmParams: $spmParams)';
-  }
+/// Create a copy of Spm_statBean
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$Spm_statBeanCopyWith<_Spm_statBean> get copyWith => __$Spm_statBeanCopyWithImpl<_Spm_statBean>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Spm_statBeanImpl &&
-            (identical(other.scm, scm) || other.scm == scm) &&
-            (identical(other.spmCode, spmCode) || other.spmCode == spmCode) &&
-            (identical(other.spmParams, spmParams) ||
-                other.spmParams == spmParams));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, scm, spmCode, spmParams);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$Spm_statBeanImplCopyWith<_$Spm_statBeanImpl> get copyWith =>
-      __$$Spm_statBeanImplCopyWithImpl<_$Spm_statBeanImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$Spm_statBeanImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$Spm_statBeanToJson(this, );
 }
 
-abstract class _Spm_statBean implements Spm_statBean {
-  const factory _Spm_statBean(
-          {@JsonKey(name: 'scm') final String? scm,
-          @JsonKey(name: 'spm_code') final String? spmCode,
-          @JsonKey(name: 'spm_params') final String? spmParams}) =
-      _$Spm_statBeanImpl;
-
-  factory _Spm_statBean.fromJson(Map<String, dynamic> json) =
-      _$Spm_statBeanImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'scm')
-  String? get scm;
-  @override
-  @JsonKey(name: 'spm_code')
-  String? get spmCode;
-  @override
-  @JsonKey(name: 'spm_params')
-  String? get spmParams;
-  @override
-  @JsonKey(ignore: true)
-  _$$Spm_statBeanImplCopyWith<_$Spm_statBeanImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Spm_statBean&&(identical(other.scm, scm) || other.scm == scm)&&(identical(other.spmCode, spmCode) || other.spmCode == spmCode)&&(identical(other.spmParams, spmParams) || other.spmParams == spmParams));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,scm,spmCode,spmParams);
+
+@override
+String toString() {
+  return 'Spm_statBean(scm: $scm, spmCode: $spmCode, spmParams: $spmParams)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$Spm_statBeanCopyWith<$Res> implements $Spm_statBeanCopyWith<$Res> {
+  factory _$Spm_statBeanCopyWith(_Spm_statBean value, $Res Function(_Spm_statBean) _then) = __$Spm_statBeanCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'scm') String? scm,@JsonKey(name: 'spm_code') String? spmCode,@JsonKey(name: 'spm_params') String? spmParams
+});
+
+
+
+
+}
+/// @nodoc
+class __$Spm_statBeanCopyWithImpl<$Res>
+    implements _$Spm_statBeanCopyWith<$Res> {
+  __$Spm_statBeanCopyWithImpl(this._self, this._then);
+
+  final _Spm_statBean _self;
+  final $Res Function(_Spm_statBean) _then;
+
+/// Create a copy of Spm_statBean
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? scm = freezed,Object? spmCode = freezed,Object? spmParams = freezed,}) {
+  return _then(_Spm_statBean(
+scm: freezed == scm ? _self.scm : scm // ignore: cast_nullable_to_non_nullable
+as String?,spmCode: freezed == spmCode ? _self.spmCode : spmCode // ignore: cast_nullable_to_non_nullable
+as String?,spmParams: freezed == spmParams ? _self.spmParams : spmParams // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -7,8 +7,6 @@ part 'user_repository.g.dart';
 
 @Riverpod(keepAlive: true)
 class UserRepository extends _$UserRepository {
-  UserEntity? get currentUser => state;
-
   set currentUser(UserEntity? user) => state = user;
 
   @override

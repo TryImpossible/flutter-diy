@@ -32,7 +32,9 @@ class LoginLogic extends _$LoginLogic {
   void login() async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() {
-      return ref.read(authRepositoryProvider).login(
+      return ref
+          .read(authRepositoryProvider)
+          .login(
             username: _usernameEditingController.text,
             password: _password,
           );

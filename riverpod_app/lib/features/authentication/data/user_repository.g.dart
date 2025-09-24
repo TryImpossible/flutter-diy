@@ -6,21 +6,58 @@ part of 'user_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userRepositoryHash() => r'12db1c019a68e634b6de31f96b9f2d8f92ca77c1';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [UserRepository].
 @ProviderFor(UserRepository)
-final userRepositoryProvider =
-    NotifierProvider<UserRepository, UserEntity?>.internal(
-  UserRepository.new,
-  name: r'userRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$userRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const userRepositoryProvider = UserRepositoryProvider._();
 
-typedef _$UserRepository = Notifier<UserEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class UserRepositoryProvider
+    extends $NotifierProvider<UserRepository, UserEntity?> {
+  const UserRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'userRepositoryProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$userRepositoryHash();
+
+  @$internal
+  @override
+  UserRepository create() => UserRepository();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(UserEntity? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<UserEntity?>(value),
+    );
+  }
+}
+
+String _$userRepositoryHash() => r'79e4b29ceb3e9abb2333c145ecd05aa6d0e7277f';
+
+abstract class _$UserRepository extends $Notifier<UserEntity?> {
+  UserEntity? build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<UserEntity?, UserEntity?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<UserEntity?, UserEntity?>,
+              UserEntity?,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

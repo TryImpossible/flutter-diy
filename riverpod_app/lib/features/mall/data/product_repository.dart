@@ -9,8 +9,8 @@ class ProductRepository {
     const String path =
         'https://apis.netstart.cn/xmsc/product/all_product?cat_id=1836';
     final Response response = await Dio().get(path);
-    List<Map<String, dynamic>> products =
-        response.data['data']['product'].cast<Map<String, dynamic>>();
+    List<Map<String, dynamic>> products = response.data['data']['product']
+        .cast<Map<String, dynamic>>();
     return products
         .map((Map<String, dynamic> json) => ProductEntity.fromJson(json))
         .toList();
@@ -18,6 +18,6 @@ class ProductRepository {
 }
 
 @riverpod
-ProductRepository productRepository(ProductRepositoryRef ref) {
+ProductRepository productRepository(Ref ref) {
   return ProductRepository();
 }

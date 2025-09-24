@@ -4,7 +4,7 @@ part 'product_entity.freezed.dart';
 part 'product_entity.g.dart';
 
 @freezed
-class ProductEntity with _$ProductEntity {
+sealed class ProductEntity with _$ProductEntity {
   const factory ProductEntity({
     @JsonKey(name: 'cat_id') int? catId,
     @JsonKey(name: 'comments_total') String? commentsTotal,
@@ -22,17 +22,18 @@ class ProductEntity with _$ProductEntity {
     @JsonKey(name: 'spm_stat') Spm_statBean? spmStat,
   }) = _ProductEntity;
 
-  factory ProductEntity.fromJson(Map<String, Object?> json) => _$ProductEntityFromJson(json);
+  factory ProductEntity.fromJson(Map<String, Object?> json) =>
+      _$ProductEntityFromJson(json);
 }
 
 @freezed
-class Spm_statBean with _$Spm_statBean {
+sealed class Spm_statBean with _$Spm_statBean {
   const factory Spm_statBean({
     @JsonKey(name: 'scm') String? scm,
     @JsonKey(name: 'spm_code') String? spmCode,
     @JsonKey(name: 'spm_params') String? spmParams,
   }) = _Spm_statBean;
 
-  factory Spm_statBean.fromJson(Map<String, Object?> json) => _$Spm_statBeanFromJson(json);
+  factory Spm_statBean.fromJson(Map<String, Object?> json) =>
+      _$Spm_statBeanFromJson(json);
 }
-
