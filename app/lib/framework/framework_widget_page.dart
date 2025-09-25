@@ -1,3 +1,4 @@
+import 'package:app/hook_type/hook_type.dart';
 import 'package:flutter/material.dart';
 
 import 'align_page.dart';
@@ -81,6 +82,14 @@ class FrameworkWidgetPage extends StatelessWidget {
     );
   }();
 
+  /// 测试@HookType插桩的示例页面，点击按钮后，_testTypeHook()会打印日志(@HookType)
+  /// 插桩逻辑位于aop_tools
+  @HookType()
+  void _testTypeHook(dynamic obj1, dynamic obj2, dynamic obj3) {
+    //aop插桩位置
+    //处理逻辑.., 这里什么都没做
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,6 +102,11 @@ class FrameworkWidgetPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          var obj1 = 123;
+          var obj2 = "字符串对象";
+          var obj3 = Container();
+          _testTypeHook(obj1, obj2, obj3);
+
           _controller.animateTo(
             0,
             duration: kThemeAnimationDuration,
