@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'fortune_wheel_page.dart';
 import 'skeleton_page.dart';
 import 'splicing_image_page.dart';
 import 'sqlite_ffi_page.dart';
@@ -22,6 +23,7 @@ class _ThirdPartyWidgetPageState extends State<ThirdPartyWidgetPage>
       '图片切割': const SplicingImagePage(),
       'SqliteFFI使用': const SqliteFFIPage(),
       '骨架屏': const SkeletonPage(),
+      '幸运大转盘': const FortuneWheelPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(

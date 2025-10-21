@@ -492,6 +492,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.5"
+  flutter_fortune_wheel:
+    dependency: transitive
+    description:
+      name: flutter_fortune_wheel
+      sha256: "8f93144fab448ec95579d320e77dcf189b71bc363545985e41d3ba57fa42664e"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.3.2"
+  flutter_hooks:
+    dependency: transitive
+    description:
+      name: flutter_hooks
+      sha256: cde36b12f7188c85286fba9b38cc5a902e7279f36dd676967106c041dc9dde70
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.20.5"
   flutter_lints:
     dependency: transitive
     description:
