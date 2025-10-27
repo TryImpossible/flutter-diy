@@ -396,6 +396,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios_app/Preview Content\"";
 				DEVELOPMENT_TEAM = NE255JBW6J;
 				ENABLE_PREVIEWS = YES;
+				FLUTTER_BUILD_MODE = debug;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-app-Info-$(CONFIGURATION).plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -428,6 +429,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios_app/Preview Content\"";
 				DEVELOPMENT_TEAM = NE255JBW6J;
 				ENABLE_PREVIEWS = YES;
+				FLUTTER_BUILD_MODE = release;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-app-Info-$(CONFIGURATION).plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
