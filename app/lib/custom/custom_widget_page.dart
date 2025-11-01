@@ -23,6 +23,7 @@ import 'sliver_persistent_header_to_box_page.dart';
 import 'timestamped_chat_message_page.dart';
 import 'touch_height_light_page.dart';
 import 'turn_box_page.dart';
+import 'watermark_effect_page.dart';
 
 class CustomWidgetPage extends StatefulWidget {
   const CustomWidgetPage({Key? key}) : super(key: key);
@@ -62,6 +63,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       '斜角旗帜': const BevelFlagPage(),
       '斜着布局': const DiagonalLayoutPage(),
       '文字镂空效果': const HollowedTextPage(),
+      '水印效果': const WatermarkEffectPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
