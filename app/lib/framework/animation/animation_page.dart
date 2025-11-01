@@ -9,8 +9,8 @@ import '../../custom/app_fade_route.dart';
 import 'animated_decorated_box1_page.dart';
 import 'animated_switcher_page.dart';
 import 'animated_widgets_page.dart';
+import 'fade_in_fade_out_animation_page.dart';
 import 'hero_animation_page.dart';
-
 // import 'route_animation_02_page.dart';
 import 'route_animation_02_page.dart';
 import 'route_animation_page.dart';
@@ -26,50 +26,56 @@ class AnimationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animation'),
-      ),
+      appBar: AppBar(title: const Text('Animation')),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const ScaleAnimation01Page();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const ScaleAnimation01Page();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('图片放大动画示例01'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const ScaleAnimation02Page();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const ScaleAnimation02Page();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('图片放大动画示例02'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const ScaleAnimation03Page();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const ScaleAnimation03Page();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('图片放大动画示例03'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(CupertinoPageRoute(
-                    builder: (BuildContext context) {
-                      return const RouteAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    CupertinoPageRoute(
+                      builder: (BuildContext context) {
+                        return const RouteAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('路由动画示例01'),
               ),
@@ -77,16 +83,17 @@ class AnimationPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     PageRouteBuilder(
-                      pageBuilder: (
-                        BuildContext context,
-                        Animation<double> animation,
-                        Animation<double> secondaryAnimation,
-                      ) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: const RouteAnimationPage(),
-                        );
-                      },
+                      pageBuilder:
+                          (
+                            BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secondaryAnimation,
+                          ) {
+                            return FadeTransition(
+                              opacity: animation,
+                              child: const RouteAnimationPage(),
+                            );
+                          },
                     ),
                   );
                 },
@@ -95,122 +102,158 @@ class AnimationPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    AppFadeRoute(builder: (BuildContext context) {
-                      return const RouteAnimationPage();
-                    }),
+                    AppFadeRoute(
+                      builder: (BuildContext context) {
+                        return const RouteAnimationPage();
+                      },
+                    ),
                   );
                 },
                 child: const Text('路由动画示例03'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const RouteAnimation02Page();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const RouteAnimation02Page();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('路由动画示例04'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const HeroAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const HeroAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('Hero动画'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const StaggerAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const StaggerAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('Stagger交织动画'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const AnimatedSwitcherPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const AnimatedSwitcherPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('AnimatedSwitcher动画切换组件'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const AnimatedDecoratedBox1Page();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const AnimatedDecoratedBox1Page();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('AnimatedDecorateBox1组件'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const AnimatedWidgetsPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const AnimatedWidgetsPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('Flutter预置的动画过渡组件'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return TweenAnimationBuilderPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return TweenAnimationBuilderPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('TweenAnimationBuilder组件'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const BreathingAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const BreathingAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('BreathingAnimation'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const SnowAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const SnowAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('SnowAnimation'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const ScannerSweepPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const ScannerSweepPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('ScannerSweepAnimation'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const PhysicsAnimationPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const PhysicsAnimationPage();
+                      },
+                    ),
+                  );
                 },
                 child: const Text('PhysicsAnimation'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const FadeInFadeOutAnimationPage();
+                      },
+                    ),
+                  );
+                },
+                child: const Text('淡入淡出动画'),
               ),
             ],
           ),
