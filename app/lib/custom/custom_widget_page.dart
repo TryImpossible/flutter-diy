@@ -7,6 +7,7 @@ import 'GestureConflictPage.dart';
 import 'app_bubble_page.dart';
 import 'app_scroll_opacity.dart';
 import 'bevel_flag_page.dart';
+import 'countdown_button_page.dart';
 import 'diagonal_layout_page.dart';
 import 'digital_keypad_page.dart';
 import 'dropdown_text_field_page.dart';
@@ -64,6 +65,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       '斜着布局': const DiagonalLayoutPage(),
       '文字镂空效果': const HollowedTextPage(),
       '水印效果': const WatermarkEffectPage(),
+      '倒计时按钮': const CountdownButtonPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
