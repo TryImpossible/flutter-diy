@@ -28,6 +28,7 @@ import 'material_widget_page.dart';
 import 'paginated_data_table_page.dart';
 import 'shader_mask_page.dart';
 import 'single_child_render_object_widget_page.dart';
+import 'sketch_pad/sketch_pad_page.dart';
 import 'sliver/sliver_page.dart';
 import 'stateful_builder_page.dart';
 import 'stream_builder_page.dart';
@@ -73,6 +74,7 @@ class FrameworkWidgetPage extends StatelessWidget {
       'HitTestBehavior': const HitTestBehaviorPage(),
       'DragAndDrop': const DragAndDropPage(),
       'FFI': const FFIPage(),
+      'SketchPad': const SketchPadPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(

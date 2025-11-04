@@ -51,6 +51,10 @@ void main() {
   // runFoundationUI();
   // runRenderObjectUI();
   // runWidgetUI();
+
+  // runSketchPadExample08();
+  // runSketchPadExample09();
+  // runSketchPadExample10();
 }
 
 class MyApp extends StatefulWidget {
@@ -83,10 +87,7 @@ class _MyAppState extends State<MyApp> {
         return Stack(
           children: <Widget>[
             child!,
-            const Banner(
-              message: 'DEBUG',
-              location: BannerLocation.topStart,
-            ),
+            const Banner(message: 'DEBUG', location: BannerLocation.topStart),
           ],
         );
       },
