@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -19,7 +20,42 @@ class App extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      onGenerateRoute: (RouteSettings settings) {
+        final String? name = settings.name;
+        debugPrint('route name: $name');
+        return switch (name) {
+          'dialog' => PageRouteBuilder<dynamic>(
+            ///透明弹窗页面这个需要是false
+            opaque: false,
+
+            ///背景蒙版颜色
+            barrierColor: Colors.transparent,
+            settings: settings,
+            transitionsBuilder:
+                (
+                  BuildContext context,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  Widget child,
+                ) {
+                  final Offset offset = Offset(0, 1 - animation.drive(CurveTween(curve: Curves.decelerate)).value);
+                  return FractionalTranslation(
+                    translation: offset,
+                    child: FadeTransition(opacity: animation, child: child),
+                  );
+                },
+            transitionDuration: const Duration(milliseconds: 500),
+            pageBuilder: (_, __, ___) {
+              return DialogPage();
+            },
+          ),
+          _ => MaterialPageRoute(
+            builder: (BuildContext context) {
+              return const MyHomePage(title: 'Flutter Demo Home Page');
+            },
+          ),
+        };
+      },
     );
   }
 }
@@ -91,10 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
           ],
         ),
       ),
@@ -103,6 +136,37 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class DialogPage extends StatelessWidget {
+  const DialogPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: double.infinity,
+          height: 300,
+          color: Colors.red.shade100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('我是Flutter弹窗'),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     SystemNavigator.pop(animated: true);
+              //   },
+              //   child: Text('关闭'),
+              // ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
