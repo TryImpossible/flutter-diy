@@ -25,6 +25,8 @@ class FlutterBoostIntegrationActivity : AppCompatActivity(), View.OnClickListene
             insets
         }
         findViewById<AppCompatButton>(R.id.btn_start_flutter_activity).setOnClickListener(this)
+        findViewById<AppCompatButton>(R.id.btn_start_transparent_flutter_activity).setOnClickListener(this)
+        findViewById<AppCompatButton>(R.id.btn_start_transparent_flutter_dialog).setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -33,9 +35,27 @@ class FlutterBoostIntegrationActivity : AppCompatActivity(), View.OnClickListene
                 val options = FlutterBoostRouteOptions.Builder()
                     .pageName("/main-page")
                     .arguments(mapOf<String, Any>("data" to "来自原生的数据"))
-                    .requestCode(1111)
+                    .requestCode(1111).build()
+                FlutterBoost.instance().open(options)
+            }
+
+            R.id.btn_start_transparent_flutter_activity -> {
+                val options = FlutterBoostRouteOptions.Builder()
+                    .pageName("/dialog-page")
+                    .opaque(false)
+                    .arguments(mapOf<String, Any>())
                     .build()
                 FlutterBoost.instance().open(options)
+            }
+
+            R.id.btn_start_transparent_flutter_dialog -> {
+                val options = FlutterBoostRouteOptions.Builder()
+                    .pageName("/dialog-page")
+                    .opaque(false)
+                    .arguments(mapOf<String, Any>("data" to "来自原生的数据"))
+                    .build()
+                val dialog = TransparentFlutterDialogFragment.newInstance(options)
+                dialog.show(supportFragmentManager, "flutter_dialog_fragment")
             }
         }
     }

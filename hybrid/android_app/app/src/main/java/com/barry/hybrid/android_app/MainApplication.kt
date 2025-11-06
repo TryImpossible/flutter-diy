@@ -3,6 +3,7 @@ package com.barry.hybrid.android_app
 import android.app.Activity
 import android.app.Application
 import android.content.Intent
+import com.barry.hybrid.android_app.flutterboost.TransparentFlutterActivity
 import com.idlefish.flutterboost.FlutterBoost
 import com.idlefish.flutterboost.FlutterBoostDelegate
 import com.idlefish.flutterboost.FlutterBoostRouteOptions
@@ -76,9 +77,12 @@ class MainApplication : Application() {
                 if (pageName.isNullOrEmpty()) {
                     return
                 }
-                val intent = FlutterBoostActivity.CachedEngineIntentBuilder(FlutterBoostActivity::class.java)
-                    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.opaque).destroyEngineWithActivity(false)
-                    .uniqueId(options.uniqueId()).url(options.pageName()).urlParams(options.arguments())
+                val intent = FlutterBoostActivity.CachedEngineIntentBuilder(if (options.opaque()) FlutterBoostActivity::class.java else TransparentFlutterActivity::class.java)
+                    .backgroundMode(if (options.opaque()) FlutterActivityLaunchConfigs.BackgroundMode.opaque else FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+                    .destroyEngineWithActivity(false)
+                    .uniqueId(options.uniqueId())
+                    .url(options.pageName())
+                    .urlParams(options.arguments())
                     .build(activity)
                 activity.startActivityForResult(intent, options.requestCode())
             }

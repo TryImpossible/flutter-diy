@@ -69,6 +69,13 @@
             android:label="@string/title_activity_other"
             android:theme="@style/Theme.Android_app" />
 
+        <activity
+            android:name=".flutterboost.TransparentFlutterActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+            android:hardwareAccelerated="true"
+            android:theme="@style/TransparentActivityTheme"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 </manifest>
 

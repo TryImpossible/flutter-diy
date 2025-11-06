@@ -45,6 +45,27 @@ class _AppState extends State<App> {
         },
       );
     },
+    '/dialog-page': (RouteSettings settings, String? uniqueId) {
+      return PageRouteBuilder<dynamic>(
+        ///透明弹窗页面这个需要是false
+        opaque: false,
+
+        ///背景蒙版颜色
+        barrierColor: Colors.transparent,
+        settings: settings,
+        transitionsBuilder:
+            (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child) {
+              final Offset offset = Offset(0, 1 - animation.drive(CurveTween(curve: Curves.decelerate)).value);
+              return FractionalTranslation(
+                translation: offset,
+                child: FadeTransition(opacity: animation, child: child),
+              );
+            },
+        pageBuilder: (_, __, ___) {
+          return DialogPage();
+        },
+      );
+    },
   };
 
   Route<dynamic>? routeFactory(RouteSettings settings, String? uniqueId) {
@@ -131,6 +152,37 @@ class SimplePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: const Center(child: Text('SimplePage')),
+    );
+  }
+}
+
+class DialogPage extends StatelessWidget {
+  const DialogPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: double.infinity,
+          height: 300,
+          color: Colors.red.shade100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('我是Flutter弹窗'),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     SystemNavigator.pop(animated: true);
+              //   },
+              //   child: Text('关闭'),
+              // ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
