@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flame/input.dart';
 import 'package:flame/particles.dart';
 
 import 'components/anim_bullet.dart';

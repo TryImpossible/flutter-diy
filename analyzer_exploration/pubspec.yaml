@@ -4,12 +4,12 @@ version: 0.0.1
 publish_to: none
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.11.0
 
 resolution: workspace
 
 dependencies:
-  analyzer: ^7.6.0
+  analyzer: ^8.4.0
   args: ^2.7.0
   cli_completion: ^0.5.1
   code_builder: ^4.11.0
