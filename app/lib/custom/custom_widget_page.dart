@@ -13,6 +13,7 @@ import 'diagonal_layout_page.dart';
 import 'digital_keypad_page.dart';
 import 'dropdown_text_field_page.dart';
 import 'editing_history_page.dart';
+import 'fan/ug_fan_speed_setting_page.dart';
 import 'gradient_button_page.dart';
 import 'hollowed_text_page.dart';
 import 'image_tab_indicator_page.dart';
@@ -68,6 +69,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       '水印效果': const WatermarkEffectPage(),
       '倒计时按钮': const CountdownButtonPage(),
       'AutoResizeImage': const AutoResizeImagePage(),
+      'UGFanSpeedSetting': const UGFanSpeedSettingPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(

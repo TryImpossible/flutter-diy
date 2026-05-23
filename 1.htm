@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>风扇曲线编辑器 - 智能散热控制</title>
+    <style>
+      * {
+        user-select: none; /* 避免拖动时选中文本 */
+      }
+      body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        font-family: "Segoe UI", "Poppins", "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      .card {
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 48px;
+        box-shadow:
+          0 25px 45px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+        padding: 24px 28px 32px 28px;
+        width: 1000px;
+        transition: all 0.2s;
+      }
+      h1 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 0 0 6px 0;
+        color: #f1f5f9;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      h1 small {
+        font-size: 0.75rem;
+        font-weight: normal;
+        background: #334155;
+        padding: 4px 12px;
+        border-radius: 40px;
+        color: #94a3b8;
+      }
+      .sub {
+        color: #94a3b8;
+        margin-bottom: 28px;
+        font-size: 0.85rem;
+        border-left: 3px solid #3b82f6;
+        padding-left: 14px;
+      }
+      /* canvas 画板区域 */
+      .canvas-container {
+        background: #0f172a;
+        border-radius: 28px;
+        padding: 20px;
+        box-shadow:
+          inset 0 1px 4px rgba(0, 0, 0, 0.5),
+          0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #0b1120;
+        border-radius: 20px;
+        cursor: crosshair;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+      .info-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .legend {
+        display: flex;
+        gap: 24px;
+        background: #1e293b;
+        padding: 8px 20px;
+        border-radius: 60px;
+        align-items: center;
+      }
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+      }
+      .dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        background: #3b82f6;
+        box-shadow: 0 0 4px #3b82f6;
+      }
+      .dot-point {
+        background: #f97316;
+        border: 2px solid #facc15;
+        width: 14px;
+        height: 14px;
+      }
+      .controls {
+        display: flex;
+        gap: 12px;
+        background: #1e293b;
+        padding: 5px 20px;
+        border-radius: 60px;
+        align-items: center;
+      }
+      button {
+        background: #2d3a4e;
+        border: none;
+        color: white;
+        font-weight: 600;
+        padding: 8px 18px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 2px black;
+      }
+      button.primary {
+        background: #3b82f6;
+        box-shadow: 0 2px 6px #1e3a8a;
+      }
+      button.primary:hover {
+        background: #2563eb;
+        transform: scale(0.97);
+      }
+      button.warning {
+        background: #ea580c;
+      }
+      button.warning:hover {
+        background: #c2410c;
+      }
+      button:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+      }
+      .point-list {
+        background: #0f172a;
+        border-radius: 28px;
+        margin-top: 24px;
+        padding: 12px 18px;
+      }
+      .point-header {
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .points-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .point-tag {
+        background: #1e293b;
+        border-radius: 40px;
+        padding: 6px 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #e2e8f0;
+        transition: 0.1s;
+        border: 1px solid #334155;
+      }
+      .point-tag.selected {
+        background: #3b82f6;
+        border-color: #facc15;
+        color: white;
+        box-shadow: 0 0 6px #3b82f6;
+      }
+      .point-tag button {
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #f87171;
+      }
+      .point-tag button:hover {
+        color: #ffb3b3;
+        transform: scale(1.1);
+      }
+      .status-json {
+        background: #020617;
+        color: #7dd3fc;
+        font-family: monospace;
+        font-size: 0.7rem;
+        margin-top: 18px;
+        padding: 12px 16px;
+        border-radius: 20px;
+        word-break: break-all;
+        border: 1px solid #334155;
+      }
+      hr {
+        border-color: #334155;
+        margin: 10px 0;
+      }
+      .tooltip-info {
+        font-size: 0.7rem;
+        color: #5ee0fa;
+        text-align: center;
+        margin-top: 12px;
+      }
+      @media (max-width: 780px) {
+        .card {
+          padding: 16px;
+        }
+        .legend,
+        .controls {
+          padding: 5px 12px;
+        }
+        .point-tag {
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>🌀 智能风扇曲线 <small>Q‑Fan 调校</small></h1>
+      <div class="sub">⚡ 编辑节点 | 每5°C一个刻度 | 实时映射温度→转速</div>
+
+      <div class="canvas-container">
+        <canvas
+          id="fanCurveCanvas"
+          width="900"
+          height="450"
+          style="
+            width: 100%;
+            height: auto;
+            max-width: 900px;
+            aspect-ratio: 900/450;
+          "
+        ></canvas>
+      </div>
+
+      <div class="info-bar">
+        <div class="legend">
+          <span
+            ><div class="dot"></div>
+            风扇曲线</span
+          >
+          <span
+            ><div class="dot dot-point"></div>
+            可编辑节点 (拖拽/点击)</span
+          >
+        </div>
+        <div class="controls">
+          <button id="resetBtn" class="warning">⟳ 重置默认</button>
+          <button id="submitBtn" class="primary">💾 提交后端</button>
+        </div>
+      </div>
+
+      <!-- 节点管理区域 -->
+      <div class="point-list">
+        <div class="point-header">
+          <span>📌 关键节点列表 (X轴:温度°C / Y轴:转速%)</span>
+          <span style="font-size: 0.7rem">✨ 点击任意点编辑 / 删除</span>
+        </div>
+        <div class="points-grid" id="pointsContainer"></div>
+        <div class="tooltip-info">
+          💡
+          提示：点击曲线上点位选中，拖拽移动；也可通过下方按钮新增5°C节点，双端节点(0°C/80°C)不可删除。
+        </div>
+      </div>
+
+      <!-- 模拟提交的数据展示 -->
+      <div class="status-json" id="jsonPreview">📤 等待编辑...</div>
+    </div>
+
+    <script>
+      (function () {
+        // ---------- 固定配置 ----------
+        const TEMP_MIN = 0;
+        const TEMP_MAX = 80;
+        const SPEED_MIN = 0;
+        const SPEED_MAX = 100;
+        const STEP = 5; // 每5度一个刻度，但节点可以仅关键点，UI限制新增时温度对齐5的倍数
+        // 初始默认节点（经典双点）
+        let points = [
+          { temp: 0, speed: 20 },
+          { temp: 80, speed: 100 },
+        ];
+
+        // 内部状态
+        let selectedPointIndex = -1; // 当前选中的索引
+        let isDragging = false;
+
+        // DOM 元素
+        const canvas = document.getElementById("fanCurveCanvas");
+        const ctx = canvas.getContext("2d");
+        const pointsContainer = document.getElementById("pointsContainer");
+        const jsonPreview = document.getElementById("jsonPreview");
+        const resetBtn = document.getElementById("resetBtn");
+        const submitBtn = document.getElementById("submitBtn");
+
+        // 画布尺寸逻辑 (固定逻辑尺寸 900x450)
+        let canvasWidth = 900;
+        let canvasHeight = 450;
+
+        function setCanvasSize() {
+          canvas.width = canvasWidth;
+          canvas.height = canvasHeight;
+          canvas.style.width = "100%";
+          canvas.style.height = "auto";
+        }
+
+        // 坐标转换 (逻辑像素)
+        function tempToX(temp) {
+          const t = Math.min(TEMP_MAX, Math.max(TEMP_MIN, temp));
+          const ratio = (t - TEMP_MIN) / (TEMP_MAX - TEMP_MIN);
+          return 60 + ratio * (canvasWidth - 120); // 左右留白60px
+        }
+
+        function speedToY(speed) {
+          const s = Math.min(SPEED_MAX, Math.max(SPEED_MIN, speed));
+          const ratio = 1 - s / SPEED_MAX; // Y轴从上到下0~100%
+          return 40 + ratio * (canvasHeight - 80); // 上下留白40px
+        }
+
+        function getTempFromX(x) {
+          let ratio = (x - 60) / (canvasWidth - 120);
+          ratio = Math.min(1, Math.max(0, ratio));
+          return TEMP_MIN + ratio * (TEMP_MAX - TEMP_MIN);
+        }
+
+        function getSpeedFromY(y) {
+          let ratio = (y - 40) / (canvasHeight - 80);
+          ratio = Math.min(1, Math.max(0, ratio));
+          return SPEED_MAX * (1 - ratio);
+        }
+
+        // 排序并去重 (按温度升序，并确保端点存在，合并相同温度)
+        function normalizePoints() {
+          // 按温度排序
+          points.sort((a, b) => a.temp - b.temp);
+          // 合并相同温度节点 (保留最新操作的值, 实际不会重复)
+          let unique = [];
+          for (let p of points) {
+            if (
+              unique.length &&
+              Math.abs(unique[unique.length - 1].temp - p.temp) < 0.1
+            ) {
+              unique[unique.length - 1].speed = p.speed;
+            } else {
+              unique.push({ temp: p.temp, speed: p.speed });
+            }
+          }
+          points = unique;
+          // 确保端点 (0°C 和 80°C) 存在
+          let has0 = points.some((p) => Math.abs(p.temp - TEMP_MIN) < 0.1);
+          let has80 = points.some((p) => Math.abs(p.temp - TEMP_MAX) < 0.1);
+          if (!has0) points.push({ temp: TEMP_MIN, speed: 20 });
+          if (!has80) points.push({ temp: TEMP_MAX, speed: 100 });
+          points.sort((a, b) => a.temp - b.temp);
+          // 限制转速范围0-100，温度范围自动夹
+          points.forEach((p) => {
+            p.temp = Math.min(TEMP_MAX, Math.max(TEMP_MIN, p.temp));
+            p.speed = Math.min(SPEED_MAX, Math.max(SPEED_MIN, p.speed));
+          });
+          // 再次排序
+          points.sort((a, b) => a.temp - b.temp);
+          // 如果selectedPointIndex失效，重置选中
+          if (selectedPointIndex >= points.length) selectedPointIndex = -1;
+        }
+
+        // 给定温度，通过线性插值获取转速（用于渲染曲线）
+        function getSpeedByTemp(temp) {
+          if (points.length === 0) return 0;
+          if (temp <= points[0].temp) return points[0].speed;
+          if (temp >= points[points.length - 1].temp)
+            return points[points.length - 1].speed;
+          for (let i = 0; i < points.length - 1; i++) {
+            let p1 = points[i];
+            let p2 = points[i + 1];
+            if (temp >= p1.temp && temp <= p2.temp) {
+              const ratio = (temp - p1.temp) / (p2.temp - p1.temp);
+              return p1.speed + ratio * (p2.speed - p1.speed);
+            }
+          }
+          return 50;
+        }
+
+        // 渲染完整曲线 + 节点 + 网格
+        function draw() {
+          if (!ctx) return;
+          ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+          // 背景网格 (每5度一个刻度)
+          ctx.save();
+          ctx.strokeStyle = "#2d3a4e";
+          ctx.lineWidth = 0.8;
+          ctx.fillStyle = "#8197b0";
+          ctx.font = "11px 'JetBrains Mono', monospace";
+          // 垂直网格 (温度)
+          for (let t = TEMP_MIN; t <= TEMP_MAX; t += STEP) {
+            const x = tempToX(t);
+            ctx.beginPath();
+            ctx.moveTo(x, 40);
+            ctx.lineTo(x, canvasHeight - 40);
+            ctx.stroke();
+            ctx.fillStyle = "#5b7a9a";
+            ctx.fillText(`${t}°C`, x - 9, 30);
+          }
+          // 水平网格 (转速)
+          for (let s = 0; s <= 100; s += 10) {
+            const y = speedToY(s);
+            ctx.beginPath();
+            ctx.moveTo(60, y);
+            ctx.lineTo(canvasWidth - 60, y);
+            ctx.stroke();
+            ctx.fillStyle = "#5b7a9a";
+            ctx.fillText(`${s}%`, 15, y + 4);
+          }
+
+          // 绘制曲线 (基于线性插值精细采样)
+          ctx.beginPath();
+          ctx.strokeStyle = "#3b82f6";
+          ctx.lineWidth = 3;
+          let first = true;
+          for (let xPx = 60; xPx <= canvasWidth - 60; xPx++) {
+            const temp = getTempFromX(xPx);
+            const speed = getSpeedByTemp(temp);
+            const yPx = speedToY(speed);
+            if (first) {
+              ctx.moveTo(xPx, yPx);
+              first = false;
+            } else {
+              ctx.lineTo(xPx, yPx);
+            }
+          }
+          ctx.stroke();
+
+          // 绘制阴影/光晕
+          ctx.shadowBlur = 0;
+          // 绘制节点 (圆形)
+          for (let i = 0; i < points.length; i++) {
+            const p = points[i];
+            const x = tempToX(p.temp);
+            const y = speedToY(p.speed);
+            ctx.beginPath();
+            ctx.arc(x, y, 8, 0, 2 * Math.PI);
+            ctx.fillStyle = i === selectedPointIndex ? "#facc15" : "#f97316";
+            ctx.fill();
+            ctx.shadowBlur = 4;
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, 2 * Math.PI);
+            ctx.fillStyle = "#ffffff";
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = "#facc90";
+            ctx.font = "bold 12px 'Segoe UI'";
+            ctx.fillText(`${p.temp}°C,${p.speed}%`, x + 12, y - 6);
+          }
+
+          // 绘制边界限制说明
+          ctx.fillStyle = "#65a3d4";
+          ctx.font = "9px monospace";
+          ctx.fillText(
+            "端点(0°C/80°C)不可删除",
+            canvasWidth - 130,
+            canvasHeight - 12,
+          );
+          ctx.restore();
+        }
+
+        // 刷新UI: 列表 + 画布 + JSON预览
+        function refreshUI() {
+          normalizePoints();
+          draw();
+          renderPointList();
+          updateJsonPreview();
+        }
+
+        // 节点列表UI
+        function renderPointList() {
+          pointsContainer.innerHTML = "";
+          points.forEach((point, idx) => {
+            const isEndPoint =
+              Math.abs(point.temp - TEMP_MIN) < 0.1 ||
+              Math.abs(point.temp - TEMP_MAX) < 0.1;
+            const chip = document.createElement("div");
+            chip.className = `point-tag ${selectedPointIndex === idx ? "selected" : ""}`;
+            chip.innerHTML = `
+                    <strong>🌡️ ${point.temp}°C</strong>  →  💨 ${point.speed}%
+                    ${!isEndPoint ? `<button class="del-point" data-idx="${idx}">🗑️</button>` : '<span style="opacity:0.5">🔒</span>'}
+                `;
+            if (!isEndPoint) {
+              const delBtn = chip.querySelector(".del-point");
+              delBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (points.length <= 2) {
+                  alert("至少保留两个端点(0°C和80°C)，不能删除所有节点");
+                  return;
+                }
+                points.splice(idx, 1);
+                if (selectedPointIndex === idx) selectedPointIndex = -1;
+                else if (selectedPointIndex > idx) selectedPointIndex--;
+                refreshUI();
+              });
+            }
+            chip.addEventListener("click", () => {
+              selectedPointIndex = idx;
+              refreshUI();
+            });
+            pointsContainer.appendChild(chip);
+          });
+          // 添加“新增节点(+5°C)”按钮
+          const addBtnDiv = document.createElement("div");
+          addBtnDiv.className = "point-tag";
+          addBtnDiv.style.background = "#2d3a4e";
+          addBtnDiv.style.cursor = "pointer";
+          addBtnDiv.innerHTML = `➕ 新增节点 (5°C刻度)`;
+          addBtnDiv.addEventListener("click", () => {
+            // 找到所有现有温度，寻找可用5°C间隙，或者允许用户在对话框输入？为了体验，我们找一个没有占用的每5℃温度值
+            let occupiedTemps = new Set(points.map((p) => Math.round(p.temp)));
+            let candidateTemp = null;
+            for (let t = TEMP_MIN + STEP; t < TEMP_MAX; t += STEP) {
+              if (!occupiedTemps.has(t)) {
+                candidateTemp = t;
+                break;
+              }
+            }
+            if (candidateTemp === null) {
+              alert(
+                "所有5°C刻度都已有点位 (0~80之间已满)，可尝试删除部分点位再添加",
+              );
+              return;
+            }
+            // 默认转速取线性插值当前曲线上的转速
+            const defaultSpeed = Math.round(getSpeedByTemp(candidateTemp));
+            points.push({ temp: candidateTemp, speed: defaultSpeed });
+            refreshUI();
+            // 自动选中新点
+            const newIdx = points.findIndex(
+              (p) => Math.abs(p.temp - candidateTemp) < 0.1,
+            );
+            if (newIdx !== -1) selectedPointIndex = newIdx;
+            refreshUI();
+          });
+          pointsContainer.appendChild(addBtnDiv);
+        }
+
+        // 提交至后端展示模拟数据
+        function updateJsonPreview() {
+          // 提交全部关键节点（完整的points数组）
+          const submitData = {
+            fan_id: "cpu_fan_1",
+            points: points.map((p) => ({
+              temp: p.temp,
+              speed: Math.round(p.speed),
+            })),
+            timestamp: new Date().toISOString(),
+          };
+          jsonPreview.innerHTML = `📤 提交后端数据：\n${JSON.stringify(submitData, null, 2)}`;
+        }
+
+        // 鼠标/触摸交互：拖拽移动节点
+        function getMouseCoord(e) {
+          const rect = canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width; // 逻辑宽 / 显示宽
+          const scaleY = canvas.height / rect.height;
+          let clientX, clientY;
+          if (e.touches) {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+          } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
+          }
+          let canvasX = (clientX - rect.left) * scaleX;
+          let canvasY = (clientY - rect.top) * scaleY;
+          canvasX = Math.min(canvasWidth, Math.max(0, canvasX));
+          canvasY = Math.min(canvasHeight, Math.max(0, canvasY));
+          return { mx: canvasX, my: canvasY };
+        }
+
+        function handleStart(e) {
+          e.preventDefault();
+          const { mx, my } = getMouseCoord(e);
+          // 寻找最近的节点 (阈值 15px)
+          let closestIdx = -1;
+          let minDist = 18;
+          for (let i = 0; i < points.length; i++) {
+            const p = points[i];
+            const nx = tempToX(p.temp);
+            const ny = speedToY(p.speed);
+            const dx = nx - mx;
+            const dy = ny - my;
+            const dist = Math.hypot(dx, dy);
+            if (dist < minDist) {
+              minDist = dist;
+              closestIdx = i;
+            }
+          }
+          if (closestIdx !== -1) {
+            selectedPointIndex = closestIdx;
+            isDragging = true;
+            refreshUI();
+          } else {
+            selectedPointIndex = -1;
+            refreshUI();
+          }
+        }
+
+        function handleMove(e) {
+          if (!isDragging || selectedPointIndex === -1) return;
+          e.preventDefault();
+          const { mx, my } = getMouseCoord(e);
+          let newTemp = getTempFromX(mx);
+          let newSpeed = getSpeedFromY(my);
+          // 温控约束：四舍五入到每5度？根据需求X轴每5度一个刻度，但是用户可以自由移动吗？为了体验，允许任意值但展示提示？
+          // 为了符合"每5度一个刻度 可以新增、编辑该点"，我们限定所有非端点的温度对齐到最近的5的倍数（step对齐）
+          const isEnd =
+            Math.abs(points[selectedPointIndex].temp - TEMP_MIN) < 0.1 ||
+            Math.abs(points[selectedPointIndex].temp - TEMP_MAX) < 0.1;
+          if (!isEnd) {
+            // 对齐到最近5°C
+            let roundedTemp = Math.round(newTemp / STEP) * STEP;
+            roundedTemp = Math.min(TEMP_MAX, Math.max(TEMP_MIN, roundedTemp));
+            // 避免与其它节点温度完全重叠（端点除外）
+            let conflict = points.some(
+              (p, idx) =>
+                idx !== selectedPointIndex &&
+                Math.abs(p.temp - roundedTemp) < 0.1,
+            );
+            if (!conflict) newTemp = roundedTemp;
+            else {
+              // 冲突就维持原温不移动温度，只改转速
+              newTemp = points[selectedPointIndex].temp;
+            }
+          }
+          newSpeed = Math.min(
+            SPEED_MAX,
+            Math.max(SPEED_MIN, Math.round(newSpeed)),
+          );
+          points[selectedPointIndex].temp = newTemp;
+          points[selectedPointIndex].speed = newSpeed;
+          normalizePoints(); // 重新排序后索引可能变化
+          // 修正selectedPointIndex，找原来同一个引用（依据温度比较?）简单根据原temp匹配，但温度可能变化，简单重新查找原对象
+          const oldRefTemp = newTemp;
+          const newIdx = points.findIndex((p) => p.temp === oldRefTemp);
+          if (newIdx !== -1) selectedPointIndex = newIdx;
+          else selectedPointIndex = -1;
+          refreshUI();
+        }
+
+        function handleEnd(e) {
+          isDragging = false;
+          refreshUI();
+        }
+
+        function resetDefault() {
+          points = [
+            { temp: 0, speed: 20 },
+            { temp: 80, speed: 100 },
+          ];
+          selectedPointIndex = -1;
+          refreshUI();
+        }
+
+        function submitToBackend() {
+          const payload = {
+            fan_id: "cpu_fan_1",
+            points: points.map((p) => ({
+              temp: p.temp,
+              speed: Math.round(p.speed),
+            })),
+            timestamp: new Date().toISOString(),
+          };
+          // 模拟后端接收日志
+          console.log("[模拟后端]", payload);
+          alert(
+            `✅ 已提交后端！共 ${points.length} 个关键节点。\n详情请看控制台与右侧数据预览。`,
+          );
+          updateJsonPreview();
+          // 实际开发可使用 fetch API:
+          // fetch('/api/fan/curve', { method: 'POST', body: JSON.stringify(payload), headers: {'Content-Type':'application/json'} })
+        }
+
+        // 事件绑定 (鼠标+触摸)
+        function bindEvents() {
+          canvas.addEventListener("mousedown", handleStart);
+          window.addEventListener("mousemove", handleMove);
+          window.addEventListener("mouseup", handleEnd);
+          canvas.addEventListener("touchstart", handleStart, {
+            passive: false,
+          });
+          window.addEventListener("touchmove", handleMove, { passive: false });
+          window.addEventListener("touchend", handleEnd);
+        }
+
+        function init() {
+          setCanvasSize();
+          bindEvents();
+          resetDefault(); // 初始化绘图
+        }
+
+        resetBtn.addEventListener("click", resetDefault);
+        submitBtn.addEventListener("click", submitToBackend);
+        init();
+      })();
+    </script>
+  </body>
+</html>
