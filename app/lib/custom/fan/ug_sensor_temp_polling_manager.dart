@@ -78,8 +78,8 @@ class UgSensorTempPollingManager {
       return;
     }
 
-    // int tempUnit = 1;
-    // final List<UgSensorTempData> temps = [];
+    int tempUnit = 1;
+    final List<UgSensorTempData> temps = [];
     // temps.add(UgSensorTempData(
     //   name: 'barry_hdd',
     //   temp: hddTempLimit,
@@ -98,9 +98,9 @@ class UgSensorTempPollingManager {
     //   tempUnit: tempUnit,
     //   tempLimit: cpuTempLimit,
     // ));
-    // if (temps.isNotEmpty) {
-    //   onTempsChanged(temps);
-    // }
+    if (temps.isNotEmpty) {
+      onTempsChanged(temps);
+    }
 
     // _isRequesting = true;
     // try {

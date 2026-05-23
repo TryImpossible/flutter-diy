@@ -229,7 +229,7 @@ class UgCurveController extends ChangeNotifier {
       y: clampedY,
       modified: true,
     );
-    _points = _applyMonotonicPush(nextPoints, index);
+    _points = _applyAnchorInterpolation(nextPoints, index);
     _activeRange = getAdjustableRange(index);
     notifyListeners();
     return true;
@@ -276,19 +276,25 @@ class UgCurveController extends ChangeNotifier {
 
     double minAllowed = constraintConfig.minY;
     double maxAllowed = constraintConfig.maxY;
-    final UgCurvePointData? leftAnchor = _nearestAnchor(
+    final int? leftAnchorIndex = _nearestAnchorIndex(
+      _points,
       index,
       searchLeft: true,
     );
-    final UgCurvePointData? rightAnchor = _nearestAnchor(
+    final int? rightAnchorIndex = _nearestAnchorIndex(
+      _points,
       index,
       searchLeft: false,
     );
-    if (leftAnchor != null) {
-      minAllowed = math.max(minAllowed, leftAnchor.y);
+
+    if (index > 0) {
+      final UgCurvePointData leftBoundary = _points[leftAnchorIndex ?? 0];
+      minAllowed = math.max(minAllowed, leftBoundary.y);
     }
-    if (rightAnchor != null) {
-      maxAllowed = math.min(maxAllowed, rightAnchor.y);
+    if (index < _points.length - 1) {
+      final UgCurvePointData rightBoundary =
+          _points[rightAnchorIndex ?? _points.length - 1];
+      maxAllowed = math.min(maxAllowed, rightBoundary.y);
     }
     return UgCurveRange(min: minAllowed, max: maxAllowed);
   }
@@ -320,21 +326,25 @@ class UgCurveController extends ChangeNotifier {
 
   bool _validatePointIndex(int index) => index >= 0 && index < _points.length;
 
-  UgCurvePointData? _nearestAnchor(int index, {required bool searchLeft}) {
-    if (!_validatePointIndex(index)) {
+  int? _nearestAnchorIndex(
+    List<UgCurvePointData> points,
+    int index, {
+    required bool searchLeft,
+  }) {
+    if (index < 0 || index >= points.length) {
       return null;
     }
     if (searchLeft) {
       for (int i = index - 1; i >= 0; i--) {
-        if (_isAnchor(_points[i])) {
-          return _points[i];
+        if (_isAnchor(points[i])) {
+          return i;
         }
       }
       return null;
     }
-    for (int i = index + 1; i < _points.length; i++) {
-      if (_isAnchor(_points[i])) {
-        return _points[i];
+    for (int i = index + 1; i < points.length; i++) {
+      if (_isAnchor(points[i])) {
+        return i;
       }
     }
     return null;
@@ -342,35 +352,64 @@ class UgCurveController extends ChangeNotifier {
 
   bool _isAnchor(UgCurvePointData point) => point.modified || point.locked;
 
-  List<UgCurvePointData> _applyMonotonicPush(
-      List<UgCurvePointData> points,
-      int changedIndex,
-      ) {
+  List<UgCurvePointData> _applyAnchorInterpolation(
+    List<UgCurvePointData> points,
+    int changedIndex,
+  ) {
     if (changedIndex < 0 || changedIndex >= points.length) {
       return points;
     }
 
     final List<UgCurvePointData> next = List<UgCurvePointData>.of(points);
-    final double changedY = next[changedIndex].y;
 
-    // 被拖动点成为锚点；仅推移相邻的未修改点，遇到已有锚点或锁定点即停止。
-    for (int i = changedIndex + 1; i < next.length; i++) {
-      if (_isAnchor(next[i])) {
-        break;
-      }
-      if (next[i].y < changedY) {
-        next[i] = next[i].copyWith(y: changedY);
-      }
+    if (changedIndex > 0) {
+      final int leftBoundaryIndex = _nearestAnchorIndex(
+            next,
+            changedIndex,
+            searchLeft: true,
+          ) ??
+          0;
+      _interpolateBetween(next, leftBoundaryIndex, changedIndex);
     }
 
-    for (int i = changedIndex - 1; i >= 0; i--) {
-      if (_isAnchor(next[i])) {
-        break;
-      }
-      if (next[i].y > changedY) {
-        next[i] = next[i].copyWith(y: changedY);
-      }
+    if (changedIndex < next.length - 1) {
+      final int rightBoundaryIndex = _nearestAnchorIndex(
+            next,
+            changedIndex,
+            searchLeft: false,
+          ) ??
+          next.length - 1;
+      _interpolateBetween(next, changedIndex, rightBoundaryIndex);
     }
+
     return next;
+  }
+
+  void _interpolateBetween(
+    List<UgCurvePointData> points,
+    int startIndex,
+    int endIndex,
+  ) {
+    if (endIndex - startIndex <= 1) {
+      return;
+    }
+
+    final UgCurvePointData start = points[startIndex];
+    final UgCurvePointData end = points[endIndex];
+    final double width = end.x - start.x;
+    if (width.abs() < 1e-9) {
+      return;
+    }
+
+    for (int i = startIndex + 1; i < endIndex; i++) {
+      final UgCurvePointData point = points[i];
+      if (_isAnchor(point)) {
+        continue;
+      }
+      final double ratio = (point.x - start.x) / width;
+      points[i] = point.copyWith(
+        y: start.y + ratio * (end.y - start.y),
+      );
+    }
   }
 }
