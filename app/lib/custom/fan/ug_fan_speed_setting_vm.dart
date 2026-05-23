@@ -170,12 +170,11 @@ class UgFanSpeedSettingVM {
   List<UgCurvePointData> _defaultCurvePoints() {
     return List<UgCurvePointData>.generate(
       curvePointCount,
-          (int index) => UgCurvePointData(
+      (int index) => UgCurvePointData(
         x: (index * curveTemperatureStep).toDouble(),
-        y: (minSpeedPercent +
+        y: minSpeedPercent +
             (index / (curvePointCount - 1)) *
-                (maxSpeedPercent - minSpeedPercent))
-            .roundToDouble(),
+                (maxSpeedPercent - minSpeedPercent),
       ),
     );
   }
@@ -187,13 +186,12 @@ class UgFanSpeedSettingVM {
     final double denominator = warningLine <= 0 ? 1 : warningLine;
     return List<UgCurvePointData>.generate(
       curvePointCount,
-          (int index) {
+      (int index) {
         final double x = (index * curveTemperatureStep).toDouble();
         final double y = x >= warningLine
             ? maxSpeedPercent
-            : (minSpeedPercent +
-            (x / denominator) * (maxSpeedPercent - minSpeedPercent))
-            .roundToDouble();
+            : minSpeedPercent +
+                (x / denominator) * (maxSpeedPercent - minSpeedPercent);
         return UgCurvePointData(x: x, y: y);
       },
     );
@@ -207,21 +205,32 @@ class UgFanSpeedSettingVM {
   }
 
   List<UgCurvePointData> _applyTempWarningToPoints(
-      List<UgCurvePointData> sourcePoints,
-      double? warningLine,
-      ) {
+    List<UgCurvePointData> sourcePoints,
+    double? warningLine,
+  ) {
     final List<UgCurvePointData> points = _normalizeCurvePoints(sourcePoints);
 
     if (isCpuFan || warningLine == null) {
       return points
           .map(
             (UgCurvePointData point) => point.copyWith(locked: false),
-      )
+          )
+          .toList();
+    }
+
+    if (_matchesRoundedWarningBaseline(points, warningLine)) {
+      return _defaultCurvePointsForWarning(warningLine)
+          .map(
+            (UgCurvePointData point) => point.copyWith(
+              locked: point.x >= warningLine,
+              modified: false,
+            ),
+          )
           .toList();
     }
 
     final List<UgCurvePointData> warningPoints = points.map(
-          (UgCurvePointData point) {
+      (UgCurvePointData point) {
         final bool isWarningPoint = point.x == warningLine;
         final bool isWarningOrOverLimit =
             isWarningPoint || point.x > warningLine;
@@ -242,7 +251,7 @@ class UgFanSpeedSettingVM {
   List<UgCurvePointData> _initialCurvePoints() {
     final List<List<int>> table =
         (isCpuFan ? fanConfig.cpuFanTable : fanConfig.sysFanTable) ??
-            <List<int>>[];
+        <List<int>>[];
     if (table.isEmpty) {
       return <UgCurvePointData>[];
     }
@@ -250,10 +259,10 @@ class UgFanSpeedSettingVM {
       table
           .map(
             (List<int> point) => UgCurvePointData(
-          x: point[0].toDouble(),
-          y: point[1].toDouble(),
-        ),
-      )
+              x: point[0].toDouble(),
+              y: point[1].toDouble(),
+            ),
+          )
           .toList(),
     );
   }
@@ -287,14 +296,14 @@ class UgFanSpeedSettingVM {
   }
 
   List<UgCurvePointData> _normalizeCurvePoints(
-      List<UgCurvePointData> sourcePoints,
-      ) {
+    List<UgCurvePointData> sourcePoints,
+  ) {
     if (sourcePoints.isEmpty) {
       return _defaultCurvePoints();
     }
 
     final Map<double, UgCurvePointData> sanitizedByX =
-    <double, UgCurvePointData>{};
+        <double, UgCurvePointData>{};
     for (final UgCurvePointData point in sourcePoints) {
       final double x = point.x.clamp(0.0, maxTemperature);
       sanitizedByX[x] = point.copyWith(
@@ -304,17 +313,17 @@ class UgFanSpeedSettingVM {
     }
     final List<UgCurvePointData> sorted = sanitizedByX.values.toList()
       ..sort(
-            (UgCurvePointData a, UgCurvePointData b) => a.x.compareTo(b.x),
+        (UgCurvePointData a, UgCurvePointData b) => a.x.compareTo(b.x),
       );
 
     final List<UgCurvePointData> normalized = List<UgCurvePointData>.generate(
       curvePointCount,
-          (int index) {
+      (int index) {
         final double x = (index * curveTemperatureStep).toDouble();
         final UgCurvePointData? exactPoint = sanitizedByX[x];
         return UgCurvePointData(
           x: x,
-          y: _interpolateY(sorted, x).roundToDouble(),
+          y: _interpolateY(sorted, x),
           locked: exactPoint?.locked ?? false,
           modified: exactPoint?.modified ?? false,
         );
@@ -358,5 +367,32 @@ class UgFanSpeedSettingVM {
       }
     }
     return minSpeedPercent;
+  }
+
+  bool _matchesRoundedWarningBaseline(
+    List<UgCurvePointData> points,
+    double warningLine,
+  ) {
+    if (points.any((UgCurvePointData point) => point.modified)) {
+      return false;
+    }
+    final List<UgCurvePointData> baseline = _defaultCurvePointsForWarning(
+      warningLine,
+    );
+    final List<UgCurvePointData> normalizedPoints = _normalizeCurvePoints(
+      points,
+    );
+    if (normalizedPoints.length != baseline.length) {
+      return false;
+    }
+    for (int i = 0; i < normalizedPoints.length; i++) {
+      final UgCurvePointData point = normalizedPoints[i];
+      final UgCurvePointData baselinePoint = baseline[i];
+      if (point.x != baselinePoint.x ||
+          point.y.round() != baselinePoint.y.round()) {
+        return false;
+      }
+    }
+    return true;
   }
 }
