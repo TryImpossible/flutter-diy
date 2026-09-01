@@ -42,6 +42,7 @@ build/*
 !build/host/outputs/repo/
 .android/
 .ios/
+.ohos/
 .flutter-plugins-dependencies
 
 # Symbolication related

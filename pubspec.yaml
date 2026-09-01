@@ -24,7 +24,7 @@ dev_dependencies:
   melos: ^7.1.0
 
 melos:
-#  sdkPath: .fvm/flutter_sdk
+  sdkPath: .fvm/flutter_sdk
 
   ide:
     intellij:
