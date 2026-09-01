@@ -22,6 +22,7 @@ import 'scrolling_parallax_effect_page.dart';
 import 'shadow_box_page.dart';
 import 'sliver_flexible_header_page.dart';
 import 'sliver_persistent_header_to_box_page.dart';
+import 'staggered_grid/staggered_grid_view_page.dart';
 import 'timestamped_chat_message_page.dart';
 import 'touch_height_light_page.dart';
 import 'turn_box_page.dart';
@@ -68,6 +69,7 @@ class _CustomWidgetPageState extends State<CustomWidgetPage>
       '水印效果': const WatermarkEffectPage(),
       '倒计时按钮': const CountdownButtonPage(),
       'AutoResizeImage': const AutoResizeImagePage(),
+      'StaggeredGridView': const StaggeredGridViewPage(),
     };
     // ignore: prefer_for_elements_to_map_fromIterable
     return Map<String, Widget>.fromIterable(
