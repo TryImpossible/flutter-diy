@@ -11,6 +11,7 @@ workspace:
   #  - packages/*
   - app
   - app/packages/ffi_plugin
+  - app/packages/rust_plugin
   - game
   - game/packages/flame_ext
   - shorebird_example

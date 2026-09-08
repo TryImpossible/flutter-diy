@@ -2,8 +2,9 @@ import 'package:app/main_page.dart';
 // import 'package:dokit/dokit.dart';
 // import 'package:dokit/kit/biz/biz.dart';
 import 'package:flutter/material.dart';
+import 'package:rust_plugin/rust_plugin.dart';
 
-void main() {
+Future<void> main() async {
   // //1.创建绘制记录器和Canvas
   // PictureRecorder recorder = PictureRecorder();
   // Canvas canvas = Canvas(recorder);
@@ -46,6 +47,7 @@ void main() {
   //     return Container(color: Colors.orange);
   //   },
   // );
+  await RustLib.init();
   runApp(const MyApp());
 
   // runFoundationUI();

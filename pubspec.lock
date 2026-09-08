@@ -137,6 +137,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
+  build_cli_annotations:
+    dependency: transitive
+    description:
+      name: build_cli_annotations
+      sha256: e563c2e01de8974566a1998410d3f6f03521788160a02503b0b1f1a46c7b3d95
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.1"
   build_config:
     dependency: transitive
     description:
@@ -529,6 +537,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.0"
+  flutter_rust_bridge:
+    dependency: transitive
+    description:
+      name: flutter_rust_bridge
+      sha256: ec69331e2335ab4d456c0a9fc700892c2c85b72b9c0cb39df3ecfe8833d5d5c8
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.13.0"
   flutter_shaders:
     dependency: transitive
     description:
@@ -1347,5 +1363,5 @@ packages:
     source: hosted
     version: "2.2.2"
 sdks:
-  dart: ">=3.9.0 <4.0.0"
+  dart: ">=3.9.2 <4.0.0"
   flutter: ">=3.31.0-0.0.pre"

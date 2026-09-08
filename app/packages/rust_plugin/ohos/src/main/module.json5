@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "rust_plugin",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}
