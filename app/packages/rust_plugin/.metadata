@@ -4,7 +4,7 @@
 # This file should be version controlled and should not be manually edited.
 
 version:
-  revision: "6828b7b94c0c66b05c8c9684bdb3ae8d77b93260"
+  revision: "7e20a24102392c309889a410da8d92b2066e1d0e"
   channel: "[user-branch]"
 
 project_type: plugin_ffi
@@ -13,26 +13,26 @@ project_type: plugin_ffi
 migration:
   platforms:
     - platform: root
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: android
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: ios
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: linux
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: macos
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: windows
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
     - platform: ohos
-      create_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
-      base_revision: 6828b7b94c0c66b05c8c9684bdb3ae8d77b93260
+      create_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
+      base_revision: 7e20a24102392c309889a410da8d92b2066e1d0e
 
   # User provided section
 
