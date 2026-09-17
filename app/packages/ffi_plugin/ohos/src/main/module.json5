@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "ffi_plugin",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+    ]
+  }
+}
