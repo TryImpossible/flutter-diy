@@ -7,12 +7,15 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - rust_plugin (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - ffi_plugin (from `.symlinks/plugins/ffi_plugin/ios`)
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - rust_plugin (from `.symlinks/plugins/rust_plugin/ios`)
 
 EXTERNAL SOURCES:
   ffi_plugin:
@@ -23,12 +26,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  rust_plugin:
+    :path: ".symlinks/plugins/rust_plugin/ios"
 
 SPEC CHECKSUMS:
   ffi_plugin: d1d69cbf58a1c236e26a1ca267d79c7df6791a4d
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  rust_plugin: 740c8fa9a7376137007bfe1acc813a3556a8ae9a
 
 PODFILE CHECKSUM: 0dbd5a87e0ace00c9610d2037ac22083a01f861d
 

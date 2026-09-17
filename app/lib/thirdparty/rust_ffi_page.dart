@@ -26,6 +26,7 @@ class _RustFFIPageState extends State<RustFFIPage> {
 
   @override
   void dispose() {
+    super.dispose();
   }
 
   @override
