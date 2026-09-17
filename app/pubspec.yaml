@@ -56,6 +56,21 @@ dev_dependencies:
 
 dependency_overrides:
 #  vm_service: 7.5.0
+  path_provider:
+    git:
+      url: https://gitcode.com/openharmony-tpc/flutter_packages.git
+      path: packages/path_provider/path_provider
+      ref: provider-v2.1.5-ohos-1.0.0
+  ffi:
+    git:
+      url: https://gitcode.com/CPF-Flutter/fluttertpc_dart_native.git
+      path: pkgs/ffi
+      ref: flutter_3.35.7_deps
+  ffigen:
+    git:
+      url: https://gitcode.com/CPF-Flutter/fluttertpc_dart_native.git
+      path: pkgs/ffigen
+      ref: flutter_3.35.7_deps
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
