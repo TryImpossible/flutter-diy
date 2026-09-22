@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "flutter-hvigor-plugin": "file:../../.fvm/flutter_sdk/packages/flutter_tools/hvigor"
+  }
+}

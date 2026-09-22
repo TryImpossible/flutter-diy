@@ -484,11 +484,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "5.0.2"
-      resolved-ref: "622e243416a04aae74845fc42444c5cd09eb15b0"
+      ref: main
+      resolved-ref: "6df80cc1ea425cde1bac7d0265407977221061df"
       url: "https://github.com/alibaba/flutter_boost.git"
     source: git
-    version: "5.0.2"
+    version: "4.6.5"
   flutter_driver:
     dependency: transitive
     description: flutter

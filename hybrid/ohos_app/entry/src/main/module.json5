@@ -1,0 +1,63 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:app_icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:app_icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "OfficialFlutterAbility",
+        "srcEntry": "./ets/official/OfficialFlutterAbility.ets",
+        "description": "$string:OfficialFlutterAbility_desc",
+        "icon": "$media:app_icon",
+        "label": "$string:OfficialFlutterAbility_label",
+        "startWindowIcon": "$media:app_icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": false
+      },
+      {
+        "name": "TransparentFlutterAbility",
+        "srcEntry": "./ets/official/TransparentFlutterAbility.ets",
+        "description": "$string:TransparentFlutterAbility_desc",
+        "icon": "$media:app_icon",
+        "label": "$string:TransparentFlutterAbility_label",
+        "startWindowIcon": "$media:app_icon",
+        "startWindowBackground": "$color:transparent_window_background",
+        "exported": false
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}

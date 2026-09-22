@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "HarmonyOS host for Flutter add-to-app"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Native host entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ohos_app"
+    }
+  ]
+}

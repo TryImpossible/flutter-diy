@@ -1,0 +1,56 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "HarmonyOS host for Flutter add-to-app"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Native host entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ohos_app"
+    },
+    {
+      "name": "OfficialFlutterAbility_desc",
+      "value": "Official Flutter page"
+    },
+    {
+      "name": "OfficialFlutterAbility_label",
+      "value": "Flutter"
+    },
+    {
+      "name": "TransparentFlutterAbility_desc",
+      "value": "Transparent Flutter page"
+    },
+    {
+      "name": "TransparentFlutterAbility_label",
+      "value": "Flutter Dialog"
+    },
+    {
+      "name": "FlutterBoostAbility_desc",
+      "value": "FlutterBoost page"
+    },
+    {
+      "name": "FlutterBoostAbility_label",
+      "value": "FlutterBoost"
+    },
+    {
+      "name": "TransparentFlutterBoostAbility_desc",
+      "value": "Transparent FlutterBoost page"
+    },
+    {
+      "name": "TransparentFlutterBoostAbility_label",
+      "value": "FlutterBoost Dialog"
+    },
+    {
+      "name": "OtherAbility_desc",
+      "value": "Native page opened from Flutter"
+    },
+    {
+      "name": "OtherAbility_label",
+      "value": "Native Page"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Flutter 混合开发鸿蒙宿主"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "原生宿主入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ohos_app"
+    }
+  ]
+}

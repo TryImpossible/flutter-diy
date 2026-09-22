@@ -25,7 +25,7 @@ class _AppState extends State<App> {
   /// 如果用MaterialPageRoute的话同理
 
   Map<String, FlutterBoostRouteFactory> routerMap = {
-    '/main-page': (RouteSettings settings, String? uniqueId) {
+    '/main-page': (RouteSettings settings, bool isContainerPage, String? uniqueId) {
       return CupertinoPageRoute(
         settings: settings,
         builder: (_) {
@@ -35,7 +35,7 @@ class _AppState extends State<App> {
         },
       );
     },
-    '/simple-page': (RouteSettings settings, String? uniqueId) {
+    '/simple-page': (RouteSettings settings, bool isContainerPage, String? uniqueId) {
       return CupertinoPageRoute(
         settings: settings,
         builder: (_) {
@@ -45,7 +45,7 @@ class _AppState extends State<App> {
         },
       );
     },
-    '/dialog-page': (RouteSettings settings, String? uniqueId) {
+    '/dialog-page': (RouteSettings settings, bool isContainerPage, String? uniqueId) {
       return PageRouteBuilder<dynamic>(
         ///透明弹窗页面这个需要是false
         opaque: false,
@@ -68,12 +68,12 @@ class _AppState extends State<App> {
     },
   };
 
-  Route<dynamic>? routeFactory(RouteSettings settings, String? uniqueId) {
+  Route<dynamic>? routeFactory(RouteSettings settings, bool isContainerPage, String? uniqueId) {
     if (settings.name == null || !routerMap.containsKey(settings.name)) {
       return null;
     }
     FlutterBoostRouteFactory func = routerMap[settings.name] as FlutterBoostRouteFactory;
-    return func(settings, uniqueId);
+    return func(settings, isContainerPage, uniqueId);
   }
 
   Widget appBuilder(Widget home) {
